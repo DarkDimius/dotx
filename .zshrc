@@ -149,10 +149,14 @@ zstyle '*' single-ignored show
 
 setopt prompt_subst
 autoload -Uz vcs_info
+# zstyle ':vcs_info:*' actionformats \
+#     '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+# zstyle ':vcs_info:*' formats       \
+#     '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:*' actionformats \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+    '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+    '%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 
 zstyle ':vcs_info:*' enable git cvs svn
@@ -167,15 +171,15 @@ vcs_info_wrapper() {
 RPROMPT=$'$(vcs_info_wrapper)'
 
 ## http://talkings.org/post/5236392664/zsh-and-slow-git-completion
-#__git_files () {
-#    _wanted files expl ‘local files’ _files
-#}
+__git_files () {
+   _wanted files expl 'local files' _files
+}
 
 setopt no_complete_aliases
 alias gco='git checkout -t'
 alias gb='git branch'
+alias gn='git checkout -b'
 alias gcio='git push origin'
-alias gciof='git push +origin'
 alias gpo='git pull origin'
 alias gpu='git pull upstream'
 alias gs='git status'
@@ -187,6 +191,21 @@ alias gcpc='git cherry-pick --continue'
 alias gcpa='git cherry-pick --abort'
 alias gra='git remote add'
 alias grv='git remote -v'
+alias gl='git --no-pager log --pretty=oneline -20'
+alias grh='git reset --hard'
+alias grh0='git reset --hard HEAD'
+alias grh1='git reset --hard HEAD~1'
+alias grh2='git reset --hard HEAD~2'
+alias grh3='git reset --hard HEAD~3'
+alias grh4='git reset --hard HEAD~4'
+alias grh5='git reset --hard HEAD~5'
+alias grm='git reset --mixed'
+alias grm0='git reset --mixed HEAD'
+alias grm1='git reset --mixed HEAD~1'
+alias grm2='git reset --mixed HEAD~2'
+alias grm3='git reset --mixed HEAD~3'
+alias grm4='git reset --mixed HEAD~4'
+alias grm5='git reset --mixed HEAD~5'
 
 # macports
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -194,10 +213,17 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # sbt
 export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH
 
+# important for building scala and especially scaladoc
+export ANT_OPTS="-Xms1536M -Xmx4096M -Xss2M -XX:MaxPermSize=512M -XX:+UseParallelGC"
+
+alias ez='subl /Users/xeno_by/Projects/Dotx/.zshrc'
+alias az='source /Users/xeno_by/.zshrc'
+
 alias hm='cd "/Users/xeno_by"'
 alias ubi='cd "/usr/local/bin"'
 alias db='cd "/media/XENO/Dropbox"'
 alias dl='cd "/Users/xeno_by/Downloads"'
+alias prj='cd "/Users/xeno_by/Projects"'
 alias kep='cd "/Users/xeno_by/Projects/Kepler"'
 alias ide='cd "/Users/xeno_by/Projects/ScalaIDE"'
 alias ens='cd "/Users/xeno_by/Projects/Ensime"'
@@ -205,3 +231,7 @@ alias sens='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packag
 alias des='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2"'
 alias pap='cd "/Users/xeno_by/Projects/Pages"'
 alias dotx='cd "/Users/xeno_by/Projects/Dotx"'
+
+export SCALA_SRC_HOME=/path/to/repo  # path to a scratch checkout of trunk
+export SCALA_PACKS_DIR=/path/to/dir  # path to somewhere to cached downloaded builds
+source /Users/xeno_by/Projects/Libscala/libscala.sh
