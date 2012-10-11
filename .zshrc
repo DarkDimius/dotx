@@ -166,6 +166,34 @@ vcs_info_wrapper() {
 }
 RPROMPT=$'$(vcs_info_wrapper)'
 
+## http://talkings.org/post/5236392664/zsh-and-slow-git-completion
+#__git_files () {
+#    _wanted files expl ‘local files’ _files
+#}
+
+setopt no_complete_aliases
+alias gco='git checkout -t'
+alias gb='git branch'
+alias gcio='git push origin'
+alias gciof='git push +origin'
+alias gpo='git pull origin'
+alias gpu='git pull upstream'
+alias gs='git status'
+alias grb='git rebase'
+alias grbc='git rebase --continue'
+alias grba='git rebase --abort'
+alias gcp='git cherry-pick'
+alias gcpc='git cherry-pick --continue'
+alias gcpa='git cherry-pick --abort'
+alias gra='git remote add'
+alias grv='git remote -v'
+
+# macports
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# sbt
+export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH
+
 alias hm='cd "/Users/xeno_by"'
 alias ubi='cd "/usr/local/bin"'
 alias db='cd "/media/XENO/Dropbox"'
