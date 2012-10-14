@@ -180,8 +180,9 @@ __git_files () {
 }
 
 setopt no_complete_aliases
-alias git=hub
-alias gpr='git pull-request'
+# alias git=hub
+# alias gpr='git pull-request'
+alias gpr='git-pull-request.py'
 alias gco='git checkout -t'
 alias gb='git branch'
 alias gn='git checkout -b'

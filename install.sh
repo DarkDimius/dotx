@@ -1,18 +1,32 @@
 #!/usr/bin/env bash
-set -o errexit
 
-function install-into-home() {
-  if [[ -L "$HOME/$2" ]]; then
-    echo "$HOME/$2 already installed"
+function install-into-destination() {
+  dest=$1
+  from=$2
+  to=$3
+  if [[ -z "$to" ]]; then to=$from; fi
+
+  if [[ -L "$dest/$to" ]]; then
+    echo "$dest/$to already installed"
     return 0;
   fi
-  if [[ -f "$HOME/$2" ]]; then mv -v "$HOME/$2" "$HOME/$2.bak"; fi
-  ln -s -v "$(realpath $(dirname $0))/$1" "$HOME/$2"
+  if [[ -f "$dest/$to" ]]; then mv -v "$dest/$to" "$dest/$to.bak"; fi
+  ln -s -v "$(realpath $(dirname $0))/$from" "$dest/$to"
 }
 
-install-into-home .gitconfig .gitconfig
+function install-into-home() {
+  install-into-destination "$HOME" $1 $2
+}
+
+function install-into-bin() {
+  install-into-destination "/usr/local/bin" $1 $2
+}
+
+install-into-home .gitconfig
 install-into-home gitignore .gitignore
-install-into-home .scala_autorun .scala_autorun
-install-into-home .scala_history .scala_history
-install-into-home .zshrc .zshrc
-install-into-home .slate .slate
+install-into-home .scala_autorun
+install-into-home .scala_history
+install-into-home .zshrc
+install-into-home .slate
+
+install-into-bin git-pull-request.py

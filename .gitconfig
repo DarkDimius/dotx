@@ -11,20 +11,20 @@
   filemode = false
   abbrev = 10
   quotepath = true
-	excludesfile = /Users/xeno_by/.gitignore
+  excludesfile = /Users/xeno_by/.gitignore
   bare = false
   symlinks = false
   ignorecase = true
   hideDotFiles = dotGitOnly
-	attributesfile = /Users/xeno_by/.gitattributes
+  attributesfile = /Users/xeno_by/.gitattributes
 [rerere]
   enabled = 1
 [diff "javap"]
-	textconv = /Users/xeno_by/Projects/Libscala/git-java/textconv-javap
-	cachetextconv = true
+  textconv = /Users/xeno_by/Projects/Libscala/git-java/textconv-javap
+  cachetextconv = true
 [diff "jar-toc"]
-	textconv = /Users/xeno_by/Projects/Libscala/git-java/textconv-jar
-	cachetextconv = true
+  textconv = /Users/xeno_by/Projects/Libscala/git-java/textconv-jar
+  cachetextconv = true
 [difftool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
 	path = 
