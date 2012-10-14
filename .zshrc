@@ -179,12 +179,65 @@ __git_files () {
    _wanted files expl 'local files' _files
 }
 
+# macports
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# sbt
+export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH
+
+# important for building scala and especially scaladoc
+export ANT_OPTS="-Xms1536M -Xmx4096M -Xss2M -XX:MaxPermSize=512M -XX:+UseParallelGC"
+
+alias ez='subl /Users/xeno_by/Projects/Dotx/.zshrc'
+alias az='source /Users/xeno_by/.zshrc'
+
+alias hm='cd "/Users/xeno_by"'
+alias ubi='cd "/usr/local/bin"'
+alias db='cd "/media/XENO/Dropbox"'
+alias dl='cd "/Users/xeno_by/Downloads"'
+alias prj='cd "/Users/xeno_by/Projects"'
+alias kep='cd "/Users/xeno_by/Projects/Kepler"'
+alias ide='cd "/Users/xeno_by/Projects/ScalaIDE"'
+alias ens='cd "/Users/xeno_by/Projects/Ensime"'
+alias sens='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime"'
+alias des='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2"'
+alias pap='cd "/Users/xeno_by/Projects/Pages"'
+alias dotx='cd "/Users/xeno_by/Projects/Dotx"'
+alias sb='cd "/Users/xeno_by/Projects/Kepler/sandbox"'
+
+export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH
+
+export EDITOR="/usr/local/bin/subl -w"
+
+autoload bashcompinit
+bashcompinit
+bash_source() {
+  alias shopt=':'
+  alias _expand=_bash_expand
+  alias _complete=_bash_comp
+  emulate -L sh
+  setopt kshglob noshglob braceexpand
+  source "$@"
+}
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#   bash_source $(brew --prefix)/etc/bash_completion
+# fi
+
+export SCALA_HOME="/Users/xeno_by/Projects/Kepler/build/pack"
+export SCALA_SRC_HOME="/Users/xeno_by/Scratchpad/ScalaSrc"  # path to a scratch checkout of trunk
+export SCALA_PACKS_DIR="/Users/xeno_by/Scratchpad/ScalaPacks"  # path to somewhere to cached downloaded builds
+export BASH_COMPLETION_DIR="/" # dummy
+export BASH_SOURCE="/Users/xeno_by/Projects/Libscala/libscala.sh"
+bash_source $BASH_SOURCE
+
 setopt no_complete_aliases
 # alias git=hub
 # alias gpr='git pull-request'
 alias gpr='git-pull-request.py'
-alias gco='git checkout -t'
+alias gch='git checkout'
+alias gco='git commit'
 alias gb='git branch'
+alias gbD='git branch -D'
 alias gn='git checkout -b'
 alias gcio='git push origin'
 function gcio+() { git push origin +$(git rev-parse --abbrev-ref HEAD) }
@@ -216,44 +269,3 @@ alias grm4='git reset --mixed HEAD~4'
 alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
-
-# macports
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-# sbt
-export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH
-
-# important for building scala and especially scaladoc
-export ANT_OPTS="-Xms1536M -Xmx4096M -Xss2M -XX:MaxPermSize=512M -XX:+UseParallelGC"
-
-alias ez='subl /Users/xeno_by/Projects/Dotx/.zshrc'
-alias az='source /Users/xeno_by/.zshrc'
-
-alias hm='cd "/Users/xeno_by"'
-alias ubi='cd "/usr/local/bin"'
-alias db='cd "/media/XENO/Dropbox"'
-alias dl='cd "/Users/xeno_by/Downloads"'
-alias prj='cd "/Users/xeno_by/Projects"'
-alias kep='cd "/Users/xeno_by/Projects/Kepler"'
-alias ide='cd "/Users/xeno_by/Projects/ScalaIDE"'
-alias ens='cd "/Users/xeno_by/Projects/Ensime"'
-alias sens='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime"'
-alias des='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2"'
-alias pap='cd "/Users/xeno_by/Projects/Pages"'
-alias dotx='cd "/Users/xeno_by/Projects/Dotx"'
-alias sb='cd "/Users/xeno_by/Projects/Kepler/sandbox"'
-
-export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH
-
-export EDITOR="/usr/local/bin/subl -w"
-
-# autoload bashcompinit
-# bashcompinit
-# if [ -f $(brew --prefix)/etc/bash_completion ]; then
-#   . $(brew --prefix)/etc/bash_completion
-# fi
-
-# export SCALA_HOME="/Users/xeno_by/Projects/Kepler/build/pack"
-# export SCALA_SRC_HOME="/Users/xeno_by/Scratchpad/ScalaSrc"  # path to a scratch checkout of trunk
-# export SCALA_PACKS_DIR="/Users/xeno_by/Scratchpad/ScalaPacks"  # path to somewhere to cached downloaded builds
-# source "/Users/xeno_by/Projects/Libscala/libscala.sh"

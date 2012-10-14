@@ -27,6 +27,8 @@ install-into-home gitignore .gitignore
 install-into-home .scala_autorun
 install-into-home .scala_history
 install-into-home .zshrc
+install-into-home .bashrc
+install-into-home .bash_profile
 install-into-home .slate
 
 install-into-bin git-pull-request.py
