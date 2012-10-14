@@ -147,8 +147,11 @@ zstyle ':completion:*:ssh:*' group-order \
    hosts-domain hosts-host users hosts-ipaddr
 zstyle '*' single-ignored show
 
+# GIT STATUS: IMPLEMENTATION #1
 setopt prompt_subst
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+# zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:*' actionformats \
 #     '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 # zstyle ':vcs_info:*' formats       \
@@ -156,11 +159,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' actionformats \
     '%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 zstyle ':vcs_info:*' formats       \
-    '%F{5}[%F{2}%b%F{5}]%f '
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-
-zstyle ':vcs_info:*' enable git cvs svn
-
+    '%F{5}[%F{2}%b%F{5}]%f ' # also try %u and %c
 # or use pre_cmd, see man zshcontrib
 vcs_info_wrapper() {
   vcs_info
@@ -170,16 +169,24 @@ vcs_info_wrapper() {
 }
 RPROMPT=$'$(vcs_info_wrapper)'
 
+# GIT STATUS: IMPLEMENTATION #2
+# https://github.com/olivierverdier/zsh-git-prompt
+# source /Users/xeno_by/Projects/Dotx/gitstatus.zsh
+# RPROMPT=$'$(git_super_status)'
+
 ## http://talkings.org/post/5236392664/zsh-and-slow-git-completion
 __git_files () {
    _wanted files expl 'local files' _files
 }
 
 setopt no_complete_aliases
+alias git=hub
+alias gpr='git pull-request'
 alias gco='git checkout -t'
 alias gb='git branch'
 alias gn='git checkout -b'
 alias gcio='git push origin'
+function gcio+() { git push origin +$(git rev-parse --abbrev-ref HEAD) }
 alias gpo='git pull origin'
 alias gpu='git pull upstream'
 alias gs='git status'
@@ -206,6 +213,8 @@ alias grm2='git reset --mixed HEAD~2'
 alias grm3='git reset --mixed HEAD~3'
 alias grm4='git reset --mixed HEAD~4'
 alias grm5='git reset --mixed HEAD~5'
+alias gm='git merge'
+alias gma='git merge --abort'
 
 # macports
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -231,7 +240,19 @@ alias sens='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packag
 alias des='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2"'
 alias pap='cd "/Users/xeno_by/Projects/Pages"'
 alias dotx='cd "/Users/xeno_by/Projects/Dotx"'
+alias sb='cd "/Users/xeno_by/Projects/Kepler/sandbox"'
 
-export SCALA_SRC_HOME=/path/to/repo  # path to a scratch checkout of trunk
-export SCALA_PACKS_DIR=/path/to/dir  # path to somewhere to cached downloaded builds
-source /Users/xeno_by/Projects/Libscala/libscala.sh
+export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH
+
+export EDITOR="/usr/local/bin/subl -w"
+
+# autoload bashcompinit
+# bashcompinit
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#   . $(brew --prefix)/etc/bash_completion
+# fi
+
+# export SCALA_HOME="/Users/xeno_by/Projects/Kepler/build/pack"
+# export SCALA_SRC_HOME="/Users/xeno_by/Scratchpad/ScalaSrc"  # path to a scratch checkout of trunk
+# export SCALA_PACKS_DIR="/Users/xeno_by/Scratchpad/ScalaPacks"  # path to somewhere to cached downloaded builds
+# source "/Users/xeno_by/Projects/Libscala/libscala.sh"
