@@ -8,7 +8,6 @@ export HISTIGNORE="&:[ ]*:exit"
 export HISTCONTROL="erasedups:ignoreboth"
 stty stop ""
 
-set show-all-if-ambiguous on
 source $(brew --prefix)/etc/bash_completion
 source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 function parse_git_branch {
@@ -32,6 +31,7 @@ alias gbD='git branch -D'
 alias gn='git checkout -b'
 alias gcio='git push origin'
 function gcio+() { git push origin +$(git rev-parse --abbrev-ref HEAD); }
+function gcio:() { git push origin :$1; }
 alias gpo='git pull origin'
 alias gpu='git pull upstream'
 alias gs='git status'

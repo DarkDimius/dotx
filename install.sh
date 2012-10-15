@@ -30,5 +30,6 @@ install-into-home .zshrc
 install-into-home .bashrc
 install-into-home .bash_profile
 install-into-home .slate
+install-into-home .inputrc
 
 install-into-bin git-pull-request.py
