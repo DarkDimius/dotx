@@ -10,17 +10,17 @@ ls -1A /Applications >> "$target"
 echo "" >> "$target"
 echo "==================" >> "$target"
 echo "Homebrew packages:" >> "$target"
-brew list >> "$target" 2>&1
+/usr/local/bin/brew list >> "$target" 2>&1
 
 echo "" >> "$target"
 echo "==================" >> "$target"
 echo "Macports packages:" >> "$target"
-port installed >> "$target" 2>&1
+/opt/local/bin/port installed >> "$target" 2>&1
 
 echo "" >> "$target"
 echo "==================" >> "$target"
 echo "Python packages:" >> "$target"
-pip freeze >> "$target" 2>&1
+/usr/local/bin/pip freeze >> "$target" 2>&1
 
 echo "" >> "$target"
 echo "==================" >> "$target"

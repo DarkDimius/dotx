@@ -3,11 +3,13 @@ Apps:
 .localized
 1Password.app
 Adium.app
+Adobe
 Alfred.app
 App Store.app
 AppCleaner.app
 Araxis Merge.app
 Automator.app
+Bartender.app
 Caffeine.app
 Calculator.app
 Calendar.app
@@ -15,6 +17,7 @@ Chess.app
 Contacts.app
 DVD Player.app
 Dashboard.app
+Day-O.app
 Diablo III
 Dictionary.app
 Dropbox.app
@@ -22,9 +25,14 @@ Evernote.app
 FaceTime.app
 Firefox.app
 FirefoxNightly.app
+Flux.app
 Font Book.app
 Game Center.app
+Gmail Notifr.app
+Growl.app
 Image Capture.app
+JD-GUI.app
+Keka.app
 Key Codes.app
 Keyboard Cleaner.app
 Launchpad.app
@@ -37,6 +45,7 @@ Photo Booth.app
 Preview.app
 QuickTime Player.app
 Reminders.app
+Retinizer.app
 Safari.app
 Skype.app
 Slate.app
@@ -134,7 +143,17 @@ zope.interface==3.5.1
 
 ==================
 Ruby gems:
-
+albino (1.3.3)
+classifier (1.3.3)
+directory_watcher (1.4.1)
+fast-stemmer (1.0.1)
+jekyll (0.11.2)
+kramdown (0.14.0)
+liquid (2.4.1)
+maruku (0.6.1)
+posix-spawn (0.3.6)
+rubygems-update (1.8.24)
+syntax (1.0.0)
 
 ==================
 Perl modules:
