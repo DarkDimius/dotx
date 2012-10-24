@@ -16,9 +16,10 @@ function parse_git_branch {
 }
 PS1="\$(date +%H:%M) \w\$(parse_git_branch)\$ "
 
-export SCALA_HOME="/Users/xeno_by/Projects/Kepler/build/pack"
-export SCALA_SRC_HOME="/Users/xeno_by/Scratchpad/ScalaSrc"  # path to a scratch checkout of trunk
-export SCALA_PACKS_DIR="/Users/xeno_by/Scratchpad/ScalaPacks"  # path to somewhere to cached downloaded builds
+# moved to launchd.conf
+# export SCALA_HOME="/Users/xeno_by/Projects/Kepler/build/pack"
+# export SCALA_SRC_HOME="/Users/xeno_by/Scratchpad/ScalaSrc"  # path to a scratch checkout of trunk
+# export SCALA_PACKS_DIR="/Users/xeno_by/Scratchpad/ScalaPacks"  # path to somewhere to cached downloaded builds
 source "/Users/xeno_by/Projects/Libscala/libscala.sh"
 
 # alias git=hub
@@ -62,11 +63,12 @@ alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
 
-export EDITOR="/usr/local/bin/subl -w"
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH # macports
-export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH # sbt
-export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH # until I resurrect myke
-export ANT_OPTS="-Xms1536M -Xmx2536M -Xss2M -XX:MaxPermSize=384M -XX:+UseParallelGC"
+# moved to launchd.conf
+# export EDITOR="/usr/local/bin/subl -w"
+# export PATH=/opt/local/bin:/opt/local/sbin:$PATH # macports
+# export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH # sbt
+# export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH # until I resurrect myke
+# export ANT_OPTS="-Xms1536M -Xmx2560M -Xss2M -XX:MaxPermSize=384M -XX:+UseParallelGC"
 
 alias ez='subl /Users/xeno_by/Projects/Dotx/.bashrc'
 alias az='source /Users/xeno_by/.bash_profile'

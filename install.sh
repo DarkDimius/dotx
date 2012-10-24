@@ -22,6 +22,10 @@ function install-into-bin() {
   install-into-destination "/usr/local/bin" $1 $2
 }
 
+function install-into-etc() {
+  install-into-destination "/etc" $1 $2
+}
+
 install-into-home .gitconfig
 install-into-home gitignore .gitignore
 install-into-home .scala_autorun
@@ -33,3 +37,5 @@ install-into-home .slate
 install-into-home .inputrc
 
 install-into-bin git-pull-request.py
+
+install-into-etc launchd.conf
