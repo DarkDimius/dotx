@@ -29,6 +29,7 @@ Flux.app
 Font Book.app
 Game Center.app
 Gmail Notifr.app
+Google Chrome.app
 Growl.app
 Image Capture.app
 JD-GUI.app
@@ -54,6 +55,7 @@ StartNinja.app
 Stickies.app
 Sublime Text 2.app
 System Preferences.app
+TeX
 TextEdit.app
 Time Machine.app
 TotalFinder.app
@@ -3848,9 +3850,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-199.sU8MsU: Permission denied
+Can't cd to (/private/tmp/) launchd-198.JJJ4tn: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-357.30xLO3: Permission denied
+Can't cd to (/private/tmp/) launchd-430.ww5zKo: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3931,6 +3933,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4027,10 +4031,6 @@ Can't cd to (/System/Library/DirectoryServices/DefaultLocalDB/) Default: Permiss
 Can't cd to (/System/Library/) User Template: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/usr/sbin/) authserver: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/XENO DRIVE/.DocumentRevisions-V100): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/XENO DRIVE/.Trashes): Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
@@ -8909,6 +8909,41 @@ local::Cellar::git::share::contrib::buildsystems::Generators	1.00
 local::Cellar::git::share::contrib::buildsystems::Generators::QMake	1.00
 local::Cellar::git::share::contrib::buildsystems::Generators::Vcproj	1.00
 local::lib::Git	0.01
+local::texlive::2012::doc::latex::xmlstyle::SGMLS	undef
+local::texlive::2012::doc::latex::xmlstyle::SGMLS::Output	undef
+local::texlive::2012::doc::latex::xmlstyle::SGMLS::Refs	undef
+local::texlive::2012::doc::latex::xmlstyle::SGMLS::SGMLS	undef
+local::texlive::2012::doc::latex::register::Reg_macro	undef
+local::texlive::2012::scripts::context::perl::path_tre	undef
+local::texlive::2012::scripts::Pedigree	undef
+local::texlive::2012::scripts::Pedigree::AbortionNode	undef
+local::texlive::2012::scripts::Pedigree::Area	undef
+local::texlive::2012::scripts::Pedigree::ChildlessNode	undef
+local::texlive::2012::scripts::Pedigree::Language	undef
+local::texlive::2012::scripts::Pedigree::MarriageNode	undef
+local::texlive::2012::scripts::Pedigree::Node	undef
+local::texlive::2012::scripts::Pedigree::Parser	undef
+local::texlive::2012::scripts::Pedigree::PersonNode	undef
+local::texlive::2012::scripts::Pedigree::TwinsNode	undef
+local::texlive::2012::scripts::xetex::perl::lib::PDF::Reuse	0.292
+local::texlive::2012::scripts::xetex::perl::lib::PDF::Reuse::Util	undef
+local::texlive::2012::source::fonts::script::MakeSPList	undef
+local::texlive::2012::source::latex::stex::bin::Modparse	undef
+local::texlive::2012::source::latex::stex::bin::TexId	undef
+local::texlive::2012::source::latex::stex::bin::rng2dot::ModelRNC	undef
+local::texlive::2012::tlpkg::TeXLive::Splashscreen	1.0
+local::texlive::2012::tlpkg::TeXLive::TeXCatalogue	undef
+local::texlive::2012::tlpkg::TeXLive::TLConfFile	undef
+local::texlive::2012::tlpkg::TeXLive::TLConfig	undef
+local::texlive::2012::tlpkg::TeXLive::TLDownload	undef
+local::texlive::2012::tlpkg::TeXLive::TLPaper	undef
+local::texlive::2012::tlpkg::TeXLive::TLPDB	undef
+local::texlive::2012::tlpkg::TeXLive::TLPOBJ	undef
+local::texlive::2012::tlpkg::TeXLive::TLPSRC	undef
+local::texlive::2012::tlpkg::TeXLive::TLTREE	undef
+local::texlive::2012::tlpkg::TeXLive::TLUtils	undef
+local::texlive::2012::tlpkg::TeXLive::TLWinGoo	undef
+local::texlive::2012::tlpkg::TeXLive::waitVariableX	1.0
 share::perl::Git	0.01
 share::perl::Git::I18N	undef
 share::headerdoc::Modules::HeaderDoc::APIOwner	$Revision: 1340150018 $
