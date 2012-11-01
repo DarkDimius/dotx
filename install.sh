@@ -37,6 +37,9 @@ install-into-home .inputrc
 install-into-home git-completion.bash .git-completion.bash
 
 install-into-bin git-pull-request.py
+install-into-bin java6
+install-into-bin java7
+install-into-bin java8
 
 install-into-etc launchd.conf
 install-into-etc paths
