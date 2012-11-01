@@ -66,7 +66,6 @@ alias gma='git merge --abort'
 # moved to launchd.conf
 # export EDITOR="/usr/local/bin/subl -w"
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH # macports
-# export PATH=/Users/xeno_by/Projects/SbtExtras:$PATH # sbt
 # export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH # until I resurrect myke
 # export ANT_OPTS="-Xms1536M -Xmx2560M -Xss2M -XX:MaxPermSize=384M -XX:+UseParallelGC"
 

@@ -39,3 +39,8 @@ install-into-home git-completion.bash .git-completion.bash
 install-into-bin git-pull-request.py
 
 install-into-etc launchd.conf
+
+if [[ ! -d "/usr/local/sbt" ]]; then
+  git clone https://github.com/paulp/sbt-extras /usr/local/sbt
+  ln -sv /usr/local/sbt/sbt /usr/local/bin/sbt
+fi
