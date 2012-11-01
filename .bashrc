@@ -30,9 +30,8 @@ alias gco='git commit'
 alias gb='git branch'
 alias gbD='git branch -D'
 alias gn='git checkout -b'
-alias gcio='git push origin'
-function gcio+() { git push origin +$(git rev-parse --abbrev-ref HEAD); }
-function gcio:() { git push origin :$1; }
+function gci { git push origin $(git rev-parse --abbrev-ref HEAD); }
+function gci+ { git push origin +$(git rev-parse --abbrev-ref HEAD); }
 alias gpo='git pull origin'
 alias gpu='git pull upstream'
 alias gs='git status'
