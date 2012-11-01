@@ -303,7 +303,9 @@ __git_refs ()
 				if [ -e "$dir/$i" ]; then echo $i; fi
 			done
 			format="refname:short"
-			refs="refs/tags refs/heads refs/remotes"
+			# xeno.by: exluded refs/tags, so that they don't pollute the completions
+			# refs="refs/tags refs/heads refs/remotes"
+			refs="refs/heads refs/remotes"
 			;;
 		esac
 		git --git-dir="$dir" for-each-ref --format="%($format)" \
