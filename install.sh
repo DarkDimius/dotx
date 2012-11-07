@@ -40,6 +40,7 @@ install-into-bin git-pull-request.py
 install-into-bin java6
 install-into-bin java7
 install-into-bin java8
+install-into-bin launch-iterm-with-cwd.applescript
 
 install-into-etc launchd.conf
 install-into-etc paths

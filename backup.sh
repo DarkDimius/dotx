@@ -31,3 +31,17 @@ echo "" >> "$target"
 echo "==================" >> "$target"
 echo "Perl modules:" >> "$target"
 cpan -l >> "$target" 2>&1
+
+echo "" >> "$target"
+echo "==================" >> "$target"
+echo "Alfred extensions:" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/applescripts" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/files" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/filters" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/scripts" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/workflows" >> "$target"
+
+echo "" >> "$target"
+echo "==================" >> "$target"
+echo "Firefox extensions:" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Firefox/Profiles/zgjntnvs.default/extensions" >> "$target"
