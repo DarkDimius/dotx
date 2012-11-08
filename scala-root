@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+import os, sys
+
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0]
+  sys.exit(1)
+
+root = None
+suffix = "/pull-binary-libs.sh"
+current = os.path.abspath(".")
+while current != "/":
+  if os.path.exists(current + suffix):
+    root = current
+    break
+  else:
+    current = os.path.dirname(current)
+
+root = root or os.environ.get("SCALA_HOME") or "/Users/xeno_by/Projects/Kepler"
+if root.endswith("pack"): root = root + "/../.."
+if root.endswith("pack/"): root = root + "../.."
+
+print os.path.abspath(root)

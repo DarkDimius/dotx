@@ -60,6 +60,13 @@ install-into-bin skype-menubar-updater
 install-into-bin jenkins-track
 install-into-bin jenkins-daemon
 install-into-bin jenkins-submit
+install-into-bin scala-root
+install-into-bin scala
+install-into-bin scalac
+install-into-bin partest
+install-into-bin partest-import
+install-into-bin partest-diff
+install-into-bin partest-suite
 
 install-into-etc launchd.conf
 install-into-etc paths
