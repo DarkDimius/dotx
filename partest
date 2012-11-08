@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, subprocess
+import os, sys, subprocess, re, time
 
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
 bin = root + "/test/partest"
@@ -22,7 +22,47 @@ if not args and os.path.exists(dotpartest):
   args = tests
 
 def update_dotpartest():
-  pass
+  with open(dotpartestlog, "r") as log:
+    lines = map(lambda test: test.strip(), log.readlines())
+  # duplication!
+  successes = []
+  failures = []
+  for line in lines:
+    m = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
+    if m:
+      test = m.group(1)
+      if not test.startswith("/files"): test = "/files" + test
+      if test.startswith("/"): test = test[1:]
+      failures.append(test)
+    m = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[  OK  \]\s*$", line)
+    if m:
+      test = m.group(1)
+      if not test.startswith("/files"): test = "/files" + test
+      if test.startswith("/"): test = test[1:]
+      successes.append(test)
+
+  # duplication ends
+  for failure in failures:
+    if not failure in tests:
+      tests.append(failure)
+  for success in successes:
+    if success in tests:
+      tests.remove(success)
+
+  # duplication again!
+  lines = []
+  if os.path.exists(dotpartest):
+    with open(dotpartest, "r") as config:
+      lines = map(lambda line: line.strip(), config.readlines())
+  def comment_out(line):
+    return "# " + line if line.strip() else line
+  lines = map(comment_out, lines)
+  if len(lines): lines = lines + [""]
+  lines += ["# created after running partest"]
+  lines += ["# timestamp: " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())]
+  lines += tests
+  with open(dotpartest, "w") as config:
+    config.writelines(map(lambda line: line + "\n", lines))
 
 try:
   subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + args) + " | tee " + dotpartestlog], cwd = root + "/test")

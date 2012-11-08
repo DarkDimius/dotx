@@ -60,7 +60,6 @@ alias j="jenkins-submit"
 alias pr="pullrequest"
 alias t="partest"
 alias td="partest-diff"
-alias tl="partest-suite --view"
 alias tv="partest-suite --view"
 alias te="partest-suite --edit"
 
