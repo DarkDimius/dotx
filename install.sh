@@ -26,6 +26,21 @@ function install-into-etc() {
   install-into-destination "/etc" $1 $2
 }
 
+function install-into-daemons() {
+  name=$1
+  from="$(realpath $(dirname $0))/$name.plist"
+  to="/Library/LaunchDaemons/$name.plist"
+
+  if [[ -f "$to" ]]; then
+    echo "$to already installed"
+    return 0;
+  else
+    cp -v "$from" "$to"
+    launchctl load "$to"
+    launchctl start local.$name
+  fi
+}
+
 install-into-home .gitconfig
 install-into-home gitignore .gitignore
 install-into-home .scala_autorun
@@ -41,9 +56,15 @@ install-into-bin java6
 install-into-bin java7
 install-into-bin java8
 install-into-bin launch-iterm-with-cwd.applescript
+install-into-bin skype-menubar-updater
+install-into-bin jenkins-track
+install-into-bin jenkins-daemon
 
 install-into-etc launchd.conf
 install-into-etc paths
+
+install-into-daemons by.xeno.dotx_backup
+install-into-daemons by.xeno.jenkins_daemon
 
 if [[ ! -d "/usr/local/sbt" ]]; then
   git clone https://github.com/paulp/sbt-extras /usr/local/sbt
