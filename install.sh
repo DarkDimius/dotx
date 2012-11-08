@@ -60,6 +60,7 @@ install-into-bin skype-menubar-updater
 install-into-bin jenkins-track
 install-into-bin jenkins-daemon
 install-into-bin jenkins-submit
+install-into-bin jenkins-failures
 install-into-bin scala-root
 install-into-bin scala
 install-into-bin scalac

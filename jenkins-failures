@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+import os, sys, subprocess, urllib2, re
+
+if len(sys.argv) != 2:
+  print "usage: " + sys.argv[0] + " <jenkins job url>"
+  sys.exit(1)
+
+job_url = sys.argv[1]
+
+# yet another duplication!!
+if job_url.endswith("/console"): job_url = job_url[:-len("console")]
+if job_url.endswith("/consoleText"): job_url = job_url[:-len("consoleText")]
+if not job_url.endswith("/"): job_url = job_url + "/"
+if not re.match("^https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/(\d+)/$", job_url):
+  print "Invalid url: " + job_url
+  sys.exit(1)
+
+log_url = job_url + "/consoleText"
+
+try:
+  data = map(lambda line: line.strip(), urllib2.urlopen(log_url).readlines())
+  failures = []
+  for line in data:
+    m = re.match(r"^\[partest\] testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
+    if m:
+      test = m.group(1)
+      if not test.startswith("/files"): test = "/files" + test
+      failures.append(test)
+  for failure in failures:
+    print failure
+except:
+  _, value, _ = sys.exc_info()
+  print value
+  sys.exit(1)

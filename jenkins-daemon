@@ -9,6 +9,9 @@ if len(sys.argv) > 1:
 def growl(message):
   call(["growlnotify", "-n", "Jenkins", "-m", message])
 
+def on_failure(url):
+  call(["partest-import", url])
+
 with open("/Users/xeno_by/.jenkins_daemon", "r") as config:
   jobs = map(lambda job: job.strip(), config.readlines())
 
@@ -25,8 +28,17 @@ for job in jobs:
         msg = result + ": " + job
         growl(msg)
         print msg
+        if result == "FAILURE": on_failure(job)
       else:
-        new_jobs.append(job)
+        failures = subprocess.Popen(["jenkins-failures", job], stdout=subprocess.PIPE).communicate()[0].splitlines()
+        if failures:
+          anything_new = True
+          msg = "FAILURE: " + job
+          growl(msg)
+          print msg
+          on_failure(job)
+        else:
+          new_jobs.append(job)
     except:
       _, value, _ = sys.exc_info()
       msg = job + ": " + str(value)

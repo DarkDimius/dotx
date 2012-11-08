@@ -1,2 +1,13 @@
 #!/usr/bin/env python
 import os, sys, subprocess
+
+if len(sys.argv) != 2:
+  print "usage: " + sys.argv[0] + " --view | --edit"
+  sys.exit(1)
+
+action = sys.argv[1]
+bin = "cat" if action == "--view" else "subl"
+
+root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
+dotpartest = root + "/.partest"
+subprocess.call([bin, dotpartest])

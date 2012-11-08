@@ -3,10 +3,21 @@ import os, sys, subprocess
 
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
 bin = root + "/test/partest"
+dotpartest = root + "/.partest"
 
 if not os.path.exists(bin):
   print bin + " does not exist"
   sys.exit(1)
 
 args = sys.argv[1:]
+if not args and os.path.exists(dotpartest):
+  with open(dotpartest, "r") as config:
+    tests = map(lambda test: test.strip(), config.readlines())
+    tests = filter(lambda test: test and not test.startswith("#"), tests)
+    def figure_out(test):
+      if test.startswith("/"): test = test[1:]
+      return test
+    tests = map(figure_out, tests)
+  args = tests
+
 subprocess.call([bin] + args, cwd = root + "/test")

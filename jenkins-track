@@ -2,12 +2,13 @@
 import sys, re, subprocess
 
 if len(sys.argv) != 2:
-  print "usage: " + sys.argv[0] + " [<job url>]"
+  print "usage: " + sys.argv[0] + " <job url>"
   sys.exit(1)
 
 job_url = sys.argv[1]
 
 if job_url.endswith("/console"): job_url = job_url[:-len("console")]
+if job_url.endswith("/consoleText"): job_url = job_url[:-len("consoleText")]
 if not job_url.endswith("/"): job_url = job_url + "/"
 if not re.match("^https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/(\d+)/$", job_url):
   print "Invalid url: " + job_url

@@ -6,7 +6,9 @@ export HISTFILESIZE=500000
 export HISTSIZE=100000
 export HISTIGNORE="&:[ ]*:exit"
 export HISTCONTROL="erasedups:ignoreboth"
-stty stop ""
+if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
+
+# environment variables have been moved to launchd.conf
 
 source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
@@ -16,14 +18,6 @@ function parse_git_branch {
 }
 PS1="\$(date +%H:%M) \w\$(parse_git_branch)\$ "
 
-# moved to launchd.conf
-# export SCALA_HOME="/Users/xeno_by/Projects/Kepler/build/pack"
-# export SCALA_SRC_HOME="/Users/xeno_by/Scratchpad/ScalaSrc"  # path to a scratch checkout of trunk
-# export SCALA_PACKS_DIR="/Users/xeno_by/Scratchpad/ScalaPacks"  # path to somewhere to cached downloaded builds
-source "/Users/xeno_by/Projects/Libscala/libscala.sh"
-
-# alias git=hub
-# alias gpr='git pull-request'
 alias gch='git checkout'
 alias gco='git commit'
 alias gb='git branch'
@@ -61,14 +55,14 @@ alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
 
+source "/Users/xeno_by/Projects/Libscala/libscala.sh"
 alias j="jenkins-submit"
-alias pr='git-pull-request'
-
-# moved to launchd.conf
-# export EDITOR="/usr/local/bin/subl -w"
-# export PATH=/opt/local/bin:/opt/local/sbin:$PATH # macports
-# export PATH=/Users/xeno_by/Projects/Kepler/build/pack/bin:$PATH # until I resurrect myke
-# export ANT_OPTS="-Xms1536M -Xmx2560M -Xss2M -XX:MaxPermSize=384M -XX:+UseParallelGC"
+alias pr="pullrequest"
+alias t="partest"
+alias td="partest-diff"
+alias tl="partest-suite --view"
+alias tv="partest-suite --view"
+alias te="partest-suite --edit"
 
 alias ez='subl /Users/xeno_by/Projects/Dotx/.bashrc'
 alias az='source /Users/xeno_by/.bash_profile'

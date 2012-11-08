@@ -67,8 +67,9 @@ try:
   data = json.loads(data)
   result = data["lastBuild"]["url"]
   if result:
+    root = Popen(['git', 'rev-parse', '--show-toplevel'], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
+    with open(root + "/.jenkins", "w") as breadcrumb: breadcrumb.write(result)
     status = Popen(["jenkins-track", result], stdout=PIPE).communicate()[0]
-    status = status.replace("nothing new", "").strip()
     call(["growlnotify", "-n", "Jenkins Submit", "-m", str(status)])
   else:
     call(["growlnotify", "-n", "Jenkins Submit", "-m", "Failed to communicate with the Jenkins API"])

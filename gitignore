@@ -87,3 +87,5 @@ Gist.sublime-settings
 *.o
 scala-2.10.1
 .DS_Store
+.partest
+.jenkins
