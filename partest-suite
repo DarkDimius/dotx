@@ -6,8 +6,21 @@ if len(sys.argv) != 2:
   sys.exit(1)
 
 action = sys.argv[1]
-bin = "cat" if action == "--view" else "subl"
-
-root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
-dotpartest = root + "/.partest"
-subprocess.call([bin, dotpartest])
+if action == "--view":
+  # duplication!
+  root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
+  dotpartest = root + "/.partest"
+  if os.path.exists(dotpartest):
+    with open(dotpartest, "r") as config:
+      tests = map(lambda test: test.strip(), config.readlines())
+      tests = filter(lambda test: test and not test.startswith("#"), tests)
+      def figure_out(test):
+        if test.startswith("/"): test = test[1:]
+        return test
+      tests = map(figure_out, tests)
+      for test in tests:
+        print test
+else:
+  root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
+  dotpartest = root + "/.partest"
+  subprocess.call(["subl", dotpartest])

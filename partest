@@ -4,6 +4,7 @@ import os, sys, subprocess
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
 bin = root + "/test/partest"
 dotpartest = root + "/.partest"
+dotpartestlog = root + "/.partestlog"
 
 if not os.path.exists(bin):
   print bin + " does not exist"
@@ -20,4 +21,11 @@ if not args and os.path.exists(dotpartest):
     tests = map(figure_out, tests)
   args = tests
 
-subprocess.call([bin] + args, cwd = root + "/test")
+def update_dotpartest():
+  pass
+
+try:
+  subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + args) + " | tee " + dotpartestlog], cwd = root + "/test")
+  update_dotpartest()
+except KeyboardInterrupt:
+  update_dotpartest()
