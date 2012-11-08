@@ -9,12 +9,12 @@ if len(sys.argv) > 1:
 def growl(message):
   call(["growlnotify", "-n", "Jenkins", "-m", message])
 
-with open("/Users/xeno_by/.jenkins_daemon") as config: jobs = config.readlines()
+with open("/Users/xeno_by/.jenkins_daemon", "r") as config:
+  jobs = map(lambda job: job.strip(), config.readlines())
 
 new_jobs = []
 anything_new = False
 for job in jobs:
-  job = job.strip()
   if job:
     try:
       data = urllib2.urlopen(job + "/api/json").read()
@@ -26,14 +26,16 @@ for job in jobs:
         growl(msg)
         print msg
       else:
-        new_jobs += job
+        new_jobs.append(job)
     except:
-      msg = job + ": " + traceback.format_exc()
+      _, value, _ = sys.exc_info()
+      msg = job + ": " + str(value)
       # growl(msg)
       print msg
-      new_jobs += job
+      new_jobs.append(job)
 
 if not anything_new:
   print "Nothing new"
 
-with open("/Users/xeno_by/.jenkins_daemon", "w") as config: config.writelines(new_jobs)
+with open("/Users/xeno_by/.jenkins_daemon", "w") as config:
+  config.writelines(map(lambda job: job + "\n", new_jobs))

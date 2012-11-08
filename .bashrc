@@ -24,7 +24,6 @@ source "/Users/xeno_by/Projects/Libscala/libscala.sh"
 
 # alias git=hub
 # alias gpr='git pull-request'
-alias gpr='git-pull-request'
 alias gch='git checkout'
 alias gco='git commit'
 alias gb='git branch'
@@ -61,7 +60,9 @@ alias grm4='git reset --mixed HEAD~4'
 alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
+
 alias j="jenkins-submit"
+alias pr='git-pull-request'
 
 # moved to launchd.conf
 # export EDITOR="/usr/local/bin/subl -w"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-import subprocess, sys, re, urllib2
-from subprocess import Popen, PIPE
+import subprocess, sys, re, urllib2, traceback, time, json
+from subprocess import Popen, call, PIPE
 
 if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
@@ -59,3 +59,19 @@ jenkins_url += ("&branch=" + branch)
 jenkins_url += "&storeArtifacts=true"
 import webbrowser
 webbrowser.open(jenkins_url)
+
+time.sleep(2)
+
+try:
+  data = urllib2.urlopen("https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/api/json").read()
+  data = json.loads(data)
+  result = data["lastBuild"]["url"]
+  if result:
+    status = Popen(["jenkins-track", result], stdout=PIPE).communicate()[0]
+    status = status.replace("nothing new", "").strip()
+    call(["growlnotify", "-n", "Jenkins Submit", "-m", str(status)])
+  else:
+    call(["growlnotify", "-n", "Jenkins Submit", "-m", "Failed to communicate with the Jenkins API"])
+except:
+  _, value, _ = sys.exc_info()
+  call(["growlnotify", "-n", "Jenkins Submit", "-m", str(value)])

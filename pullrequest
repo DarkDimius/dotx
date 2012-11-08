@@ -25,9 +25,9 @@ changed = Popen(['git','diff','--name-status'], stdout=PIPE, stderr=PIPE).commun
 staged = Popen(['git','diff', '--staged','--name-status'], stdout=PIPE).communicate()[0].splitlines()
 untracked = Popen(['git','ls-files','--others','--exclude-standard'],stdout=PIPE).communicate()[0].splitlines()
 if changed or staged or untracked:
-  if changed: print "repository is dirty (has modified files)"
-  elif staged: print "repository is dirty (has staged files)"
-  elif untracked: print "repository is dirty (has untracked files)"
+  if changed: print "repository " + origin + " is dirty (has modified files)"
+  elif staged: print "repository " + origin + " is dirty (has staged files)"
+  elif untracked: print "repository " + origin + " is dirty (has untracked files)"
   sys.exit(4)
 
 branch = Popen(["git", "rev-parse", "--abbrev-ref", "HEAD"], stdout=PIPE).communicate()[0][:-1]
@@ -51,7 +51,7 @@ else:
     ahead = len([x for x in behead if x[0]=='>'])
     behind = len(behead) - ahead
 if ahead or behind:
-  print "repository is dirty (head is different from remote)"
+  print "repository " + origin + " is dirty (head is different from remote)"
   sys.exit(5)
 
 try:
