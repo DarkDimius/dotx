@@ -59,6 +59,7 @@ install-into-bin launch-iterm-with-cwd.applescript
 install-into-bin skype-menubar-updater
 install-into-bin jenkins-track
 install-into-bin jenkins-daemon
+install-into-bin jenkins-submit
 
 install-into-etc launchd.conf
 install-into-etc paths

@@ -2,6 +2,10 @@
 from subprocess import call
 import os, sys, re, json, urllib2, traceback
 
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0]
+  sys.exit(1)
+
 def growl(message):
   call(["growlnotify", "-n", "Jenkins", "-m", message])
 
