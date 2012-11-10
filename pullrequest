@@ -15,7 +15,7 @@ if introspect.returncode != 0:
   print "".join(lines)
   sys.exit(introspect.returncode)
 
-user, repo, _, status = lines
+user, repo, branch, status = lines
 if status != "no changes":
   print status
   sys.exit(1)
@@ -25,7 +25,7 @@ try:
     config = json.load(f)
 except Exception as e:
   config = []
-target_branch = target_branch or config.get(m.expand("\g<user>:\g<repo>"))
+target_branch = target_branch or config.get(user + ":" + repo)
 
 url = "https://github.com/" + user + "/" + repo + "/pull/new/"
 if target_branch: url += target_branch + "..."
