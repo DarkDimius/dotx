@@ -2,7 +2,7 @@
 import os, sys, subprocess, urllib2, re, time
 
 if len(sys.argv) != 2:
-  print "usage: " + sys.argv[0] + " <jenkins job url>"
+  print "usage: " + sys.argv[0] + " <url-like>"
   sys.exit(1)
 
 job_url = sys.argv[1]

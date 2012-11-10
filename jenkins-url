@@ -7,11 +7,10 @@ if len(sys.argv) != 2:
 
 url = sys.argv[1]
 
-if re.match("^\d+$", url): url = "https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/" + url + "/"
 if url.endswith("/console"): url = url[:-len("console")]
 if url.endswith("/consoleText"): url = url[:-len("consoleText")]
 if not url.endswith("/"): url = url + "/"
-if not re.match("^https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/(\d+)/$", url):
+if not re.match("^https://scala-webapps.epfl.ch/jenkins/job/(.+?)/(\d+)/$", url):
   print "Invalid url: " + url
   sys.exit(1)
 
