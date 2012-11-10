@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+git status 1>/dev/null 2>&1
+if [[ $? == 128 ]]; then
+  launch-iterm-with-cwd "$(pwd)"
+else
+  launch-iterm-with-cwd "$(git rev-parse --show-toplevel)"
+fi

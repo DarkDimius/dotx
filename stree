@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+git status 1>/dev/null 2>&1
+if [[ $? == 128 ]]; then
+  git status
+else
+  cd "$(git rev-parse --show-toplevel)"
+  stock-stree . &
+fi

@@ -1,0 +1,4 @@
+bind left:ctrl corner top-left resize:screenSizeX/2;screenSizeY
+bind right:ctrl corner top-right resize:screenSizeX/2;screenSizeY
+bind up:ctrl corner top-left resize:screenSizeX;screenSizeY
+bind down:ctrl corner top-left resize:screenSizeX;screenSizeY

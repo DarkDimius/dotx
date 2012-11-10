@@ -50,12 +50,13 @@ install-into-home .bash_profile
 install-into-home .slate
 install-into-home .inputrc
 install-into-home git-completion.bash .git-completion.bash
+install-into-home .pullrequest
 
 install-into-bin pullrequest
 install-into-bin java6
 install-into-bin java7
 install-into-bin java8
-install-into-bin launch-iterm-with-cwd.applescript
+install-into-bin launch-iterm-with-cwd
 install-into-bin skype-menubar-updater
 install-into-bin jenkins-track
 install-into-bin jenkins-daemon
@@ -68,6 +69,9 @@ install-into-bin partest
 install-into-bin partest-import
 install-into-bin partest-diff
 install-into-bin partest-suite
+install-into-bin shell
+if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
+install-into-bin stree
 
 install-into-etc launchd.conf
 install-into-etc paths

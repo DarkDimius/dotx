@@ -5,7 +5,7 @@ from subprocess import Popen, PIPE
 if len(sys.argv) > 2:
   print "usage: " + sys.argv[0] + " [<target branch>]"
   print "if the target branch is not specified"
-  print "the script will try to load it from ~/.git-pull-request"
+  print "the script will try to load it from ~/.pullrequest"
   sys.exit(1)
 target_branch = sys.argv[1] if len(sys.argv) == 2 else None
 
@@ -55,7 +55,7 @@ if ahead or behind:
   sys.exit(5)
 
 try:
-  with open(os.path.expandvars("$HOME/.git-pull-request"), "r") as f:
+  with open(os.path.expandvars("$HOME/.pullrequest"), "r") as f:
     config = json.load(f)
 except Exception as e:
   config = []

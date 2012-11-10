@@ -45,3 +45,8 @@ echo "" >> "$target"
 echo "==================" >> "$target"
 echo "Firefox extensions:" >> "$target"
 ls "/Users/xeno_by/Library/Application Support/Firefox/Profiles/zgjntnvs.default/extensions" >> "$target"
+
+echo "" >> "$target"
+echo "==================" >> "$target"
+echo "KeyRemap4MacBook private.xml:" >> "$target"
+cat "/Users/xeno_by/Library/Application Support/KeyRemap4MacBook/private.xml" >> "$target"

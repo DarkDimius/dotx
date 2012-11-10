@@ -89,3 +89,4 @@ scala-2.10.1
 .DS_Store
 .partest
 .jenkins
+.partestlog
