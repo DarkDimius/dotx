@@ -7,7 +7,6 @@ if len(sys.argv) != 2:
 
 job_url = sys.argv[1]
 
-# yet another duplication!!
 if re.match("^\d+$", job_url): job_url = "https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/" + job_url + "/"
 if job_url.endswith("/console"): job_url = job_url[:-len("console")]
 if job_url.endswith("/consoleText"): job_url = job_url[:-len("consoleText")]

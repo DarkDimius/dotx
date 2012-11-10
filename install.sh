@@ -51,6 +51,7 @@ install-into-home .slate
 install-into-home .inputrc
 install-into-home git-completion.bash .git-completion.bash
 install-into-home .pullrequest
+install-into-home .jenkins
 
 install-into-bin pullrequest
 install-into-bin java6
@@ -72,6 +73,8 @@ install-into-bin partest-suite
 install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
 install-into-bin stree
+install-into-bin bug
+install-into-bin hub-introspect
 
 install-into-etc launchd.conf
 install-into-etc paths

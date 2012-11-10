@@ -1,0 +1,59 @@
+#!/usr/bin/env python
+import os, sys, re, json
+from subprocess import Popen, PIPE
+
+user = ""
+repo = ""
+branch = ""
+
+def success(status):
+  print user + "\n" + repo + "\n" + branch + "\n" + status
+  sys.exit(0)
+
+def error(error):
+  print user + "\n" + repo + "\n" + branch + "\n" + status
+  sys.exit(1)
+
+if len(sys.argv) > 1: error("usage: " + sys.argv[0])
+origin = Popen(["git", "config", "--get", "remote.origin.url"], stdout=PIPE).communicate()[0][:-1]
+if not origin: error("not a git repo")
+
+def match1(): return re.match("^git://github.com/(?P<user>.*?)/(?P<repo>.*).git$", origin)
+def match2(): return re.match("^git@github.com:(?P<user>.*?)/(?P<repo>.*).git$", origin)
+m = match1() or match2()
+if not m: error("origin (" + origin + ") doesn't point to a github repo")
+user = m.expand("\g<user>")
+repo = m.expand("\g<repo>")
+
+branch = Popen(["git", "rev-parse", "--abbrev-ref", "HEAD"], stdout=PIPE).communicate()[0][:-1]
+branchless = not branch
+if branchless: branch = Popen(['git','rev-parse','--short','HEAD'], stdout=PIPE).communicate()[0][:-1]
+
+changed = Popen(['git','diff','--name-status'], stdout=PIPE, stderr=PIPE).communicate()[0].splitlines()
+staged = Popen(['git','diff', '--staged','--name-status'], stdout=PIPE).communicate()[0].splitlines()
+untracked = Popen(['git','ls-files','--others','--exclude-standard'],stdout=PIPE).communicate()[0].splitlines()
+if changed: success("repository " + origin + " is dirty (has modified files)")
+if staged: success("repository " + origin + " is dirty (has staged files)")
+if untracked: success("repository " + origin + " is dirty (has untracked files)")
+
+ahead = None
+behind = None
+if not branchless:
+  remote_name = Popen(['git','config','branch.%s.remote' % branch], stdout=PIPE).communicate()[0].strip()
+  if remote_name:
+    merge_name = Popen(['git','config','branch.%s.merge' % branch], stdout=PIPE).communicate()[0].strip()
+    if remote_name == '.': # local
+      remote_ref = merge_name
+    else:
+      remote_ref = 'refs/remotes/%s/%s' % (remote_name, merge_name[11:])
+    revgit = Popen(['git', 'rev-list', '--left-right', '%s...HEAD' % remote_ref],stdout=PIPE, stderr=PIPE)
+    revlist = revgit.communicate()[0]
+    if revgit.poll(): # fallback to local
+      revlist = Popen(['git', 'rev-list', '--left-right', '%s...HEAD' % merge_name],stdout=PIPE, stderr=PIPE).communicate()[0]
+    behead = revlist.splitlines()
+    ahead = len([x for x in behead if x[0]=='>'])
+    behind = len(behead) - ahead
+if ahead or behind:
+  success("repository " + origin + " is dirty (head is different from remote)")
+
+success("no changes")
