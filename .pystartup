@@ -1,0 +1,48 @@
+# Add auto-completion and a stored history file of commands to your Python
+# interactive interpreter. Requires Python 2.0+, readline. Autocomplete is
+# bound to the Esc key by default (you can change it - see readline docs).
+#
+# Store the file in ~/.pystartup, and set an environment variable to point
+# to it:  "export PYTHONSTARTUP=/home/gsf/.pystartup" in bash.
+#
+# Note that PYTHONSTARTUP does *not* expand "~", so you have to put in the
+# full path to your home directory.
+
+import atexit
+import os
+import readline
+import rlcompleter
+import sys
+
+# change autocomplete to tab
+# SUPER IMPORTANT
+# http://stackoverflow.com/questions/7116038/python-tab-completion-mac-osx-10-7-lion
+# Apple does not ship GNU readline with OS X. It does ship BSD libedit which includes a readline compatibility interface.
+# The system Pythons shipped by Apple and the 64-bit/32-bit Pythons from python.org installers are built with libedit.
+# The problem is that the commands supported by libedit are completely different from those of readline
+if 'libedit' in readline.__doc__:
+  readline.parse_and_bind("bind ^I rl_complete")
+else:
+  readline.parse_and_bind("tab: complete")
+
+# enable tab to do tabulation at the beginning of the line
+class TabCompleter(rlcompleter.Completer):
+  """Completer that supports indenting"""
+  def complete(self, text, state):
+    if not text:
+      return ('    ', None)[state]
+    else:
+      return rlcompleter.Completer.complete(self, text, state)
+readline.set_completer(TabCompleter().complete)
+
+# add history
+historyPath = os.path.expanduser("~/.pyhistory")
+def save_history(historyPath=historyPath):
+  import readline
+  readline.write_history_file(historyPath)
+if os.path.exists(historyPath):
+  readline.read_history_file(historyPath)
+atexit.register(save_history)
+
+# anything not deleted (sys and os) will remain in the interpreter session
+del atexit, readline, rlcompleter, save_history, historyPath

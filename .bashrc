@@ -13,6 +13,7 @@ if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
 source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
+export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
@@ -33,12 +34,14 @@ alias gs='git status'
 alias grb='git rebase'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
+alias grbs='git rebase --skip'
 alias gcp='git cherry-pick'
 alias gcpc='git cherry-pick --continue'
 alias gcpa='git cherry-pick --abort'
 alias gra='git remote add'
 alias grv='git remote -v'
 alias gru='git remote update'
+alias grn='git remote rename'
 alias gl='git --no-pager log --pretty=oneline -20'
 alias grh='git reset --hard'
 alias grh0='git reset --hard HEAD'

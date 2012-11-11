@@ -49,6 +49,7 @@ install-into-home .bashrc
 install-into-home .bash_profile
 install-into-home .slate
 install-into-home .inputrc
+install-into-home .pystartup
 install-into-home git-completion.bash .git-completion.bash
 install-into-home .pullrequest
 install-into-home .jenkins
