@@ -1,4 +1,4 @@
-_hack() {
+_hak() {
   local cur prev opts
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
@@ -24,7 +24,7 @@ _hack() {
     fi
   fi
 }
-complete -F _hack hack
+complete -F _hak hak
 
 _hack_home() {
   local cur prev opts
