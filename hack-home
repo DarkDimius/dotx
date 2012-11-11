@@ -12,11 +12,9 @@ if script.returncode != 0:
   print output
   sys.exit(script.returncode)
 
-projects_root = os.path.expandvars("$HOME/Projects")
-projects = filter(os.path.isdir, map(lambda prj: os.path.join(projects_root, prj), os.listdir(projects_root)))
-hacks = filter(lambda prj: os.path.exists(os.path.join(prj, ".hack")), projects)
-hacks = dict((open(os.path.join(prj, ".hack")).read().strip(), prj) for prj in hacks)
-project = hacks.get(output)
+homes = Popen(["hack-homes"], stdout=PIPE).communicate()[0].splitlines()
+index = dict((open(os.path.join(home, ".hack")).read().strip(), home) for home in homes)
+project = index.get(output)
 
 if project:
   print project

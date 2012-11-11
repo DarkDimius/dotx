@@ -80,6 +80,7 @@ install-into-bin hub-introspect
 install-into-bin toggle-notification-center
 install-into-bin hack
 install-into-bin hack-home
+install-into-bin hack-homes
 install-into-bin hack-branch
 
 install-into-etc launchd.conf
