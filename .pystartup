@@ -14,6 +14,17 @@ import readline
 import rlcompleter
 import sys
 
+# enable tab to do tabulation at the beginning of the line
+class TabCompleter(rlcompleter.Completer):
+  """Completer that supports indenting"""
+  def complete(self, text, state):
+    if not text:
+      return ('    ', None)[state]
+    else:
+      import rlcompleter
+      return rlcompleter.Completer.complete(self, text, state)
+readline.set_completer(TabCompleter().complete)
+
 # change autocomplete to tab
 # SUPER IMPORTANT
 # http://stackoverflow.com/questions/7116038/python-tab-completion-mac-osx-10-7-lion
@@ -24,16 +35,6 @@ if 'libedit' in readline.__doc__:
   readline.parse_and_bind("bind ^I rl_complete")
 else:
   readline.parse_and_bind("tab: complete")
-
-# enable tab to do tabulation at the beginning of the line
-class TabCompleter(rlcompleter.Completer):
-  """Completer that supports indenting"""
-  def complete(self, text, state):
-    if not text:
-      return ('    ', None)[state]
-    else:
-      return rlcompleter.Completer.complete(self, text, state)
-readline.set_completer(TabCompleter().complete)
 
 # add history
 historyPath = os.path.expanduser("~/.pyhistory")
