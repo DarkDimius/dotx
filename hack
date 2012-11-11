@@ -24,7 +24,7 @@ def checkpoint(msg):
   print msg
 
 try:
-  if len(sys.argv) > 3: print "usage: " + sys.argv[0] + " [[+|-]<target> [<prototype>]]"; sys.exit(1)
+  if len(sys.argv) > 3: print >> sys.stderr, "usage: " + sys.argv[0] + " [[+|-]<target> [<prototype>]]"; sys.exit(1)
   target = sys.argv[1] if len(sys.argv) >= 2 else check_output("hack-branch").strip()
   add, delete = target.startswith("+"), target.startswith("-")
   if add or delete: target = target[1:]
@@ -34,10 +34,10 @@ try:
   script = Popen(["hack-home", target], stdout=PIPE)
   project_home = script.communicate()[0].strip() or os.path.expandvars("$HOME/Projects/") + "Kepler_" + short_target
   exists = script.returncode == 0
-  if exists and add: print target + " already exists at " + project_home; sys.exit(1)
-  if not exists and not add: print target + " does not exist"; sys.exit(1)
+  if exists and add: print >> sys.stderr, target + " already exists at " + project_home; sys.exit(1)
+  if not exists and not add: print >> sys.stderr, target + " does not exist"; sys.exit(1)
   prototype = sys.argv[2] if len(sys.argv) >= 3 else None
-  if exists and prototype: print "prototype cannot be used with a pre-existing target"; sys.exit(1)
+  if exists and prototype: print >> sys.stderr, "prototype cannot be used with a pre-existing target"; sys.exit(1)
   if not prototype: prototype = check_output("hack-branch").strip()
   prototype = check_output(["hack-home", prototype]).strip()
 
@@ -82,6 +82,6 @@ except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:
     # print tpe
-    print value
+    print >> sys.stderr, value
     # traceback.print_tb(tb)
     sys.exit(1)
