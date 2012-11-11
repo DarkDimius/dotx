@@ -12,6 +12,8 @@ if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
 
 source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
+source $HOME/.hack-completion.bash
+
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
   echo " ("${ref#refs/heads/}")"

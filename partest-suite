@@ -2,7 +2,7 @@
 import os, sys, subprocess
 
 if len(sys.argv) != 2:
-  print "usage: " + sys.argv[0] + " --view | --edit"
+  print "usage: " + sys.argv[0] + " {--view|--edit}"
   sys.exit(1)
 
 action = sys.argv[1]
