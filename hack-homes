@@ -3,7 +3,7 @@ import sys, os, re
 from subprocess import Popen, PIPE
 
 if len(sys.argv) != 2:
-  print "usage: " + sys.argv[0] + " {--dirs|--short-branches|--full-branches}"
+  print "usage: " + sys.argv[0] + " {--all|--dirs|--short-branches|--full-branches}"
   sys.exit(1)
 
 flavor = sys.argv[1]
@@ -14,6 +14,8 @@ hacks = filter(lambda prj: os.path.exists(os.path.join(prj, ".hack")), projects)
 index = dict((open(os.path.join(home, ".hack")).read().strip(), home) for home in hacks)
 
 for branch, dir in index.items():
+  if flavor == "--all":
+    print dir.ljust(50, " ") + " " + branch
   if flavor == "--dirs":
     print dir
   elif flavor == "--full-branches":

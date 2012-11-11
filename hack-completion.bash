@@ -1,4 +1,4 @@
-_hak() {
+_hack() {
   local cur prev opts
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
@@ -24,7 +24,7 @@ _hak() {
     fi
   fi
 }
-complete -F _hak hak
+complete -F _hack hack
 
 _hack_home() {
   local cur prev opts
@@ -47,7 +47,7 @@ _hack_homes() {
   COMPREPLY=()
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev="${COMP_WORDS[COMP_CWORD-1]}"
-  opts="--dirs --short-branches --full-branches"
+  opts="--all --dirs --short-branches --full-branches"
 
   if [[ ${#COMP_WORDS[@]} == 2 ]]; then
     COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )

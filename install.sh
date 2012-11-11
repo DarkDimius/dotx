@@ -80,7 +80,7 @@ install-into-bin stree
 install-into-bin bug
 install-into-bin hub-introspect
 install-into-bin toggle-notification-center
-install-into-bin hak
+install-into-bin hack
 install-into-bin hack-home
 install-into-bin hack-homes
 install-into-bin hack-branch

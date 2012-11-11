@@ -68,6 +68,10 @@ alias t="partest"
 alias td="partest-diff"
 alias tv="partest-suite --view"
 alias te="partest-suite --edit"
+alias h="hack"
+alias hh="hack-homes --all"
+complete -F _hack h
+complete -F _hack_homes hh
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
