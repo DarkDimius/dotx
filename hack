@@ -23,6 +23,12 @@ def checkpoint(msg):
   call(["growlnotify", "-n", title, "-m", msg])
   print msg
 
+def update_bashrc(fn):
+  bashrc = open(os.path.expandvars("$HOME/.bashrc")).read().splitlines()
+  index = bashrc.index("### Automatically managed part of .bashrc")
+  bashrc = bashrc[:index] + fn(bashrc[index:])
+  with open(os.path.expandvars("$HOME/.bashrc"), "w") as f: f.write("\n".join(bashrc))
+
 try:
   if len(sys.argv) > 3: print >> sys.stderr, "usage: " + sys.argv[0] + " [[+|-]<target> [<prototype>]]"; sys.exit(1)
   target = sys.argv[1] if len(sys.argv) >= 2 else check_output("hack-branch").strip()
@@ -78,7 +84,14 @@ try:
     template = template.replace("$PROJECT_SHORTNAME", original_target)
     template = os.path.expandvars(template)
     with open(alfredextension_plist, "w") as f: f.write(template)
-    checkpoint("Created an Alfred shortcut")
+    checkpoint("Created an Alfred shortcut named " + original_target)
+
+    def create_aliases(bashrc):
+      bashrc.append("""function kep_{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", original_target))
+      bashrc.append("""function sb_{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", original_target))
+      return bashrc
+    update_bashrc(create_aliases)
+    checkpoint("Created Bash aliases kep_" + original_target + " and sb_" + original_target)
   elif delete:
     comm(["rm", "-rf", project_home])
     checkpoint("Deleted the Git repo at " + project_home)
@@ -86,7 +99,13 @@ try:
     comm(["rm", sublime_project])
     checkpoint("Deleted the Sublime project at " + sublime_project)
     comm(["rm", "-rf", alfredextension])
-    checkpoint("Deleted the Alfred shortcut")
+    checkpoint("Deleted the Alfred shortcut named " + original_target)
+    def delete_aliases(bashrc):
+      kep_alias = """function kep_{} {""".replace("{}", original_target)
+      sb_alias = """function sb_{} {""".replace("{}", original_target)
+      return [line for line in bashrc if not line.startswith(kep_alias) and not line.startswith(sb_alias)]
+    update_bashrc(delete_aliases)
+    checkpoint("Deleted Bash aliases kep_" + original_target + " and sb_" + original_target)
 
   if not delete:
     with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(target)

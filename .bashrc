@@ -88,3 +88,6 @@ alias pap='cd "$HOME/Projects/Pages"'
 alias dotx='cd "$HOME/Projects/Dotx"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+
+### Automatically managed part of .bashrc
+### Don't write anything below this comment, or it might get accidentally destroyed
