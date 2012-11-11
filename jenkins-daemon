@@ -1,35 +1,56 @@
 #!/usr/bin/env python
-from subprocess import call, Popen, PIPE
+from subprocess import call
 import os, sys, re, json, urllib2, traceback
 
 if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
   sys.exit(1)
 
-with open("/Users/xeno_by/.jenkins", "r") as config:
-  jobs = map(lambda job: job.strip(), config.readlines())
+def growl(message):
+  call(["growlnotify", "-n", "Jenkins", "-m", message])
+
+def on_failure(url):
+  call(["partest-import", url])
+
+try:
+  with open(os.path.expandvars("$HOME/.jenkins"), "r") as f:
+    config = json.load(f)
+except Exception as e:
+  config = []
 
 new_jobs = []
 anything_new = False
 for job in jobs:
   if job:
     try:
-      failures = Popen(["jenkins-failures", job], stdout=PIPE).communicate()[0].splitlines()
-      if failures:
+      data = urllib2.urlopen(job + "/api/json").read()
+      data = json.loads(data)
+      result = data["result"]
+      if result:
         anything_new = True
-        msg = "FAILURE: " + job
+        msg = result + ": " + job
+        growl(msg)
         print msg
-        call(["growlnotify", "-n", "Jenkins", "-m", msg])
-        call(["partest-import", job])
+        if result == "FAILURE": on_failure(job)
       else:
-        new_jobs.append(job)
+        failures = subprocess.Popen(["jenkins-failures", job], stdout=subprocess.PIPE).communicate()[0].splitlines()
+        if failures:
+          anything_new = True
+          msg = "FAILURE: " + job
+          growl(msg)
+          print msg
+          on_failure(job)
+        else:
+          new_jobs.append(job)
     except:
       _, value, _ = sys.exc_info()
-      print job + ": " + str(value)
+      msg = job + ": " + str(value)
+      # growl(msg)
+      print msg
       new_jobs.append(job)
 
 if not anything_new:
   print "Nothing new"
 
-with open("/Users/xeno_by/.jenkins", "w") as config:
-  config.writelines(map(lambda job: job + "\n", new_jobs))
+with open(os.path.expandvars("$HOME/.jenkins"), "w") as f:
+  json.dump(f, sort_keys=True, indent=4)
