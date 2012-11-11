@@ -11,7 +11,7 @@
     <key>UserName</key>
     <string>xeno_by</string>
     <key>Program</key>
-    <string>/Users/xeno_by/Projects/Dotx/jenkins-daemon</string>
+    <string>jenkins-scan</string>
     <key>ProgramArguments</key>
     <array>
     </array>

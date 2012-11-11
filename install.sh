@@ -59,8 +59,8 @@ install-into-bin java7
 install-into-bin java8
 install-into-bin launch-iterm-with-cwd
 install-into-bin skype-menubar-updater
-install-into-bin jenkins-track
-install-into-bin jenkins-daemon
+install-into-bin jenkins-callback
+install-into-bin jenkins-scan
 install-into-bin jenkins-submit
 install-into-bin jenkins-failures
 install-into-bin jenkins-url
