@@ -28,6 +28,7 @@ try:
   target = sys.argv[1] if len(sys.argv) >= 2 else check_output("hack-branch").strip()
   add, delete = target.startswith("+"), target.startswith("-")
   if add or delete: target = target[1:]
+  original_target = target
   target = check_output(["hack-branch", target]).strip()
   branch = target[target.find(":") + 1:]
   short_target = target[target.rfind("/") + 1:]
@@ -47,6 +48,9 @@ try:
   sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/Projects")
   sublime_project = sublime_projects + "/" + project_home[len(projects):] + ".sublime-project"
   bashrc = os.path.expandvars("$HOME/.bashrc")
+  alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred/extensions/scripts")
+  alfredextension = alfredextensions + "/" + original_target
+  alfredextension_plist = alfredextension + "/" + "info.plist"
 
   if add:
     check_comm(["git", "clone", prototype, project_home])
@@ -68,12 +72,21 @@ try:
     template = os.path.expandvars(template)
     with open(sublime_project, "w") as f: f.write(template)
     checkpoint("Created a Sublime project at " + sublime_project)
+
+    check_comm(["mkdir", alfredextension])
+    template = open(os.path.expandvars("$HOME/.hack.alfredextension")).read()
+    template = template.replace("$PROJECT_SHORTNAME", original_target)
+    template = os.path.expandvars(template)
+    with open(alfredextension_plist, "w") as f: f.write(template)
+    checkpoint("Created an Alfred shortcut")
   elif delete:
     comm(["rm", "-rf", project_home])
-    checkpoint("Deleted a Git repo at " + project_home)
+    checkpoint("Deleted the Git repo at " + project_home)
     comm(["rm", "-rf", project_metadata])
     comm(["rm", sublime_project])
-    checkpoint("Deleted a Sublime project at " + sublime_project)
+    checkpoint("Deleted the Sublime project at " + sublime_project)
+    comm(["rm", "-rf", alfredextension])
+    checkpoint("Deleted the Alfred shortcut")
 
   if not delete:
     with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(target)
