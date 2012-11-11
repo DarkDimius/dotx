@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from subprocess import call
 import os, sys, re, json, urllib2, traceback, time
+from subprocess import call, Popen, PIPE
 
 if len(sys.argv) > 2:
   print "usage: " + sys.argv[0] + " [-v]"
@@ -23,6 +23,27 @@ except Exception as e:
 if not config.get("servers"): config["servers"] = []
 if not config.get("jobs"): config["jobs"] = []
 
+def jenkins_build_parameters(data):
+  action = next((action for action in data["actions"] if action.get("parameters")), None)
+  if action:
+    params = {}
+    for param in action["parameters"]:
+      params[param["name"]] = param["value"]
+    return params
+
+def kepler_branch_from_jenkins(data):
+  parameters = jenkins_build_parameters(data) or {}
+  if parameters.get("pullrequest"):
+    data = urllib2.urlopen("https://api.github.com/repos/scala/scala/pulls/" + parameters["pullrequest"]).read()
+    data = json.loads(data)
+    if verbose: print "Branch: " + str(data["head"]["label"])
+    m = re.match("(?P<user>.*?):(?P<branch>.*)", data["head"]["label"])
+    if m and m.expand("\g<user>") == "scalamacros":
+      return m.expand("\g<branch>")
+  elif parameters.get("githubUsername") == "scalamacros":
+    if verbose: print "Branch: " + str(parameters["branch"])
+    return parameters["branch"]
+
 for server in config["servers"]:
   try:
     if not server.get("lastBuildNumber"): server["lastBuildNumber"] = 0
@@ -33,15 +54,8 @@ for server in config["servers"]:
     if actual > expected:
       jobs = filter(lambda datum: datum["number"] > expected, data["builds"])
       jobs = map(lambda datum: datum["url"], jobs)
-      for job in jobs:
-        data = urllib2.urlopen(job + "/api/json").read()
-        data = json.loads(data)
-        parameters = next((action for action in data["actions"] if action.get("parameters")), None)
-        if parameters:
-          githubUsername = next((param for param in parameters["parameters"] if param["name"] == "githubUsername"), None)
-          if githubUsername and githubUsername["value"] == "scalamacros":
-            config["jobs"].append(job)
-            print "Tracking " + job
+      if verbose: print "\n".join(map(lambda job: "Enqueuing " + job, jobs))
+      config["jobs"] += jobs
       server["lastBuildNumber"] = actual
     checkpoint(server["url"])
   except:
@@ -51,21 +65,46 @@ for server in config["servers"]:
 
 pending_jobs = set(config["jobs"])
 config["jobs"] = []
-anything_new = False
+something_new = False
 for job in pending_jobs:
   if job:
     try:
+      if verbose: print "Processing " + job
       data = urllib2.urlopen(job + "/api/json").read()
       data = json.loads(data)
-      result = data["result"]
-      if result:
-        anything_new = True
-        call(["jenkins-callback", job, result])
-      else:
-        failures = subprocess.Popen(["jenkins-failures", job], stdout=subprocess.PIPE).communicate()[0].splitlines()
-        if failures:
-          anything_new = True
-          call(["jenkins-callback", job, "FAILURE"])
+      branch = kepler_branch_from_jenkins(data)
+      if branch:
+        result = data["result"]
+        failures = Popen(["jenkins-failures", job], stdout=PIPE).communicate()[0].splitlines()
+        if failures: result = "FAILURE"
+        if result:
+          something_new = True
+          msg = result + ": " + job
+          call(["growlnotify", "-n", "Jenkins", "-m", msg])
+          print msg
+          if result == "FAILURE":
+            root = Popen(["hack-home", branch], stdout=PIPE).communicate()[0][:-1]
+            if root and os.path.exists(root):
+              if failures:
+                dotpartest = root + "/.partest"
+                tests = []
+                if os.path.exists(dotpartest):
+                  with open(dotpartest, "r") as f:
+                    tests = map(lambda test: test.strip(), f.readlines())
+                def comment_out(test):
+                  return "# " + test if test.strip() else test
+                tests = map(comment_out, tests)
+                if len(tests): tests = tests + [""]
+                tests += ["# imported from " + job]
+                tests += ["# timestamp: " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())]
+                tests += failures
+                with open(dotpartest, "w") as f:
+                  f.writelines(map(lambda test: test + "\n", tests))
+                print "Imported " + str(len(failures)) + " failing tests into " + dotpartest
+              else:
+                print "No partest failures found, skipping partest import"
+            else:
+              print "No hack home for " + branch + ", skipping partest import"
         else:
           config["jobs"].append(job)
       checkpoint(job)
@@ -75,7 +114,7 @@ for job in pending_jobs:
       print job + ": " + str(value)
       config["jobs"].append(job)
 
-if not anything_new:
+if not something_new:
   print "Nothing new"
 
 with open(os.path.expandvars("$HOME/.jenkins"), "w") as f:

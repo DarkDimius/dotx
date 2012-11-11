@@ -5,51 +5,14 @@ if len(sys.argv) != 2:
   print "usage: " + sys.argv[0] + " <fuzzy name or index in .partest>"
   sys.exit(1)
 
-target = sys.argv[1]
+script = subprocess.Popen(["partest-lookup", sys.argv[1]], stdout=subprocess.PIPE)
+output = script.communicate()[0][:-1]
+if script.returncode != 0:
+  print output
+  sys.exit(script.returncode)
 
-# duplication!
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
-dotpartest = root + "/.partest"
-if os.path.exists(dotpartest):
-  with open(dotpartest, "r") as config:
-    tests = map(lambda test: test.strip(), config.readlines())
-    tests = filter(lambda test: test and not test.startswith("#"), tests)
-    def figure_out(test):
-      if test.startswith("/"): test = test[1:]
-      return test
-    tests = map(figure_out, tests)
-
-def resolve_index(index):
-  final_index = index
-  if final_index >= 0: final_index -= 1
-  if final_index in range(-len(tests), len(tests)):
-    return tests[final_index]
-  else:
-    print "Invalid index " + str(index) + ": only " + str(len(tests)) + " tests in " + dotpartest
-    sys.exit(1)
-
-def resolve_fuzzy(fuzzy):
-  pattern = fuzzy
-  if not pattern.startswith("^"): pattern = ".*" + pattern
-  if not pattern.endswith("$"): pattern = pattern + ".*"
-  matches = filter(lambda test: re.match(pattern, test), tests)
-  if len(matches) == 0:
-    print "Not found " + fuzzy + " in " + dotpartest
-    sys.exit(1)
-  elif len(matches) == 1:
-    return matches[0]
-  else:
-    print "Multiple matches for " + fuzzy + " in " + dotpartest
-    for match in matches: print match
-    sys.exit(1)
-
-try:
-  index = int(target)
-except:
-  index = None
-test = resolve_index(index) if index != None else resolve_fuzzy(target)
-test = root + "/test/" + test
-
+test = root + "/test/" + output
 base, ext = os.path.splitext(test)
 flavor = os.path.basename(os.path.dirname(base))
 checkfile = base + ".check"

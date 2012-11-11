@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+import os, sys, subprocess, re
+
+if len(sys.argv) != 2:
+  print "usage: " + sys.argv[0] + " <fuzzy name or index in .partest>"
+  sys.exit(1)
+
+target = sys.argv[1]
+tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE).communicate()[0].splitlines()
+root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
+dotpartest = root + "/.partest"
+
+def resolve_index(index):
+  final_index = index
+  if final_index >= 0: final_index -= 1
+  if final_index in range(-len(tests), len(tests)):
+    return tests[final_index]
+  else:
+    print "Invalid index " + str(index) + ": only " + str(len(tests)) + " tests in " + dotpartest
+    sys.exit(1)
+
+def resolve_fuzzy(fuzzy):
+  pattern = fuzzy
+  if not pattern.startswith("^"): pattern = ".*" + pattern
+  if not pattern.endswith("$"): pattern = pattern + ".*"
+  matches = filter(lambda test: re.match(pattern, test), tests)
+  if len(matches) == 0:
+    print "Not found " + fuzzy + " in " + dotpartest
+    sys.exit(1)
+  elif len(matches) == 1:
+    return matches[0]
+  else:
+    print "Multiple matches for " + fuzzy + " in " + dotpartest
+    for match in matches: print match
+    sys.exit(1)
+
+try:
+  index = int(target)
+except:
+  index = None
+test = resolve_index(index) if index != None else resolve_fuzzy(target)
+
+print test

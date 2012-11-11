@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-import os, sys
+import os, sys, subprocess
+from subprocess import Popen, PIPE
 
 if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
@@ -15,7 +16,7 @@ while current != "/":
   else:
     current = os.path.dirname(current)
 
-root = root or os.environ.get("SCALA_HOME") or "/Users/xeno_by/Projects/Kepler"
+root = root or subprocess.Popen(["hack-home"], stdout=subprocess.PIPE).communicate()[0][:-1]
 if root.endswith("pack"): root = root + "/../.."
 if root.endswith("pack/"): root = root + "../.."
 

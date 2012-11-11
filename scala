@@ -8,5 +8,5 @@ if not os.path.exists(bin):
   print bin + " does not exist"
   sys.exit(1)
 
-args = sys.argv[1:] + ["-Dscala.repl.autoruncode=/Users/xeno_by/.scala_autorun"]
+args = sys.argv[1:] + [os.path.expandvars("-Dscala.repl.autoruncode=$HOME/.scala_autorun")]
 subprocess.call([bin] + args)

@@ -55,26 +55,27 @@ alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
 
-source "/Users/xeno_by/Projects/Libscala/libscala.sh"
+source "$HOME/Projects/Libscala/libscala.sh"
 alias j="jenkins-submit"
+alias js="jenkins-scan"
 alias pr="pullrequest"
 alias t="partest"
 alias td="partest-diff"
 alias tv="partest-suite --view"
 alias te="partest-suite --edit"
 
-alias ez='subl /Users/xeno_by/Projects/Dotx/.bashrc'
-alias az='source /Users/xeno_by/.bash_profile'
-alias hm='cd "/Users/xeno_by"'
+alias ez='subl $HOME/Projects/Dotx/.bashrc'
+alias az='source $HOME/.bash_profile'
+alias hm='cd "$HOME"'
 alias ubi='cd "/usr/local/bin"'
 alias db='cd "/media/XENO/Dropbox"'
-alias dl='cd "/Users/xeno_by/Downloads"'
-alias prj='cd "/Users/xeno_by/Projects"'
-alias kep='cd "/Users/xeno_by/Projects/Kepler"'
-alias ide='cd "/Users/xeno_by/Projects/ScalaIDE"'
-alias ens='cd "/Users/xeno_by/Projects/Ensime"'
-alias sens='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime"'
-alias des='cd "/Users/xeno_by/Library/Application Support/Sublime Text 2"'
-alias pap='cd "/Users/xeno_by/Projects/Pages"'
-alias dotx='cd "/Users/xeno_by/Projects/Dotx"'
-alias sb='cd "/Users/xeno_by/Projects/Kepler/sandbox"'
+alias dl='cd "$HOME/Downloads"'
+alias prj='cd "$HOME/Projects"'
+alias ide='cd "$HOME/Projects/ScalaIDE"'
+alias ens='cd "$HOME/Projects/Ensime"'
+alias sens='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
+alias des='cd "$HOME/Library/Application Support/Sublime Text 2"'
+alias pap='cd "$HOME/Projects/Pages"'
+alias dotx='cd "$HOME/Projects/Dotx"'
+function kep { cd "$(hack-home)"; }
+function sb { cd "$(hack-home)/sandbox"; }

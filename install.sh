@@ -68,7 +68,7 @@ install-into-bin scala-root
 install-into-bin scala
 install-into-bin scalac
 install-into-bin partest
-install-into-bin partest-import
+install-into-bin partest-lookup
 install-into-bin partest-diff
 install-into-bin partest-suite
 install-into-bin shell
@@ -76,6 +76,9 @@ if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr
 install-into-bin stree
 install-into-bin bug
 install-into-bin hub-introspect
+install-into-bin toggle-notification-center
+install-into-bin hack
+install-into-bin hack-home
 
 install-into-etc launchd.conf
 install-into-etc paths

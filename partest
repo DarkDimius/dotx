@@ -12,19 +12,11 @@ if not os.path.exists(bin):
 
 args = sys.argv[1:]
 if not args and os.path.exists(dotpartest):
-  with open(dotpartest, "r") as config:
-    tests = map(lambda test: test.strip(), config.readlines())
-    tests = filter(lambda test: test and not test.startswith("#"), tests)
-    def figure_out(test):
-      if test.startswith("/"): test = test[1:]
-      return test
-    tests = map(figure_out, tests)
-  args = tests
+  tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE).communicate()[0].splitlines()
 
 def update_dotpartest():
   with open(dotpartestlog, "r") as log:
     lines = map(lambda test: test.strip(), log.readlines())
-  # duplication!
   successes = []
   failures = []
   for line in lines:
@@ -40,16 +32,12 @@ def update_dotpartest():
       if not test.startswith("/files"): test = "/files" + test
       if test.startswith("/"): test = test[1:]
       successes.append(test)
-
-  # duplication ends
   for failure in failures:
     if not failure in tests:
       tests.append(failure)
   for success in successes:
     if success in tests:
       tests.remove(success)
-
-  # duplication again!
   lines = []
   if os.path.exists(dotpartest):
     with open(dotpartest, "r") as config:
@@ -65,7 +53,10 @@ def update_dotpartest():
     config.writelines(map(lambda line: line + "\n", lines))
 
 try:
-  subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + args) + " | tee " + dotpartestlog], cwd = root + "/test")
-  update_dotpartest()
+  if args:
+    subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + args) + " | tee " + dotpartestlog], cwd = root + "/test")
+    update_dotpartest()
+  else:
+    print "No tests in " + dotpartest
 except KeyboardInterrupt:
   update_dotpartest()
