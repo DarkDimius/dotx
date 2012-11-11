@@ -3,12 +3,18 @@ import sys, os, traceback
 import subprocess
 from subprocess import check_output, call, Popen, PIPE
 
-def check_call(*args, **kwargs):
+def check_comm(*args, **kwargs):
   kwargs["stdout"] = PIPE
   kwargs["stderr"] = PIPE
   child = Popen(*args, **kwargs)
   stdout, stderr = child.communicate()
   if child.returncode != 0: raise Exception(stderr.strip())
+
+def comm(*args, **kwargs):
+  kwargs["stdout"] = PIPE
+  kwargs["stderr"] = PIPE
+  child = Popen(*args, **kwargs)
+  child.communicate()
 
 def checkpoint(msg):
   title = sys.argv[1]
@@ -26,31 +32,51 @@ try:
   branch = target[target.find(":") + 1:]
   short_target = target[target.rfind("/") + 1:]
   script = Popen(["hack-home", target], stdout=PIPE)
-  existing_home = script.communicate()[0].strip()
+  project_home = script.communicate()[0].strip() or projects + "Kepler_" + short_target
   exists = script.returncode == 0
-  if exists and add: print target + " already exists at " + existing_home; sys.exit(1)
+  if exists and add: print target + " already exists at " + project_home; sys.exit(1)
   if not exists and not add: print target + " does not exist"; sys.exit(1)
   prototype = sys.argv[2] if len(sys.argv) >= 3 else None
   if exists and prototype: print "prototype cannot be used with a pre-existing target"; sys.exit(1)
   if not prototype: prototype = check_output("hack-branch").strip()
   prototype = check_output(["hack-home", prototype]).strip()
 
+  projects = os.path.expandvars("$HOME/Projects/")
+  project_metadata = projects + "/Metadata/" + project_home[len(projects):]
+  sandbox = project_home + "/sandbox"
+  sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/")
+  sublime_project = sublime_projects + "/" + project_home[len(projects):] + ".sublime-project"
+  bashrc = os.path.expandvars("$HOME/.bashrc")
+
   if add:
-    projects = os.path.expandvars("$HOME/Projects/")
-    existing_home = projects + "Kepler_" + short_target
-    check_call(["git", "clone", prototype, existing_home])
-    check_call(["git", "remote", "set-url", "origin", "git@github.com:scalamacros/kepler.git"], cwd = existing_home)
-    check_call(["git", "remote", "add", "upstream", "git@github.com:scala/scala.git"], cwd = existing_home)
-    check_call(["git", "checkout", "-b", branch], cwd = existing_home)
-    with open(existing_home + "/.hack", "w") as f: f.write(target)
-    checkpoint("Created a Git repo at " + existing_home[len(projects):] + " using " + prototype[len(projects):] + " as a prototype")
+    check_comm(["git", "clone", prototype, project_home])
+    check_comm(["git", "remote", "set-url", "origin", "git@github.com:scalamacros/kepler.git"], cwd = project_home)
+    check_comm(["git", "remote", "add", "upstream", "git@github.com:scala/scala.git"], cwd = project_home)
+    check_comm(["git", "checkout", "-b", branch], cwd = project_home)
+    with open(project_home + "/.hack", "w") as f: f.write(target)
+    checkpoint("Created a Git repo at " + project_home[len(projects):] + " using " + prototype[len(projects):] + " as a prototype")
+
+    check_comm(["cp", "-r", prototype + "/build", project_home + "/build"])
+    checkpoint("Cannibalized " + project_home + "/build")
+
+    check_comm(["mkdir", sandbox])
+    check_comm(["mkdir", project_metadata])
+    check_comm(["ln", "-s", project_home + "/build.xml", project_metadata + "/build.xml"])
+    template = open(os.path.expandvars("$HOME/.hack.sublime-project")).read()
+    template = template.replace("$PROJECT_HOME", project_home)
+    template = template.replace("$PROJECT_NAME", project_home[len(projects):])
+    template = os.path.expandvars(template)
+    with open(sublime_project, "w") as f: f.write(template)
+    checkpoint("Created a Sublime project at " + sublime_project)
   elif delete:
-    check_call(["rm", "-rf", existing_home])
-    checkpoint("Deleted " + existing_home)
+    comm(["rm", "-rf", project_home])
+    comm(["rm", "-rf", project_metadata])
+    comm(["rm", sublime_project])
+    checkpoint("Deleted " + project_home)
 
   if not delete:
     with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(target)
-    check_call(["subl", "--command", "my_hack"])
+    check_comm(["subl", "--command", "my_hack"])
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:

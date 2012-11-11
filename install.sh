@@ -55,6 +55,7 @@ install-into-home .pullrequest
 install-into-home .jenkins
 install-into-home ..hack .hack
 install-into-home hack-completion.bash .hack-completion.bash
+install-into-home hack.sublime-project .hack.sublime-project
 
 install-into-bin pullrequest
 install-into-bin java6
