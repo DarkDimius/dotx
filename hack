@@ -18,7 +18,7 @@ def comm(*args, **kwargs):
 
 def checkpoint(msg):
   title = sys.argv[1]
-  if title.startswith("+") or title.startswith("-"): title = title[1:]
+  # if title.startswith("+") or title.startswith("-"): title = title[1:]
   title = "Hack " + title
   call(["growlnotify", "-n", title, "-m", msg])
   print msg
@@ -32,7 +32,7 @@ try:
   branch = target[target.find(":") + 1:]
   short_target = target[target.rfind("/") + 1:]
   script = Popen(["hack-home", target], stdout=PIPE)
-  project_home = script.communicate()[0].strip() or projects + "Kepler_" + short_target
+  project_home = script.communicate()[0].strip() or os.path.expandvars("$HOME/Projects/") + "Kepler_" + short_target
   exists = script.returncode == 0
   if exists and add: print target + " already exists at " + project_home; sys.exit(1)
   if not exists and not add: print target + " does not exist"; sys.exit(1)
@@ -44,7 +44,7 @@ try:
   projects = os.path.expandvars("$HOME/Projects/")
   project_metadata = projects + "/Metadata/" + project_home[len(projects):]
   sandbox = project_home + "/sandbox"
-  sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/")
+  sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/Projects")
   sublime_project = sublime_projects + "/" + project_home[len(projects):] + ".sublime-project"
   bashrc = os.path.expandvars("$HOME/.bashrc")
 
@@ -70,9 +70,10 @@ try:
     checkpoint("Created a Sublime project at " + sublime_project)
   elif delete:
     comm(["rm", "-rf", project_home])
+    checkpoint("Deleted a Git repo at " + project_home)
     comm(["rm", "-rf", project_metadata])
     comm(["rm", sublime_project])
-    checkpoint("Deleted " + project_home)
+    checkpoint("Deleted a Sublime project at " + sublime_project)
 
   if not delete:
     with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(target)
