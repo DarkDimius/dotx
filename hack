@@ -32,9 +32,9 @@ def update_bashrc(fn):
 try:
   if len(sys.argv) > 3: print >> sys.stderr, "usage: " + sys.argv[0] + " [[+|-]<target> [<prototype>]]"; sys.exit(1)
   target = sys.argv[1] if len(sys.argv) >= 2 else check_output("hack-branch").strip()
+  original_target = target
   add, delete = target.startswith("+"), target.startswith("-")
   if add or delete: target = target[1:]
-  original_target = target
   target = check_output(["hack-branch", target]).strip()
   branch = target[target.find(":") + 1:]
   short_target = target[target.rfind("/") + 1:]
@@ -52,10 +52,11 @@ try:
   project_metadata = projects + "/Metadata/" + project_home[len(projects):]
   sandbox = project_home + "/sandbox"
   sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/Projects")
-  sublime_project = sublime_projects + "/" + project_home[len(projects):] + ".sublime-project"
+  sublime_project = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-project"
+  sublime_workspace = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-workspace"
   bashrc = os.path.expandvars("$HOME/.bashrc")
   alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred/extensions/scripts")
-  alfredextension = alfredextensions + "/" + original_target
+  alfredextension = alfredextensions + "/" + short_target
   alfredextension_plist = alfredextension + "/" + "info.plist"
 
   if add:
@@ -81,35 +82,36 @@ try:
 
     check_comm(["mkdir", alfredextension])
     template = open(os.path.expandvars("$HOME/.hack.alfredextension")).read()
-    template = template.replace("$PROJECT_SHORTNAME", original_target)
+    template = template.replace("$PROJECT_SHORTNAME", short_target)
     template = os.path.expandvars(template)
     with open(alfredextension_plist, "w") as f: f.write(template)
-    checkpoint("Created an Alfred shortcut named " + original_target)
+    checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
-      bashrc.append("""function kep_{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", original_target))
-      bashrc.append("""function sb_{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", original_target))
+      bashrc.append("""function kep_{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
+      bashrc.append("""function sb_{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
       return bashrc
     update_bashrc(create_aliases)
-    checkpoint("Created Bash aliases kep_" + original_target + " and sb_" + original_target)
+    checkpoint("Created Bash aliases kep_" + short_target + " and sb_" + short_target)
   elif delete:
     comm(["rm", "-rf", project_home])
     checkpoint("Deleted the Git repo at " + project_home)
     comm(["rm", "-rf", project_metadata])
     comm(["rm", sublime_project])
+    comm(["rm", sublime_workspace])
     checkpoint("Deleted the Sublime project at " + sublime_project)
     comm(["rm", "-rf", alfredextension])
-    checkpoint("Deleted the Alfred shortcut named " + original_target)
+    checkpoint("Deleted the Alfred shortcut named " + short_target)
     def delete_aliases(bashrc):
-      kep_alias = """function kep_{} {""".replace("{}", original_target)
-      sb_alias = """function sb_{} {""".replace("{}", original_target)
+      kep_alias = """function kep_{} {""".replace("{}", short_target)
+      sb_alias = """function sb_{} {""".replace("{}", short_target)
       return [line for line in bashrc if not line.startswith(kep_alias) and not line.startswith(sb_alias)]
     update_bashrc(delete_aliases)
-    checkpoint("Deleted Bash aliases kep_" + original_target + " and sb_" + original_target)
+    checkpoint("Deleted Bash aliases kep_" + short_target + " and sb_" + short_target)
 
-  if not delete:
-    with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(target)
-    check_comm(["subl", "--command", "my_hack"])
+  with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home)
+  if not delete: check_comm(["subl", "--project", sublime_project])
+  check_comm(["subl", "--command", "my_hack"])
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:
