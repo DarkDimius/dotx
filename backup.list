@@ -84,15 +84,18 @@ libpng
 lighttpd
 pcre
 pkg-config
+pyqt
+qt
 readline
+sip
 tree
 wget
 xz
 
-
-==================
 ==================
 Macports packages:
+
+==================
 Macports packages:
 The following ports are currently installed:
 The following ports are currently installed:
@@ -101,92 +104,92 @@ The following ports are currently installed:
   cctools @836_0+llvm31
   cctools-headers @836_0
   cloog @0.17.0_1
+  dyld-headers @210.2.3_0
+  expat @2.1.0_0
+  gcc47 @4.7.2_2
+  gcc_select @0.1_7
+  gdbm @1.10_2
+  gettext @0.18.1.1_2
+  ghc @7.4.2_1+gcc47
+  ghc-bootstrap @7.0.4_0
+  glpk @4.47_0
+  gmp @5.0.5_0
   autoconf @2.69_0
-  dyld-headers @210.2.3_0
-  expat @2.1.0_0
+  gperf @3.0.4_2
+  help2man @1.40.10_0
   automake @1.12.4_0
-  gcc47 @4.7.2_2
+  hs-json @0.5_0
   cctools @836_0+llvm31
-  gcc_select @0.1_7
+  hs-mtl @2.1.2_0
   cctools-headers @836_0
-  gdbm @1.10_2
+  hs-parsec @3.1.3_0
   cloog @0.17.0_1
-  gettext @0.18.1.1_2
+  hs-text @0.11.2.2_0
   dyld-headers @210.2.3_0
-  ghc @7.4.2_1+gcc47
+  hs-transformers @0.3.0.0_0
   expat @2.1.0_0
-  ghc-bootstrap @7.0.4_0
+  isl @0.10_1
   gcc47 @4.7.2_2
-  glpk @4.47_0
+  ld64 @134.9_0+llvm31
   gcc_select @0.1_7
-  gmp @5.0.5_0
+  libffi @3.0.11_1
   gdbm @1.10_2
-  gperf @3.0.4_2
+  libiconv @1.14_0
   gettext @0.18.1.1_2
-  help2man @1.40.10_0
+  libmpc @1.0.1_0
   ghc @7.4.2_1+gcc47
-  hs-json @0.5_0
+  libstdcxx @4.7.2_2
   ghc-bootstrap @7.0.4_0
-  hs-mtl @2.1.2_0
+  libtool @2.4.2_3
   glpk @4.47_0
-  hs-parsec @3.1.3_0
+  libunwind-headers @35.1_0
+  libxml2 @2.8.0_0
   gmp @5.0.5_0
-  hs-text @0.11.2.2_0
+  libxslt @1.1.27_0
   gperf @3.0.4_2
-  hs-transformers @0.3.0.0_0
+  llvm-3.1 @3.1_4
   help2man @1.40.10_0
-  isl @0.10_1
+  llvm_select @0.2_0
   hs-json @0.5_0
-  ld64 @134.9_0+llvm31
+  m4 @1.4.16_0
   hs-mtl @2.1.2_0
-  libffi @3.0.11_1
+  mpfr @3.1.1-p2_0
   hs-parsec @3.1.3_0
-  libiconv @1.14_0
+  ncurses @5.9_1
   hs-text @0.11.2.2_0
-  libmpc @1.0.1_0
+  p5.12-locale-gettext @1.50.0_7
   hs-transformers @0.3.0.0_0
-  libstdcxx @4.7.2_2
+  perl5 @5.12.4_0+perl5_12
   isl @0.10_1
-  libtool @2.4.2_3
+  perl5.12 @5.12.4_1
   ld64 @134.9_0+llvm31
-  libunwind-headers @35.1_0
+  ppl @1.0_0
   libffi @3.0.11_1
-  libxml2 @2.8.0_0
+  xz @5.0.4_0
   libiconv @1.14_0
-  libxslt @1.1.27_0
+  zlib @1.2.7_0
   libmpc @1.0.1_0
-  llvm-3.1 @3.1_4
   libstdcxx @4.7.2_2
-  llvm_select @0.2_0
   libtool @2.4.2_3
   libunwind-headers @35.1_0
-  m4 @1.4.16_0
   libxml2 @2.8.0_0
-  mpfr @3.1.1-p2_0
   libxslt @1.1.27_0
-  ncurses @5.9_1
   llvm-3.1 @3.1_4
-  p5.12-locale-gettext @1.50.0_7
   llvm_select @0.2_0
-  perl5 @5.12.4_0+perl5_12
   m4 @1.4.16_0
-  perl5.12 @5.12.4_1
   mpfr @3.1.1-p2_0
-  ppl @1.0_0
   ncurses @5.9_1
-  xz @5.0.4_0
   p5.12-locale-gettext @1.50.0_7
-  zlib @1.2.7_0
   perl5 @5.12.4_0+perl5_12
   perl5.12 @5.12.4_1
   ppl @1.0_0
   xz @5.0.4_0
   zlib @1.2.7_0
-
-==================
 
 ==================
 Python packages:
+
+==================
 Python packages:
 PyRSS2Gen==1.0.0
 Twisted==12.0.0
@@ -347,10 +350,10 @@ syntax (1.0.0)
 Perl modules:
 Perl modules:
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 32) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 32) line 6, <FILE> line 7.
@@ -8080,12 +8083,12 @@ Can't cd to (/private/var/spool/postfix/) public: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/spool/postfix/) saved: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/spool/postfix/) trace: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/spool/postfix/) saved: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/spool/postfix/) trace: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) trace: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/tmp/) launchd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/tmp/) launchd: Permission denied
@@ -8109,10 +8112,10 @@ Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string 
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2664) line 6, <FILE> line 7.
 fig	1.41
 Text::Diff::Table	1.41
@@ -8388,8 +8391,8 @@ Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string 
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
 0018 $
@@ -10693,10 +10696,10 @@ Library::Perl::Pod::Perldoc::BaseTo	undef
 Library::Perl::Pod::Perldoc::GetOptsOO	undef
 Library::Perl::Pod::Perldoc::ToChecker	undef
 Library::Perl::Pod::PerldoUseless use of a constant (-tree) in void context at (eval 3703) line 6, <FILE> line 75.
-Useless use of a constant (-tree) in void context at (eval 3703) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 3703) line 6, <FILE> line 75.
 Useless use of a variable in void context at (eval 3703) line 6, <FILE> line 75.
 Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3703) line 6, <FILE> line 75.
+Useless use of a constant (-tree) in void context at (eval 3703) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 3703) line 6, <FILE> line 75.
 Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3703) line 6, <FILE> line 75.
 c::ToMan	undef
 Library::Perl::Pod::Perldoc::ToNroff	undef
@@ -20059,8 +20062,8 @@ xeno_by::build::blib::lib::CPAN::Exception::blocked_urllist	1.001
 xeno_by::build::blib::lib::CPAN::Exception::RecursiveDependency	5.5
 xeno_by::build::blib::lib::CPAN::Exception::yaml_not_installed	5.5
 xeno_by::build::blib::lib::Useless use of numeric ge (>=) in void context at (eval 6616) line 6, <FILE> line 28.
-Useless use of numeric ge (>=) in void context at (eval 6616) line 6, <FILE> line 28.
 Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6616) line 6, <FILE> line 28.
+Useless use of numeric ge (>=) in void context at (eval 6616) line 6, <FILE> line 28.
 Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6616) line 6, <FILE> line 28.
 Useless use of numeric ge (>=) in void context at (eval 6619) line 6, <FILE> line 28.
 Useless use of numeric ge (>=) in void context at (eval 6619) line 6, <FILE> line 28.
@@ -30467,6 +30470,7 @@ New task
 Skype
 Track Jenkins Build
 Wi-Fi-toggle
+bug
 java6
 java7
 java8
@@ -30476,6 +30480,7 @@ New task
 Skype
 Track Jenkins Build
 Wi-Fi-toggle
+bug
 java6
 java7
 java8
