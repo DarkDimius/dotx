@@ -11,7 +11,7 @@ def success(status):
   sys.exit(0)
 
 def error(error):
-  print user + "\n" + repo + "\n" + branch + "\n" + status
+  print user + "\n" + repo + "\n" + branch + "\n" + error
   sys.exit(1)
 
 if len(sys.argv) > 1: error("usage: " + sys.argv[0])
