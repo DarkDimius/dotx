@@ -2,13 +2,19 @@
 import sys, os
 from subprocess import Popen, PIPE
 
-if len(sys.argv) != 1:
-  print "usage: " + sys.argv[0]
+if len(sys.argv) != 2:
+  print "usage: " + sys.argv[0] + " {--dirs|--branches}"
   sys.exit(1)
+
+flavor = sys.argv[1]
 
 projects_root = os.path.expandvars("$HOME/Projects")
 projects = filter(os.path.isdir, map(lambda prj: os.path.join(projects_root, prj), os.listdir(projects_root)))
 hacks = filter(lambda prj: os.path.exists(os.path.join(prj, ".hack")), projects)
+index = dict((open(os.path.join(home, ".hack")).read().strip(), home) for home in hacks)
 
-for hack in hacks:
-  print hack
+for branch, dir in index.items():
+  if flavor == "--dirs":
+    print dir
+  elif flavor == "--branches":
+    print branch

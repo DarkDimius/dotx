@@ -12,7 +12,7 @@ if script.returncode != 0:
   print output
   sys.exit(script.returncode)
 
-homes = Popen(["hack-homes"], stdout=PIPE).communicate()[0].splitlines()
+homes = Popen(["hack-homes", "--dirs"], stdout=PIPE).communicate()[0].splitlines()
 index = dict((open(os.path.join(home, ".hack")).read().strip(), home) for home in homes)
 project = index.get(output)
 
