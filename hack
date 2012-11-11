@@ -9,6 +9,7 @@ def check_comm(*args, **kwargs):
   child = Popen(*args, **kwargs)
   stdout, stderr = child.communicate()
   if child.returncode != 0: raise Exception(stderr.strip())
+  return stdout.splitlines()
 
 def comm(*args, **kwargs):
   kwargs["stdout"] = PIPE
@@ -94,6 +95,10 @@ try:
     update_bashrc(create_aliases)
     checkpoint("Created Bash aliases kep_" + short_target + " and sb_" + short_target)
   elif delete:
+    introspect = check_comm(["hub-introspect"], cwd = project_home)
+    status = introspect[3]
+    if status != "no changes": raise Exception(status)
+
     comm(["rm", "-rf", project_home])
     checkpoint("Deleted the Git repo at " + project_home)
     comm(["rm", "-rf", project_metadata])
