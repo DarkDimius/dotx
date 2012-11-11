@@ -77,5 +77,5 @@ alias sens='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime
 alias des='cd "$HOME/Library/Application Support/Sublime Text 2"'
 alias pap='cd "$HOME/Projects/Pages"'
 alias dotx='cd "$HOME/Projects/Dotx"'
-function kep { cd "$(hack-home)"; }
-function sb { cd "$(hack-home)/sandbox"; }
+function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

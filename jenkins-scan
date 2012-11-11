@@ -31,18 +31,17 @@ def jenkins_build_parameters(data):
       params[param["name"]] = param["value"]
     return params
 
-def kepler_branch_from_jenkins(data):
+def github_branch_from_jenkins(data):
   parameters = jenkins_build_parameters(data) or {}
   if parameters.get("pullrequest"):
     data = urllib2.urlopen("https://api.github.com/repos/scala/scala/pulls/" + parameters["pullrequest"]).read()
     data = json.loads(data)
     if verbose: print "Branch: " + str(data["head"]["label"])
-    m = re.match("(?P<user>.*?):(?P<branch>.*)", data["head"]["label"])
-    if m and m.expand("\g<user>") == "scalamacros":
-      return m.expand("\g<branch>")
-  elif parameters.get("githubUsername") == "scalamacros":
-    if verbose: print "Branch: " + str(parameters["branch"])
-    return parameters["branch"]
+    return data["head"]["label"]
+  elif parameters.get("githubUsername"):
+    branch = parameters["githubUsername"] + ":" + parameters["branch"]
+    if verbose: print "Branch: " + str(branch)
+    return branch
 
 for server in config["servers"]:
   try:
@@ -72,7 +71,7 @@ for job in pending_jobs:
       if verbose: print "Processing " + job
       data = urllib2.urlopen(job + "/api/json").read()
       data = json.loads(data)
-      branch = kepler_branch_from_jenkins(data)
+      branch = github_branch_from_jenkins(data)
       if branch:
         result = data["result"]
         failures = Popen(["jenkins-failures", job], stdout=PIPE).communicate()[0].splitlines()
@@ -83,8 +82,9 @@ for job in pending_jobs:
           call(["growlnotify", "-n", "Jenkins", "-m", msg])
           print msg
           if result == "FAILURE":
-            root = Popen(["hack-home", branch], stdout=PIPE).communicate()[0][:-1]
-            if root and os.path.exists(root):
+            script = Popen(["hack-home", branch], stdout=PIPE)
+            root = script.communicate()[0][:-1]
+            if script.returncode == 0 and os.path.exists(root):
               if failures:
                 dotpartest = root + "/.partest"
                 tests = []

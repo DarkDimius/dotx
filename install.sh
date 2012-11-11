@@ -52,6 +52,7 @@ install-into-home .inputrc
 install-into-home git-completion.bash .git-completion.bash
 install-into-home .pullrequest
 install-into-home .jenkins
+install-into-home ..hack .hack
 
 install-into-bin pullrequest
 install-into-bin java6
@@ -79,6 +80,7 @@ install-into-bin hub-introspect
 install-into-bin toggle-notification-center
 install-into-bin hack
 install-into-bin hack-home
+install-into-bin hack-branch
 
 install-into-etc launchd.conf
 install-into-etc paths
