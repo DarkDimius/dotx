@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+import os, sys, subprocess, time
+
+create_flags = "--create-flags" in sys.argv
+create_dir = "--create-dir" in sys.argv
+create_file = not create_dir
+sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
+
+if len(sys.argv) != 2:
+  print "usage: " + sys.argv[0] + " <test name> [--create-flags] [--create-dir]"
+  sys.exit(1)
+
+name = sys.argv[1]
+allowed_prefixes = ["files/run", "files/pos", "files/neg"]
+if not filter(lambda prefix: name.startswith(prefix), allowed_prefixes):
+  print "name should start with one of these prefixes: " + ", ".join(allowed_prefixes)
+  sys.exit(1)
+
+# todo. make sense of this w.r.t --create-dir
+create_dir = not name.endswith(".scala")
+create_file = name.endswith(".scala")
+
+root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
+dotpartest = root + "/.partest"
+prefix = root + "/test/" + name
+if prefix.endswith(".scala"): prefix = prefix[:-len(".scala")]
+test_dir = prefix
+test_file = test_dir + ".scala"
+check_file = test_dir + ".check"
+flags_file = test_dir + ".flags"
+if os.path.exists(test_dir): print test_dir + " already exists"; sys.exit(1)
+if os.path.exists(test_file): print test_file + " already exists"; sys.exit(1)
+
+def init_file(filename):
+  with open(filename, "w") as f: f.write("")
+  print "Created " + filename
+
+def init_dir(dirname):
+  os.makedirs(dirname)
+  print "Created " + dirname
+  init_file(os.path.join(dirname, "Macros_1.scala"))
+  init_file(os.path.join(dirname, "Test_2.scala"))
+
+if create_file: init_file(test_file)
+elif create_dir: init_dir(test_dir)
+init_file(check_file)
+if create_flags: init_file(flags_file)
+
+lines = []
+if os.path.exists(dotpartest):
+  with open(dotpartest, "r") as config:
+    lines = map(lambda line: line.strip(), config.readlines())
+if len(lines): lines = lines + [""]
+lines += ["# created with partest-create"]
+lines += ["# timestamp: " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())]
+lines += test_file if create_file else test_dir
+with open(dotpartest, "w") as config:
+  config.writelines(map(lambda line: line + "\n", lines))

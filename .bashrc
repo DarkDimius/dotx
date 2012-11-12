@@ -78,6 +78,7 @@ alias td8="partest-diff 8"
 alias td9="partest-diff 9"
 alias tv="partest-suite --view-with-numbers"
 alias te="partest-suite --edit"
+alias tc="partest-create"
 alias h="hack"
 alias hh="hack-homes --all"
 complete -F _hack h
