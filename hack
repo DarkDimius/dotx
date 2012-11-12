@@ -66,6 +66,7 @@ try:
     check_comm(["git", "remote", "add", "upstream", "git@github.com:scala/scala.git"], cwd = project_home)
     check_comm(["git", "checkout", "-b", branch], cwd = project_home)
     with open(project_home + "/.hack", "w") as f: f.write(target)
+    with open(project_home + "/.gitignore", "w") as f: f.write("*.jar")
     checkpoint("Created a Git repo at " + project_home[len(projects):] + " using " + prototype[len(projects):] + " as a prototype")
 
     check_comm(["cp", "-r", prototype + "/build", project_home + "/build"])
@@ -74,6 +75,7 @@ try:
     check_comm(["mkdir", sandbox])
     check_comm(["mkdir", project_metadata])
     check_comm(["ln", "-s", project_home + "/build.xml", project_metadata + "/build.xml"])
+    check_comm(["ln", "-s", project_home + "/.partest", project_metadata + "/.partest"])
     template = open(os.path.expandvars("$HOME/.hack.sublime-project")).read()
     template = template.replace("$PROJECT_HOME", project_home)
     template = template.replace("$PROJECT_NAME", project_home[len(projects):])

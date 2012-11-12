@@ -11,6 +11,7 @@ if not os.path.exists(bin):
   sys.exit(1)
 
 args = sys.argv[1:]
+tests = []
 if not args and os.path.exists(dotpartest):
   tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE).communicate()[0].splitlines()
 

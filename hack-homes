@@ -15,7 +15,7 @@ index = dict((open(os.path.join(home, ".hack")).read().strip(), home) for home i
 
 for branch, dir in index.items():
   if flavor == "--all":
-    print dir.ljust(50, " ") + " " + branch
+    print dir.ljust(60, " ") + " " + branch
   if flavor == "--dirs":
     print dir
   elif flavor == "--full-branches":

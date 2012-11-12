@@ -2,11 +2,14 @@
 import os, sys, subprocess
 
 if len(sys.argv) != 2:
-  print "usage: " + sys.argv[0] + " {--view|--edit}"
+  print "usage: " + sys.argv[0] + " {--view|--view-with-numbers|--edit}"
   sys.exit(1)
 
 action = sys.argv[1]
-if action == "--view":
+view = action == "--view" or action == "--view-with-numbers"
+numbers = action == "--view-with-numbers"
+
+if view:
   root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
   dotpartest = root + "/.partest"
   if os.path.exists(dotpartest):
@@ -17,8 +20,10 @@ if action == "--view":
         if test.startswith("/"): test = test[1:]
         return test
       tests = map(figure_out, tests)
-      for test in tests:
-        print test
+      for idx, test in enumerate(tests):
+        msg = test
+        if numbers: msg = str(idx + 1) + ": " + msg
+        print msg
 else:
   root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
   dotpartest = root + "/.partest"

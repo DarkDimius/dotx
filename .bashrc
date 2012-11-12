@@ -67,7 +67,16 @@ alias js="jenkins-scan"
 alias pr="pullrequest"
 alias t="partest"
 alias td="partest-diff"
-alias tv="partest-suite --view"
+alias td1="partest-diff 1"
+alias td2="partest-diff 2"
+alias td3="partest-diff 3"
+alias td4="partest-diff 4"
+alias td5="partest-diff 5"
+alias td6="partest-diff 6"
+alias td7="partest-diff 7"
+alias td8="partest-diff 8"
+alias td9="partest-diff 9"
+alias tv="partest-suite --view-with-numbers"
 alias te="partest-suite --edit"
 alias h="hack"
 alias hh="hack-homes --all"
@@ -92,3 +101,9 @@ function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
+function kep_6023 { target="$(hack-home "6023")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb_6023 { target="$(hack-home "6023")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep_showraw-nodeprinters { target="$(hack-home "showraw-nodeprinters")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb_showraw-nodeprinters { target="$(hack-home "showraw-nodeprinters")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep_typetags-local-classes { target="$(hack-home "typetags-local-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb_typetags-local-classes { target="$(hack-home "typetags-local-classes")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
