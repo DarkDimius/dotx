@@ -91,3 +91,4 @@ scala-2.10.1
 .jenkins
 .partestlog
 .hack
+kepler_*.sublime-project

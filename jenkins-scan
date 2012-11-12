@@ -79,12 +79,12 @@ for job in pending_jobs:
         if result:
           something_new = True
           msg = result + ": " + job
-          call(["growlnotify", "-n", "Jenkins", "-m", msg])
-          print msg
-          if result == "FAILURE":
-            script = Popen(["hack-home", branch], stdout=PIPE)
-            root = script.communicate()[0][:-1]
-            if script.returncode == 0 and os.path.exists(root):
+          script = Popen(["hack-home", branch], stdout=PIPE)
+          root = script.communicate()[0][:-1]
+          if script.returncode == 0 and os.path.exists(root):
+            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", job])
+            print msg
+            if result == "FAILURE":
               if failures:
                 dotpartest = root + "/.partest"
                 tests = []
@@ -103,8 +103,8 @@ for job in pending_jobs:
                 print "Imported " + str(len(failures)) + " failing tests into " + dotpartest
               else:
                 print "No partest failures found, skipping partest import"
-            else:
-              print "No hack home for " + branch + ", skipping partest import"
+          else:
+            print "No hack home for " + branch + ", ignoring"
         else:
           config["jobs"].append(job)
       checkpoint(job)
