@@ -2,12 +2,10 @@
 import os, sys, subprocess, time
 
 create_flags = "--create-flags" in sys.argv
-create_dir = "--create-dir" in sys.argv
-create_file = not create_dir
 sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
 
 if len(sys.argv) != 2:
-  print "usage: " + sys.argv[0] + " <test name> [--create-flags] [--create-dir]"
+  print "usage: " + sys.argv[0] + " <test name> [--create-flags]"
   sys.exit(1)
 
 name = sys.argv[1]
@@ -16,7 +14,6 @@ if not filter(lambda prefix: name.startswith(prefix), allowed_prefixes):
   print "name should start with one of these prefixes: " + ", ".join(allowed_prefixes)
   sys.exit(1)
 
-# todo. make sense of this w.r.t --create-dir
 create_dir = not name.endswith(".scala")
 create_file = name.endswith(".scala")
 
