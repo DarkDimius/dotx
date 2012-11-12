@@ -10,10 +10,9 @@ if not os.path.exists(bin):
   print bin + " does not exist"
   sys.exit(1)
 
-args = sys.argv[1:]
-tests = []
-if not args and os.path.exists(dotpartest):
-  tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE).communicate()[0].splitlines()
+tests = sys.argv[1:]
+if not tests and os.path.exists(dotpartest):
+  tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE, cwd = root).communicate()[0].splitlines()
 
 def update_dotpartest():
   with open(dotpartestlog, "r") as log:
@@ -54,8 +53,8 @@ def update_dotpartest():
     config.writelines(map(lambda line: line + "\n", lines))
 
 try:
-  if args:
-    subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + args) + " | tee " + dotpartestlog], cwd = root + "/test")
+  if tests:
+    subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + tests) + " | tee " + dotpartestlog], cwd = root + "/test")
     update_dotpartest()
   else:
     print "No tests in " + dotpartest

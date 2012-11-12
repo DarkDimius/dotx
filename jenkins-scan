@@ -10,6 +10,14 @@ if len(sys.argv) > 2:
   sys.exit(1)
 
 requested_url = sys.argv[1] if len(sys.argv) == 2 else None
+if requested_url:
+  script = Popen(["jenkins-url", requested_url], stdout=PIPE)
+  output = script.communicate()[0][:-1]
+  if script.returncode != 0:
+    print output
+    sys.exit(script.returncode)
+  else:
+    requested_url = output
 
 last_time = time.time()
 def checkpoint(message):
@@ -60,7 +68,7 @@ def scan_job(job):
           script = Popen(["hack-home", branch], stdout=PIPE)
           root = script.communicate()[0][:-1]
           if script.returncode == 0 and os.path.exists(root):
-            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", job])
+            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", job + "/consoleText"])
             print msg
             if result == "FAILURE":
               if failures:
