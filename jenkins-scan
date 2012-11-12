@@ -2,11 +2,15 @@
 import os, sys, re, json, urllib2, traceback, time
 from subprocess import call, Popen, PIPE
 
+verbose = "--verbose" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
+
 if len(sys.argv) > 2:
-  print "usage: " + sys.argv[0] + " [-v]"
+  print "usage: " + sys.argv[0] + " [<job url>] [--verbose]"
   sys.exit(1)
 
-verbose = len(sys.argv) > 1 and sys.argv[1] == "-v"
+requested_url = sys.argv[1] if len(sys.argv) == 2 else None
+
 last_time = time.time()
 def checkpoint(message):
   global last_time
@@ -14,14 +18,6 @@ def checkpoint(message):
   last_time = time.time()
   if verbose:
     print str(message) + ": " + str(delta)
-
-try:
-  with open(os.path.expandvars("$HOME/.jenkins"), "r") as f:
-    config = json.load(f)
-except Exception as e:
-  config = {}
-if not config.get("servers"): config["servers"] = []
-if not config.get("jobs"): config["jobs"] = []
 
 def jenkins_build_parameters(data):
   action = next((action for action in data["actions"] if action.get("parameters")), None)
@@ -43,29 +39,11 @@ def github_branch_from_jenkins(data):
     if verbose: print "Branch: " + str(branch)
     return branch
 
-for server in config["servers"]:
-  try:
-    if not server.get("lastBuildNumber"): server["lastBuildNumber"] = 0
-    data = urllib2.urlopen(server["url"] + "/api/json").read()
-    data = json.loads(data)
-    actual = data["lastBuild"]["number"]
-    expected = server["lastBuildNumber"]
-    if actual > expected:
-      jobs = filter(lambda datum: datum["number"] > expected, data["builds"])
-      jobs = map(lambda datum: datum["url"], jobs)
-      if verbose: print "\n".join(map(lambda job: "Enqueuing " + job, jobs))
-      config["jobs"] += jobs
-      server["lastBuildNumber"] = actual
-    checkpoint(server["url"])
-  except:
-    checkpoint(server["url"])
-    _, value, _ = sys.exc_info()
-    print str(server) + ": " + str(value)
+class ScanResult(object):
+  def __init__(self, status):
+    self.status = status
 
-pending_jobs = set(config["jobs"])
-config["jobs"] = []
-something_new = False
-for job in pending_jobs:
+def scan_job(job):
   if job:
     try:
       if verbose: print "Processing " + job
@@ -105,17 +83,59 @@ for job in pending_jobs:
                 print "No partest failures found, skipping partest import"
           else:
             print "No hack home for " + branch + ", ignoring"
+          return ScanResult("COMPLETED")
         else:
-          config["jobs"].append(job)
-      checkpoint(job)
+          return ScanResult("PENDING")
+      else:
+        return ScanResult("UNKNOWN_BRANCH")
     except:
-      checkpoint(job)
       _, value, _ = sys.exc_info()
       print job + ": " + str(value)
-      config["jobs"].append(job)
+      return ScanResult("EXCEPTION")
+    finally:
+      checkpoint(job)
 
-if not something_new:
-  print "Nothing new"
+def scan_config():
+  try:
+    with open(os.path.expandvars("$HOME/.jenkins"), "r") as f:
+      config = json.load(f)
+  except Exception as e:
+    config = {}
+  if not config.get("servers"): config["servers"] = []
+  if not config.get("jobs"): config["jobs"] = []
 
-with open(os.path.expandvars("$HOME/.jenkins"), "w") as f:
-  json.dump(config, f, sort_keys=True, indent=4)
+  for server in config["servers"]:
+    try:
+      if not server.get("lastBuildNumber"): server["lastBuildNumber"] = 0
+      data = urllib2.urlopen(server["url"] + "/api/json").read()
+      data = json.loads(data)
+      actual = data["lastBuild"]["number"]
+      expected = server["lastBuildNumber"]
+      if actual > expected:
+        jobs = filter(lambda datum: datum["number"] > expected, data["builds"])
+        jobs = map(lambda datum: datum["url"], jobs)
+        if verbose: print "\n".join(map(lambda job: "Enqueuing " + job, jobs))
+        config["jobs"] += jobs
+        server["lastBuildNumber"] = actual
+      checkpoint(server["url"])
+    except:
+      checkpoint(server["url"])
+      _, value, _ = sys.exc_info()
+      print str(server) + ": " + str(value)
+
+  pending_jobs = set(config["jobs"])
+  config["jobs"] = []
+  something_new = False
+  for job in pending_jobs:
+    result = scan_job(job)
+    something_new = something_new or result == "COMPLETED"
+    reschedule = result == "EXCEPTION" or result == "PENDING"
+    if reschedule: config["jobs"].append(job)
+
+  with open(os.path.expandvars("$HOME/.jenkins"), "w") as f:
+    json.dump(config, f, sort_keys=True, indent=4)
+
+  return ScanResult("COMPLETED") if something_new else ScanResult("PENDING")
+
+result = scan_job(requested_url) if requested_url else scan_config()
+if not result.status == "COMPLETED": print "Nothing new"
