@@ -2,9 +2,11 @@
 # http://serverfault.com/questions/337123/strange-bash-history-behaviour-when-running-multiple-sessions
 shopt -s cmdhist
 shopt -s histappend
+# http://superuser.com/questions/7414/how-can-i-search-the-bash-history-and-rerun-a-command
+shopt -s histverify
 export HISTFILESIZE=500000
 export HISTSIZE=100000
-export HISTIGNORE="&:[ ]*:exit"
+export HISTIGNORE="&:ls:exit"
 export HISTCONTROL="erasedups:ignoreboth"
 if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
 

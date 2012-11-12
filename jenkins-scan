@@ -35,6 +35,10 @@ def jenkins_build_parameters(data):
       params[param["name"]] = param["value"]
     return params
 
+def github_pullrequest_from_jenkins(data):
+  parameters = jenkins_build_parameters(data) or {}
+  if parameters.get("pullrequest"): return parameters["pullrequest"]
+
 def github_branch_from_jenkins(data):
   parameters = jenkins_build_parameters(data) or {}
   if parameters.get("pullrequest"):
@@ -68,7 +72,10 @@ def scan_job(job):
           script = Popen(["hack-home", branch], stdout=PIPE)
           root = script.communicate()[0][:-1]
           if script.returncode == 0 and os.path.exists(root):
-            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", job + "/consoleText"])
+            action = job + "/consoleText"
+            pullrequest = github_pullrequest_from_jenkins(data)
+            if pullrequest: action = "https://github.com/scala/scala/pull/" + str(pullrequest)
+            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", action], stdout = PIPE)
             print msg
             if result == "FAILURE":
               if failures:
