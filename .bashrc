@@ -64,6 +64,8 @@ alias gm='git merge'
 alias gma='git merge --abort'
 
 source "$HOME/Projects/Libscala/libscala.sh"
+alias gl='git --no-pager log --pretty=oneline -20'
+alias gc="gitx --commit"
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="pullrequest"
