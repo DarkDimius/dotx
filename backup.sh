@@ -4,7 +4,7 @@ target="$(dirname $0)/backup.list"
 if [[ -f "$target" ]]; then rm "$target"; fi
 touch "$target"
 
-echo "Apps:" >> "$target"
+echo "Apps:" > "$target"
 ls -1A /Applications >> "$target"
 
 echo "" >> "$target"

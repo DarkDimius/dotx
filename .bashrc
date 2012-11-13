@@ -104,5 +104,3 @@ function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function kep_typetags-local-classes { target="$(hack-home "typetags-local-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb_typetags-local-classes { target="$(hack-home "typetags-local-classes")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
