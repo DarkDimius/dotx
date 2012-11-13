@@ -106,3 +106,5 @@ function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
+function kep_showraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb_showraw { target="$(hack-home "showraw")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

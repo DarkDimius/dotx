@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, re, json
+import os, sys, re, json, urllib2
 from subprocess import Popen, PIPE
 
 if len(sys.argv) > 2:
@@ -27,9 +27,14 @@ except Exception as e:
   config = []
 target_branch = target_branch or config.get(user + ":" + repo)
 
-url = "https://github.com/" + user + "/" + repo + "/pull/new/"
-if target_branch: url += target_branch + "..."
-url += branch
+data = urllib2.urlopen("https://api.github.com/repos/scala/scala/pulls").read()
+pr = (pr for pr in json.loads(data) if pr["head"]["label"] == "scalamacros:" + branch).next()
+if pr:
+  url = pr["html_url"]
+else:
+  url = "https://github.com/" + user + "/" + repo + "/pull/new/"
+  if target_branch: url += target_branch + "..."
+  url += branch
 
 import webbrowser
 webbrowser.open(url)
