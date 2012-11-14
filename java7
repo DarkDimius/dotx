@@ -1,6 +1,2 @@
 #!/usr/bin/env bash
-if [[ -L "/usr/local/java" ]]; then rm "/usr/local/java"; fi
-java_home=$(/usr/libexec/java_home -v 1.7)
-if [[ $? == 0 ]]; then
-  ln -sv "$java_home/bin" "/usr/local/java"
-fi
+switch-java 1.7

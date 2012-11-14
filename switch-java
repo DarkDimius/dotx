@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+import os, sys, subprocess
+from subprocess import check_output
+
+if len(sys.argv) != 2:
+  print "usage: " + sys.argv[0] + " <java version supported by /usr/libexec/java_home>"
+  sys.exit(1)
+
+target_version = sys.argv[1]
+print "Switching to Java " + target_version
+
+java_home = check_output(["/usr/libexec/java_home", "-v", target_version]).strip()
+print "Java home is detected at " + java_home
+
+mylink_to_javabin = "/usr/local/java"
+if os.path.islink(mylink_to_javabin): os.unlink(mylink_to_javabin)
+os.symlink(java_home + "/bin", mylink_to_javabin)
+print "Symlinked /usr/local/java -> " + java_home + "/bin"
+
+def update_bashrc(fn):
+  bashrc = open(os.path.expandvars("$HOME/.bashrc")).read().splitlines()
+  index = bashrc.index("### Automatically managed part of .bashrc")
+  bashrc = bashrc[:index] + fn(bashrc[index:])
+  with open(os.path.expandvars("$HOME/.bashrc"), "w") as f: f.write("\n".join(bashrc))
+def register_java_home(bashrc):
+  bashrc = [line for line in bashrc if not line.startswith("export JAVA_HOME=")]
+  bashrc.append("export JAVA_HOME=\"" + java_home + "\"")
+  return bashrc
+update_bashrc(register_java_home)
+print "Updated .bashrc with export JAVA_HOME = \"" + java_home + "\""

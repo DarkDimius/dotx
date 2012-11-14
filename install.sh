@@ -62,6 +62,7 @@ install-into-bin pullrequest
 install-into-bin java6
 install-into-bin java7
 install-into-bin java8
+install-into-bin switch-java
 install-into-bin launch-iterm-with-cwd
 install-into-bin skype-menubar-updater
 install-into-bin jenkins-callback

@@ -28,9 +28,9 @@ except Exception as e:
 target_branch = target_branch or config.get(user + ":" + repo)
 
 data = urllib2.urlopen("https://api.github.com/repos/scala/scala/pulls").read()
-pr = (pr for pr in json.loads(data) if pr["head"]["label"] == "scalamacros:" + branch).next()
+pr = [pr for pr in json.loads(data) if pr["head"]["label"] == user + ":" + branch]
 if pr:
-  url = pr["html_url"]
+  url = pr[0]["html_url"]
 else:
   url = "https://github.com/" + user + "/" + repo + "/pull/new/"
   if target_branch: url += target_branch + "..."

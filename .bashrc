@@ -108,3 +108,8 @@ function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"
 ### Don't write anything below this comment, or it might get accidentally destroyed
 function kep_showraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb_showraw { target="$(hack-home "showraw")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep_6662 { target="$(hack-home "6662")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb_6662 { target="$(hack-home "6662")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep_typemacros { target="$(hack-home "typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb_typemacros { target="$(hack-home "typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_10.jdk/Contents/Home"
