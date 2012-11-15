@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+root="$(scala-root)"
+cd "$root"
+ant quick.comp
