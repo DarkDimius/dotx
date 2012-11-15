@@ -71,8 +71,11 @@ install-into-bin jenkins-submit
 install-into-bin jenkins-failures
 install-into-bin jenkins-url
 install-into-bin scala-root
-install-into-bin scala
-install-into-bin scalac
+install-into-bin scala-runner scala
+install-into-bin scala-runner scalac
+install-into-bin scala-runner fsc
+install-into-bin scala-runner scaladoc
+install-into-bin scala-runner scalap
 install-into-bin partest
 install-into-bin partest-lookup
 install-into-bin partest-diff

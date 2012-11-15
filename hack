@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-import sys, os, traceback
-import subprocess
+import sys, os, traceback, time, subprocess
 from subprocess import check_output, call, Popen, PIPE
 
 def check_comm(*args, **kwargs):
@@ -118,8 +117,10 @@ try:
     update_bashrc(delete_aliases)
     checkpoint("Deleted Bash aliases kep_" + short_target + " and sb_" + short_target)
 
-  with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home)
+  sublime_is_open = "Sublime" in check_output(["ps", "aux"])
+  with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home + "\n" + str(not sublime_is_open))
   if not delete: check_comm(["subl", "--project", sublime_project])
+  if not sublime_is_open: time.sleep(0.5)
   check_comm(["subl", "--command", "my_hack"])
 except:
   tpe, value, tb = sys.exc_info()

@@ -29,7 +29,6 @@ FirefoxNightly.app
 Flux.app
 Font Book.app
 Game Center.app
-GitX.app
 Gmail Notifr.app
 Google Chrome.app
 Growl.app
@@ -154,6 +153,7 @@ bdist-mpkg==0.4.4
 bonjour-py==0.3
 bpython==0.11
 distribute==0.6.28
+git-remote-helpers==0.1.0
 http-parser==0.7.12
 ipython==0.13.1
 macholib==1.4.2
@@ -3921,9 +3921,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-194.M5Ceug: Permission denied
+Can't cd to (/private/tmp/) launchd-196.CYjBAu: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-348.FYRlKU: Permission denied
+Can't cd to (/private/tmp/) launchd-411.xTDXrz: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -14885,6 +14885,23 @@ xeno_by::build::blib::lib::YAML::Tiny	1.51
 xeno_by::build::lib::YAML::Tiny	1.51
 xeno_by::build::t::lib::Test	undef
 xeno_by::CPAN::MyConfig	undef
+local::Cellar::git::lib::Git	0.01
+local::Cellar::git::lib::Git::I18N	undef
+local::Cellar::git::lib::Git::IndexInfo	undef
+local::Cellar::git::lib::Git::SVN	undef
+local::Cellar::git::lib::Git::SVN::Editor	undef
+local::Cellar::git::lib::Git::SVN::Fetcher	undef
+local::Cellar::git::lib::Git::SVN::GlobSpec	undef
+local::Cellar::git::lib::Git::SVN::Log	undef
+local::Cellar::git::lib::Git::SVN::Migration	undef
+local::Cellar::git::lib::Git::SVN::Prompt	undef
+local::Cellar::git::lib::Git::SVN::Ra	undef
+local::Cellar::git::lib::Git::SVN::Utils	undef
+local::Cellar::git::lib::Git::SVN::Memoize::YAML	undef
+local::Cellar::git::share::contrib::buildsystems::Generators	1.00
+local::Cellar::git::share::contrib::buildsystems::Generators::QMake	1.00
+local::Cellar::git::share::contrib::buildsystems::Generators::Vcproj	1.00
+local::lib::Git	0.01
 local::texlive::2012::doc::latex::xmlstyle::SGMLS	undef
 local::texlive::2012::doc::latex::xmlstyle::SGMLS::Output	undef
 local::texlive::2012::doc::latex::xmlstyle::SGMLS::Refs	undef
@@ -14970,6 +14987,7 @@ Toggle iTerm
 Applications
 Downloads
 Movies
+6662
 Check Jenkins Status
 New task
 Skype
@@ -14982,10 +15000,14 @@ java7
 java8
 rtm
 showraw
+snippet00
+snippet01
+typemacros
 
 ==================
 Firefox extensions:
 css@xeno.by.xpi
+customizable-shortcuts@timtaubert.de.xpi
 firebug@software.joehewitt.com.xpi
 firegestures@xuldev.org.xpi
 jsonovich@lackoftalent.org.xpi
@@ -15014,6 +15036,10 @@ KeyRemap4MacBook private.xml:
   <appdef>
     <appname>SKYPE</appname>
     <equal>com.skype.skype</equal>
+  </appdef>
+  <appdef>
+    <appname>FIREFOX</appname>
+    <equal>org.mozilla.nightly</equal>
   </appdef>
   <item>
     <name>(except Sublime) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
@@ -15048,6 +15074,56 @@ KeyRemap4MacBook private.xml:
       --KeyToKey--
       KeyCode::F3, ModifierFlag::SHIFT_R,
       KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Sublime) Fn + Left -> F18, Fn + Right -> F19</name>
+    <identifier>private.sublime_fnleft_navigateback</identifier>
+    <only>SUBLIME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::F18,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::F19,
+    </autogen>
+  </item>
+  <item>
+    <name>(Firefox) Fn + Left -> F18, Fn + Right -> F19, Cmd + Left -> Cmd + Shift + [, Cmd + Right -> Cmd + Shift + ]</name>
+    <identifier>private.firefox_fnleft_navigateback</identifier>
+    <only>FIREFOX</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::F18,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::F19,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
     </autogen>
   </item>
   <item>

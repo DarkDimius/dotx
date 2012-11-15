@@ -1,1 +1,1 @@
-scalamacros:2.10.x
+scalamacros:topic/typemacros
