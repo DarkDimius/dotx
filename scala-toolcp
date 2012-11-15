@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+import os, sys, subprocess
+from subprocess import check_output
+
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0]
+  sys.exit(1)
+
+root = check_output(["scala-root"]).strip()
+relative = "build/quick/classes"
+classes = os.path.join(root, relative)
+asm = os.path.join(root, "build/asm/classes")
+jline = os.path.join(root, "lib/jline.jar")
+library, reflect, compiler = map(lambda name: os.path.join(classes, name), ["library", "reflect", "compiler"])
+print ":".join([asm, jline, library, reflect, compiler])

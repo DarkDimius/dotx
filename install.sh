@@ -71,6 +71,7 @@ install-into-bin jenkins-submit
 install-into-bin jenkins-failures
 install-into-bin jenkins-url
 install-into-bin scala-root
+install-into-bin scala-toolcp
 install-into-bin scala-runner scala
 install-into-bin scala-runner scalac
 install-into-bin scala-runner fsc

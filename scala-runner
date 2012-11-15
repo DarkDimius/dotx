@@ -7,6 +7,9 @@
 # There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 ##############################################################################
+#
+# Original version: http://groups.google.com/group/scala-internals/browse_thread/thread/af68affb6f65cb51
+# Modified to encompass options I'd like to always pass to scala + to not rely on jars (which require a lot of time to be packed)
 
 default_java_opts="-Xmx768m -Xms768m"
 bootcp=true
@@ -105,11 +108,6 @@ findScalaHome () {
   echo "$(scala-root)/build/pack"
 }
 
-# mkString : foo bar baz  ==> foo:bar:baz
-mkString () {
-  sep="$1" && shift && ( IFS="$sep" ; echo "$*"; )
-}
-
 onExit() {
   [[ -n $saved_stty ]] && restoreSttySettings
   exit $scala_exit_status
@@ -118,12 +116,9 @@ onExit() {
 # to reenable echo if we are interrupted before completing.
 trap onExit INT
 
-# Finding the root folder for this Scala distribution
-scala_home="$(findScalaHome "${BASH_SOURCE[0]}")"
-
 # Constructing the java classpath
 toolClasspath () {
-  [[ -n "$toolcp" ]] && echo "$toolcp" || mkString : $scala_home/lib/*
+  [[ -n "$toolcp" ]] && echo "$toolcp" || echo "$(scala-toolcp)"
 }
 
 # If using the boot classpath, also pass an empty classpath
@@ -190,7 +185,7 @@ done
 case $programName in
     scala) addResidual "-language:experimental.macros" &&
            addJava "-Dscala.repl.autoruncode=$HOME/.scala_autorun" &&
-           addScala¡ "-Dscala.repl.autoruncode=$HOME/.scala_autorun";;
+           addScala "-Dscala.repl.autoruncode=$HOME/.scala_autorun";;
    scalac) ;;
       fsc) ;;
  scaladoc) ;;
@@ -208,7 +203,6 @@ execCommand \
   ${JAVA_OPTS:-$default_java_opts} \
   "${java_args[@]}" \
   $(classpathArgs) \
-  -Dscala.home="$scala_home" \
   -Dscala.usejavacp=true \
   "${scala_main_class:-$ReplMain}" \
   "${scala_args[@]}" \
