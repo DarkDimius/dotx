@@ -11,5 +11,5 @@ relative = "build/quick/classes"
 classes = os.path.join(root, relative)
 asm = os.path.join(root, "build/asm/classes")
 jline = os.path.join(root, "lib/jline.jar")
-library, reflect, compiler = map(lambda name: os.path.join(classes, name), ["library", "reflect", "compiler"])
-print ":".join([asm, jline, library, reflect, compiler])
+library, reflect, compiler, scalap = map(lambda name: os.path.join(classes, name), ["library", "reflect", "compiler", "scalap"])
+print ":".join([asm, jline, library, reflect, compiler, scalap])

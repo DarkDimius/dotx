@@ -1,4 +1,67 @@
-#!/usr/bin/env bash
-root="$(scala-root)"
-cd "$root"
-ant quick.comp
+#!/usr/bin/env python
+import sys, os, subprocess, json, shutil
+from subprocess import check_output, call
+
+sublime = "--sublime" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
+
+if len(sys.argv) < 2:
+  print "usage: " + sys.argv[0] + " [--sublime] <action> [<args>]"
+  sys.exit(1)
+
+action = sys.argv[1]
+args = sys.argv[2:]
+
+env = {}
+env["action"] = action
+env["meaningful"] = 0
+env["args"] = args
+env["working_dir"] = os.path.abspath(".")
+env["status"] = 0
+
+def notify(msg):
+  if (sublime): call(["growlnotify", "-n", "Kepler", "-m", msg])
+  else: print msg
+
+try:
+  if action == "compile":
+    root = check_output(["scala-root"]).strip()
+    env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+    env["result_line_regex"] = ""
+    env["result_base_dir"] = root
+    sys.exit(call(["ant", "quick.comp"], cwd = root))
+  elif action == "clean":
+    root = check_output(["scala-root"]).strip()
+    def clean_quick(target):
+      quick = os.path.join(root, "build/quick")
+      complete = os.path.join(quick, target + ".complete")
+      classes = os.path.join(quick, "classes/" + target)
+      if os.path.exists(complete): os.unlink(complete)
+      if os.path.exists(classes): shutil.rmtree(classes)
+      notify("Cleaned quick/" + target)
+    target = args[0]
+    if target.startswith("quick/"):
+      clean_quick(target[len("quick/"):])
+    elif target == "all":
+      map(lambda target: clean_quick(target), ["library", "reflect", "compiler"])
+    else:
+      notify("unknown clean target: " + target)
+      sys.exit(1)
+  else:
+    notify("unsupported action " + action)
+    sys.exit(1)
+except:
+  tpe, value, tb = sys.exc_info()
+  if tpe != SystemExit:
+    # print tpe
+    notify(value)
+    # traceback.print_tb(tb)
+    env["status"] = 1
+    sys.exit(1)
+  else:
+    env["status"] = value.code
+    sys.exit(value.code)
+finally:
+  dotgaika = os.path.expandvars("$HOME/.gaika")
+  with open(dotgaika, "w") as f: json.dump(env, f)
+

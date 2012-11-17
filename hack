@@ -92,11 +92,11 @@ try:
     checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
-      bashrc.append("""function kep_{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
-      bashrc.append("""function sb_{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
+      bashrc.append("""function kep{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
+      bashrc.append("""function sb{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
       return bashrc
     update_bashrc(create_aliases)
-    checkpoint("Created Bash aliases kep_" + short_target + " and sb_" + short_target)
+    checkpoint("Created Bash aliases kep" + short_target + " and sb" + short_target)
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
@@ -111,11 +111,11 @@ try:
     comm(["rm", "-rf", alfredextension])
     checkpoint("Deleted the Alfred shortcut named " + short_target)
     def delete_aliases(bashrc):
-      kep_alias = """function kep_{} {""".replace("{}", short_target)
-      sb_alias = """function sb_{} {""".replace("{}", short_target)
+      kep_alias = """function kep{} {""".replace("{}", short_target)
+      sb_alias = """function sb{} {""".replace("{}", short_target)
       return [line for line in bashrc if not line.startswith(kep_alias) and not line.startswith(sb_alias)]
     update_bashrc(delete_aliases)
-    checkpoint("Deleted Bash aliases kep_" + short_target + " and sb_" + short_target)
+    checkpoint("Deleted Bash aliases kep" + short_target + " and sb" + short_target)
 
   sublime_is_open = "Sublime" in check_output(["ps", "aux"])
   with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home + "\n" + str(not sublime_is_open))
