@@ -10,10 +10,9 @@
     <false/>
     <key>UserName</key>
     <string>xeno_by</string>
-    <key>Program</key>
-    <string>/Users/xeno_by/Projects/Dotx/backup.sh</string>
     <key>ProgramArguments</key>
     <array>
+        <string>/Users/xeno_by/Projects/Dotx/backup.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>

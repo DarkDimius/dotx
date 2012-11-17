@@ -143,8 +143,8 @@ def scan_config():
   something_new = False
   for job in pending_jobs:
     result = scan_job(job)
-    something_new = something_new or result == "COMPLETED"
-    reschedule = result == "EXCEPTION" or result == "PENDING"
+    something_new = something_new or result.status == "COMPLETED"
+    reschedule = result.status == "EXCEPTION" or result.status == "PENDING"
     if reschedule: config["jobs"].append(job)
 
   with open(os.path.expandvars("$HOME/.jenkins"), "w") as f:

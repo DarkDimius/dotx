@@ -41,6 +41,21 @@ function install-into-daemons() {
   fi
 }
 
+function install-into-agents() {
+  name=$1
+  from="$(realpath $(dirname $0))/$name.plist"
+  to="/Library/LaunchAgents/$name.plist"
+
+  if [[ -f "$to" ]]; then
+    echo "$to already installed"
+    return 0;
+  else
+    cp -v "$from" "$to"
+    launchctl load "$to"
+    launchctl start local.$name
+  fi
+}
+
 install-into-home .gitconfig
 install-into-home gitignore .gitignore
 install-into-home .scala_autorun
@@ -93,12 +108,14 @@ install-into-bin hack-home
 install-into-bin hack-homes
 install-into-bin hack-branch
 install-into-bin gaika
+install-into-bin gitblit
 
 install-into-etc launchd.conf
 install-into-etc paths
 
 install-into-daemons by.xeno.dotx_backup
-install-into-daemons by.xeno.jenkins_daemon
+install-into-daemons by.xeno.gitblit
+install-into-agents by.xeno.jenkins_agent
 
 if [[ ! -d "/usr/local/sbt" ]]; then
   git clone https://github.com/paulp/sbt-extras /usr/local/sbt
