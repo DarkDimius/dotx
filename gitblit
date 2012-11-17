@@ -1,3 +1,37 @@
-#!/usr/bin/env bash
-cd /usr/local/gitblit
-java -jar gitblit.jar
+#!/usr/bin/env python
+import os, sys, subprocess, webbrowser
+from subprocess import call, check_output, Popen, PIPE
+
+if len(sys.argv) == 1:
+  call(["java", "-jar", "gitblit.jar"], cwd = "/usr/local/gitblit")
+else:
+  command = sys.argv[1]
+  args = sys.argv[2:]
+
+  script = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE)
+  output = script.communicate()[0].strip()
+  if script.returncode != 0:
+    print output
+    sys.exit(script.returncode)
+  else:
+    root = output
+    head = check_output(["git", "rev-parse", "HEAD"]).strip()
+
+  if command == "log":
+    if len(args) == 0:
+      webbrowser.open("https://localhost:8443/log/" + os.path.basename(root))
+    elif len(args) == 1:
+      target = os.path.relpath(args[0], root)
+      webbrowser.open("https://localhost:8443/history/" + os.path.basename(root) + "/" + head + "/" + target.replace("/", "%2f"))
+    else:
+      print "usage: " + sys.argv[0] + " log [target]"
+      sys.exit(1)
+  elif command == "blame":
+    if len(args) == 1:
+      target = os.path.relpath(args[0], root)
+      webbrowser.open("https://localhost:8443/blame/" + os.path.basename(root) + "/" + head + "/" + target.replace("/", "%2f"))
+    else:
+      print "usage: " + sys.argv[0] + " blame <target>"
+      sys.exit(1)
+  else:
+    print "unknown command: " + command
