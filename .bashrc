@@ -121,3 +121,5 @@ function kep6673 { target="$(hack-home "6673")"; if [[ $? == 0 ]]; then cd "$tar
 function sb6673 { target="$(hack-home "6673")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

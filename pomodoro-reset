@@ -1,0 +1,9 @@
+#!/usr/bin/osascript
+on run argv
+  tell application "System Events"
+    tell process "My Little Pomodoro"
+      click menu item "Stop" of menu "Timer" of menu bar 1
+      click menu item "Reset" of menu "Timer" of menu bar 1
+    end tell
+  end tell
+end run

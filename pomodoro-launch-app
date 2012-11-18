@@ -1,0 +1,9 @@
+#!/usr/bin/osascript
+on run argv
+  tell application "My Little Pomodoro"
+    activate
+  end tell
+  tell application "System Events"
+    set visible of process "My Little Pomodoro" to false
+  end tell
+end run

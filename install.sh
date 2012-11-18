@@ -109,6 +109,13 @@ install-into-bin hack-homes
 install-into-bin hack-branch
 install-into-bin gaika
 install-into-bin gitblit
+install-into-bin pomodoro-launch-app
+install-into-bin pomodoro-pomodoro
+install-into-bin pomodoro-shortbreak
+install-into-bin pomodoro-longbreak
+install-into-bin pomodoro-start
+install-into-bin pomodoro-stop
+install-into-bin pomodoro-reset
 
 install-into-etc launchd.conf
 install-into-etc paths
