@@ -124,14 +124,11 @@ def scan_config():
       if not server.get("lastBuildNumber"): server["lastBuildNumber"] = 0
       data = urllib2.urlopen(server["url"] + "/api/json").read()
       data = json.loads(data)
-      actual = data["lastBuild"]["number"]
-      expected = server["lastBuildNumber"]
-      if actual > expected:
-        jobs = filter(lambda datum: datum["number"] > expected, data["builds"])
-        jobs = map(lambda datum: datum["url"], jobs)
-        if verbose: print "\n".join(map(lambda job: "Enqueuing " + job, jobs))
-        config["jobs"] += jobs
-        server["lastBuildNumber"] = actual
+      for number in range(server["lastBuildNumber"] + 1, data["nextBuildNumber"]):
+        job = server["url"] + "/" + str(number)
+        if verbose: print "Enqueuing " + job
+        config["jobs"].append(job)
+        server["lastBuildNumber"] = number
       checkpoint(server["url"])
     except:
       checkpoint(server["url"])

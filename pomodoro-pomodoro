@@ -1,5 +1,13 @@
 #!/usr/bin/osascript
 on run argv
+  if application "My Little Pomodoro" is not running then
+    tell application "My Little Pomodoro"
+      activate
+    end tell
+    tell application "System Events"
+      set visible of process "My Little Pomodoro" to false
+    end tell
+  end if
   tell application "System Events"
     tell process "My Little Pomodoro"
       click menu item "Stop" of menu "Timer" of menu bar 1
