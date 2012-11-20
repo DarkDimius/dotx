@@ -43,6 +43,7 @@ Mail.app
 Messages.app
 Microsoft Office 2011
 Mission Control.app
+My Little Pomodoro.app
 Notes.app
 Photo Booth.app
 Preview.app
@@ -63,6 +64,7 @@ TeX
 TextEdit.app
 Time Machine.app
 TotalFinder.app
+Tweetbot.app
 Utilities
 VLC.app
 VirtualBox.app
@@ -149,6 +151,7 @@ Pygments==1.5
 Twisted==12.0.0
 WebOb==1.2.3
 altgraph==0.9
+appscript==1.0.1
 argh==0.16.0
 bdist-mpkg==0.4.4
 bonjour-py==0.3
@@ -3922,9 +3925,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-200.TQ7sEl: Permission denied
+Can't cd to (/private/tmp/) launchd-199.lXgxmg: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-352.rxZ6WM: Permission denied
+Can't cd to (/private/tmp/) launchd-343.vQQAtI: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -14992,8 +14995,13 @@ Movies
 Check Jenkins Status
 Mission control
 New task
+Pomodoro > Long break
+Pomodoro > Pomodoro
+Pomodoro > Reset
+Pomodoro > Short break
+Pomodoro > Start
+Pomodoro > Stop
 Skype
-Toggle notification center
 What is My IP
 Wi-Fi-toggle
 bashrc
@@ -15009,6 +15017,7 @@ rtm
 showraw
 snippet00
 snippet01
+snippet02
 typemacros
 
 ==================

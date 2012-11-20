@@ -112,7 +112,6 @@ function kep6662 { target="$(hack-home "6662")"; if [[ $? == 0 ]]; then cd "$tar
 function sb6662 { target="$(hack-home "6662")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function keptypemacros { target="$(hack-home "typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbtypemacros { target="$(hack-home "typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -123,3 +122,4 @@ function kep210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$t
 function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
