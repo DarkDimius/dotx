@@ -45,7 +45,7 @@ try:
   if not exists and not add: print >> sys.stderr, target + " does not exist"; sys.exit(1)
   prototype = sys.argv[2] if len(sys.argv) >= 3 else None
   if exists and prototype: print >> sys.stderr, "prototype cannot be used with a pre-existing target"; sys.exit(1)
-  if not prototype: prototype = check_output("hack-branch").strip()
+  if not prototype: prototype = check_output("hack-prototype").strip()
   prototype = check_output(["hack-home", prototype]).strip()
 
   projects = os.path.expandvars("$HOME/Projects/")

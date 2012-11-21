@@ -68,14 +68,14 @@ def scan_job(job):
         if failures: result = "FAILURE"
         if result:
           something_new = True
-          msg = result + ": " + job
+          msg = result + ": " + branch[branch.index(":") + 1:]
           script = Popen(["hack-home", branch], stdout=PIPE)
           root = script.communicate()[0][:-1]
           if script.returncode == 0 and os.path.exists(root):
             action = job + "/consoleText"
             pullrequest = github_pullrequest_from_jenkins(data)
             if pullrequest: action = "https://github.com/scala/scala/pull/" + str(pullrequest)
-            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", action], stdout = PIPE)
+            call(["terminal-notifier", "-title", "Jenkins", "-message", msg, "-open", action, "-group", branch], stdout = PIPE)
             print msg
             if result == "FAILURE":
               if failures:

@@ -52,6 +52,7 @@ Reminders.app
 Retinizer.app
 Safari.app
 Scroll Reverser.app
+ShadowKiller.app
 Skim.app
 Skype.app
 Slate.app
@@ -3925,9 +3926,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-199.lXgxmg: Permission denied
+Can't cd to (/private/tmp/) launchd-201.KXcJqV: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-343.vQQAtI: Permission denied
+Can't cd to (/private/tmp/) launchd-372.LbK7dj: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -14990,6 +14991,7 @@ Applications
 Downloads
 Movies
 2.10.x
+6023
 6662
 6673
 Check Jenkins Status
@@ -15007,6 +15009,7 @@ Wi-Fi-toggle
 bashrc
 bug
 dothack
+dothackproto
 dotjenkins
 dotslate
 hack

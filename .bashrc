@@ -15,6 +15,7 @@ if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
 source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
+source $HOME/.partest-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 function parse_git_branch {
@@ -123,3 +124,13 @@ function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then
 function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function kep6023 { target="$(hack-home "6023")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6023 { target="$(hack-home "6023")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep5875 { target="$(hack-home "5875")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb5875 { target="$(hack-home "5875")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6696 { target="$(hack-home "6696")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6696 { target="$(hack-home "6696")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

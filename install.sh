@@ -69,9 +69,11 @@ install-into-home git-completion.bash .git-completion.bash
 install-into-home .pullrequest
 install-into-home .jenkins
 install-into-home ..hack .hack
+install-into-home ..hackproto .hackproto
 install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
 install-into-home hack.alfredextension .hack.alfredextension
+install-into-home partest-completion.bash .partest-completion.bash
 
 install-into-bin pullrequest
 install-into-bin java6
@@ -107,6 +109,7 @@ install-into-bin hack
 install-into-bin hack-home
 install-into-bin hack-homes
 install-into-bin hack-branch
+install-into-bin hack-prototype
 install-into-bin gaika
 install-into-bin gitblit
 install-into-bin pomodoro-launch-app
