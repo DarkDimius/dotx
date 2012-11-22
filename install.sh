@@ -99,6 +99,7 @@ install-into-bin partest-lookup
 install-into-bin partest-diff
 install-into-bin partest-suite
 install-into-bin partest-create
+install-into-bin partest-open
 install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
 install-into-bin stree

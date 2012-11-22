@@ -37,6 +37,7 @@ Keka.app
 Key Codes.app
 Keyboard Cleaner.app
 Launchpad.app
+Leda-IC-122.883.app
 Leda-IU-122.694.app
 Lingon.app
 Mail.app
@@ -45,6 +46,7 @@ Microsoft Office 2011
 Mission Control.app
 My Little Pomodoro.app
 Notes.app
+OnyX.app
 Photo Booth.app
 Preview.app
 QuickTime Player.app
@@ -83,6 +85,7 @@ ack
 bash
 bash-completion
 coreutils
+findutils
 git
 libpng
 lighttpd
@@ -3926,9 +3929,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-201.KXcJqV: Permission denied
+Can't cd to (/private/tmp/) launchd-199.LZGaVI: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-372.LbK7dj: Permission denied
+Can't cd to (/private/tmp/) launchd-375.uyvdwD: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -8969,6 +8972,89 @@ Library::Perl::Extras::XML::XPath::Node::Element	undef
 Library::Perl::Extras::XML::XPath::Node::Namespace	undef
 Library::Perl::Extras::XML::XPath::Node::PI	undef
 Library::Perl::Extras::XML::XPath::Node::Text	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssoc	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocCDE	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocCheck	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocDebian	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocKDE	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocKDEXDG	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocMacOSX	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocMailcap	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocMandrake	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocMcap	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocWindows	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXAssocXDG	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXBottle	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXCDE	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXConfig	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXDebian	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXLog	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenu	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuCDE	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuCheck	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuDebian	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuDtop	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuMacOSX	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuShortcut	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuWindows	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMenuXDG	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMimeKDE	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXMimeMcap	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXOpts	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXPlist	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXRecode	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXReplicateDir	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXRPM	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXRWConfig	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXSunpkg	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXTinySAX	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXTinySAXBase	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXTinySAXLog	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXTinySAXMultiplexer	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXUpgrade	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXUtils	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::CXXMLDOM	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry	0.30
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::Key	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::Value	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::Win95::File	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::Win95::Key	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::Win95::Value	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::WinNT::File	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::WinNT::Key	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::Parse::Win32Registry::WinNT::Value	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::DOM	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::NamespaceSupport	1.11
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::RegExp	0.02
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX	0.96
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::DOM::DOMException	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::DOM::NamedNodeMap	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::DOM::NodeList	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::Handler::BuildDOM	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::Base	1.04
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::DocumentLocator	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::Exception	1.01
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::ParserFactory	1.01
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl	0.96
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::DebugHandler	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::DocType	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::DTDDecls	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::EncodingDetect	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Exception	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::NoUnicodeExt	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Productions	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Reader	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::UnicodeExt	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::XMLDecl	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Reader::NoUnicodeExt	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Reader::Stream	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Reader::String	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Reader::UnicodeExt	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::lib::perl::XML::SAX::PurePerl::Reader::URI	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::share::crossover::bottle_templates::win2000::CXBT_win2000	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::share::crossover::bottle_templates::win98::CXBT_win98	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::share::crossover::bottle_templates::winvista::CXBT_winvista	undef
+Shared::Dropbox::Contents::SharedSupport::CrossOver::share::crossover::bottle_templates::winxp::CXBT_winxp	undef
 xeno_by::build::blib::lib::Algorithm::Diff	1.1902
 xeno_by::build::blib::lib::Algorithm::DiffOld	1.1
 xeno_by::build::lib::Algorithm::Diff	1.1902
@@ -9194,8 +9280,7 @@ xeno_by::build::t::lib::TestApp::Controller::Config	undef
 xeno_by::build::t::lib::TestApp::Controller::Root	undef
 xeno_by::build::blib::lib::Catalyst::Plugin::ConfigLoader	0.30
 xeno_by::build::inc::Module::Install	1.00
-xeno_by::build:Use of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6246) line 6, <FILE> line 313.
-:inc::Module::Install::Base	1.00
+xeno_by::build::inc::Module::Install::Base	1.00
 xeno_by::build::inc::Module::Install::Can	1.00
 xeno_by::build::inc::Module::Install::Fetch	1.00
 xeno_by::build::inc::Module::Install::Makefile	1.00
@@ -9209,7 +9294,8 @@ xeno_by::build::t::lib::TestApp::Controller::Root	undef
 xeno_by::build::blib::lib::Catalyst::Plugin::Static::Simple	0.30
 xeno_by::build::inc::Module::AutoInstall	1.06
 xeno_by::build::inc::Module::Install	1.06
-xeno_by::build::inc::Module::Install::AuthorRequires	0.02
+xeno_by::build::inc::Module::InstUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6254) line 6, <FILE> line 313.
+all::AuthorRequires	0.02
 xeno_by::build::inc::Module::Install::AuthorTests	0.002
 xeno_by::build::inc::Module::Install::AutoInstall	1.06
 xeno_by::build::inc::Module::Install::Base	1.06
@@ -9272,8 +9358,7 @@ xeno_by::build::blib::lib::Catalyst::DispatchType::Index	undef
 xeno_by::build::blib::lib::Catalyst::DispatchType::Path	undef
 xeno_by::build::blib::lib::Catalyst::DispatchType::Regex	undef
 xeno_by::build::blib::lib::Catalyst::Engine::HTTP	undef
-xeno_by::build::blib::lib::Catalyst::Exception:Use of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6265) line 6, <FILE> line 313.
-:Basic	undef
+xeno_by::build::blib::lib::Catalyst::Exception::Basic	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Detach	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Go	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Interface	undef
@@ -9286,7 +9371,8 @@ xeno_by::build::blib::lib::Catalyst::Script::Test	undef
 xeno_by::build::inc::Module::AutoInstall	1.06
 xeno_by::build::inc::Module::Install	1.06
 xeno_by::build::inc::Module::Install::Authority	0.02
-xeno_by::build::inc::Module::Install::AuthorRequires	0.02
+xeno_by::build::inc::Module::Install::AuthorReqUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6273) line 6, <FILE> line 313.
+uires	0.02
 xeno_by::build::inc::Module::Install::AuthorTests	0.002
 xeno_by::build::inc::Module::Install::AutoInstall	1.06
 xeno_by::build::inc::Module::Install::Base	1.06
@@ -9481,8 +9567,7 @@ xeno_by::build::t::lib::TestApp::Controller::Priorities::path_vs_index	undef
 xeno_by::build::t::lib::TestApp::Controller::Priorities::re_vs_index	undef
 xeno_by::build::t::lib::TestApp::DispatchType::CustomPostLoad	undef
 xeno_by::build::t::lib::TestApp::DispatchType::CustomPreLoad	undef
-xeno_by::build::t::lib::TestApp::Model::ClosUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6279) line 6, <FILE> line 313.
-uresInConfig	undef
+xeno_by::build::t::lib::TestApp::Model::ClosuresInConfig	undef
 xeno_by::build::t::lib::TestApp::Model::Foo	undef
 xeno_by::build::t::lib::TestApp::Model::Generating	undef
 xeno_by::build::t::lib::TestApp::Model::Foo::Bar	undef
@@ -9495,7 +9580,8 @@ xeno_by::build::t::lib::TestApp::View::Dump::Body	undef
 xeno_by::build::t::lib::TestApp::View::Dump::Env	undef
 xeno_by::build::t::lib::TestApp::View::Dump::Request	undef
 xeno_by::build::t::lib::TestApp::View::Dump::Response	undef
-xeno_by::build::t::lib::TestAppChainedAbsolutePathPart::Controller::Foo	undef
+xeno_by::build::t:Use of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6287) line 6, <FILE> line 313.
+:lib::TestAppChainedAbsolutePathPart::Controller::Foo	undef
 xeno_by::build::t::lib::TestAppChainedRecursive::Controller::Foo	undef
 xeno_by::build::t::lib::TestAppDoubleAutoBug::Controller::Root	undef
 xeno_by::build::t::lib::TestAppEncoding::Controller::Root	undef
@@ -9550,8 +9636,7 @@ xeno_by::build::blib::lib::Catalyst::DispatchType::Regex	undef
 xeno_by::build::blib::lib::Catalyst::Engine::HTTP	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Basic	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Detach	undef
-xeno_by::build::blib::lib::Catalyst::Exception::Go	undeUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6298) line 6, <FILE> line 313.
-f
+xeno_by::build::blib::lib::Catalyst::Exception::Go	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Interface	undef
 xeno_by::build::blib::lib::Catalyst::Request::Upload	undef
 xeno_by::build::blib::lib::Catalyst::Script::CGI	undef
@@ -9565,7 +9650,8 @@ xeno_by::build::inc::Module::Install::Authority	0.02
 xeno_by::build::inc::Module::Install::AuthorRequires	0.02
 xeno_by::build::inc::Module::Install::AuthorTests	0.002
 xeno_by::build::inc::Module::Install::AutoInstall	1.06
-xeno_by::build::inc::Module::Install::Base	1.06
+xeno_byUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6306) line 6, <FILE> line 313.
+::build::inc::Module::Install::Base	1.06
 xeno_by::build::inc::Module::Install::Can	1.06
 xeno_by::build::inc::Module::Install::CheckConflicts	0.02
 xeno_by::build::inc::Module::Install::Fetch	1.06
@@ -10088,11 +10174,7 @@ xeno_by::build::blib::lib::CPAN::Version	5.5001
 xeno_by::build::blib::lib::CPAN::Exception::blocked_urllist	1.001
 xeno_by::build::blib::lib::CPAN::Exception::RecursiveDependency	5.5
 xeno_by::build::blib::lib::CPAN::Exception::yaml_not_installed	5.5
-xeno_by::build::blib::lib::Useless use of numeric ge (>=) in void context at (eval 6616) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6616) line 6, <FILE> line 28.
-Useless use of numeric ge (>=) in void context at (eval 6619) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6619) line 6, <FILE> line 28.
-CPAN::Exception::yaml_process_error	5.5
+xeno_by::build::blib::lib::CPAN::Exception::yaml_process_error	5.5
 xeno_by::build::blib::lib::CPAN::FTP::netrc	1.01
 xeno_by::build::blib::lib::CPAN::HTTP::Client	1.9600
 xeno_by::build::blib::lib::CPAN::HTTP::Credentials	1.9600
@@ -10108,7 +10190,11 @@ xeno_by::build::lib::CPAN::CacheMgr	5.5001
 xeno_by::build::lib::CPAN::Complete	5.5
 xeno_by::build::lib::CPAN::Debug	5.5001
 xeno_by::build::lib::CPAN::DeferredCode	5.50
-xeno_by::build::lib::CPAN::Distribution	1.9602
+xeno_by::build::lib::CPAN::Distribution	1Useless use of numeric ge (>=) in void context at (eval 6624) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6624) line 6, <FILE> line 28.
+Useless use of numeric ge (>=) in void context at (eval 6627) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6627) line 6, <FILE> line 28.
+.9602
 xeno_by::build::lib::CPAN::Distroprefs	6
 xeno_by::build::lib::CPAN::Distrostatus	5.5
 xeno_by::build::lib::CPAN::FirstTime	5.5303
@@ -14790,11 +14876,7 @@ xeno_by::build::blib::lib::YAML::Loader	0.84
 xeno_by::build::blib::lib::YAML::Marshall	0.84
 xeno_by::build::blib::lib::YAML::Mo	undef
 xeno_by::build::blib::lib::YAML::Node	0.84
-xeno_by::build::Useless use of numeric ge (>=) in void context at (eval 9956) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9956) line 6, <FILE> line 28.
-Useless use of numeric ge (>=) in void context at (eval 9959) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9959) line 6, <FILE> line 28.
-blib::lib::YAML::Tag	0.84
+xeno_by::build::blib::lib::YAML::Tag	0.84
 xeno_by::build::blib::lib::YAML::Types	0.84
 xeno_by::build::blib::lib::YAML::Dumper::Base	0.84
 xeno_by::build::blib::lib::YAML::Loader::Base	0.84
@@ -14809,7 +14891,11 @@ xeno_by::build::inc::Module::Install::Include	1.06
 xeno_by::build::inc::Module::Install::Makefile	1.06
 xeno_by::build::inc::Module::Install::Metadata	1.06
 xeno_by::build::inc::Module::Install::Package	0.30
-xeno_by::build::inc::Module::Install::Win32	1.06
+xeno_by::build::inc::Module::InstalUseless use of numeric ge (>=) in void context at (eval 9964) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9964) line 6, <FILE> line 28.
+Useless use of numeric ge (>=) in void context at (eval 9967) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9967) line 6, <FILE> line 28.
+l::Win32	1.06
 xeno_by::build::inc::Module::Install::WriteAll	1.06
 xeno_by::build::inc::Test::Base	0.60
 xeno_by::build::inc::Test::Builder	0.98
@@ -14991,9 +15077,11 @@ Applications
 Downloads
 Movies
 2.10.x
+5875
 6023
 6662
 6673
+6696
 Check Jenkins Status
 Mission control
 New task
@@ -15016,6 +15104,9 @@ hack
 java6
 java7
 java8
+macrosnippet00
+macrosnippet01
+pr
 rtm
 showraw
 snippet00

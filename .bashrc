@@ -80,6 +80,16 @@ alias td6="partest-diff 6"
 alias td7="partest-diff 7"
 alias td8="partest-diff 8"
 alias td9="partest-diff 9"
+alias to="partest-open"
+alias to1="partest-open 1"
+alias to2="partest-open 2"
+alias to3="partest-open 3"
+alias to4="partest-open 4"
+alias to5="partest-open 5"
+alias to6="partest-open 6"
+alias to7="partest-open 7"
+alias to8="partest-open 8"
+alias to9="partest-open 9"
 alias tv="partest-suite --view-with-numbers"
 alias te="partest-suite --edit"
 alias tc="partest-create"
@@ -134,3 +144,7 @@ function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? ==
 function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet03 { target="$(hack-home "snippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet03 { target="$(hack-home "snippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet04 { target="$(hack-home "snippet04")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet04 { target="$(hack-home "snippet04")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
