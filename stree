@@ -4,5 +4,6 @@ if [[ $? == 128 ]]; then
   git status
 else
   cd "$(git rev-parse --show-toplevel)"
+  $(cd "/Users/xeno_by/Library/Application Support/SourceTree"; cp "openWindowList.clean" "openWindowList")
   stock-stree . &
 fi

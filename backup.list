@@ -46,7 +46,6 @@ Microsoft Office 2011
 Mission Control.app
 My Little Pomodoro.app
 Notes.app
-OnyX.app
 Photo Booth.app
 Preview.app
 QuickTime Player.app
@@ -3929,9 +3928,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-199.LZGaVI: Permission denied
+Can't cd to (/private/tmp/) launchd-199.CJzrIe: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-375.uyvdwD: Permission denied
+Can't cd to (/private/tmp/) launchd-20138.zr6x8U: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-360.cY1uep: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4014,6 +4015,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15112,6 +15115,8 @@ showraw
 snippet00
 snippet01
 snippet02
+snippet03
+snippet04
 typemacros
 
 ==================

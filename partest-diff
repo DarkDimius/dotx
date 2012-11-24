@@ -17,4 +17,4 @@ base, ext = os.path.splitext(test)
 flavor = os.path.basename(os.path.dirname(base))
 checkfile = base + ".check"
 logfile = base + "-" + flavor + ".log"
-subprocess.call(["diffmerge", logfile, checkfile])
+subprocess.call(["bash", "-c", "diffmerge " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
