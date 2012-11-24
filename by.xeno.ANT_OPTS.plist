@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>by.xeno.ANT_OPTS</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>launchctl</string>
+    <string>setenv</string>
+    <string>JAVA_OPTS</string>
+    <string>-Xms1536M -Xmx3072M -Xss2M -XX:MaxPermSize=384M -XX:+UseParallelGC</string>
+  </array>
+  <key>QueueDirectories</key>
+  <array/>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>WatchPaths</key>
+  <array/>
+</dict>
+</plist>
