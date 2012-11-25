@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import os, sys
+
+try:
+  ignore = False
+  for line in sys.stdin:
+    if line and not ignore:
+      print line[:-1]
+      if "during phase:" in line:
+        ignore = True
+        print "...further crash information omitted..."
+except KeyboardInterrupt:
+  pass

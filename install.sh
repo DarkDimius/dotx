@@ -60,6 +60,7 @@ install-into-home .gitconfig
 install-into-home gitignore .gitignore
 install-into-home .scala_autorun
 install-into-home .scala_history
+install-into-home .scala_ignore_crashes
 install-into-home .bashrc
 install-into-home .bash_profile
 install-into-home .slate
@@ -74,7 +75,7 @@ install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
 install-into-home hack.alfredextension .hack.alfredextension
 install-into-home partest-completion.bash .partest-completion.bash
-install-into-home .scala_tier .scala_tier
+install-into-home .scala_tier
 
 install-into-bin pullrequest
 install-into-bin java6
@@ -82,6 +83,7 @@ install-into-bin java7
 install-into-bin java8
 install-into-bin switch-java
 install-into-bin launch-iterm-with-cwd
+install-into-bin skype
 install-into-bin skype-menubar-updater
 install-into-bin jenkins-callback
 install-into-bin jenkins-scan
@@ -96,6 +98,7 @@ install-into-bin scala-runner scalac
 install-into-bin scala-runner fsc
 install-into-bin scala-runner scaladoc
 install-into-bin scala-runner scalap
+install-into-bin scala-crash-filter
 install-into-bin partest
 install-into-bin partest-lookup
 install-into-bin partest-diff

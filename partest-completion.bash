@@ -15,3 +15,4 @@ _partest() {
   fi
 }
 complete -F _partest partest
+complete -F _partest t
