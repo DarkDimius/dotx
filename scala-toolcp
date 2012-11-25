@@ -7,7 +7,8 @@ if len(sys.argv) > 1:
   sys.exit(1)
 
 root = check_output(["scala-root"]).strip()
-relative = "build/quick/classes"
+tier = check_output(["scala-tier"]).strip()
+relative = "build/" + tier + "/classes"
 classes = os.path.join(root, relative)
 asm = os.path.join(root, "build/asm/classes")
 jline = os.path.join(root, "lib/jline.jar")

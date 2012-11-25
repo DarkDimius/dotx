@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 import os, sys, subprocess, re, time
 
+all = "--all" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
+
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
 bin = root + "/test/partest"
 dotpartest = root + "/.partest"
@@ -11,8 +14,16 @@ if not os.path.exists(bin):
   sys.exit(1)
 
 tests = sys.argv[1:]
-if not tests and os.path.exists(dotpartest):
-  tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE, cwd = root).communicate()[0].splitlines()
+if all:
+  if tests:
+    print "can't provide any tests when --all is specified"
+    sys.exit(1)
+else:
+  if not tests and os.path.exists(dotpartest):
+    tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE, cwd = root).communicate()[0].splitlines()
+  if not tests:
+    print "No tests in " + dotpartest
+    sys.exit(1)
 
 def update_dotpartest():
   with open(dotpartestlog, "r") as log:
@@ -52,11 +63,23 @@ def update_dotpartest():
   with open(dotpartest, "w") as config:
     config.writelines(map(lambda line: line + "\n", lines))
 
+def completion_stamps(tier):
+  return map(lambda project: root + "/build/" + tier + "/" + project + ".complete", ["library", "reflect", "compiler"])
+def last_mod(files):
+  files = files if type(files) == list else [files]
+  return max(map(lambda f: os.path.getmtime(f) if os.path.exists(f) else 0, files))
+locker_time = last_mod(completion_stamps("locker"))
+quick_time = last_mod(completion_stamps("quick"))
+bin_time = last_mod(root + "/build/pack/bin.complete")
+if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
+  exitcode = subprocess.call(["ant"], cwd = root)
+  if exitcode != 0: sys.exit(exitcode)
+
 try:
-  if tests:
-    subprocess.call([os.environ["SHELL"], "-c", " ".join([bin] + tests) + " | tee " + dotpartestlog], cwd = root + "/test")
-    update_dotpartest()
-  else:
-    print "No tests in " + dotpartest
+  invocation = " ".join([bin] + tests)
+  if not tests: invocation += " --all"
+  invocation += " | tee " + dotpartestlog
+  subprocess.call([os.environ["SHELL"], "-c", invocation], cwd = root + "/test")
+  update_dotpartest()
 except KeyboardInterrupt:
   update_dotpartest()

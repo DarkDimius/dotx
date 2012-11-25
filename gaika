@@ -26,10 +26,17 @@ def notify(msg):
 try:
   if action == "compile":
     root = check_output(["scala-root"]).strip()
+    tier = check_output(["scala-tier"]).strip()
     env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
     env["result_line_regex"] = ""
     env["result_base_dir"] = root
-    sys.exit(call(["ant", "quick.comp"], cwd = root))
+    if tier == "quick":
+      sys.exit(call(["ant", "quick.comp"], cwd = root))
+    elif tier == "locker":
+      sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
+    else:
+      print "unknown tier: " + str(tier)
+      sys.exit(1)
   elif action == "clean":
     root = check_output(["scala-root"]).strip()
     def clean_quick(target):

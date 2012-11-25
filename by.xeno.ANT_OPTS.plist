@@ -8,7 +8,7 @@
   <array>
     <string>launchctl</string>
     <string>setenv</string>
-    <string>JAVA_OPTS</string>
+    <string>ANT_OPTS</string>
     <string>-Xms1536M -Xmx3072M -Xss2M -XX:MaxPermSize=384M -XX:+UseParallelGC</string>
   </array>
   <key>QueueDirectories</key>

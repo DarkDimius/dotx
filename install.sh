@@ -74,6 +74,7 @@ install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
 install-into-home hack.alfredextension .hack.alfredextension
 install-into-home partest-completion.bash .partest-completion.bash
+install-into-home .scala_tier .scala_tier
 
 install-into-bin pullrequest
 install-into-bin java6
@@ -88,6 +89,7 @@ install-into-bin jenkins-submit
 install-into-bin jenkins-failures
 install-into-bin jenkins-url
 install-into-bin scala-root
+install-into-bin scala-tier
 install-into-bin scala-toolcp
 install-into-bin scala-runner scala
 install-into-bin scala-runner scalac
@@ -99,7 +101,7 @@ install-into-bin partest-lookup
 install-into-bin partest-diff
 install-into-bin partest-suite
 install-into-bin partest-create
-install-into-bin partest-open
+install-into-bin partest-file
 install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
 install-into-bin stree
