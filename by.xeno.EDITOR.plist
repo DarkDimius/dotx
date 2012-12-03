@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>local.by.xeno.ANT_OPTS</string>
+  <string>local.by.xeno.EDITOR</string>
   <key>ProgramArguments</key>
   <array>
     <string>launchctl</string>
     <string>setenv</string>
-    <string>ANT_OPTS</string>
-    <string>-Xms1536M -Xmx3072M -Xss2M -XX:MaxPermSize=512M -XX:+UseParallelGC</string>
+    <string>EDITOR</string>
+    <string>subl -w</string>
   </array>
   <key>QueueDirectories</key>
   <array/>

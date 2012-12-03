@@ -72,8 +72,11 @@ locker_time = last_mod(completion_stamps("locker"))
 quick_time = last_mod(completion_stamps("quick"))
 bin_time = last_mod(root + "/build/pack/bin.complete")
 if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
-  exitcode = subprocess.call(["ant"], cwd = root)
-  if exitcode != 0: sys.exit(exitcode)
+  try:
+    exitcode = subprocess.call(["ant"], cwd = root)
+    if exitcode != 0: sys.exit(exitcode)
+  except KeyboardInterrupt:
+    sys.exit(1)
 
 try:
   invocation = " ".join([bin] + tests)

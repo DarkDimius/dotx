@@ -156,40 +156,49 @@ alias dotx='cd "$HOME/Projects/Dotx"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 
+function bug6685 {
+  sb6685
+  TOOLCP29=.:$SCALA292/lib/scala-compiler.jar:$SCALA292/lib/scala-library.jar
+  BUILD=/Users/xeno_by/Projects/Kepler_6685/build
+  TOOLCP210=$BUILD/asm/classes:/Users/xeno_by/Projects/Kepler_6685/build/quick/classes/library:$BUILD/quick/classes/reflect:$BUILD/quick/classes/compiler
+  if [[ $# == 0 ]]; then
+    java -classpath $TOOLCP29 C $TOOLCP210 ArrayUser.scala
+  else
+    java -classpath $TOOLCP29 C $TOOLCP210 ArrayUser.scala "$*"
+  fi
+}
+alias b=bug6685
+
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function kepshowraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbshowraw { target="$(hack-home "showraw")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6662 { target="$(hack-home "6662")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6662 { target="$(hack-home "6662")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function keptypemacros { target="$(hack-home "typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbtypemacros { target="$(hack-home "typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6673 { target="$(hack-home "6673")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6673 { target="$(hack-home "6673")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kep6023 { target="$(hack-home "6023")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6023 { target="$(hack-home "6023")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep5875 { target="$(hack-home "5875")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb5875 { target="$(hack-home "5875")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6696 { target="$(hack-home "6696")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6696 { target="$(hack-home "6696")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet03 { target="$(hack-home "snippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet03 { target="$(hack-home "snippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet04 { target="$(hack-home "snippet04")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet04 { target="$(hack-home "snippet04")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function keppre-typemacros { target="$(hack-home "pre-typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbpre-typemacros { target="$(hack-home "pre-typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet02 { target="$(hack-home "macrosnippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet02 { target="$(hack-home "macrosnippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepshowraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbshowraw { target="$(hack-home "showraw")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keptoplevel { target="$(hack-home "toplevel")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbtoplevel { target="$(hack-home "toplevel")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6685 { target="$(hack-home "6685")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6685 { target="$(hack-home "6685")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepunchecked-pattern-match { target="$(hack-home "unchecked-pattern-match")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbunchecked-pattern-match { target="$(hack-home "unchecked-pattern-match")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6187 { target="$(hack-home "6187")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6187 { target="$(hack-home "6187")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6742 { target="$(hack-home "6742")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6742 { target="$(hack-home "6742")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet03 { target="$(hack-home "snippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet03 { target="$(hack-home "snippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

@@ -92,3 +92,4 @@ scala-2.10.1
 .partestlog
 .hack
 kepler_*.sublime-project
+*.gz
