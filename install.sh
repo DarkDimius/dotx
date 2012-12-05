@@ -99,6 +99,10 @@ install-into-bin scala-runner fsc
 install-into-bin scala-runner scaladoc
 install-into-bin scala-runner scalap
 install-into-bin scala-crash-filter
+install-into-bin adhoc-scalac
+install-into-bin parse
+install-into-bin typecheck
+install-into-bin parse-and-typecheck
 install-into-bin partest
 install-into-bin partest-lookup
 install-into-bin partest-diff

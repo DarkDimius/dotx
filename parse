@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+adhoc-scalac -Xprint:parser "$*"

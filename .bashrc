@@ -63,6 +63,7 @@ alias grm4='git reset --mixed HEAD~4'
 alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
+complete -F _git_branch gm grb gch gb gbD
 
 source "$HOME/Projects/Libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
@@ -202,3 +203,15 @@ function kepsnippet03 { target="$(hack-home "snippet03")"; if [[ $? == 0 ]]; the
 function sbsnippet03 { target="$(hack-home "snippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6751 { target="$(hack-home "6751")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6751 { target="$(hack-home "6751")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepunapply-macros { target="$(hack-home "unapply-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbunapply-macros { target="$(hack-home "unapply-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet04 { target="$(hack-home "snippet04")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet04 { target="$(hack-home "snippet04")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep5467 { target="$(hack-home "5467")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb5467 { target="$(hack-home "5467")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepidempotency { target="$(hack-home "idempotency")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbidempotency { target="$(hack-home "idempotency")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep5875 { target="$(hack-home "5875")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb5875 { target="$(hack-home "5875")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
