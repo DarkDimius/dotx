@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-adhoc-scalac -Xprint:parser,typer "$*"
+adhoc-scalac -Xprint:parser,typer $*
