@@ -4,11 +4,12 @@ shopt -s cmdhist
 shopt -s histappend
 # http://superuser.com/questions/7414/how-can-i-search-the-bash-history-and-rerun-a-command
 shopt -s histverify
-export HISTFILESIZE=500000
+export HISTFILESIZE=100000
 export HISTSIZE=100000
 export HISTIGNORE="&:ls:exit"
 export HISTCONTROL="erasedups:ignoreboth"
 if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
+export PROMPT_COMMAND='history -a' # http://users.livejournal.com/_winnie/371322.html
 
 # environment variables have been moved to launchd.conf
 
@@ -215,3 +216,9 @@ function kepidempotency { target="$(hack-home "idempotency")"; if [[ $? == 0 ]];
 function sbidempotency { target="$(hack-home "idempotency")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep5875 { target="$(hack-home "5875")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb5875 { target="$(hack-home "5875")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6696 { target="$(hack-home "6696")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6696 { target="$(hack-home "6696")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6548 { target="$(hack-home "6548")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6548 { target="$(hack-home "6548")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet05 { target="$(hack-home "snippet05")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet05 { target="$(hack-home "snippet05")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

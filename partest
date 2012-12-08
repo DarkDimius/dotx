@@ -13,7 +13,9 @@ if not os.path.exists(bin):
   print bin + " does not exist"
   sys.exit(1)
 
-tests = sys.argv[1:]
+def strip_trailing_slash(filename):
+  return filename[:-1] if filename.endswith("/") else filename
+tests = map(strip_trailing_slash, sys.argv[1:])
 if all:
   if tests:
     print "can't provide any tests when --all is specified"
@@ -28,6 +30,8 @@ else:
 def update_dotpartest():
   with open(dotpartestlog, "r") as log:
     lines = map(lambda test: test.strip(), log.readlines())
+  lines = map(strip_trailing_slash, lines)
+  lines = filter(lambda test: not "*" in test, lines)
   successes = []
   failures = []
   for line in lines:
@@ -43,6 +47,8 @@ def update_dotpartest():
       if not test.startswith("/files"): test = "/files" + test
       if test.startswith("/"): test = test[1:]
       successes.append(test)
+  global tests
+  tests = filter(lambda test: not "*" in test, tests)
   for failure in failures:
     if not failure in tests:
       tests.append(failure)
