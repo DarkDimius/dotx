@@ -36,6 +36,7 @@ alias gpo='git pull origin'
 alias gpu='git pull upstream'
 alias gs='git status'
 alias grb='git rebase'
+alias grbi='git rebase -i'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
 alias grbs='git rebase --skip'
@@ -64,7 +65,7 @@ alias grm4='git reset --mixed HEAD~4'
 alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
-complete -F _git_branch gm grb gch gb gbD
+complete -F _git_branch gm grb grbi gch gb gbD
 
 source "$HOME/Projects/Libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
@@ -222,3 +223,5 @@ function kep6548 { target="$(hack-home "6548")"; if [[ $? == 0 ]]; then cd "$tar
 function sb6548 { target="$(hack-home "6548")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet05 { target="$(hack-home "snippet05")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet05 { target="$(hack-home "snippet05")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet02 { target="$(hack-home "macrosnippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet02 { target="$(hack-home "macrosnippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

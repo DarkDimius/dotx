@@ -28,20 +28,20 @@ flags_file = test_dir + ".flags"
 if os.path.exists(test_dir): print test_dir + " already exists"; sys.exit(1)
 if os.path.exists(test_file): print test_file + " already exists"; sys.exit(1)
 
-def init_file(filename):
-  with open(filename, "w") as f: f.write("")
+def init_file(filename, default_content=""):
+  with open(filename, "w") as f: f.write(default_content)
   print "Created " + filename
 
 def init_dir(dirname):
   os.makedirs(dirname)
   print "Created " + dirname
-  init_file(os.path.join(dirname, "Macros_1.scala"))
-  init_file(os.path.join(dirname, "Test_2.scala"))
+  init_file(os.path.join(dirname, "Impls_1.scala"))
+  init_file(os.path.join(dirname, "Macros_Test_2.scala"))
 
 if create_file: init_file(test_file)
 elif create_dir: init_dir(test_dir)
 init_file(check_file)
-if create_flags: init_file(flags_file)
+if create_flags: init_file(flags_file, "-language:experimental.macros")
 
 lines = []
 if os.path.exists(dotpartest):
