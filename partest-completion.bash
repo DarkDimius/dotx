@@ -8,7 +8,12 @@ _partest() {
     COMPREPLY=( $(compgen -W "--debug --verbose --show-log --show-diff --update-check" -- ${cur}) )
     return 0
   else
-    filenames=$({ cd "$(scala-root)"; gfind "test/files" -path "test/${cur}*" ! -path "test/${cur}*/*" ! -path "*.flags" ! -path "*.check" ! -path "*.log" \( -type d -printf "%p/\n" , -type f -print \) | sed "s/test\/\(.*\)/\1/"; })
+    # TODO: deduplicate
+    if [[ ${cur} == */*/* ]]; then
+      filenames=$({ cd "$(scala-root)"; gfind "test/files" -path "test/${cur}*" ! -path "test/${cur}*/*" ! -path "*.flags" ! -path "*.check" ! -path "*.log" | sed "s/test\/\(.*\)/\1/"; })
+    else
+      filenames=$({ cd "$(scala-root)"; gfind "test/files" -path "test/${cur}*" ! -path "test/${cur}*/*" ! -path "*.flags" ! -path "*.check" ! -path "*.log" \( -type d -printf "%p/\n" , -type f -print \) | sed "s/test\/\(.*\)/\1/"; })
+    fi
     COMPREPLY=( $(compgen -W "${filenames}" -- ${cur}) )
     [[ $COMPREPLY = */ ]] && compopt -o nospace
     return 0
