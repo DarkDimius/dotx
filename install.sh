@@ -109,6 +109,7 @@ install-into-bin partest-diff
 install-into-bin partest-suite
 install-into-bin partest-create
 install-into-bin partest-file
+install-into-bin partest-macro
 install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
 install-into-bin stree
@@ -122,6 +123,7 @@ install-into-bin hack-branch
 install-into-bin hack-prototype
 install-into-bin gaika
 install-into-bin gitblit
+install-into-bin h2
 install-into-bin pomodoro-launch-app
 install-into-bin pomodoro-pomodoro
 install-into-bin pomodoro-shortbreak
@@ -129,6 +131,7 @@ install-into-bin pomodoro-longbreak
 install-into-bin pomodoro-start
 install-into-bin pomodoro-stop
 install-into-bin pomodoro-reset
+install-into-bin sandbox
 
 install-into-etc launchd.conf
 install-into-etc paths

@@ -188,10 +188,10 @@ while [[ $# -gt 0 ]]; do
 done
 
 case $programName in
-    # scala) addResidual "-language:experimental.macros" &&
-    scala) addJava "-Dscala.repl.autoruncode=$HOME/.scala_autorun" &&
+    scala) addResidual "-language:experimental.macros" &&
+           addJava "-Dscala.repl.autoruncode=$HOME/.scala_autorun" &&
            addScala "-Dscala.repl.autoruncode=$HOME/.scala_autorun";;
-   scalac) ;;
+   scalac) addResidual "-language:experimental.macros";;
       fsc) ;;
  scaladoc) ;;
    scalap) ;;

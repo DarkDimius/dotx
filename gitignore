@@ -93,3 +93,5 @@ scala-2.10.1
 .hack
 kepler_*.sublime-project
 *.gz
+test/coffees.h2.db
+test/coffees.trace.db

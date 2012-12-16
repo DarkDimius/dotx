@@ -27,6 +27,8 @@ PS1="\$(date +%H:%M) \w\$(parse_git_branch)\$ "
 
 alias gch='git checkout'
 alias gco='git commit'
+alias gcoa='git commit --amend'
+alias gca='git commit --amend'
 alias gb='git branch'
 alias gbD='git branch -D'
 alias gn='git checkout -b'
@@ -73,6 +75,8 @@ alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="pullrequest"
 alias t="partest"
+alias tmacro="partest-macro --macros-only"
+alias treify="partest-macro --macros-and-reify"
 alias ta="partest --all"
 alias td="partest-diff"
 alias td1="partest-diff 1"
@@ -94,49 +98,75 @@ alias td16="partest-diff 16"
 alias td17="partest-diff 17"
 alias td18="partest-diff 18"
 alias td19="partest-diff 19"
-alias to="partest-file --edit"
-alias to1="partest-file --edit 1"
-alias to2="partest-file --edit 2"
-alias to3="partest-file --edit 3"
-alias to4="partest-file --edit 4"
-alias to5="partest-file --edit 5"
-alias to6="partest-file --edit 6"
-alias to7="partest-file --edit 7"
-alias to8="partest-file --edit 8"
-alias to9="partest-file --edit 9"
-alias to10="partest-file --edit 10"
-alias to11="partest-file --edit 11"
-alias to12="partest-file --edit 12"
-alias to13="partest-file --edit 13"
-alias to14="partest-file --edit 14"
-alias to15="partest-file --edit 15"
-alias to16="partest-file --edit 16"
-alias to17="partest-file --edit 17"
-alias to18="partest-file --edit 18"
-alias to19="partest-file --edit 19"
-alias tv="partest-file --view"
-alias tv1="partest-file --view 1"
-alias tv2="partest-file --view 2"
-alias tv3="partest-file --view 3"
-alias tv4="partest-file --view 4"
-alias tv5="partest-file --view 5"
-alias tv6="partest-file --view 6"
-alias tv7="partest-file --view 7"
-alias tv8="partest-file --view 8"
-alias tv9="partest-file --view 9"
-alias tv10="partest-file --view 10"
-alias tv11="partest-file --view 11"
-alias tv12="partest-file --view 12"
-alias tv13="partest-file --view 13"
-alias tv14="partest-file --view 14"
-alias tv15="partest-file --view 15"
-alias tv16="partest-file --view 16"
-alias tv17="partest-file --view 17"
-alias tv18="partest-file --view 18"
-alias tv19="partest-file --view 19"
+alias td20="partest-diff 20"
+alias td21="partest-diff 21"
+alias td22="partest-diff 22"
+alias td23="partest-diff 23"
+alias td24="partest-diff 24"
+alias td25="partest-diff 25"
+alias td26="partest-diff 26"
+alias td27="partest-diff 27"
+alias td28="partest-diff 28"
+alias td29="partest-diff 29"
 alias tv="partest-suite --view-with-numbers"
-alias te="partest-suite --edit"
-alias tc="partest-create"
+alias tv1="partest-file --edit 1"
+alias tv2="partest-file --edit 2"
+alias tv3="partest-file --edit 3"
+alias tv4="partest-file --edit 4"
+alias tv5="partest-file --edit 5"
+alias tv6="partest-file --edit 6"
+alias tv7="partest-file --edit 7"
+alias tv8="partest-file --edit 8"
+alias tv9="partest-file --edit 9"
+alias tv10="partest-file --edit 10"
+alias tv11="partest-file --edit 11"
+alias tv12="partest-file --edit 12"
+alias tv13="partest-file --edit 13"
+alias tv14="partest-file --edit 14"
+alias tv15="partest-file --edit 15"
+alias tv16="partest-file --edit 16"
+alias tv17="partest-file --edit 17"
+alias tv18="partest-file --edit 18"
+alias tv19="partest-file --edit 19"
+alias tv20="partest-file --edit 20"
+alias tv21="partest-file --edit 21"
+alias tv22="partest-file --edit 22"
+alias tv23="partest-file --edit 23"
+alias tv24="partest-file --edit 24"
+alias tv25="partest-file --edit 25"
+alias tv26="partest-file --edit 26"
+alias tv27="partest-file --edit 27"
+alias tv28="partest-file --edit 28"
+alias tv29="partest-file --edit 29"
+alias te1="partest-file --export 1"
+alias te2="partest-file --export 2"
+alias te3="partest-file --export 3"
+alias te4="partest-file --export 4"
+alias te5="partest-file --export 5"
+alias te6="partest-file --export 6"
+alias te7="partest-file --export 7"
+alias te8="partest-file --export 8"
+alias te9="partest-file --export 9"
+alias te10="partest-file --export 10"
+alias te11="partest-file --export 11"
+alias te12="partest-file --export 12"
+alias te13="partest-file --export 13"
+alias te14="partest-file --export 14"
+alias te15="partest-file --export 15"
+alias te16="partest-file --export 16"
+alias te17="partest-file --export 17"
+alias te18="partest-file --export 18"
+alias te19="partest-file --export 19"
+alias te20="partest-file --export 20"
+alias te21="partest-file --export 21"
+alias te22="partest-file --export 22"
+alias te23="partest-file --export 23"
+alias te24="partest-file --export 24"
+alias te25="partest-file --export 25"
+alias te26="partest-file --export 26"
+alias te27="partest-file --export 27"
+alias te28="partest-file --export 28"
+alias te29="partest-file --export 29"
 alias h="hack"
 alias hh="hack-homes --all"
 complete -F _hack h
@@ -178,7 +208,6 @@ function keptypemacros { target="$(hack-home "typemacros")"; if [[ $? == 0 ]]; t
 function sbtypemacros { target="$(hack-home "typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function keppre-typemacros { target="$(hack-home "pre-typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbpre-typemacros { target="$(hack-home "pre-typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepshowraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -225,3 +254,26 @@ function kepsnippet05 { target="$(hack-home "snippet05")"; if [[ $? == 0 ]]; the
 function sbsnippet05 { target="$(hack-home "snippet05")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet02 { target="$(hack-home "macrosnippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet02 { target="$(hack-home "macrosnippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsuper-call-args { target="$(hack-home "super-call-args")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsuper-call-args { target="$(hack-home "super-call-args")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keptypeof { target="$(hack-home "typeof")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbtypeof { target="$(hack-home "typeof")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep4044 { target="$(hack-home "4044")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb4044 { target="$(hack-home "4044")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep5841 { target="$(hack-home "5841")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb5841 { target="$(hack-home "5841")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepannotated { target="$(hack-home "annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbannotated { target="$(hack-home "annotated")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepshowrawpos { target="$(hack-home "showrawpos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbshowrawpos { target="$(hack-home "showrawpos")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6808 { target="$(hack-home "6808")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6808 { target="$(hack-home "6808")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keptyped-ident-attachments { target="$(hack-home "typed-ident-attachments")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbtyped-ident-attachments { target="$(hack-home "typed-ident-attachments")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepannotation-error { target="$(hack-home "annotation-error")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbannotation-error { target="$(hack-home "annotation-error")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepquasiquotes { target="$(hack-home "quasiquotes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbquasiquotes { target="$(hack-home "quasiquotes")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"

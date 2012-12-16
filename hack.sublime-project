@@ -43,6 +43,14 @@
         "*.js",
         "*.orig"
       ],
+      "path": "$PROJECT_HOME/src/partest"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.js",
+        "*.orig"
+      ],
       "path": "$PROJECT_HOME/test/files"
     },
     {
@@ -68,6 +76,12 @@
     },
     {
       "path": "$HOME/Projects/ScalaIDE"
+    },
+    {
+      "path": "$HOME/Projects/scala-refactoring"
+    },
+    {
+      "path": "$HOME/Projects/scalariform"
     },
     {
       "file_exclude_patterns":

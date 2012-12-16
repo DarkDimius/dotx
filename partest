@@ -35,9 +35,12 @@ def update_dotpartest():
   successes = []
   failures = []
   for line in lines:
-    m = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
+    m1 = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
+    m2 = re.match(r"^Possible compiler crash during test of: (.*?)$", line)
+    m = m1 or m2
     if m:
       test = m.group(1)
+      if not test.startswith("/"): test = "/" + test
       if not test.startswith("/files"): test = "/files" + test
       if test.startswith("/"): test = test[1:]
       failures.append(test)
