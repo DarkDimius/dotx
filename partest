@@ -47,6 +47,7 @@ def update_dotpartest():
     m = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[  OK  \]\s*$", line)
     if m:
       test = m.group(1)
+      if not test.startswith("/"): test = "/" + test
       if not test.startswith("/files"): test = "/files" + test
       if test.startswith("/"): test = test[1:]
       successes.append(test)

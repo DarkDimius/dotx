@@ -1,1 +1,1 @@
-scalamacros:topic/typemacros
+scalamacros:paradise/macros

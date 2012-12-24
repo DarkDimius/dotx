@@ -25,18 +25,31 @@ def notify(msg):
 
 try:
   if action == "compile":
-    root = check_output(["scala-root"]).strip()
-    tier = check_output(["scala-tier"]).strip()
-    env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-    env["result_line_regex"] = ""
-    env["result_base_dir"] = root
-    if tier == "quick":
-      sys.exit(call(["ant", "quick.comp"], cwd = root))
-    elif tier == "locker":
-      sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
+    # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
+    if args and args[0].endswith(".tex"):
+      print args
+      target = args[0]
+      root = os.path.dirname(os.path.abspath(target))
+      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+      env["result_line_regex"] = ""
+      env["result_base_dir"] = root
+      status = call(["pdflatex", target], cwd = root)
+      if status: sys.exit(status)
+      call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
+      call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
     else:
-      print "unknown tier: " + str(tier)
-      sys.exit(1)
+      root = check_output(["scala-root"]).strip()
+      tier = check_output(["scala-tier"]).strip()
+      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+      env["result_line_regex"] = ""
+      env["result_base_dir"] = root
+      if tier == "quick":
+        sys.exit(call(["ant", "quick.comp"], cwd = root))
+      elif tier == "locker":
+        sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
+      else:
+        print "unknown tier: " + str(tier)
+        sys.exit(1)
   elif action == "clean":
     root = check_output(["scala-root"]).strip()
     def clean_quick(target):
@@ -47,7 +60,10 @@ try:
       if os.path.exists(classes): shutil.rmtree(classes)
       notify("Cleaned quick/" + target)
     target = args[0]
-    if target.startswith("quick/"):
+    if target == "quick/compiler+reflect":
+      clean_quick("compiler")
+      clean_quick("reflect")
+    elif target.startswith("quick/"):
       clean_quick(target[len("quick/"):])
     elif target == "all":
       map(lambda target: clean_quick(target), ["library", "reflect", "compiler"])

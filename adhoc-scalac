@@ -3,7 +3,7 @@ import sys, os, tempfile
 from subprocess import call
 
 def wrap_snippet(snippet):
-  if "class" in snippet or "trait" in snippet or "object" in snippet:
+  if "package" in snippet or "class" in snippet or "trait" in snippet or "object" in snippet:
     return snippet
   else:
     return "class wrapper {\n" + snippet + "\n}"

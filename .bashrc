@@ -49,7 +49,7 @@ alias gra='git remote add'
 alias grv='git remote -v'
 alias gru='git remote update'
 alias grn='git remote rename'
-alias gl='git --no-pager log --pretty=oneline -20'
+alias gl='git --no-pager log --pretty=oneline -25'
 alias grh='git reset --hard'
 alias grh0='git reset --hard HEAD'
 alias grh1='git reset --hard HEAD~1'
@@ -70,7 +70,7 @@ alias gma='git merge --abort'
 complete -F _git_branch gm grb grbi gch gb gbD
 
 source "$HOME/Projects/Libscala/libscala.sh"
-alias gl='git --no-pager log --pretty=oneline -20'
+alias gl='git --no-pager log --pretty=oneline -25'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="pullrequest"
@@ -172,6 +172,7 @@ alias hh="hack-homes --all"
 complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
+alias sbtsnap="sbt -sbt-snapshot"
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
@@ -186,21 +187,10 @@ alias sens='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime
 alias des='cd "$HOME/Library/Application Support/Sublime Text 2"'
 alias pap='cd "$HOME/Projects/Pages"'
 alias dotx='cd "$HOME/Projects/Dotx"'
+alias docs='cd "$HOME/Projects/DocsScalaLang"'
+alias smock='cd "$HOME/Projects/ScalaMock"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-
-function bug6685 {
-  sb6685
-  TOOLCP29=.:$SCALA292/lib/scala-compiler.jar:$SCALA292/lib/scala-library.jar
-  BUILD=/Users/xeno_by/Projects/Kepler_6685/build
-  TOOLCP210=$BUILD/asm/classes:/Users/xeno_by/Projects/Kepler_6685/build/quick/classes/library:$BUILD/quick/classes/reflect:$BUILD/quick/classes/compiler
-  if [[ $# == 0 ]]; then
-    java -classpath $TOOLCP29 C $TOOLCP210 ArrayUser.scala
-  else
-    java -classpath $TOOLCP29 C $TOOLCP210 ArrayUser.scala "$*"
-  fi
-}
-alias b=bug6685
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
@@ -264,8 +254,6 @@ function kep5841 { target="$(hack-home "5841")"; if [[ $? == 0 ]]; then cd "$tar
 function sb5841 { target="$(hack-home "5841")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepannotated { target="$(hack-home "annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbannotated { target="$(hack-home "annotated")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepshowrawpos { target="$(hack-home "showrawpos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbshowrawpos { target="$(hack-home "showrawpos")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep6808 { target="$(hack-home "6808")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb6808 { target="$(hack-home "6808")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -277,3 +265,35 @@ function sbannotation-error { target="$(hack-home "annotation-error")/sandbox"; 
 function kepquasiquotes { target="$(hack-home "quasiquotes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbquasiquotes { target="$(hack-home "quasiquotes")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function kepmima { target="$(hack-home "mima")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmima { target="$(hack-home "mima")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6591 { target="$(hack-home "6591")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6591 { target="$(hack-home "6591")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepparadise { target="$(hack-home "paradise")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbparadise { target="$(hack-home "paradise")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet03 { target="$(hack-home "macrosnippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet03 { target="$(hack-home "macrosnippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepident { target="$(hack-home "ident")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbident { target="$(hack-home "ident")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepident-attachments { target="$(hack-home "ident-attachments")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbident-attachments { target="$(hack-home "ident-attachments")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keppatmat-positionless { target="$(hack-home "patmat-positionless")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbpatmat-positionless { target="$(hack-home "patmat-positionless")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacros-unapply { target="$(hack-home "macros-unapply")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacros-unapply { target="$(hack-home "macros-unapply")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keptree-nonempty { target="$(hack-home "tree-nonempty")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbtree-nonempty { target="$(hack-home "tree-nonempty")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepuniverse-treeinfo { target="$(hack-home "universe-treeinfo")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbuniverse-treeinfo { target="$(hack-home "universe-treeinfo")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepshowrawpos { target="$(hack-home "showrawpos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbshowrawpos { target="$(hack-home "showrawpos")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet04 { target="$(hack-home "macrosnippet04")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet04 { target="$(hack-home "macrosnippet04")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet05 { target="$(hack-home "macrosnippet05")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet05 { target="$(hack-home "macrosnippet05")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet06 { target="$(hack-home "macrosnippet06")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet06 { target="$(hack-home "macrosnippet06")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet06 { target="$(hack-home "snippet06")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet06 { target="$(hack-home "snippet06")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet07 { target="$(hack-home "macrosnippet07")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet07 { target="$(hack-home "macrosnippet07")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

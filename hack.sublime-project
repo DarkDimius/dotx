@@ -8,9 +8,6 @@
       "path": "$PROJECT_HOME/project"
     },
     {
-      "path": "$HOME/Projects/Docs"
-    },
-    {
       "path": "$PROJECT_HOME/sandbox"
     },
     {
@@ -75,6 +72,9 @@
       "path": "$HOME/Projects/Ensime"
     },
     {
+      "path": "$HOME/Projects/xsbt"
+    },
+    {
       "path": "$HOME/Projects/ScalaIDE"
     },
     {
@@ -99,6 +99,23 @@
         "_site"
       ],
       "path": "$HOME/Projects/Pages"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.orig",
+        "*.aux",
+        "*.log",
+        "*.nav",
+        "*.snm",
+        "*.toc",
+        "*.vrb"
+      ],
+      "folder_exclude_patterns":
+      [
+        "_site"
+      ],
+      "path": "$HOME/Projects/DocsScalaLang"
     },
     {
       "file_exclude_patterns":

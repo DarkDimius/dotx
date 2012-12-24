@@ -2,6 +2,7 @@ Apps:
 .DS_Store
 .localized
 1Password.app
+Acorn.app
 Adium.app
 Alfred.app
 App Store.app
@@ -47,6 +48,7 @@ Lingon.app
 Mail.app
 Messages.app
 Microsoft Office 2011
+Minecraft.app
 Mission Control.app
 My Little Pomodoro.app
 Nocturne.app
@@ -63,6 +65,7 @@ Skim.app
 Skype.app
 Slate.app
 SourceTree.app
+StarCraft II
 StartNinja.app
 Stickies.app
 Sublime Text 2.app
@@ -77,6 +80,7 @@ Utilities
 VLC.app
 VirtualBox.app
 Xcode.app
+Xerox
 YourKit.app
 gfxCardStatus.app
 iPhoto.app
@@ -3935,11 +3939,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-203.Kf1FsB: Permission denied
+Can't cd to (/private/tmp/) launchd-202.QGnzj7: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-353.eutSBs: Permission denied
+Can't cd to (/private/tmp/) launchd-391.86oHGJ: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-9995.BcsxGd: Permission denied
+Can't cd to (/private/tmp/) launchd-39122.o7wi5C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15093,6 +15097,7 @@ Movies
 5875
 6187
 6548
+6591
 6685
 6696
 6742
@@ -15122,15 +15127,26 @@ dotslate
 h2
 hack
 idempotency
+ident
+ident-attachments
 ident-deprecation-warnings
 ignore crashes
 java6
 java7
 java8
 locker
+macros-unapply
 macrosnippet00
 macrosnippet01
 macrosnippet02
+macrosnippet03
+macrosnippet04
+macrosnippet05
+macrosnippet06
+macrosnippet07
+mima
+paradise
+patmat-positionless
 pr
 pre-typemacros
 quasiquotes
@@ -15144,13 +15160,16 @@ snippet02
 snippet03
 snippet04
 snippet05
+snippet06
 super-call-args
 toplevel
+tree-nonempty
 typed-ident-attachments
 typemacros
 typeof
 unapply-macros
 unchecked-pattern-match
+universe-treeinfo
 
 ==================
 Firefox extensions:

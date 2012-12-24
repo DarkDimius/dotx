@@ -33,5 +33,10 @@ def search(dir):
 
 unstructured = map(lambda dir: search(dir), scope)
 result = [item for sublist in unstructured for item in sublist]
+result = [f[len(root + "/test/"):] for f in result]
 # for f in result: print f
-call(["partest"] + result)
+
+try:
+  call(["partest"] + result)
+except KeyboardInterrupt:
+  pass
