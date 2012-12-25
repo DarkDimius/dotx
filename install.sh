@@ -133,6 +133,7 @@ install-into-bin pomodoro-stop
 install-into-bin pomodoro-reset
 install-into-bin sandbox
 install-into-bin deploy-paradise
+install-into-bin paradise-prereqs
 
 install-into-etc launchd.conf
 install-into-etc paths
