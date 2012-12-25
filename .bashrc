@@ -303,3 +303,5 @@ function kepenclosures { target="$(hack-home "enclosures")"; if [[ $? == 0 ]]; t
 function sbenclosures { target="$(hack-home "enclosures")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepintroduce-top-level { target="$(hack-home "introduce-top-level")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbintroduce-top-level { target="$(hack-home "introduce-top-level")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepauto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbauto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

@@ -2,6 +2,7 @@
 set -o errexit
 
 # git remote add annotation-error ../Kepler_annotation-error/
+# git remote add auto-duplicate-expansions ../Kepler_auto-duplicate-expansions/
 # git remote add enclosures ../Kepler_enclosures/
 # git remote add fresh-name ../Kepler_fresh-name/
 # git remote add ident-attachments ../Kepler_ident-attachments/
@@ -20,6 +21,7 @@ git push origin master
 git branch -D newparadise
 git checkout -b newparadise
 git pull annotation-error topic/annotation-error
+git pull auto-duplicate-expansions topic/auto-duplicate-expansions
 git pull enclosures topic/enclosures
 git pull fresh-name topic/fresh-name
 git pull ident-attachments topic/ident-attachments
