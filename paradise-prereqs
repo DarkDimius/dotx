@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -o errexit
+
+# git remote add annotation-error ../Kepler_annotation-error/
+# git remote add enclosures ../Kepler_enclosures/
+# git remote add fresh-name ../Kepler_fresh-name/
+# git remote add ident-attachments ../Kepler_ident-attachments/
+# git remote add ident-deprecation-warnings ../Kepler_ident-deprecation-warnings/
+# git remote add introduce-top-level ../Kepler_introduce-top-level/
+# git remote add macros-unapply ../Kepler_macros-unapply
+# git remote add patmat-positionless ../Kepler_patmat-positionless/
+# git remote add reflection ../Kepler_reflection/
+# git remote add showrawpos ../Kepler_showrawpos
+# git remote add tree-nonempty ../Kepler_tree-nonempty/
+
+git remote update
+git checkout master
+git pull origin master
+git push origin master
+git branch -D newparadise
+git checkout -b newparadise
+git pull annotation-error topic/annotation-error
+git pull enclosures topic/enclosures
+git pull fresh-name topic/fresh-name
+git pull ident-attachments topic/ident-attachments
+git pull ident-deprecation-warnings topic/ident-deprecation-warnings
+git pull introduce-top-level topic/introduce-top-level
+git pull macros-unapply topic/macros-unapply
+git pull patmat-positionless topic/patmat-positionless
+git pull reflection topic/reflection
+git pull showrawpos topic/showrawpos
+git pull tree-nonempty topic/tree-nonempty
