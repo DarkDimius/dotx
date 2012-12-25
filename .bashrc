@@ -196,8 +196,8 @@ function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"
 ### Don't write anything below this comment, or it might get accidentally destroyed
 function keptypemacros { target="$(hack-home "typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbtypemacros { target="$(hack-home "typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmaster { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmaster { target="$(hack-home "master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function keppre-typemacros { target="$(hack-home "pre-typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbpre-typemacros { target="$(hack-home "pre-typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepshowraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -269,8 +269,6 @@ function kepmima { target="$(hack-home "mima")"; if [[ $? == 0 ]]; then cd "$tar
 function sbmima { target="$(hack-home "mima")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep6591 { target="$(hack-home "6591")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb6591 { target="$(hack-home "6591")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepparadise { target="$(hack-home "paradise")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbparadise { target="$(hack-home "paradise")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet03 { target="$(hack-home "macrosnippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet03 { target="$(hack-home "macrosnippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepident { target="$(hack-home "ident")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -297,3 +295,11 @@ function kepsnippet06 { target="$(hack-home "snippet06")"; if [[ $? == 0 ]]; the
 function sbsnippet06 { target="$(hack-home "snippet06")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet07 { target="$(hack-home "macrosnippet07")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet07 { target="$(hack-home "macrosnippet07")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepreflection { target="$(hack-home "reflection")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbreflection { target="$(hack-home "reflection")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepfresh-name { target="$(hack-home "fresh-name")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbfresh-name { target="$(hack-home "fresh-name")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepenclosures { target="$(hack-home "enclosures")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbenclosures { target="$(hack-home "enclosures")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepintroduce-top-level { target="$(hack-home "introduce-top-level")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbintroduce-top-level { target="$(hack-home "introduce-top-level")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

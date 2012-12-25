@@ -3939,11 +3939,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-202.QGnzj7: Permission denied
+Can't cd to (/private/tmp/) launchd-11103.eW18G0: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-391.86oHGJ: Permission denied
+Can't cd to (/private/tmp/) launchd-201.XrRdlQ: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-39122.o7wi5C: Permission denied
+Can't cd to (/private/tmp/) launchd-344.0swfFY: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3972,6 +3972,8 @@ Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.202: Permiss
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.212: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.26: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.4294967294: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.502: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4053,6 +4055,10 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/lib/) postfix: Permission denied
@@ -4066,6 +4072,8 @@ Can't cd to (/private/var/log/) com.apple.launchd.peruser.202: Permission denied
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.212: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.26: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/log/) com.apple.launchd.peruser.4294967294: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.502: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
