@@ -11,9 +11,9 @@ flavor = sys.argv[1]
 projects_root = os.path.expandvars("$HOME/Projects")
 projects = filter(os.path.isdir, map(lambda prj: os.path.join(projects_root, prj), os.listdir(projects_root)))
 hacks = filter(lambda prj: os.path.exists(os.path.join(prj, ".hack")), projects)
-index = dict((open(os.path.join(home, ".hack")).read().strip(), home) for home in hacks)
 
-for branch, dir in index.items():
+for dir in sorted(hacks):
+  branch = open(os.path.join(dir, ".hack")).read().strip()
   if flavor == "--all":
     print dir.ljust(60, " ") + " " + branch
   if flavor == "--dirs":

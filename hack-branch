@@ -19,7 +19,7 @@ if branch == "snippet" or branch == "macrosnippet":
   branch = "scalamacros:topic/" + branch + str(next_index).zfill(2)
 
 if not ":" in branch:
-  hardcoded = ["master", "develop", "2.10.0-wip", "2.10.x"]
+  hardcoded = ["master", "2.10.x", "paradise/macros"]
   if not branch in hardcoded:
     prefix = "ticket" if re.match("^\d+$", branch) else "topic"
     branch = prefix + "/" + branch

@@ -1,19 +1,6 @@
 #!/usr/bin/env bash
 set -o verbose
 cd /Users/xeno_by/Projects/Kepler
-git branch -D topic/reflection-docs
-git push origin :topic/reflection-docs
 git remote update
 git prune origin
 cd -
-hack -scalamacros:topic/macrosnippet06 --batch --force # snippet
-hack -scalamacros:topic/macrosnippet07 --batch --force # snippet
-hack -scalamacros:topic/macrosnippet05 --batch --force # snippet
-hack -scalamacros:topic/macrosnippet02 --batch --force # snippet
-hack -scalamacros:topic/macrosnippet00 --batch --force # snippet
-hack -scalamacros:topic/macrosnippet01 --batch --force # snippet
-hack -scalamacros:topic/macrosnippet03 --batch --force # snippet
-hack -scalamacros:topic/snippet01 --batch --force # snippet
-hack -scalamacros:topic/snippet04 --batch --force # snippet
-hack -scalamacros:topic/snippet03 --batch --force # snippet
-hack -scalamacros:topic/snippet06 --batch --force # snippet

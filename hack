@@ -2,7 +2,7 @@
 import sys, os, traceback, time, subprocess
 from subprocess import check_output, call, Popen, PIPE
 
-interactive = "--interactive" in sys.argv
+interactive = not "--batch" in sys.argv
 force = "--force" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
 
@@ -104,7 +104,7 @@ try:
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
-    if not status.startswith("no changes"): raise Exception(status)
+    if not force and not status.startswith("no changes"): raise Exception(status)
 
     comm(["rm", "-rf", project_home])
     checkpoint("Deleted the Git repo at " + project_home)
@@ -125,8 +125,8 @@ try:
     sublime_is_open = "Sublime" in check_output(["ps", "aux"])
     with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home + "\n" + str(not sublime_is_open))
     if not delete: check_comm(["subl", "--project", sublime_project])
-    if not sublime_is_open: time.sleep(1.5)
-    check_comm(["subl", "--command", "my_hack"])
+    if not sublime_is_open: time.sleep(0.5)
+    if not delete or sublime_is_open: check_comm(["subl", "--command", "my_hack"])
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:
