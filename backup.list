@@ -21,7 +21,6 @@ Dashboard.app
 Day-O.app
 Diablo III
 Dictionary.app
-DiffMerge.app
 Dropbox.app
 Evernote.app
 F-Script.app
@@ -15125,6 +15124,7 @@ What is My IP
 Wi-Fi-toggle
 annotated
 annotation-error
+auto-duplicate-expansions
 bashrc
 bug
 dont ignore scala crashes
@@ -15132,6 +15132,8 @@ dothack
 dothackproto
 dotjenkins
 dotslate
+enclosures
+fresh-name
 h2
 hack
 idempotency
@@ -15139,6 +15141,7 @@ ident
 ident-attachments
 ident-deprecation-warnings
 ignore crashes
+introduce-top-level
 java6
 java7
 java8
@@ -15153,12 +15156,12 @@ macrosnippet05
 macrosnippet06
 macrosnippet07
 mima
-paradise
 patmat-positionless
 pr
 pre-typemacros
 quasiquotes
 quick
+reflection
 rtm
 showraw
 showrawpos

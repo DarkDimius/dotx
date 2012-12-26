@@ -121,6 +121,8 @@ install-into-bin hack-home
 install-into-bin hack-homes
 install-into-bin hack-branch
 install-into-bin hack-prototype
+install-into-bin hack-gc
+install-into-bin zzz-commence-hack-gc
 install-into-bin gaika
 install-into-bin gitblit
 install-into-bin h2

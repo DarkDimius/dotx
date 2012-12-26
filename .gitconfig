@@ -29,5 +29,5 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = subl $MERGED
+	cmd = subl -w $MERGED
 	trustExitCode = true

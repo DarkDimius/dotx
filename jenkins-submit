@@ -13,7 +13,7 @@ if introspect.returncode != 0:
   sys.exit(introspect.returncode)
 
 user, repo, branch, status = lines
-if status != "no changes":
+if status.startswith("no changes"):
   print status
   sys.exit(1)
 

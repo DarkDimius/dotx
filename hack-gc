@@ -1,0 +1,62 @@
+#!/usr/bin/env python
+import sys, os, re
+from subprocess import check_output, call
+
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0] + " [--dry-run|--commence]"
+  sys.exit(1)
+
+proto = check_output(["hack-home", check_output(["hack-prototype"]).strip()]).strip()
+print "Step 1: Updating " + proto + " to find out what branches have already been merged"
+call(["git", "remote", "update"], cwd = proto)
+def postprocess(branch):
+  branch = branch.strip()
+  if "*" in branch: return None
+  if "->" in branch: return None
+  if "master" in branch: return None
+  if "paradise/macros" in branch: return None
+  if branch.startswith("remotes/origin/"): return branch[len("remotes/origin/"):]
+  if branch.startswith("remotes/"): return None
+  return branch
+merged = check_output(["git", "branch", "-a", "--merged"], cwd = proto).strip().split("\n")
+merged = map(postprocess, merged)
+merged = filter(lambda branch: branch != None, merged)
+print merged
+
+print ""
+print "Step 2: Iterating through hack homes to detect garbage"
+dirs = check_output(["hack-homes", "--dirs"]).strip().split("\n")
+branches = check_output(["hack-homes", "--full-branches"]).strip().split("\n")
+results = []
+for dir, branch in zip(dirs, branches):
+  def verdict(status):
+    results.append((dir, branch, status))
+    print dir.ljust(60, " ") + " " + status
+  if branch.startswith("scalamacros:topic/snippet") or branch.startswith("scalamacros:topic/macrosnippet"):
+    verdict("* snippet")
+  else:
+    _, _, _, status = check_output(["hub-introspect"], cwd = dir).strip().split("\n")
+    if status != "no changes":
+      verdict(re.match(r"^repository .* is dirty \((.*)\).*$", status).group(1))
+    else:
+      if branch[len("scalamacros:"):] in merged: verdict("* merged")
+      else: verdict("not merged")
+
+print ""
+print "Step 3: Generating garbage collection script"
+target_path = "/usr/local/bin/zzz-commence-hack-gc"
+if not os.path.exists(target_path):
+  print target_path + " not found"
+else:
+  with open(target_path, "w") as target:
+    def write(line): target.write(line.strip() + "\n")
+    write("#!/usr/bin/env bash")
+    write("set -o verbose")
+    write("cd " + proto)
+    for branch in merged: write("git push origin :" + branch)
+    write("git remote update")
+    for branch in merged: write("git branch -dr " + branch)
+    write("cd -")
+    for dir, branch, status in results:
+      if status.startswith("*"): write("hack -" + branch + " --batch # " + status[1:].strip())
+  print "Successfully wrote the cleanup script to " + target_path

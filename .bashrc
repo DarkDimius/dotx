@@ -49,7 +49,7 @@ alias gra='git remote add'
 alias grv='git remote -v'
 alias gru='git remote update'
 alias grn='git remote rename'
-alias gl='git --no-pager log --pretty=oneline -25'
+alias gl='git --no-pager log --pretty=oneline -20'
 alias grh='git reset --hard'
 alias grh0='git reset --hard HEAD'
 alias grh1='git reset --hard HEAD~1'
@@ -70,7 +70,7 @@ alias gma='git merge --abort'
 complete -F _git_branch gm grb grbi gch gb gbD
 
 source "$HOME/Projects/Libscala/libscala.sh"
-alias gl='git --no-pager log --pretty=oneline -25'
+alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="pullrequest"
@@ -305,3 +305,5 @@ function kepintroduce-top-level { target="$(hack-home "introduce-top-level")"; i
 function sbintroduce-top-level { target="$(hack-home "introduce-top-level")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepauto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbauto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6468 { target="$(hack-home "6468")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6468 { target="$(hack-home "6468")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

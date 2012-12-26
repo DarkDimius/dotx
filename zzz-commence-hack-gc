@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+set -o verbose
+cd /Users/xeno_by/Projects/Kepler
+git push origin :develop
+git push origin :topic/reflection-docs
+git push origin :ticket/4044
+git push origin :ticket/5841
+git push origin :ticket/6023
+git push origin :ticket/6548
+git push origin :ticket/6662
+git push origin :ticket/6673
+git push origin :ticket/6685
+git push origin :ticket/6696
+git push origin :topic/6023
+git push origin :topic/annotated
+git push origin :topic/fix-sbt-build
+git push origin :topic/idempotency
+git push origin :topic/mima
+git push origin :topic/pre-typemacros
+git push origin :topic/showraw
+git push origin :topic/showraw-nodeprinters
+git push origin :topic/super-call-args
+git push origin :topic/typed-ident-attachments
+git push origin :topic/typetags-local-classes
+git remote update
+git branch -dr develop
+git branch -dr topic/reflection-docs
+git branch -dr ticket/4044
+git branch -dr ticket/5841
+git branch -dr ticket/6023
+git branch -dr ticket/6548
+git branch -dr ticket/6662
+git branch -dr ticket/6673
+git branch -dr ticket/6685
+git branch -dr ticket/6696
+git branch -dr topic/6023
+git branch -dr topic/annotated
+git branch -dr topic/fix-sbt-build
+git branch -dr topic/idempotency
+git branch -dr topic/mima
+git branch -dr topic/pre-typemacros
+git branch -dr topic/showraw
+git branch -dr topic/showraw-nodeprinters
+git branch -dr topic/super-call-args
+git branch -dr topic/typed-ident-attachments
+git branch -dr topic/typetags-local-classes
+cd -
+hack -scalamacros:topic/macrosnippet06 --batch # snippet
+hack -scalamacros:topic/macrosnippet07 --batch # snippet
+hack -scalamacros:topic/macrosnippet05 --batch # snippet
+hack -scalamacros:topic/macrosnippet02 --batch # snippet
+hack -scalamacros:topic/idempotency --batch # merged
+hack -scalamacros:topic/macrosnippet00 --batch # snippet
+hack -scalamacros:topic/macrosnippet01 --batch # snippet
+hack -scalamacros:topic/typed-ident-attachments --batch # merged
+hack -scalamacros:topic/macrosnippet04 --batch # snippet
+hack -scalamacros:ticket/5841 --batch # merged
+hack -scalamacros:topic/super-call-args --batch # merged
+hack -scalamacros:topic/macrosnippet03 --batch # snippet
+hack -scalamacros:topic/mima --batch # merged
+hack -scalamacros:topic/showraw --batch # merged
+hack -scalamacros:ticket/6696 --batch # merged
+hack -scalamacros:ticket/6548 --batch # merged
+hack -scalamacros:topic/snippet01 --batch # snippet
+hack -scalamacros:topic/snippet00 --batch # snippet
+hack -scalamacros:topic/snippet05 --batch # snippet
+hack -scalamacros:topic/snippet04 --batch # snippet
+hack -scalamacros:topic/annotated --batch # merged
+hack -scalamacros:topic/snippet03 --batch # snippet
+hack -scalamacros:topic/pre-typemacros --batch # merged
+hack -scalamacros:ticket/4044 --batch # merged
+hack -scalamacros:topic/snippet02 --batch # snippet
+hack -scalamacros:topic/snippet06 --batch # snippet

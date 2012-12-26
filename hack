@@ -2,6 +2,9 @@
 import sys, os, traceback, time, subprocess
 from subprocess import check_output, call, Popen, PIPE
 
+interactive = "--interactive" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
+
 def check_comm(*args, **kwargs):
   kwargs["stdout"] = PIPE
   kwargs["stderr"] = PIPE
@@ -20,7 +23,7 @@ def checkpoint(msg):
   title = sys.argv[1]
   # if title.startswith("+") or title.startswith("-"): title = title[1:]
   title = "Hack " + title
-  call(["growlnotify", "-n", title, "-m", msg])
+  if interactive: call(["growlnotify", "-n", title, "-m", msg])
   print msg
 
 def update_bashrc(fn):
@@ -30,7 +33,7 @@ def update_bashrc(fn):
   with open(os.path.expandvars("$HOME/.bashrc"), "w") as f: f.write("\n".join(bashrc))
 
 try:
-  if len(sys.argv) > 3: print >> sys.stderr, "usage: " + sys.argv[0] + " [[+|-]<target> [<prototype>]]"; sys.exit(1)
+  if len(sys.argv) > 3: print >> sys.stderr, "usage: " + sys.argv[0] + " [[+|-]<target> [<prototype>]] [--interactive|--batch]"; sys.exit(1)
   target = sys.argv[1] if len(sys.argv) >= 2 else check_output("hack-branch").strip()
   original_target = target
   add, delete = target.startswith("+"), target.startswith("-")
@@ -100,7 +103,7 @@ try:
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
-    if status != "no changes": raise Exception(status)
+    if status.startswith("no changes"): raise Exception(status)
 
     comm(["rm", "-rf", project_home])
     checkpoint("Deleted the Git repo at " + project_home)
@@ -117,11 +120,12 @@ try:
     update_bashrc(delete_aliases)
     checkpoint("Deleted Bash aliases kep" + short_target + " and sb" + short_target)
 
-  sublime_is_open = "Sublime" in check_output(["ps", "aux"])
-  with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home + "\n" + str(not sublime_is_open))
-  if not delete: check_comm(["subl", "--project", sublime_project])
-  if not sublime_is_open: time.sleep(0.5)
-  check_comm(["subl", "--command", "my_hack"])
+  if interactive:
+    sublime_is_open = "Sublime" in check_output(["ps", "aux"])
+    with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home + "\n" + str(not sublime_is_open))
+    if not delete: check_comm(["subl", "--project", sublime_project])
+    if not sublime_is_open: time.sleep(1.5)
+    check_comm(["subl", "--command", "my_hack"])
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:
