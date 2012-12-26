@@ -3,6 +3,7 @@ import sys, os, traceback, time, subprocess
 from subprocess import check_output, call, Popen, PIPE
 
 interactive = "--interactive" in sys.argv
+force = "--force" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
 
 def check_comm(*args, **kwargs):
@@ -103,7 +104,7 @@ try:
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
-    if status.startswith("no changes"): raise Exception(status)
+    if not status.startswith("no changes"): raise Exception(status)
 
     comm(["rm", "-rf", project_home])
     checkpoint("Deleted the Git repo at " + project_home)
