@@ -20,7 +20,7 @@ git merge origin/topic/pre-typemacros
 # git cherry-pick f03aee72d3 # quasiquotes milestone 1
 
 git cherry-pick d94bdd1f44 # org.scala-lang.macro-paradise
-git cherry-pick acfb66841f # type macros beta v2
+git cherry-pick 46c867d11a # type macros beta v2
 git cherry-pick fcbc475fbf # SI-6859 type macros no longer crash sbt
 git cherry-pick 74d60036f5 # SI-6830 constructor annotations are broken in macro paradise
 git cherry-pick f03aee72d3 # quasiquotes milestone 1
