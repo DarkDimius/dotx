@@ -45,6 +45,7 @@ for dir, branch in zip(dirs, branches):
   elif branch == "scalamacros:master" or branch =="scalamacros:paradise/macros":
     verdict("special")
   else:
+    call(["git", "remote", "update"])
     _, _, _, status = check_output(["hub-introspect"], cwd = dir).strip().split("\n")
     if not status.startswith("no changes"):
       verdict(re.match(r"^repository .* is dirty \((.*)\).*$", status).group(1))
@@ -68,7 +69,7 @@ else:
       write("git branch -D " + branch)
       write("git push origin :" + branch)
     write("git remote update")
-    write("git prune origin")
+    write("git remote prune origin")
     write("cd -")
     for dir, branch, status in results:
       if status.startswith("*"): write("hack -" + branch + " --batch --force # " + status[1:].strip())

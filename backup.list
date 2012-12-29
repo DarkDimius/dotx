@@ -17,15 +17,14 @@ Calendar.app
 Chess.app
 Contacts.app
 DVD Player.app
+DaisyDisk.app
 Dashboard.app
 Day-O.app
-Diablo III
 Dictionary.app
 Dropbox.app
 Evernote.app
 F-Script.app
 FaceTime.app
-Firefox.zip
 FirefoxAurora.app
 Flux.app
 Font Book.app
@@ -40,9 +39,6 @@ Key Codes.app
 KeyRemap4MacBook.app
 Keyboard Cleaner.app
 Launchpad.app
-Leda-IC-122.883.app
-Leda-IU-122.694.app
-Leda-IU-123.23.app
 Lingon.app
 Mail.app
 Messages.app
@@ -3938,11 +3934,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-11103.eW18G0: Permission denied
+Can't cd to (/private/tmp/) launchd-108.LRwRgn: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-201.XrRdlQ: Permission denied
+Can't cd to (/private/tmp/) launchd-349.nND0zW: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-344.0swfFY: Permission denied
+Can't cd to (/private/tmp/) launchd-809.4tbWgE: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15097,19 +15093,8 @@ Toggle iTerm
 Applications
 Downloads
 Movies
-2.10.x
-4044
-5467
-5841
-5875
-6187
-6548
-6591
-6685
-6696
-6742
+6638
 6751
-6808
 Check Jenkins Status
 Mission control
 New task
@@ -15122,7 +15107,6 @@ Pomodoro > Stop
 Skype
 What is My IP
 Wi-Fi-toggle
-annotated
 annotation-error
 auto-duplicate-expansions
 bashrc
@@ -15136,8 +15120,6 @@ enclosures
 fresh-name
 h2
 hack
-idempotency
-ident
 ident-attachments
 ident-deprecation-warnings
 ignore crashes
@@ -15147,40 +15129,18 @@ java7
 java8
 locker
 macros-unapply
-macrosnippet00
-macrosnippet01
-macrosnippet02
-macrosnippet03
-macrosnippet04
-macrosnippet05
-macrosnippet06
-macrosnippet07
-mima
-patmat-positionless
+master
+paradise
+paradise-parser
 pr
-pre-typemacros
-quasiquotes
 quick
 reflection
 rtm
-showraw
 showrawpos
 snippet00
-snippet01
-snippet02
-snippet03
-snippet04
-snippet05
-snippet06
-super-call-args
-toplevel
 tree-nonempty
-typed-ident-attachments
-typemacros
-typeof
 unapply-macros
-unchecked-pattern-match
-universe-treeinfo
+zzz
 
 ==================
 Firefox extensions:
@@ -15192,8 +15152,10 @@ jsonovich@lackoftalent.org.xpi
 keyconfig@petricek.net.xpi
 omnibar@ajitk.com.xpi
 onepassword@agilebits.com.xpi
+readability@readability.com.xpi
 testpilot@labs.mozilla.com.xpi
 {64161300-e22b-11db-8314-0800200c9a66}.xpi
+{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi
 {dc572301-7619-498c-a57d-39143191b318}.xpi
 
 ==================

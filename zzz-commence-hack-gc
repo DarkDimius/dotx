@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 set -o verbose
 cd /Users/xeno_by/Projects/Kepler
+git branch -D topic/fresh-name
+git push origin :topic/fresh-name
+git branch -D topic/reflection
+git push origin :topic/reflection
+git branch -D topic/tree-nonempty
+git push origin :topic/tree-nonempty
 git remote update
-git prune origin
+git remote prune origin
 cd -
+hack -scalamacros:topic/snippet00 --batch --force # snippet
+hack -scalamacros:topic/snippet01 --batch --force # snippet
+hack -scalamacros:topic/snippet02 --batch --force # snippet
+hack -scalamacros:topic/snippet03 --batch --force # snippet
+hack -scalamacros:topic/snippet04 --batch --force # snippet

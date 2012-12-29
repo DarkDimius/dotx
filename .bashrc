@@ -25,17 +25,22 @@ function parse_git_branch {
 }
 PS1="\$(date +%H:%M) \w\$(parse_git_branch)\$ "
 
+alias ga='git add'
+alias gai='git add -i'
+alias gap='git add -p'
+alias gr='git remove'
 alias gch='git checkout'
 alias gco='git commit'
 alias gcoa='git commit --amend'
 alias gca='git commit --amend'
 alias gb='git branch'
+alias gba='git branch -a'
 alias gbD='git branch -D'
 alias gn='git checkout -b'
 function gci { git push origin $(git rev-parse --abbrev-ref HEAD); }
 function gci+ { git push origin +$(git rev-parse --abbrev-ref HEAD); }
-alias gpo='git pull origin'
-alias gpu='git pull upstream'
+function gpo { git pull origin $(git rev-parse --abbrev-ref HEAD); }
+function gpu { git pull upstream $(git rev-parse --abbrev-ref HEAD); }
 alias gs='git status'
 alias grb='git rebase'
 alias grbi='git rebase -i'
@@ -48,7 +53,6 @@ alias gcpa='git cherry-pick --abort'
 alias gra='git remote add'
 alias grv='git remote -v'
 alias gru='git remote update'
-alias grn='git remote rename'
 alias gl='git --no-pager log --pretty=oneline -20'
 alias grh='git reset --hard'
 alias grh0='git reset --hard HEAD'
@@ -198,34 +202,18 @@ function sbparadise { target="$(hack-home "paradise/macros")/sandbox"; if [[ $? 
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function kepmaster { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmaster { target="$(hack-home "master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6751 { target="$(hack-home "6751")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6751 { target="$(hack-home "6751")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepunapply-macros { target="$(hack-home "unapply-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbunapply-macros { target="$(hack-home "unapply-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepannotation-error { target="$(hack-home "annotation-error")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbannotation-error { target="$(hack-home "annotation-error")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kepident-attachments { target="$(hack-home "ident-attachments")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbident-attachments { target="$(hack-home "ident-attachments")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function keppatmat-positionless { target="$(hack-home "patmat-positionless")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbpatmat-positionless { target="$(hack-home "patmat-positionless")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacros-unapply { target="$(hack-home "macros-unapply")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacros-unapply { target="$(hack-home "macros-unapply")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function keptree-nonempty { target="$(hack-home "tree-nonempty")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbtree-nonempty { target="$(hack-home "tree-nonempty")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepshowrawpos { target="$(hack-home "showrawpos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbshowrawpos { target="$(hack-home "showrawpos")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepreflection { target="$(hack-home "reflection")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbreflection { target="$(hack-home "reflection")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepfresh-name { target="$(hack-home "fresh-name")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbfresh-name { target="$(hack-home "fresh-name")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepenclosures { target="$(hack-home "enclosures")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbenclosures { target="$(hack-home "enclosures")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepintroduce-top-level { target="$(hack-home "introduce-top-level")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbintroduce-top-level { target="$(hack-home "introduce-top-level")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepauto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbauto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6638 { target="$(hack-home "6638")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6638 { target="$(hack-home "6638")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepparadise-parser { target="$(hack-home "paradise-parser")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbparadise-parser { target="$(hack-home "paradise-parser")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keppre-typemacros { target="$(hack-home "pre-typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbpre-typemacros { target="$(hack-home "pre-typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
