@@ -3934,11 +3934,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-108.LRwRgn: Permission denied
+Can't cd to (/private/tmp/) launchd-198.3STY9F: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-349.nND0zW: Permission denied
+Can't cd to (/private/tmp/) launchd-4866.49NOGt: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-809.4tbWgE: Permission denied
+Can't cd to (/private/tmp/) launchd-520.gefb7b: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15094,7 +15094,6 @@ Applications
 Downloads
 Movies
 6638
-6751
 Check Jenkins Status
 Mission control
 New task
@@ -15107,8 +15106,6 @@ Pomodoro > Stop
 Skype
 What is My IP
 Wi-Fi-toggle
-annotation-error
-auto-duplicate-expansions
 bashrc
 bug
 dont ignore scala crashes
@@ -15117,10 +15114,8 @@ dothackproto
 dotjenkins
 dotslate
 enclosures
-fresh-name
 h2
 hack
-ident-attachments
 ident-deprecation-warnings
 ignore crashes
 introduce-top-level
@@ -15128,18 +15123,14 @@ java6
 java7
 java8
 locker
-macros-unapply
 master
 paradise
 paradise-parser
 pr
+pre-typemacros
 quick
-reflection
 rtm
 showrawpos
-snippet00
-tree-nonempty
-unapply-macros
 zzz
 
 ==================
