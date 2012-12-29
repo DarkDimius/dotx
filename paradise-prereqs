@@ -1,18 +1,26 @@
 #!/usr/bin/env bash
 set -o errexit
+set -o verbose
 
 git remote update
 git checkout master
 git pull origin master
 git push origin master
-git branch -D pullrequest/paradise
-git checkout -b pullrequest/paradise
+git branch -D paradise/macros
+git checkout -b paradise/macros
 git merge origin/topic/enclosures
 git merge origin/topic/ident-deprecation-warnings
 git merge origin/topic/introduce-top-level
 git merge origin/topic/pre-typemacros
-git cherry-pick 05153c6484 # org.scala-lang.macro-paradise
-git cherry-pick 2d847e7f2e # type macros beta v2
-git cherry-pick fcbc475fbf # (origin/pullrequest/paradise, pullrequest/paradise) SI-6859 type macros no longer crash sbt
+
+# git cherry-pick 05153c6484 # org.scala-lang.macro-paradise
+# git cherry-pick 2d847e7f2e # type macros beta v2
+# git cherry-pick fcbc475fbf # SI-6859 type macros no longer crash sbt
+# git cherry-pick 74d60036f5 # SI-6830 constructor annotations are broken in macro paradise
+# git cherry-pick f03aee72d3 # quasiquotes milestone 1
+
+git cherry-pick d94bdd1f44 # org.scala-lang.macro-paradise
+git cherry-pick acfb66841f # type macros beta v2
+git cherry-pick fcbc475fbf # SI-6859 type macros no longer crash sbt
 git cherry-pick 74d60036f5 # SI-6830 constructor annotations are broken in macro paradise
 git cherry-pick f03aee72d3 # quasiquotes milestone 1
