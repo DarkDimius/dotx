@@ -8,33 +8,11 @@ git pull origin master
 git push origin master
 git branch -D paradise/macros
 git checkout -b paradise/macros
-git merge origin/topic/enclosures
-git merge origin/topic/ident-deprecation-warnings
 git merge origin/topic/introduce-top-level
 git merge origin/topic/pre-typemacros
 
-# git cherry-pick 05153c6484 # org.scala-lang.macro-paradise
-# git cherry-pick 2d847e7f2e # type macros beta v2
-# git cherry-pick fcbc475fbf # SI-6859 type macros no longer crash sbt
-# git cherry-pick 74d60036f5 # SI-6830 constructor annotations are broken in macro paradise
-# git cherry-pick f03aee72d3 # quasiquotes milestone 1
-
-# git cherry-pick d94bdd1f44 # org.scala-lang.macro-paradise
-# git cherry-pick 6a09125dc4 # type macros beta v2
-# git cherry-pick 5756ce199a # SI-6859 type macros no longer crash sbt
-# git cherry-pick c456784304 # SI-6830 constructor annotations are broken in macro paradise
-# git cherry-pick 6346b92146 # quasiquotes milestone 1
-
-# git cherry-pick 55d97002ab # org.scala-lang.macro-paradise
-# git cherry-pick 71a448aee3 # type macros beta v2
-# git cherry-pick 1c1944cd5e # macro fixup
-# git cherry-pick 83532b5779 # macro fixup
-# git cherry-pick e7edf96309 # SI-6859 type macros no longer crash sbt
-# git cherry-pick 552a575ac1 # SI-6830 constructor annotations are broken in macro paradise
-# git cherry-pick ebf2e3e2ba # quasiquotes milestone 1
-
-git cherry-pick ef134ef2d3 # org.scala-lang.macro-paradise
-git cherry-pick 8091fcddf2 # type macros beta v2
-git cherry-pick 216f8a03fa # SI-6859 type macros no longer crash sbt
-git cherry-pick 69e3a7b816 # SI-6830 constructor annotations are broken in macro paradise
-git cherry-pick b839e7213e # quasiquotes milestone 1
+git cherry-pick 5909157e14 # org.scala-lang.macro-paradise
+git cherry-pick e05bb5a5fc # type macros beta v2
+git cherry-pick c8d2f183ea # SI-6859 type macros no longer crash sbt
+git cherry-pick ad2e9737df # SI-6830 constructor annotations are broken in macro paradise
+git cherry-pick 4b2b22eaa9 # quasiquotes milestone 1

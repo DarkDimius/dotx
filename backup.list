@@ -3936,6 +3936,8 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-198.3STY9F: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-37773.vQ9kMe: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-4866.49NOGt: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-520.gefb7b: Permission denied
@@ -15128,6 +15130,7 @@ paradise
 paradise-parser
 pr
 pre-typemacros
+quasiquotes
 quick
 rtm
 showrawpos

@@ -202,18 +202,12 @@ function sbparadise { target="$(hack-home "paradise/macros")/sandbox"; if [[ $? 
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function kepident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbident-deprecation-warnings { target="$(hack-home "ident-deprecation-warnings")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kepshowrawpos { target="$(hack-home "showrawpos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbshowrawpos { target="$(hack-home "showrawpos")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepenclosures { target="$(hack-home "enclosures")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbenclosures { target="$(hack-home "enclosures")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepintroduce-top-level { target="$(hack-home "introduce-top-level")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbintroduce-top-level { target="$(hack-home "introduce-top-level")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep6638 { target="$(hack-home "6638")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb6638 { target="$(hack-home "6638")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepparadise-parser { target="$(hack-home "paradise-parser")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbparadise-parser { target="$(hack-home "paradise-parser")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function keppre-typemacros { target="$(hack-home "pre-typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbpre-typemacros { target="$(hack-home "pre-typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepimplicit-macros { target="$(hack-home "implicit-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbimplicit-macros { target="$(hack-home "implicit-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
