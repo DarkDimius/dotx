@@ -25,3 +25,4 @@ implicit class SymbolFlags(sym: Symbol) { def flags = ru.show(sym.asInstanceOf[s
 implicit class TypeFlags(tpe: Type) { def flags = tpe.typeSymbol.flags }
 def impl1(c: Context) = c.literalUnit
 def impl2(c: Context) = c.universe.Ident(c.universe.TypeName("AnyRef"))
+class ann extends scala.annotation.StaticAnnotation

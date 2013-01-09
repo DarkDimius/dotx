@@ -25,7 +25,7 @@ Dropbox.app
 Evernote.app
 F-Script.app
 FaceTime.app
-FirefoxAurora.app
+Firefox.app
 Flux.app
 Font Book.app
 Game Center.app
@@ -87,6 +87,7 @@ uTorrent.app
 ==================
 Homebrew packages:
 ack
+autoconf
 bash
 bash-completion
 coreutils
@@ -113,6 +114,7 @@ The following ports are currently installed:
   cctools @836_0+llvm31
   cctools-headers @836_0
   cloog @0.17.0_1
+  ctags @5.8_0 (active)
   dyld-headers @210.2.3_0
   expat @2.1.0_0
   gcc47 @4.7.2_2
@@ -3934,13 +3936,15 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-198.3STY9F: Permission denied
+Can't cd to (/private/tmp/) launchd-108.SBR3zW: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-37773.vQ9kMe: Permission denied
+Can't cd to (/private/tmp/) launchd-10919.3iqMEd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-4866.49NOGt: Permission denied
+Can't cd to (/private/tmp/) launchd-14338.FtLXbG: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-520.gefb7b: Permission denied
+Can't cd to (/private/tmp/) launchd-2527.zrzDq1: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-345.qwDcJL: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3989,6 +3993,8 @@ Can't cd to (/private/var/db/) Spotlight: Permission denied
 Can't cd to (/private/var/db/) sudo: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/_j/tq8pn1_n4zddq3f3f7h68fmm0000gp/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/_j/tq8pn1_n4zddq3f3f7h68fmm0000gp/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/f3/jy8k6c2d69sf_zb6kgczsyn40000gn/C/com.apple.SoftwareUpdate/swcdn.apple.com/content/downloads/53/02/041-8081/2jwp4wjrwygtm4lc608qy4h0n4a9yyq37g/) Safari6.0.2Mountain.pkg: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -14993,6 +14999,15 @@ xeno_by::build::blib::lib::YAML::Tiny	1.51
 xeno_by::build::lib::YAML::Tiny	1.51
 xeno_by::build::t::lib::Test	undef
 xeno_by::CPAN::MyConfig	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::C4che	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::ChannelDefs	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::Channels	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::Configure_ac	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::FileUtils	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::General	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::Getopt	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::Request	undef
+local::Cellar::autoconf::share::autoconf::Autom4te::XFile	1.2
 local::Cellar::git::lib::Git	0.01
 local::Cellar::git::lib::Git::I18N	undef
 local::Cellar::git::lib::Git::IndexInfo	undef
@@ -15095,6 +15110,8 @@ Toggle iTerm
 Applications
 Downloads
 Movies
+5744
+5824
 6638
 Check Jenkins Status
 Mission control
@@ -15115,25 +15132,24 @@ dothack
 dothackproto
 dotjenkins
 dotslate
-enclosures
+flags
 h2
 hack
-ident-deprecation-warnings
 ignore crashes
-introduce-top-level
+implicit-macros
 java6
 java7
 java8
 locker
 master
 paradise
-paradise-parser
 pr
 pre-typemacros
-quasiquotes
 quick
 rtm
-showrawpos
+si
+snippet00
+snippet01
 zzz
 
 ==================
@@ -15175,6 +15191,10 @@ KeyRemap4MacBook private.xml:
   <appdef>
     <appname>FIREFOX</appname>
     <equal>org.mozilla.aurora</equal>
+  </appdef>
+  <appdef>
+    <appname>PREVIEW</appname>
+    <equal>com.apple.Preview</equal>
   </appdef>
   <item>
     <name>(except Sublime) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
@@ -15346,5 +15366,20 @@ KeyRemap4MacBook private.xml:
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
+  </item>
+  <item>
+    <name>(Preview) Satechi Compat</name>
+    <identifier>private.preview_satechi_compat</identifier>
+    <only>PREVIEW</only>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::CURSOR_RIGHT,
+    </autogen>
   </item>
 </root>

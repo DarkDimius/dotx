@@ -114,6 +114,7 @@ install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
 install-into-bin stree
 install-into-bin bug
+install-into-bin bug si
 install-into-bin hub-introspect
 install-into-bin toggle-notification-center
 install-into-bin hack
@@ -138,6 +139,7 @@ install-into-bin pomodoro-reset
 install-into-bin sandbox
 install-into-bin deploy-paradise
 install-into-bin paradise-prereqs
+install-into-bin grade-submissions
 
 install-into-etc launchd.conf
 install-into-etc paths
