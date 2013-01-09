@@ -18,6 +18,7 @@ source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
 source $HOME/.partest-completion.bash
+source $HOME/.grade-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 function parse_git_branch {
@@ -194,7 +195,8 @@ alias pap='cd "$HOME/Projects/Pages"'
 alias dotx='cd "$HOME/Projects/Dotx"'
 alias docs='cd "$HOME/Projects/DocsScalaLang"'
 alias smock='cd "$HOME/Projects/ScalaMock"'
-alias grading='cd "$HOME/Projects/Grading"'
+alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
+alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }

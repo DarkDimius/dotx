@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+import sys, os, filecmp, difflib, shutil
+from subprocess import check_call
+
+current_dir = os.path.abspath(".")
+root = "/Users/xeno_by/Projects/pp-2012-simulation-grades"
+backup_dir = "/Users/xeno_by/Projects/pp-2012-blueprint"
+donnee_dir = "/Users/xeno_by/Projects/progfun/src/main/scala/simulations"
+dirs = filter(lambda dir: dir != "!SOLUTION" and dir != ".git" and dir != "README.md", os.listdir(root))
+blueprint_dir = root + "/!SOLUTION/src/main/scala/simulations"
+interestings = ["Circuit.scala", "EpidemySimulator.scala"]
+stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
+
+if len(sys.argv) != 2: error("usage: " + sys.argv[0] + " <team name>")
+current_dir = root + "/" + sys.argv[1]
+
+solution = root + "/!SOLUTION"
+scratchpad = root + "/!SCRATCHPAD"
+if os.path.exists(scratchpad): shutil.rmtree(scratchpad)
+shutil.copytree(solution, scratchpad)
+for interesting in interestings:
+  student_solution = current_dir + "/" + interesting
+  scratchpad_destination = scratchpad + "/src/main/scala/simulations/" + interesting
+  check_call(["cp", student_solution, scratchpad_destination])
+epidemy_display = scratchpad + "/gui/EpidemyDisplay.scala"
+
+check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
+
+# STEP 1: ESTABLISH THE BASELINE
+# for dir in dirs:
+#   for stub in stubs:
+#     donnee = donnee_dir + "/" + stub
+#     stub = dir + "/" + stub
+#     check_call(["cp", donnee, stub])
+#   for interesting in interestings:
+#     donnee = donnee_dir + "/" + interesting
+#     interesting = dir + "/" + interesting
+#     check_call(["cp", donnee, interesting])
+
+# STEP 2: COPY THE SOLUTIONS
+# for dir in dirs:
+#   for interesting in interestings:
+#     blueprint = blueprint_dir + "/" + interesting
+#     interesting = dir + "/" + interesting
+#     check_call(["cp", blueprint, interesting])
+
+# STEP 3: COMMIT THE SOLUTIONS
+# for dir in dirs:
+#   for interesting in interestings:
+#     blueprint = blueprint_dir + "/" + interesting
+#     interesting = dir + "/" + interesting
+#     check_call(["git", "add", interesting])
+#   check_call(["git", "commit", "-m", dir])

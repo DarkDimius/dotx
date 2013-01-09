@@ -75,6 +75,7 @@ install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
 install-into-home hack.alfredextension .hack.alfredextension
 install-into-home partest-completion.bash .partest-completion.bash
+install-into-home grade-completion.bash .grade-completion.bash
 install-into-home .scala_tier
 
 install-into-bin pullrequest
@@ -139,7 +140,8 @@ install-into-bin pomodoro-reset
 install-into-bin sandbox
 install-into-bin deploy-paradise
 install-into-bin paradise-prereqs
-install-into-bin grade-submissions
+install-into-bin grade
+install-into-bin solution
 
 install-into-etc launchd.conf
 install-into-etc paths
