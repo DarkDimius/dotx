@@ -11,21 +11,6 @@ blueprint_dir = root + "/!SOLUTION/src/main/scala/simulations"
 interestings = ["Circuit.scala", "EpidemySimulator.scala"]
 stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
 
-if len(sys.argv) != 2: error("usage: " + sys.argv[0] + " <team name>")
-current_dir = root + "/" + sys.argv[1]
-
-solution = root + "/!SOLUTION"
-scratchpad = root + "/!SCRATCHPAD"
-if os.path.exists(scratchpad): shutil.rmtree(scratchpad)
-shutil.copytree(solution, scratchpad)
-for interesting in interestings:
-  student_solution = current_dir + "/" + interesting
-  scratchpad_destination = scratchpad + "/src/main/scala/simulations/" + interesting
-  check_call(["cp", student_solution, scratchpad_destination])
-epidemy_display = scratchpad + "/gui/EpidemyDisplay.scala"
-
-check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
-
 # STEP 1: ESTABLISH THE BASELINE
 # for dir in dirs:
 #   for stub in stubs:
@@ -51,3 +36,18 @@ check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
 #     interesting = dir + "/" + interesting
 #     check_call(["git", "add", interesting])
 #   check_call(["git", "commit", "-m", dir])
+
+if len(sys.argv) != 2: error("usage: " + sys.argv[0] + " <team name>")
+current_dir = root + "/" + sys.argv[1]
+
+solution = root + "/!SOLUTION"
+scratchpad = root + "/!SCRATCHPAD"
+if os.path.exists(scratchpad): shutil.rmtree(scratchpad)
+shutil.copytree(solution, scratchpad)
+for interesting in interestings:
+  student_solution = current_dir + "/" + interesting
+  scratchpad_destination = scratchpad + "/src/main/scala/simulations/" + interesting
+  check_call(["cp", student_solution, scratchpad_destination])
+epidemy_display = scratchpad + "/gui/EpidemyDisplay.scala"
+check_call(["sed", "-i", "", "-e", "s/\"Scaliosis - REFERENCE\"/\"Scaliosis - " + sys.argv[1].upper() + "\"/g", "src/main/scala/simulations/gui/EpidemyDisplay.scala"], cwd = scratchpad)
+check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
