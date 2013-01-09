@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-import sys, os, filecmp, difflib, shutil
+import sys, os, filecmp, difflib, shutil, time
 from subprocess import check_call
 
 root = "/Users/xeno_by/Projects/pp-2012-simulation-grades"
 backup_dir = "/Users/xeno_by/Projects/pp-2012-blueprint"
 donnee_dir = "/Users/xeno_by/Projects/progfun/src/main/scala/simulations"
-dirs = filter(lambda dir: dir != "!SOLUTION" and dir != ".git" and dir != "README.md", os.listdir(root))
+dirs = filter(lambda dir: dir != "!SOLUTION" and dir != "!SCRATCHPAD" and dir != ".git" and dir != "README.md", os.listdir(root))
 blueprint_dir = root + "/!SOLUTION/src/main/scala/simulations"
 interestings = ["Circuit.scala", "EpidemySimulator.scala"]
 stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
@@ -24,9 +24,9 @@ stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
 # STEP 2: COPY THE SOLUTIONS
 # for dir in dirs:
 #   for interesting in interestings:
-#     blueprint = blueprint_dir + "/" + interesting
-#     interesting = dir + "/" + interesting
-#     check_call(["cp", blueprint, interesting])
+#     backup = backup_dir + "/" + dir + "/" + interesting
+#     interesting = root + "/" + dir + "/" + interesting
+#     check_call(["cp", backup, interesting])
 
 # STEP 3: COMMIT THE SOLUTIONS
 # for dir in dirs:
@@ -55,10 +55,15 @@ def set_flags(airplane_mode, reduced_mobility_mode, vaccination_mode):
   if reduced_mobility_mode: mode = "reduced mobility"
   if vaccination_mode: mode = "vaccination"
   mode = mode.upper()
+  for i in range(1, 10): print ""
+  print mode
+  print "==================="
+  time.sleep(5)
   check_call(["sed", "-i", "", "-E", "s/\"Scaliosis - (.*)\"/\"Scaliosis - " + sys.argv[1].upper() + " - " + mode + "\"/g", "src/main/scala/simulations/gui/EpidemyDisplay.scala"], cwd = scratchpad)
-  check_call(["sed", "-i", "", "-E", "s/airplaneMode = (.*)/airplaneMode = " + str(airplane_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
-  check_call(["sed", "-i", "", "-E", "s/reducedMobilityMode = (.*)/reducedMobilityMode = " + str(reduced_mobility_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
-  check_call(["sed", "-i", "", "-E", "s/vaccinationMode = (.*)/vaccinationMode = " + str(vaccination_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
+  # check_call(["sed", "-i", "", "-E", "s/airplaneMode = (.*)/airplaneMode = " + str(airplane_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
+  # check_call(["sed", "-i", "", "-E", "s/reducedMobilityMode = (.*)/reducedMobilityMode = " + str(reduced_mobility_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
+  # check_call(["sed", "-i", "", "-E", "s/vaccinationMode = (.*)/vaccinationMode = " + str(vaccination_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
+  check_call(["subl", "-w", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
 
 set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = False)
 check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
