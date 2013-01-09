@@ -72,7 +72,4 @@ check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
 set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = True)
 check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
 
-
-
-
-
+check_call(["bash", "-c", "sbt test"], cwd = solution)

@@ -16,14 +16,19 @@ def set_flags(airplane_mode, reduced_mobility_mode, vaccination_mode):
   check_call(["sed", "-i", "", "-E", "s/reducedMobilityMode = (.*)/reducedMobilityMode = " + str(reduced_mobility_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = solution)
   check_call(["sed", "-i", "", "-E", "s/vaccinationMode = (.*)/vaccinationMode = " + str(vaccination_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = solution)
 
-set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = False)
-check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+try:
+  set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = False)
+  check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
 
-set_flags(airplane_mode = True, reduced_mobility_mode = False, vaccination_mode = False)
-check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+  set_flags(airplane_mode = True, reduced_mobility_mode = False, vaccination_mode = False)
+  check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
 
-set_flags(airplane_mode = False, reduced_mobility_mode = True, vaccination_mode = False)
-check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+  set_flags(airplane_mode = False, reduced_mobility_mode = True, vaccination_mode = False)
+  check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
 
-set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = True)
-check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+  set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = True)
+  check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+
+  check_call(["bash", "-c", "sbt test"], cwd = solution)
+finally:
+  check_call(["git", "checkout", "--", "src"], cwd = solution)
