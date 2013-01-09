@@ -4,4 +4,26 @@ from subprocess import check_call
 
 root = "/Users/xeno_by/Projects/pp-2012-simulation-grades"
 solution = root + "/!SOLUTION"
+
+def set_flags(airplane_mode, reduced_mobility_mode, vaccination_mode):
+  mode = "vanilla"
+  if airplane_mode: mode = "airplane"
+  if reduced_mobility_mode: mode = "reduced mobility"
+  if vaccination_mode: mode = "vaccination"
+  mode = mode.upper()
+  check_call(["sed", "-i", "", "-E", "s/\"Scaliosis - (.*)\"/\"Scaliosis - SOLUTION - " + mode + "\"/g", "src/main/scala/simulations/gui/EpidemyDisplay.scala"], cwd = solution)
+  check_call(["sed", "-i", "", "-E", "s/airplaneMode = (.*)/airplaneMode = " + str(airplane_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = solution)
+  check_call(["sed", "-i", "", "-E", "s/reducedMobilityMode = (.*)/reducedMobilityMode = " + str(reduced_mobility_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = solution)
+  check_call(["sed", "-i", "", "-E", "s/vaccinationMode = (.*)/vaccinationMode = " + str(vaccination_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = solution)
+
+set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = False)
+check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+
+set_flags(airplane_mode = True, reduced_mobility_mode = False, vaccination_mode = False)
+check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+
+set_flags(airplane_mode = False, reduced_mobility_mode = True, vaccination_mode = False)
+check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
+
+set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = True)
 check_call(["bash", "-c", "echo 2 | sbt run"], cwd = solution)
