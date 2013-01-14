@@ -205,15 +205,13 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function paradise { target="$(hack-home "paradise/macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbparadise { target="$(hack-home "paradise/macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keppr { target="$(hack-home "pullrequest/paradise")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbpr { target="$(hack-home "pullrequest/paradise")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function bp { target="$(hack-home "backport/paradise")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbbp { target="$(hack-home "backport/paradise")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function kepimplicit-macros { target="$(hack-home "implicit-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbimplicit-macros { target="$(hack-home "implicit-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepinference { target="$(hack-home "inference")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbinference { target="$(hack-home "inference")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepinfrastructure { target="$(hack-home "infrastructure")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbinfrastructure { target="$(hack-home "infrastructure")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
