@@ -3938,17 +3938,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) HP_CHorse.pkg.boms.bJlVhh: Permission denied
+Can't cd to (/private/tmp/) launchd-200.78Eljr: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-108.SBR3zW: Permission denied
+Can't cd to (/private/tmp/) launchd-309.NQu5hS: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-10919.3iqMEd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-14338.FtLXbG: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-2527.zrzDq1: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-345.qwDcJL: Permission denied
+Can't cd to (/private/tmp/) launchd-465.NN5Fy8: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3998,8 +3992,6 @@ Can't cd to (/private/var/db/) sudo: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/_j/tq8pn1_n4zddq3f3f7h68fmm0000gp/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/_j/tq8pn1_n4zddq3f3f7h68fmm0000gp/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/f3/jy8k6c2d69sf_zb6kgczsyn40000gn/C/com.apple.SoftwareUpdate/swcdn.apple.com/content/downloads/53/02/041-8081/2jwp4wjrwygtm4lc608qy4h0n4a9yyq37g/) Safari6.0.2Mountain.pkg: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
@@ -4013,8 +4005,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4037,8 +4027,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4143,8 +4131,6 @@ Can't cd to (/System/Library/DirectoryServices/DefaultLocalDB/) Default: Permiss
 Can't cd to (/System/Library/) User Template: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/usr/sbin/) authserver: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/0764D06F-819F-40EC-8DC8-884424841CBD/.Trashes): Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
@@ -15114,14 +15100,6 @@ share::headerdoc::Modules::HeaderDoc::Typedef	$Revision: 1298084579 $
 share::headerdoc::Modules::HeaderDoc::TypeHelper	$Revision: 1298084579 $
 share::headerdoc::Modules::HeaderDoc::Utilities	$Revision: 1334261201 $
 share::headerdoc::Modules::HeaderDoc::Var	$Revision: 1298084579 $
-Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
-Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
-Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
-Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
-Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
-Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
-Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
-Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 
 ==================
 Alfred extensions:
@@ -15147,6 +15125,7 @@ Pomodoro > Stop
 Skype
 What is My IP
 Wi-Fi-toggle
+backport
 bashrc
 bug
 dont ignore scala crashes
@@ -15159,19 +15138,18 @@ h2
 hack
 ignore crashes
 implicit-macros
-inference
-infrastructure
 java6
 java7
 java8
 locker
+macrosnippet00
 master
 paradise
 pr
+pullrequest
 quick
 rtm
 si
-snippet00
 zzz
 
 ==================
