@@ -201,23 +201,19 @@ function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmaster { target="$(hack-home "master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function paradise { target="$(hack-home "paradise/macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbparadise { target="$(hack-home "paradise/macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kep6638 { target="$(hack-home "6638")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6638 { target="$(hack-home "6638")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function keppre-typemacros { target="$(hack-home "pre-typemacros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbpre-typemacros { target="$(hack-home "pre-typemacros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepimplicit-macros { target="$(hack-home "implicit-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbimplicit-macros { target="$(hack-home "implicit-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep5744 { target="$(hack-home "5744")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb5744 { target="$(hack-home "5744")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepinference { target="$(hack-home "inference")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbinference { target="$(hack-home "inference")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep5824 { target="$(hack-home "5824")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb5824 { target="$(hack-home "5824")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepinfrastructure { target="$(hack-home "infrastructure")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbinfrastructure { target="$(hack-home "infrastructure")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

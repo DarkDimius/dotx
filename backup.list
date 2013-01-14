@@ -3924,6 +3924,8 @@ Can't cd to (/Library/Caches/) com.apple.coresymbolicationd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/Library/Caches/) com.apple.Spotlight: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/Library/Caches/) com.google.SoftwareUpdate.0: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't opendir(/private/etc/cups/certs): Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) certs: Permission denied
@@ -3935,6 +3937,8 @@ Can't cd to (/private/etc/raddb/) sites-available: Permission denied
 Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) HP_CHorse.pkg.boms.bJlVhh: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-108.SBR3zW: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4009,6 +4013,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4137,6 +4143,8 @@ Can't cd to (/System/Library/DirectoryServices/DefaultLocalDB/) Default: Permiss
 Can't cd to (/System/Library/) User Template: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/usr/sbin/) authserver: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't opendir(/Volumes/0764D06F-819F-40EC-8DC8-884424841CBD/.Trashes): Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
 Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2663) line 6, <FILE> line 7.
@@ -14999,6 +15007,14 @@ xeno_by::build::blib::lib::YAML::Tiny	1.51
 xeno_by::build::lib::YAML::Tiny	1.51
 xeno_by::build::t::lib::Test	undef
 xeno_by::CPAN::MyConfig	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 local::Cellar::autoconf::share::autoconf::Autom4te::C4che	undef
 local::Cellar::autoconf::share::autoconf::Autom4te::ChannelDefs	undef
 local::Cellar::autoconf::share::autoconf::Autom4te::Channels	undef
@@ -15098,6 +15114,14 @@ share::headerdoc::Modules::HeaderDoc::Typedef	$Revision: 1298084579 $
 share::headerdoc::Modules::HeaderDoc::TypeHelper	$Revision: 1298084579 $
 share::headerdoc::Modules::HeaderDoc::Utilities	$Revision: 1334261201 $
 share::headerdoc::Modules::HeaderDoc::Var	$Revision: 1298084579 $
+Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
+Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
+Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 
 ==================
 Alfred extensions:
@@ -15110,9 +15134,7 @@ Toggle iTerm
 Applications
 Downloads
 Movies
-5744
-5824
-6638
+210x
 Check Jenkins Status
 Mission control
 New task
@@ -15137,6 +15159,8 @@ h2
 hack
 ignore crashes
 implicit-macros
+inference
+infrastructure
 java6
 java7
 java8
@@ -15144,12 +15168,10 @@ locker
 master
 paradise
 pr
-pre-typemacros
 quick
 rtm
 si
 snippet00
-snippet01
 zzz
 
 ==================

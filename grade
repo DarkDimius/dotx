@@ -36,7 +36,7 @@ stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
 #     check_call(["git", "add", interesting])
 #   check_call(["git", "commit", "-m", dir])
 
-if len(sys.argv) != 2: sys.error("usage: " + sys.argv[0] + " <team name>")
+if len(sys.argv) != 2: print "usage: " + sys.argv[0] + " <team name>"; sys.exit(1)
 current_dir = root + "/" + sys.argv[1]
 
 solution = root + "/!SOLUTION"
@@ -65,6 +65,8 @@ def set_flags(airplane_mode, reduced_mobility_mode, vaccination_mode):
   # check_call(["sed", "-i", "", "-E", "s/vaccinationMode = (.*)/vaccinationMode = " + str(vaccination_mode).lower() + "/g", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
   check_call(["subl", "-w", "src/main/scala/simulations/EpidemySimulator.scala"], cwd = scratchpad)
 
+check_call(["bash", "-c", "sbt test"], cwd = scratchpad)
+
 set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = False)
 check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
 
@@ -76,5 +78,3 @@ check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
 
 set_flags(airplane_mode = False, reduced_mobility_mode = False, vaccination_mode = True)
 check_call(["bash", "-c", "echo 2 | sbt run"], cwd = scratchpad)
-
-check_call(["bash", "-c", "sbt test"], cwd = solution)

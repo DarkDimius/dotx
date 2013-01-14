@@ -15,6 +15,7 @@ def postprocess(branch):
   branch = branch.strip()
   if "*" in branch: return None
   if "->" in branch: return None
+  if "2.10.x" in branch: return None
   if "master" in branch: return None
   if "paradise/macros" in branch: return None
   if branch.startswith("remotes/origin/"): return branch[len("remotes/origin/"):]
