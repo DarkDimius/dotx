@@ -79,7 +79,7 @@ source "$HOME/Projects/Libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
-alias pr="pullrequest"
+alias pr="/usr/local/bin/pullrequest"
 alias t="partest"
 alias tmacro="partest-macro --macros-only"
 alias treify="partest-macro --macros-and-reify"
@@ -198,7 +198,7 @@ alias smock='cd "$HOME/Projects/ScalaMock"'
 alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
 alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb { target="$(hack-home)/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmaster { target="$(hack-home "master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -217,3 +217,9 @@ function kepimplicit-macros { target="$(hack-home "implicit-macros")"; if [[ $? 
 function sbimplicit-macros { target="$(hack-home "implicit-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrocompiler { target="$(hack-home "macrocompiler")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrocompiler { target="$(hack-home "macrocompiler")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

@@ -1,0 +1,11 @@
+#!/usr/bin/osascript
+on run argv
+  -- if reeder is not started
+    -- start
+    -- cmd + 2
+    -- j
+    -- j
+    -- activate
+  -- if reeder is started
+    -- do nothing
+end run
