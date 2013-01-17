@@ -143,6 +143,7 @@ install-into-bin paradise-prereqs
 install-into-bin grade
 install-into-bin solution
 install-into-bin reeder-launch-app
+install-into-bin reeder-focus-unread
 
 install-into-etc launchd.conf
 install-into-etc paths
