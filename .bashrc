@@ -217,9 +217,13 @@ function kepimplicit-macros { target="$(hack-home "implicit-macros")"; if [[ $? 
 function sbimplicit-macros { target="$(hack-home "implicit-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrocompiler { target="$(hack-home "macrocompiler")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrocompiler { target="$(hack-home "macrocompiler")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet02 { target="$(hack-home "macrosnippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet02 { target="$(hack-home "macrosnippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

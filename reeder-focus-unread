@@ -1,11 +1,11 @@
 #!/usr/bin/osascript
 on run argv
-  tell application "Reeder"
-    activate
-  end tell
-  tell application "System Events"
-    keystroke "2" using command down
-    keystroke "j"
-    keystroke "j"
-  end tell
+  -- tell application "Reeder"
+  --   activate
+  -- end tell
+  -- tell application "System Events"
+  --   keystroke "2" using command down
+  --   keystroke "j"
+  --   keystroke "j"
+  -- end tell
 end run

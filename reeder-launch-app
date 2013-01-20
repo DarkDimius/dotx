@@ -8,21 +8,3 @@ else
   sleep 0.5
   reeder-focus-unread
 fi
-
-# on run argv
-#   tell application "Reeder"
-#     activate
-#   end tell
-#   delay 1
-#   tell application "System Events"
-#     set visible of process "Reeder" to true
-#   end tell
-#   -- if reeder is not started
-#     -- start
-#     -- cmd + 2
-#     -- j
-#     -- j
-#     -- activate
-#   -- if reeder is started
-#     -- do nothing
-# end run

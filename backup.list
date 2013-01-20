@@ -51,6 +51,7 @@ Notes.app
 Photo Booth.app
 Preview.app
 QuickTime Player.app
+Reeder.app
 Reminders.app
 Retinizer.app
 Safari.app
@@ -243,6 +244,8 @@ rubygems-update (1.8.24)
 rumember (1.0.1)
 syntax (1.0.0)
 terminal-notifier (1.4.2)
+trollop (2.0)
+wkpdf (0.6.9 universal-darwin)
 
 ==================
 Perl modules:
@@ -3938,13 +3941,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-200.78Eljr: Permission denied
+Can't cd to (/private/tmp/) launchd-200.kxfbtN: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-23606.EAPKfe: Permission denied
+Can't cd to (/private/tmp/) launchd-366.EuZH8V: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-309.NQu5hS: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-465.NN5Fy8: Permission denied
+Can't cd to (/private/tmp/) launchd-4497.7r0btS: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15118,6 +15119,7 @@ Pomodoro > Reset
 Pomodoro > Short break
 Pomodoro > Start
 Pomodoro > Stop
+Reeder
 Skype
 What is My IP
 Wi-Fi-toggle
@@ -15138,9 +15140,9 @@ java6
 java7
 java8
 locker
-macrocompiler
 macrosnippet00
 macrosnippet01
+macrosnippet02
 master
 paradise
 pr
@@ -15149,6 +15151,8 @@ quick
 rtm
 si
 snippet00
+snippet01
+snippet02
 zzz
 
 ==================

@@ -6,29 +6,56 @@ root = "/Users/xeno_by/Projects/pp-2012-simulation-grades"
 backup_dir = "/Users/xeno_by/Projects/pp-2012-blueprint"
 donnee_dir = "/Users/xeno_by/Projects/progfun/src/main/scala/simulations"
 dirs = filter(lambda dir: dir != "!SOLUTION" and dir != "!SCRATCHPAD" and dir != ".git" and dir != "README.md", os.listdir(root))
+def is_dir_relevant(dir): return filter(lambda file: "output" in file, os.listdir(root + "/" + dir))
+dirs = filter(is_dir_relevant, dirs)
+dirs = []
 blueprint_dir = root + "/!SOLUTION/src/main/scala/simulations"
 interestings = ["Circuit.scala", "EpidemySimulator.scala"]
 stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
 
+# print dirs
+# print len(dirs)
+# sys.exit(0)
+
 # STEP 1: ESTABLISH THE BASELINE
 # for dir in dirs:
+#   if not os.path.exists(dir + "/gui"): os.mkdir(dir + "/gui")
 #   for stub in stubs:
 #     donnee = donnee_dir + "/" + stub
-#     stub = dir + "/" + stub
+#     stub = root + "/" + dir + "/" + stub
 #     check_call(["cp", donnee, stub])
 #   for interesting in interestings:
 #     donnee = donnee_dir + "/" + interesting
-#     interesting = dir + "/" + interesting
+#     interesting = root + "/" + dir + "/" + interesting
 #     check_call(["cp", donnee, interesting])
 
-# STEP 2: COPY THE SOLUTIONS
+# STEP 2: EXTRACT THE SUBMISSIONS
+# for dir in dirs:
+#   stuff = filter(lambda file: "output" in file, os.listdir(root + "/" + dir))
+#   if len(stuff) != 1:
+#     print dir
+#     sys.exit(1)
+#   else:
+#     if os.path.exists(backup_dir + "/" + dir):
+#       check_call(["rm", "-rf", backup_dir + "/" + dir])
+#       check_call(["mkdir", backup_dir + "/" + dir])
+#     archive = stuff[0]
+#     check_call(["unzip", "-o", root + "/" + dir + "/" + archive, "-d", root + "/" + dir + "/extracted"])
+#     check_call(["mv", root + "/" + dir + "/" + archive, backup_dir + "/" + dir])
+#     check_call(["cp", "-r", root + "/" + dir + "/extracted/simulations/gui", backup_dir + "/" + dir])
+#     check_call(["cp", root + "/" + dir + "/extracted/simulations/Circuit.scala", backup_dir + "/" + dir])
+#     check_call(["cp", root + "/" + dir + "/extracted/simulations/EpidemySimulator.scala", backup_dir + "/" + dir])
+#     check_call(["cp", root + "/" + dir + "/extracted/simulations/Simulator.scala", backup_dir + "/" + dir])
+#     check_call(["rm", "-rf", root + "/" + dir + "/extracted"])
+
+# STEP 3: COPY THE SOLUTIONS
 # for dir in dirs:
 #   for interesting in interestings:
 #     backup = backup_dir + "/" + dir + "/" + interesting
 #     interesting = root + "/" + dir + "/" + interesting
 #     check_call(["cp", backup, interesting])
 
-# STEP 3: COMMIT THE SOLUTIONS
+# STEP 4: COMMIT THE SOLUTIONS
 # for dir in dirs:
 #   for interesting in interestings:
 #     blueprint = blueprint_dir + "/" + interesting
@@ -36,6 +63,7 @@ stubs = ["gui/EpidemyDisplay.scala", "gui/Grid.scala", "Simulator.scala"]
 #     check_call(["git", "add", interesting])
 #   check_call(["git", "commit", "-m", dir])
 
+# STEP 5: GRADE THE SUBMISSIONS
 if len(sys.argv) != 2: print "usage: " + sys.argv[0] + " <team name>"; sys.exit(1)
 current_dir = root + "/" + sys.argv[1]
 
