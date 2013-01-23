@@ -197,6 +197,7 @@ alias docs='cd "$HOME/Projects/DocsScalaLang"'
 alias smock='cd "$HOME/Projects/ScalaMock"'
 alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
 alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
+alias slick='cd "$HOME/Projects/Slick"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -227,3 +228,7 @@ function kepmacrosnippet02 { target="$(hack-home "macrosnippet02")"; if [[ $? ==
 function sbmacrosnippet02 { target="$(hack-home "macrosnippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet03 { target="$(hack-home "macrosnippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet03 { target="$(hack-home "macrosnippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrosnippet04 { target="$(hack-home "macrosnippet04")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrosnippet04 { target="$(hack-home "macrosnippet04")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

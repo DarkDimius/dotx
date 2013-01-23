@@ -144,6 +144,8 @@ install-into-bin grade
 install-into-bin solution
 install-into-bin reeder-launch-app
 install-into-bin reeder-focus-unread
+install-into-bin sc2-wol
+install-into-bin sc2-hots
 
 install-into-etc launchd.conf
 install-into-etc paths
