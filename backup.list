@@ -3941,15 +3941,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-200.kxfbtN: Permission denied
+Can't cd to (/private/tmp/) launchd-5371.D2qePC: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-366.EuZH8V: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-4497.7r0btS: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-53112.2uOXSO: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-71632.exfflB: Permission denied
+Can't cd to (/private/tmp/) launchd-8750.PS10H3: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4012,8 +4006,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15004,14 +14996,6 @@ xeno_by::build::blib::lib::YAML::Tiny	1.51
 xeno_by::build::lib::YAML::Tiny	1.51
 xeno_by::build::t::lib::Test	undef
 xeno_by::CPAN::MyConfig	undef
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
-xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 local::Cellar::autoconf::share::autoconf::Autom4te::C4che	undef
 local::Cellar::autoconf::share::autoconf::Autom4te::ChannelDefs	undef
 local::Cellar::autoconf::share::autoconf::Autom4te::Channels	undef
@@ -15135,6 +15119,8 @@ Pomodoro > Start
 Pomodoro > Stop
 Reeder
 Skype
+StarCraft II: Heart of the Swarm
+StarCraft II: Wings of Liberty
 What is My IP
 Wi-Fi-toggle
 backport

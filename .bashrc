@@ -214,21 +214,3 @@ function sbbackport { target="$(hack-home "backport/paradise")/sandbox"; if [[ $
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kepimplicit-macros { target="$(hack-home "implicit-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbimplicit-macros { target="$(hack-home "implicit-macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet00 { target="$(hack-home "macrosnippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet00 { target="$(hack-home "macrosnippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet01 { target="$(hack-home "macrosnippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet01 { target="$(hack-home "macrosnippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet02 { target="$(hack-home "macrosnippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet02 { target="$(hack-home "macrosnippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet03 { target="$(hack-home "macrosnippet03")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet03 { target="$(hack-home "macrosnippet03")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacrosnippet04 { target="$(hack-home "macrosnippet04")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacrosnippet04 { target="$(hack-home "macrosnippet04")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
