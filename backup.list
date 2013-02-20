@@ -33,6 +33,7 @@ Gmail Notifr.app
 Google Chrome.app
 Growl.app
 Image Capture.app
+IntelliJ IDEA 12 CE.app
 JD-GUI.app
 Keka.app
 Key Codes.app
@@ -78,6 +79,7 @@ VirtualBox.app
 Xcode.app
 Xerox
 YourKit.app
+eclipse
 gfxCardStatus.app
 iPhoto.app
 iTerm.app
@@ -3941,9 +3943,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-5371.D2qePC: Permission denied
+Can't cd to (/private/tmp/) launchd-109.JDZBJw: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-8750.PS10H3: Permission denied
+Can't cd to (/private/tmp/) launchd-3247.imBMMA: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-394.xRE9zi: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4028,8 +4032,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4274,13 +4276,18 @@ Contents::Developer::Library::Perl::SVN::Repos	undef
 Contents::Developer::Library::Perl::SVN::Wc	undef
 Contents::Developer::usr::share::perl::Git	0.01
 Contents::Developer::usr::share::perl::Git::I18N	undef
-Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::APIOwner	$Revision: 134015Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
-0018 $
+Contents::Developer::usr::share::perl::Git::IndexInfo	undef
+Contents::Developer::usr::share::perl::Git::SVN	undef
+Contents::Developer::usr::share::perl::Git::SVN::Editor	undef
+Contents::Developer::usr::share::perl::Git::SVN::Fetcher	undef
+Contents::Developer::usr::share::perl::Git::SVN::GlobSpec	undef
+Contents::Developer::usr::share::perl::Git::SVN::Log	undef
+Contents::Developer::usr::share::perl::Git::SVN::Migration	undef
+Contents::Developer::usr::share::perl::Git::SVN::Prompt	undef
+Contents::Developer::usr::share::perl::Git::SVN::Ra	undef
+Contents::Developer::usr::share::perl::Git::SVN::Utils	undef
+Contents::Developer::usr::share::perl::Git::SVN::Memoize::YAML	undef
+Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::APIOwner	$Revision: 1340150018 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::AvailHelper	$Revision: 1298084577 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::BlockParse	$Revision: 1333753010 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Constant	$Revision: 1298084577 $
@@ -4315,7 +4322,13 @@ Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Test	$Revision: 
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Typedef	$Revision: 1298084579 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::TypeHelper	$Revision: 1298084579 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Utilities	$Revision: 1334261201 $
-Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Var	$Revision: 1298084579 $
+Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Var	$RevisionUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
+: 1298084579 $
 Perl::SVN::Base	undef
 Perl::SVN::Client	undef
 Perl::SVN::Core	..
@@ -4763,7 +4776,10 @@ Library::Perl::Module::Build::Version	0.77
 Library::Perl::Module::Build::YAML	0.50
 Library::Perl::Module::Build::Platform::aix	0.340201
 Library::Perl::Module::Build::Platform::Amiga	0.340201
-Library::Perl::Module::Build::Platform::cygwin	0.340201
+Library::Perl::Module::Build::PlatformUseless use of a constant (-tree) in void context at (eval 3154) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 3154) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3154) line 6, <FILE> line 75.
+::cygwin	0.340201
 Library::Perl::Module::Build::Platform::darwin	0.340201
 Library::Perl::Module::Build::Platform::Default	0.340201
 Library::Perl::Module::Build::Platform::EBCDIC	0.340201
@@ -4776,10 +4792,7 @@ Library::Perl::Module::Build::Platform::VMS	0.340201
 Library::Perl::Module::Build::Platform::VOS	0.340201
 Library::Perl::Module::Build::Platform::Windows	0.340201
 Library::Perl::Module::Load::Conditional	0.30
-Library:Useless use of a constant (-tree) in void context at (eval 3154) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 3154) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3154) line 6, <FILE> line 75.
-:Perl::Module::Pluggable::Object	3.9
+Library::Perl::Module::Pluggable::Object	3.9
 Library::Perl::Net::Cmd	2.29
 Library::Perl::Net::Config	1.11
 Library::Perl::Net::Domain	2.20
@@ -5411,7 +5424,10 @@ Library::Perl::Parse::CPAN::Meta	1.40
 Library::Perl::PerlIO::via::QuotedPrint	0.06
 Library::Perl::Pod::Checker	1.45
 Library::Perl::Pod::Escapes	1.04
-Library::Perl::Pod::Find	1.35
+LibrarUseless use of a constant (-tree) in void context at (eval 3703) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 3703) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3703) line 6, <FILE> line 75.
+y::Perl::Pod::Find	1.35
 Library::Perl::Pod::Functions	1.04
 Library::Perl::Pod::Html	1.09
 Library::Perl::Pod::InputObjects	1.31
@@ -5430,10 +5446,7 @@ Library::Perl::Pod::Usage	1.36
 Library::Perl::Pod::Perldoc::BaseTo	undef
 Library::Perl::Pod::Perldoc::GetOptsOO	undef
 Library::Perl::Pod::Perldoc::ToChecker	undef
-Library::Perl::Pod::PerldoUseless use of a constant (-tree) in void context at (eval 3703) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 3703) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3703) line 6, <FILE> line 75.
-c::ToMan	undef
+Library::Perl::Pod::Perldoc::ToMan	undef
 Library::Perl::Pod::Perldoc::ToNroff	undef
 Library::Perl::Pod::Perldoc::ToPod	undef
 Library::Perl::Pod::Perldoc::ToRtf	undef
@@ -9303,7 +9316,8 @@ xeno_by::build::t::lib::TestApp::Controller::Root	undef
 xeno_by::build::blib::lib::Catalyst::Plugin::ConfigLoader	0.30
 xeno_by::build::inc::Module::Install	1.00
 xeno_by::build::inc::Module::Install::Base	1.00
-xeno_by::build::inc::Module::Install::Can	1.00
+xeno_by::build::inUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6254) line 6, <FILE> line 313.
+c::Module::Install::Can	1.00
 xeno_by::build::inc::Module::Install::Fetch	1.00
 xeno_by::build::inc::Module::Install::Makefile	1.00
 xeno_by::build::inc::Module::Install::Metadata	1.00
@@ -9316,8 +9330,7 @@ xeno_by::build::t::lib::TestApp::Controller::Root	undef
 xeno_by::build::blib::lib::Catalyst::Plugin::Static::Simple	0.30
 xeno_by::build::inc::Module::AutoInstall	1.06
 xeno_by::build::inc::Module::Install	1.06
-xeno_by::build::inc::Module::InstUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6254) line 6, <FILE> line 313.
-all::AuthorRequires	0.02
+xeno_by::build::inc::Module::Install::AuthorRequires	0.02
 xeno_by::build::inc::Module::Install::AuthorTests	0.002
 xeno_by::build::inc::Module::Install::AutoInstall	1.06
 xeno_by::build::inc::Module::Install::Base	1.06
@@ -9381,7 +9394,8 @@ xeno_by::build::blib::lib::Catalyst::DispatchType::Path	undef
 xeno_by::build::blib::lib::Catalyst::DispatchType::Regex	undef
 xeno_by::build::blib::lib::Catalyst::Engine::HTTP	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Basic	undef
-xeno_by::build::blib::lib::Catalyst::Exception::Detach	undef
+xeno_by::build::blib::lib::Catalyst::EUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6273) line 6, <FILE> line 313.
+xception::Detach	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Go	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Interface	undef
 xeno_by::build::blib::lib::Catalyst::Request::Upload	undef
@@ -9393,8 +9407,7 @@ xeno_by::build::blib::lib::Catalyst::Script::Test	undef
 xeno_by::build::inc::Module::AutoInstall	1.06
 xeno_by::build::inc::Module::Install	1.06
 xeno_by::build::inc::Module::Install::Authority	0.02
-xeno_by::build::inc::Module::Install::AuthorReqUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6273) line 6, <FILE> line 313.
-uires	0.02
+xeno_by::build::inc::Module::Install::AuthorRequires	0.02
 xeno_by::build::inc::Module::Install::AuthorTests	0.002
 xeno_by::build::inc::Module::Install::AutoInstall	1.06
 xeno_by::build::inc::Module::Install::Base	1.06
@@ -9590,7 +9603,8 @@ xeno_by::build::t::lib::TestApp::Controller::Priorities::re_vs_index	undef
 xeno_by::build::t::lib::TestApp::DispatchType::CustomPostLoad	undef
 xeno_by::build::t::lib::TestApp::DispatchType::CustomPreLoad	undef
 xeno_by::build::t::lib::TestApp::Model::ClosuresInConfig	undef
-xeno_by::build::t::lib::TestApp::Model::Foo	undef
+xeno_by::build::t::lib::TestApp:Use of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6287) line 6, <FILE> line 313.
+:Model::Foo	undef
 xeno_by::build::t::lib::TestApp::Model::Generating	undef
 xeno_by::build::t::lib::TestApp::Model::Foo::Bar	undef
 xeno_by::build::t::lib::TestApp::Plugin::AddDispatchTypes	undef
@@ -9602,8 +9616,7 @@ xeno_by::build::t::lib::TestApp::View::Dump::Body	undef
 xeno_by::build::t::lib::TestApp::View::Dump::Env	undef
 xeno_by::build::t::lib::TestApp::View::Dump::Request	undef
 xeno_by::build::t::lib::TestApp::View::Dump::Response	undef
-xeno_by::build::t:Use of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6287) line 6, <FILE> line 313.
-:lib::TestAppChainedAbsolutePathPart::Controller::Foo	undef
+xeno_by::build::t::lib::TestAppChainedAbsolutePathPart::Controller::Foo	undef
 xeno_by::build::t::lib::TestAppChainedRecursive::Controller::Foo	undef
 xeno_by::build::t::lib::TestAppDoubleAutoBug::Controller::Root	undef
 xeno_by::build::t::lib::TestAppEncoding::Controller::Root	undef
@@ -9659,7 +9672,8 @@ xeno_by::build::blib::lib::Catalyst::Engine::HTTP	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Basic	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Detach	undef
 xeno_by::build::blib::lib::Catalyst::Exception::Go	undef
-xeno_by::build::blib::lib::Catalyst::Exception::Interface	undef
+xeno_by::build::blib::lib::Catalyst::Exception::IUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6306) line 6, <FILE> line 313.
+nterface	undef
 xeno_by::build::blib::lib::Catalyst::Request::Upload	undef
 xeno_by::build::blib::lib::Catalyst::Script::CGI	undef
 xeno_by::build::blib::lib::Catalyst::Script::Create	undef
@@ -9672,8 +9686,7 @@ xeno_by::build::inc::Module::Install::Authority	0.02
 xeno_by::build::inc::Module::Install::AuthorRequires	0.02
 xeno_by::build::inc::Module::Install::AuthorTests	0.002
 xeno_by::build::inc::Module::Install::AutoInstall	1.06
-xeno_byUse of uninitialized value $HTML::Parser::VERSION in numeric ge (>=) at (eval 6306) line 6, <FILE> line 313.
-::build::inc::Module::Install::Base	1.06
+xeno_by::build::inc::Module::Install::Base	1.06
 xeno_by::build::inc::Module::Install::Can	1.06
 xeno_by::build::inc::Module::Install::CheckConflicts	0.02
 xeno_by::build::inc::Module::Install::Fetch	1.06
@@ -10197,7 +10210,11 @@ xeno_by::build::blib::lib::CPAN::Exception::blocked_urllist	1.001
 xeno_by::build::blib::lib::CPAN::Exception::RecursiveDependency	5.5
 xeno_by::build::blib::lib::CPAN::Exception::yaml_not_installed	5.5
 xeno_by::build::blib::lib::CPAN::Exception::yaml_process_error	5.5
-xeno_by::build::blib::lib::CPAN::FTP::netrc	1.01
+xeno_by::buUseless use of numeric ge (>=) in void context at (eval 6624) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6624) line 6, <FILE> line 28.
+Useless use of numeric ge (>=) in void context at (eval 6627) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6627) line 6, <FILE> line 28.
+ild::blib::lib::CPAN::FTP::netrc	1.01
 xeno_by::build::blib::lib::CPAN::HTTP::Client	1.9600
 xeno_by::build::blib::lib::CPAN::HTTP::Credentials	1.9600
 xeno_by::build::blib::lib::CPAN::LWP::UserAgent	1.9600
@@ -10212,11 +10229,7 @@ xeno_by::build::lib::CPAN::CacheMgr	5.5001
 xeno_by::build::lib::CPAN::Complete	5.5
 xeno_by::build::lib::CPAN::Debug	5.5001
 xeno_by::build::lib::CPAN::DeferredCode	5.50
-xeno_by::build::lib::CPAN::Distribution	1Useless use of numeric ge (>=) in void context at (eval 6624) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6624) line 6, <FILE> line 28.
-Useless use of numeric ge (>=) in void context at (eval 6627) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6627) line 6, <FILE> line 28.
-.9602
+xeno_by::build::lib::CPAN::Distribution	1.9602
 xeno_by::build::lib::CPAN::Distroprefs	6
 xeno_by::build::lib::CPAN::Distrostatus	5.5
 xeno_by::build::lib::CPAN::FirstTime	5.5303
@@ -14899,7 +14912,11 @@ xeno_by::build::blib::lib::YAML::Marshall	0.84
 xeno_by::build::blib::lib::YAML::Mo	undef
 xeno_by::build::blib::lib::YAML::Node	0.84
 xeno_by::build::blib::lib::YAML::Tag	0.84
-xeno_by::build::blib::lib::YAML::Types	0.84
+xeno_by::build::blib::libUseless use of numeric ge (>=) in void context at (eval 9964) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9964) line 6, <FILE> line 28.
+Useless use of numeric ge (>=) in void context at (eval 9967) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9967) line 6, <FILE> line 28.
+::YAML::Types	0.84
 xeno_by::build::blib::lib::YAML::Dumper::Base	0.84
 xeno_by::build::blib::lib::YAML::Loader::Base	0.84
 xeno_by::build::inc::Spiffy	0.30
@@ -14913,11 +14930,7 @@ xeno_by::build::inc::Module::Install::Include	1.06
 xeno_by::build::inc::Module::Install::Makefile	1.06
 xeno_by::build::inc::Module::Install::Metadata	1.06
 xeno_by::build::inc::Module::Install::Package	0.30
-xeno_by::build::inc::Module::InstalUseless use of numeric ge (>=) in void context at (eval 9964) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9964) line 6, <FILE> line 28.
-Useless use of numeric ge (>=) in void context at (eval 9967) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 9967) line 6, <FILE> line 28.
-l::Win32	1.06
+xeno_by::build::inc::Module::Install::Win32	1.06
 xeno_by::build::inc::Module::Install::WriteAll	1.06
 xeno_by::build::inc::Test::Base	0.60
 xeno_by::build::inc::Test::Builder	0.98
@@ -15108,6 +15121,9 @@ Applications
 Downloads
 Movies
 210x
+6240
+6411
+7148
 Check Jenkins Status
 Mission control
 New task
@@ -15135,22 +15151,22 @@ flags
 h2
 hack
 ignore crashes
-implicit-macros
+introduce-member
 java6
 java7
 java8
 locker
-macrosnippet00
-macrosnippet01
-macrosnippet02
-macrosnippet03
-macrosnippet04
 master
 paradise
 pr
+proto-210x
+proto-master
+proto-paradise
 pullrequest
 quick
+resetattrs-this
 rtm
+runtime-internal
 si
 snippet00
 snippet01
@@ -15201,10 +15217,18 @@ KeyRemap4MacBook private.xml:
     <appname>PREVIEW</appname>
     <equal>com.apple.Preview</equal>
   </appdef>
+  <appdef>
+    <appname>ECLIPSE</appname>
+    <equal>org.eclipse.eclipse</equal>
+  </appdef>
+  <appdef>
+    <appname>VIRTUALBOX</appname>
+    <equal>org.virtualbox.app.VirtualBoxVM</equal>
+  </appdef>
   <item>
-    <name>(except Sublime) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
+    <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
-    <not>SUBLIME</only>
+    <not>SUBLIME,VIRTUALBOX</only>
     <autogen>
       --KeyToKey--
       KeyCode::F3, ModifierFlag::NONE,
@@ -15385,6 +15409,31 @@ KeyRemap4MacBook private.xml:
       --ConsumerToKey--
       ConsumerKeyCode::MUSIC_NEXT_17,
       KeyCode::CURSOR_RIGHT,
+    </autogen>
+  </item>
+  <item>
+    <name>(Eclipse) Home/End</name>
+    <identifier>private.home_end</identifier>
+    <only>ECLIPSE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
     </autogen>
   </item>
 </root>

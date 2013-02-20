@@ -123,7 +123,7 @@ install-into-bin hack-home
 install-into-bin hack-homes
 install-into-bin hack-branch
 install-into-bin hack-prototype
-install-into-bin hack-gc
+install-into-bin hack-si
 install-into-bin zzz-commence-hack-gc
 install-into-bin zzz-commence-kepler-gc
 install-into-bin zzz-commence-kepler-backup
@@ -146,6 +146,9 @@ install-into-bin reeder-launch-app
 install-into-bin reeder-focus-unread
 install-into-bin sc2-wol
 install-into-bin sc2-hots
+install-into-bin unpack-st3-packages
+install-into-bin lzycompute
+install-into-bin scrutil
 
 install-into-etc launchd.conf
 install-into-etc paths

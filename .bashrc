@@ -78,6 +78,7 @@ complete -F _git_branch gm grb grbi gch gb gbD
 source "$HOME/Projects/Libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
+alias n="python -c 'import webbrowser; webbrowser.open("'"'"https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-main/buildWithParameters?publish=true"'"'")'"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
 alias t="partest"
@@ -189,8 +190,14 @@ alias dl='cd "$HOME/Downloads"'
 alias prj='cd "$HOME/Projects"'
 alias ide='cd "$HOME/Projects/ScalaIDE"'
 alias ens='cd "$HOME/Projects/Ensime"'
+alias plugins='cd "$HOME/.sbt/0.12.1/plugins"'
 alias sens='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
 alias des='cd "$HOME/Library/Application Support/Sublime Text 2"'
+alias sens2='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
+alias des2='cd "$HOME/Library/Application Support/Sublime Text 2"'
+alias sens3='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/Ensime"'
+alias des3='cd "$HOME/Library/Application Support/Sublime Text 3"'
+alias stock3='cd "/Applications/Sublime Text 3.app/Contents/MacOS/Packages"'
 alias pap='cd "$HOME/Projects/Pages"'
 alias dotx='cd "$HOME/Projects/Dotx"'
 alias docs='cd "$HOME/Projects/DocsScalaLang"'
@@ -198,6 +205,7 @@ alias smock='cd "$HOME/Projects/ScalaMock"'
 alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
 alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
 alias slick='cd "$HOME/Projects/Slick"'
+alias shared='cd "$HOME/../Shared/VirtualBox"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -213,4 +221,16 @@ function sbbackport { target="$(hack-home "backport/paradise")/sandbox"; if [[ $
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
+function kep6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6240 { target="$(hack-home "6240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6411 { target="$(hack-home "6411")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6411 { target="$(hack-home "6411")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepruntime-internal { target="$(hack-home "runtime-internal")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbruntime-internal { target="$(hack-home "runtime-internal")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepintroduce-member { target="$(hack-home "introduce-member")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbintroduce-member { target="$(hack-home "introduce-member")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepresetattrs-this { target="$(hack-home "resetattrs-this")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbresetattrs-this { target="$(hack-home "resetattrs-this")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7148 { target="$(hack-home "7148")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7148 { target="$(hack-home "7148")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"

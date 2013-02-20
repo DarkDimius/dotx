@@ -96,3 +96,4 @@ kepler_*.sublime-project
 test/coffees.h2.db
 test/coffees.trace.db
 *SCRATCHPAD/
+Cache/

@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+import os, shutil
+from subprocess import check_call
+
+stock_packages_dir = "/Applications/Sublime Text 3.app/Contents/MacOS/Packages/"
+unpacked_packages_dir = "/Users/xeno_by/Library/Application Support/Sublime Text 3/Packages/"
+for package in os.listdir(stock_packages_dir):
+  archive = os.path.join(stock_packages_dir, package)
+  target = os.path.join(unpacked_packages_dir, package[:-len(".sublime-package")])
+  if os.path.exists(target): shutil.rmtree(target)
+  check_call(["unzip", archive, "-d", target])

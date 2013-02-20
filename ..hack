@@ -1,1 +1,1 @@
-scalamacros:paradise/macros
+scalamacros:topic/introduce-member

@@ -23,6 +23,6 @@ def mirrorThatLoaded(sym: Symbol) = {
 //def uniques = ru.asInstanceOf[scala.reflect.internal.Types].uniques.asInstanceOf[scala.reflect.internal.util.HashSet[_]]
 implicit class SymbolFlags(sym: Symbol) { def flags = ru.show(sym.asInstanceOf[scala.reflect.internal.Symbols#Symbol].flags.asInstanceOf[FlagSet]) }
 implicit class TypeFlags(tpe: Type) { def flags = tpe.typeSymbol.flags }
-def impl1(c: Context) = c.literalUnit
-def impl2(c: Context) = c.universe.Ident(c.universe.TypeName("AnyRef"))
-class ann extends scala.annotation.StaticAnnotation
+// def impl1(c: Context) = c.literalUnit
+// def impl2(c: Context) = c.universe.Ident(c.universe.TypeName("AnyRef"))
+// class ann extends scala.annotation.StaticAnnotation

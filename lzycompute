@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+import os, sys, re, glob, fnmatch
+from subprocess import check_call, check_output
+
+root = check_output(["git", "rev-parse", "--show-toplevel"]).strip()
+root = os.path.join(root, "build/quick/classes/reflect/scala/reflect")
+
+classfiles = []
+for container, dirnames, filenames in os.walk(root):
+  for filename in fnmatch.filter(filenames, '*.class'):
+    classfiles.append(os.path.join(container, filename))
+
+for classfile in classfiles:
+  blob = open(classfile).read()
+  for found in re.findall(r"[\w\$]+\$lzycompute", blob):
+    print found, "in", classfile[len(root) + 1:]

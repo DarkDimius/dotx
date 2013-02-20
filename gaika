@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys, os, subprocess, json, shutil
-from subprocess import check_output, call
+from subprocess import check_output, call, check_call, Popen, PIPE
 
 sublime = "--sublime" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
@@ -25,32 +25,54 @@ def notify(msg):
 
 try:
   if action == "compile":
-    # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
-    if args and args[0].endswith(".tex"):
-      print args
+    if args and args[0].endswith(".c"):
       target = args[0]
+      executable, _ = os.path.splitext(target)
       root = os.path.dirname(os.path.abspath(target))
-      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]c):([0-9]+)"
       env["result_line_regex"] = ""
       env["result_base_dir"] = root
-      status = call(["pdflatex", target], cwd = root)
-      if status: sys.exit(status)
-      call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
-      call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
+      status = call(["gcc", target, "-o", executable], cwd = root)
+      sys.exit(status)
     else:
-      root = check_output(["scala-root"]).strip()
-      tier = check_output(["scala-tier"]).strip()
-      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-      env["result_line_regex"] = ""
-      env["result_base_dir"] = root
-      if tier == "quick":
-        sys.exit(call(["ant", "quick.comp"], cwd = root))
-        # sys.exit(call(["ant"], cwd = root))
-      elif tier == "locker":
-        sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
+      # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
+      git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE).communicate()[0][:-1]
+      if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Ensime"):
+        root = git_root
+        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+        env["result_line_regex"] = ""
+        env["result_base_dir"] = root
+        log_dir = "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/logs"
+        logs = ["server.log", "client.log"]
+        for log in logs:
+          log = os.path.join(log_dir, log)
+          if os.path.exists(log): os.unlink(log)
+        retcode = call(["sbt", "-Dsbt.log.noformat=true", "stage"], cwd = root)
+        if retcode != 0: sys.exit(retcode)
+        check_call(["rm", "-rf", "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/server"])
+        check_call(["cp", "-r", "/Users/xeno_by/Projects/Ensime/dist_2.10.0", "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/server"])
+        sys.exit(0)
+      elif args and args[0].endswith(".tex"):
+        target = args[0]
+        root = os.path.dirname(os.path.abspath(target))
+        status = call(["pdflatex", target], cwd = root)
+        if status: sys.exit(status)
+        call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
+        call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
       else:
-        print "unknown tier: " + str(tier)
-        sys.exit(1)
+        root = check_output(["scala-root"]).strip()
+        tier = check_output(["scala-tier"]).strip()
+        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+        env["result_line_regex"] = ""
+        env["result_base_dir"] = root
+        if tier == "quick":
+          sys.exit(call(["ant", "quick.comp"], cwd = root))
+          # sys.exit(call(["ant"], cwd = root))
+        elif tier == "locker":
+          sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
+        else:
+          print "unknown tier: " + str(tier)
+          sys.exit(1)
   elif action == "clean":
     root = check_output(["scala-root"]).strip()
     def clean_quick(target):

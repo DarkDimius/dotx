@@ -18,7 +18,7 @@ if not status.startswith("no changes"):
   sys.exit(1)
 
 if branch == "paradise/macros":
-  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-main/build?delay=0sec"
+  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-main/buildWithParameters?publish=true"
 else:
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/buildWithParameters"
   jenkins_url += "?githubUsername=" + user + "&repository=" + repo

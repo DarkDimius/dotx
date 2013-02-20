@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 set -o verbose
 cd /Users/xeno_by/Projects/Master
-git branch -D ticket/6638
-git push origin :ticket/6638
-git branch -D topic/annotation-error
-git push origin :topic/annotation-error
-git branch -D topic/auto-duplicate-expansions
-git push origin :topic/auto-duplicate-expansions
-git branch -D topic/enclosures
-git push origin :topic/enclosures
-git branch -D topic/ident-attachments
-git push origin :topic/ident-attachments
-git branch -D topic/ident-deprecation-warnings
-git push origin :topic/ident-deprecation-warnings
-git branch -D topic/pre-typemacros
-git push origin :topic/pre-typemacros
-git branch -D topic/showrawpos
-git push origin :topic/showrawpos
+git branch -D ticket/5716
+git push origin :ticket/5716
+git branch -D ticket/6812
+git push origin :ticket/6812
+git branch -D topic/reify-staticXXX
+git push origin :topic/reify-staticXXX
 git remote update
 git remote prune origin
 cd -
+hack -scalamacros:ticket/5716 --batch --force # merged
+hack -scalamacros:ticket/6812 --batch --force # merged
+hack -scalamacros:topic/reify-staticXXX --batch --force # merged
+hack -scalamacros:topic/snippet00 --batch --force # snippet
+hack -scalamacros:topic/snippet01 --batch --force # snippet
+hack -scalamacros:topic/snippet02 --batch --force # snippet
+hack -scalamacros:topic/snippet03 --batch --force # snippet
+hack -scalamacros:topic/snippet04 --batch --force # snippet
+hack -scalamacros:topic/snippet05 --batch --force # snippet
+hack -scalamacros:topic/snippet06 --batch --force # snippet
+hack -scalamacros:topic/snippet07 --batch --force # snippet
