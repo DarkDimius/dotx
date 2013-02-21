@@ -3943,11 +3943,9 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-109.JDZBJw: Permission denied
+Can't cd to (/private/tmp/) launchd-201.g7LEpE: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-3247.imBMMA: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-394.xRE9zi: Permission denied
+Can't cd to (/private/tmp/) launchd-352.ucQduN: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4058,8 +4056,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -15168,9 +15164,6 @@ resetattrs-this
 rtm
 runtime-internal
 si
-snippet00
-snippet01
-snippet02
 zzz
 
 ==================
