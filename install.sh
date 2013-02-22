@@ -159,8 +159,17 @@ install-into-bin sc2
 install-into-bin unpack-st3-packages
 install-into-bin lzycompute
 install-into-bin scrutil
+if [[ ! -f "/usr/local/bin/mountainlion-window-restore-fix" ]]; then
+  # http://apple.stackexchange.com/questions/48439/how-to-default-to-not-open-all-the-apps-again-on-mac-os-x-lion
+  sudo defaults write com.apple.loginwindow LoginHook /usr/local/bin/mountainlion-window-restore-fix
+  sudo defaults read com.apple.loginwindow
+fi
 install-into-bin mountainlion-window-restore-fix
-defaults write com.apple.loginwindow LoginHook /usr/local/bin/mountainlion-window-restore-fix
+defaults write com.apple.dock autohide -int 1
+defaults write com.apple.dock autohide-time-modifier -int 999999
+defaults write com.apple.dock tilesize -int 16
+defaults write com.apple.dock launchanim -int 0
+killall Dock
 
 install-into-etc launchd.conf
 install-into-etc paths

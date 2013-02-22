@@ -1,2 +1,3 @@
 #!/bin/bash
+# http://apple.stackexchange.com/questions/48439/how-to-default-to-not-open-all-the-apps-again-on-mac-os-x-lion
 rm /Users/*/Library/Preferences/ByHost/com.apple.loginwindow.*
