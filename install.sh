@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+if [[ -z "$(which grealpath)" ]]; then
+  echo "Bad environment. Make sure that /usr/local/bin is on PATH"
+  exit 1
+fi
+
+if [[ ! -f "/usr/local/bin/realpath" ]]; then
+  ln -sv /usr/local/bin/grealpath /usr/local/bin/realpath
+fi
+
 function install-into-destination() {
   dest=$1
   from=$2
@@ -7,6 +16,7 @@ function install-into-destination() {
   if [[ -z "$to" ]]; then to=$from; fi
 
   if [[ -L "$dest/$to" ]]; then
+    # rm "$dest/$to"
     echo "$dest/$to already installed"
     return 0;
   fi
@@ -113,6 +123,7 @@ install-into-bin partest-file
 install-into-bin partest-macro
 install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
+if [[ ! -f "/usr/local/bin/subl" ]]; then ln -sv "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"; fi
 install-into-bin stree
 install-into-bin bug
 install-into-bin bug si
@@ -144,8 +155,7 @@ install-into-bin grade
 install-into-bin solution
 install-into-bin reeder-launch-app
 install-into-bin reeder-focus-unread
-install-into-bin sc2-wol
-install-into-bin sc2-hots
+install-into-bin sc2
 install-into-bin unpack-st3-packages
 install-into-bin lzycompute
 install-into-bin scrutil
