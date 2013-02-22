@@ -159,6 +159,8 @@ install-into-bin sc2
 install-into-bin unpack-st3-packages
 install-into-bin lzycompute
 install-into-bin scrutil
+install-into-bin mountainlion-window-restore-fix
+defaults write com.apple.loginwindow LoginHook /usr/local/bin/mountainlion-window-restore-fix
 
 install-into-etc launchd.conf
 install-into-etc paths
