@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>SUBLIME</appname>
+    <equal>com.sublimetext.2</equal>
+  </appdef>
+  <appdef>
+    <appname>ITERM2</appname>
+    <equal>com.googlecode.iterm2</equal>
+  </appdef>
+  <appdef>
+    <appname>EVERNOTE</appname>
+    <equal>com.evernote.Evernote</equal>
+  </appdef>
+  <appdef>
+    <appname>SKYPE</appname>
+    <equal>com.skype.skype</equal>
+  </appdef>
+  <appdef>
+    <appname>FIREFOX</appname>
+    <equal>org.mozilla.aurora</equal>
+  </appdef>
+  <appdef>
+    <appname>PREVIEW</appname>
+    <equal>com.apple.Preview</equal>
+  </appdef>
+  <appdef>
+    <appname>ECLIPSE</appname>
+    <equal>org.eclipse.eclipse</equal>
+  </appdef>
+  <appdef>
+    <appname>VIRTUALBOX</appname>
+    <equal>org.virtualbox.app.VirtualBoxVM</equal>
+  </appdef>
+  <appdef>
+    <appname>STARCRAFT</appname>
+    <equal>com.blizzard.starcraft2</equal>
+  </appdef>
+  <item>
+    <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
+    <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
+    <not>SUBLIME,VIRTUALBOX,STARCRAFT</not>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::NONE,
+      KeyCode::G, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_L,
+      KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_R,
+      KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Sublime) Shift + F3 -> Cmd + Shift + G</name>
+    <identifier>private.pc_like_search_prev_search_next_sublime</identifier>
+    <only>SUBLIME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_L,
+      KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_R,
+      KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Sublime) Fn + Left -> F18, Fn + Right -> F19</name>
+    <identifier>private.sublime_fnleft_navigateback</identifier>
+    <only>SUBLIME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::F18,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::F19,
+    </autogen>
+  </item>
+  <item>
+    <name>(Firefox) Fn + Left -> F18, Fn + Right -> F19, Cmd + Left -> Cmd + Shift + [, Cmd + Right -> Cmd + Shift + ]</name>
+    <identifier>private.firefox_fnleft_navigateback</identifier>
+    <only>FIREFOX</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::F18,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::F19,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(iTerm2) Option + Delete -> Esc, Delete</name>
+    <identifier>private.iterm2_backward_delete_word</identifier>
+    <only>ITERM2</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DELETE, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::ESCAPE, KeyCode::DELETE
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DELETE, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::ESCAPE, KeyCode::DELETE
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Left Control -> Option + Space</name>
+    <identifier>private.lcontrol_option_space</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::CONTROL_L, KeyCode::SPACE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Left Shift -> Command + Shift + [</name>
+    <identifier>private.lmod_prev_tab</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+      KeyCode::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Right Shift -> Command + Shift + ]</name>
+    <identifier>private.rmod_next_tab</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      KeyCode::SHIFT_R, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Control + Ф, Control + Shift + Ф, Control + У, Control + Shift + У</name>
+    <identifier>private.control_plus_nonenglish_letter_shortcuts</identifier>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::A, ModifierFlag::CONTROL_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::E, ModifierFlag::CONTROL_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+  </item>
+  <item>
+    <name>(Preview) Satechi Compat</name>
+    <identifier>private.preview_satechi_compat</identifier>
+    <only>PREVIEW</only>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::CURSOR_RIGHT,
+    </autogen>
+  </item>
+  <item>
+    <name>(Eclipse) Home/End</name>
+    <identifier>private.home_end</identifier>
+    <only>ECLIPSE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Starcraft) Cmd + Q => Cmd + Option + Q</name>
+    <identifier>private.starcraft_command_q_fix</identifier>
+    <only>STARCRAFT</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+</root>

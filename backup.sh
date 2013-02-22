@@ -50,3 +50,53 @@ echo "" >> "$target"
 echo "==================" >> "$target"
 echo "KeyRemap4MacBook private.xml:" >> "$target"
 cat "/Users/xeno_by/Library/Application Support/KeyRemap4MacBook/private.xml" >> "$target"
+
+src="/Users/xeno_by/Library/Application Support/Blizzard/StarCraft II/"
+dest="/Users/Shared/Dropbox/Saves/StarCraft II"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+src="/Users/xeno_by/Library/Application Support/Alfred/extensions"
+dest="$(dirname $0)/configs/Library/Application Support/Alfred/extensions"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+src="/Users/xeno_by/Library/Application Support/Alfred/hotkeys"
+dest="$(dirname $0)/configs/Library/Application Support/Alfred/hotkeys"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+src="/Users/xeno_by/Library/Application Support/iTerm"
+dest="$(dirname $0)/configs/Library/Application Support/iTerm"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+src="/Users/xeno_by/Library/Application Support/KeyRemap4MacBook"
+dest="$(dirname $0)/configs/Library/Application Support/KeyRemap4MacBook"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+src="/Users/xeno_by/Library/Application Support/Witch"
+dest="$(dirname $0)/configs/Library/Application Support/Witch"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+src="/Users/xeno_by/Library/Preferences/muCommander"
+dest="$(dirname $0)/configs/Library/Preferences/muCommander"
+if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
+cp -r "$src" "$dest"
+
+cp "/Users/xeno_by/Library/Preferences/com.Logitech.Control Center.Assignments.registry" "$(dirname $0)/configs/Library/Preferences/com.Logitech.Control Center.Assignments.registry"
+cp "/Users/xeno_by/Library/Preferences/com.Logitech.Control Center.Daemon.plist" "$(dirname $0)/configs/Library/Preferences/com.Logitech.Control Center.Daemon.plist"
+cp "/Users/xeno_by/Library/Preferences/com.Logitech.Control Center.Device Manager.plist" "$(dirname $0)/configs/Library/Preferences/com.Logitech.Control Center.Device Manager.plist"
+cp "/Users/xeno_by/Library/Preferences/com.Logitech.Control Center.Device Settings.registry" "$(dirname $0)/configs/Library/Preferences/com.Logitech.Control Center.Device Settings.registry"
+cp "/Users/xeno_by/Library/Preferences/com.Logitech.Updater.plist" "$(dirname $0)/configs/Library/Preferences/com.Logitech.Updater.plist"
+cp "/Users/xeno_by/Library/Preferences/com.alfredapp.Alfred.plist" "$(dirname $0)/configs/Library/Preferences/com.alfredapp.Alfred.plist"
+cp "/Users/xeno_by/Library/Preferences/com.apple.ActivityMonitor.plist" "$(dirname $0)/configs/Library/Preferences/com.apple.ActivityMonitor.plist"
+cp "/Users/xeno_by/Library/Preferences/com.apple.dock.plist" "$(dirname $0)/configs/Library/Preferences/com.apple.dock.plist"
+cp "/Users/xeno_by/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.mouse.plist" "$(dirname $0)/configs/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.mouse.plist"
+cp "/Users/xeno_by/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad.plist" "$(dirname $0)/configs/Library/Preferences/com.apple.driver.AppleBluetoothMultitouch.trackpad.plist"
+cp "/Users/xeno_by/Library/Preferences/com.apple.driver.AppleHIDMouse.plist" "$(dirname $0)/configs/Library/Preferences/com.apple.driver.AppleHIDMouse.plist"
+cp "/Users/xeno_by/Library/Preferences/com.apple.loginitems.plist" "$(dirname $0)/configs/Library/Preferences/com.apple.loginitems.plist"
+cp "/Users/xeno_by/Library/Preferences/com.googlecode.iterm2.plist" "$(dirname $0)/configs/Library/Preferences/com.googlecode.iterm2.plist"
+cp "/Users/xeno_by/Library/Preferences/org.pqrs.KeyRemap4MacBook.plist" "$(dirname $0)/configs/Library/Preferences/org.pqrs.KeyRemap4MacBook.plist"

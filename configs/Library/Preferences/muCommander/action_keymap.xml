@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- See http://trac.mucommander.com/wiki/ActionKeyMap for information on how to customize this file -->
+<keymap version="0.9.0">
+    <action id="View"/>
+    <action id="Pack" keystroke="ctrl I" alt_keystroke="alt F5"/>
+    <action id="Edit" keystroke="F4" alt_keystroke="meta G"/>
+    <action id="SetSameFolder" keystroke="ctrl E" alt_keystroke="shift meta U"/>
+    <action id="GoToParent" keystroke="meta UP"/>
+    <action id="ExploreBookmarks" keystroke="shift ctrl B" alt_keystroke="shift meta B"/>
+    <action id="RunCommand" keystroke="ctrl R" alt_keystroke="meta R"/>
+    <action id="GoToHome" keystroke="ctrl BACK_QUOTE"/>
+    <action id="AddBookmark" keystroke="ctrl B" alt_keystroke="meta B"/>
+    <action id="SwapFolders" keystroke="ctrl U" alt_keystroke="meta U"/>
+</keymap>

@@ -1,4 +1,5 @@
 Apps:
+.DS_Store
 .localized
 1Password.app
 Adium.app
@@ -14,6 +15,7 @@ Calendar.app
 Chess.app
 Contacts.app
 DVD Player.app
+DaisyDisk.app
 Dashboard.app
 Day-O.app
 Dictionary.app
@@ -23,6 +25,7 @@ FaceTime.app
 Firefox.app
 Font Book.app
 Game Center.app
+Gmail Notifr.app
 Google Chrome.app
 Growl.app
 Image Capture.app
@@ -44,6 +47,7 @@ Reminders.app
 Retinizer.app
 Safari.app
 Skype.app
+SourceTree.app
 StarCraft II
 StartNinja.app
 Stickies.app
@@ -75,71 +79,40 @@ coreutils
 findutils
 git
 readline
+wget
 xz
 
 ==================
 Macports packages:
-/Users/xeno_by/Projects/Dotx/backup.sh: line 18: /opt/local/bin/port: No such file or directory
+./backup.sh: line 18: /opt/local/bin/port: No such file or directory
 
 ==================
 Python packages:
-/Users/xeno_by/Projects/Dotx/backup.sh: line 23: /usr/local/bin/pip: No such file or directory
+./backup.sh: line 23: /usr/local/bin/pip: No such file or directory
 
 ==================
 Ruby gems:
-
+classifier (1.3.3)
+directory_watcher (1.4.1)
+fast-stemmer (1.0.2)
+jekyll (0.12.1)
+kramdown (0.14.2)
+liquid (2.4.1)
+maruku (0.6.1)
+posix-spawn (0.3.6)
+pygments.rb (0.3.7)
+rubygems-update (1.8.25)
+syntax (1.0.0)
+yajl-ruby (1.1.0)
 
 ==================
 Perl modules:
-
-CPAN is the world-wide archive of perl resources. It consists of about
-300 sites that all replicate the same contents around the globe. Many
-countries have at least one CPAN site already. The resources found on
-CPAN are easily accessible with the CPAN.pm module. If you want to use
-CPAN.pm, lots of things have to be configured. Fortunately, most of
-them can be determined automatically. If you prefer the automatic
-configuration, answer 'yes' below.
-
-If you prefer to enter a dialog instead, you can answer 'no' to this
-question and I'll let you configure in small steps one thing after the
-other. (Note: you can revisit this dialog anytime later by typing 'o
-conf init' at the cpan prompt.)
-
-Would you like me to configure as much as possible automatically? [yes] yes
-
-
-Autoconfigured everything but 'urllist'.
-
-Now you need to choose your CPAN mirror sites.  You can let me
-pick mirrors for you, you can select them from a list or you
-can enter them by hand.
-
-Would you like me to automatically choose the best CPAN mirror
-sites for you? (This means connecting to the Internet and could
-take a couple minutes) [yes] yes
-
-Trying to fetch a mirror list from the Internet
-Fetching with LWP:
-http://www.perl.org/CPAN/MIRRORED.BY
-
-Searching for the best CPAN mirrors (please be patient) ........................................................................................................ done!
-
-New urllist
-  ftp://mirror.fraunhofer.de/CPAN/
-  ftp://tux.rainside.sk/CPAN/
-  ftp://cpan.inode.at/
-  ftp://mir1.ovh.net/ftp.cpan.org/
-  ftp://ftp.mirrorservice.org/sites/cpan.perl.org/CPAN/
-
-Autoconfiguration complete.
-
-commit: wrote '/Users/xeno_by/.cpan/CPAN/MyConfig.pm'
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 39) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 39) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 39) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 48) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 48) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 48) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 23) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 32) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 32) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 32) line 6, <FILE> line 7.
 Can't stat /Network/Library/Perl/5.12/darwin-thread-multi-2level: No such file or directory
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't stat /Network/Library/Perl/5.12: No such file or directory
@@ -717,9 +690,9 @@ Module::Build::Platform::Amiga	0.3603
 Module::Build::Platform::cygwin	0.360301
 Module::Build::Platform::darwin	0.3603
 Module::Build::Platform::Default	0.3603
-Module::BuilUseless use of a constant (-tree) in void context at (eval 602) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 602) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 602) line 6, <FILE> line 75.
+Module::BuilUseless use of a constant (-tree) in void context at (eval 586) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 586) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 586) line 6, <FILE> line 75.
 d::Platform::EBCDIC	0.3603
 Module::Build::Platform::MacOS	0.3603
 Module::Build::Platform::MPEiX	0.3603
@@ -3798,415 +3771,449 @@ Test::Tester::Delegate	undef
 Test::use::ok	0.02
 Text::Diff	1.41
 Text::Glob	0.09
-Text::Diff::ConCan't opendir(/.DocumentRevisions-V100): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/) .fseventsd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/) .Spotlight-V100: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/.Trashes): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Library/Application Support/Apple/ParentalControls/) Users: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Library/Caches/) com.apple.coresymbolicationd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Library/Caches/) com.apple.Spotlight: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/private/etc/cups/certs): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/etc/raddb/) certs: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/etc/raddb/) modules: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/etc/raddb/) sites-available: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/etc/raddb/) sql: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-200.k1e18b: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-295.qTGmFB: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/) agentx: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/at/) tabs: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/at/) tmp: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/) audit: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/) backups: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/ConfigurationProfiles/) Setup: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/) dhcpclient: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/dslocal/nodes/) Default: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/) geod: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/) krb5kdc: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.0: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.202: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.212: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.88: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.89: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.97: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/) locationd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/) Spotlight: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/db/) sudo: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) Cleanup At Startup: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000008w000027/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000008w000027/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000th00006m/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000th00006m/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/) jabberd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/lib/) postfix: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) com.apple.launchd.peruser.0: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) com.apple.launchd.peruser.202: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) com.apple.launchd.peruser.212: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) com.apple.launchd.peruser.88: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) com.apple.launchd.peruser.89: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) com.apple.launchd.peruser.97: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) krb5kdc: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/log/) radius: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/) pgsql_socket_alt: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/) root: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/run/) mds: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/) cups: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/) fax: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/) mqueue: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) active: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) bounce: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) corrupt: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) defer: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) deferred: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) flush: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) hold: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) incoming: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) maildrop: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) private: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) public: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) saved: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/spool/postfix/) trace: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/tmp/) launchd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/System/Library/DirectoryServices/DefaultLocalDB/) Default: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/System/Library/) User Template: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/usr/sbin/) authserver: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/Macintosh HD/.DocumentRevisions-V100): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/) .fseventsd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/) .Spotlight-V100: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/Macintosh HD/.Trashes): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/Library/Application Support/Apple/ParentalControls/) Users: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/Library/Caches/) com.apple.coresymbolicationd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/Library/Caches/) com.apple.Spotlight: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/Library/Caches/) com.google.SoftwareUpdate.0: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/Macintosh HD/private/etc/cups/certs): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/etc/raddb/) certs: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/etc/raddb/) modules: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/etc/raddb/) sites-available: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/etc/raddb/) sites-enabled: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/etc/raddb/) sql: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/tmp/) launchd-213.Km0kBf: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/tmp/) launchd-214.KpwXkr: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/tmp/) launchd-326.6AQDcq: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/tmp/) launchd-4605.8GPWkX: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/) agentx: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/at/) tabs: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/at/) tmp: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/) audit: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/) backups: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/ConfigurationProfiles/) Setup: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/) dhcpclient: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/dslocal/nodes/) Default: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/) krb5kdc: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.0: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.200: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.202: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.212: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.26: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.4294967294: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.502: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.88: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.89: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.92: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/launchd.db/) com.apple.launchd.peruser.97: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/) locationd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/) Spotlight: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/db/) sudo: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/_j/tq8pn1_n4zddq3f3f7h68fmm0000gp/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/f3/jy8k6c2d69sf_zb6kgczsyn40000gn/C/com.apple.SoftwareUpdate/swcdn.apple.com/content/downloads/53/02/041-8081/2jwp4wjrwygtm4lc608qy4h0n4a9yyq37g/) Safari6.0.2Mountain.pkg: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't opendir(/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) Cleanup At Startup: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n000008w000027/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n000008w000027/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000t000006h/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000th00006m/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000th00006m/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/) jabberd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/lib/) postfix: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.0: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.200: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.202: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.212: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.26: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.4294967294: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.502: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.88: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.89: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.92: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) com.apple.launchd.peruser.97: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) krb5kdc: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/log/) radius: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/) pgsql_socket_alt: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/) root: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/run/) mds: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/) cups: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/) fax: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/) mqueue: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) active: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) bounce: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) corrupt: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) defer: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) deferred: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) flush: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) hold: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) incoming: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) maildrop: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) private: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) public: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) saved: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/spool/postfix/) trace: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/private/var/tmp/) launchd: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/System/Library/DirectoryServices/DefaultLocalDB/) Default: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/Volumes/Macintosh HD/System/Library/) User Template: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Text::Diff::Config	1.41
+Text::Diff::Table	1.41
+Time::Epoch	0.02
+Time::Progress	1.7
+Time::Zone	2.24
+Tree::DAG_Node	1.06
+Try::Tiny	0.11
+UNIVERSAL::require	0.13
+URI::_foreign	undef
+URI::_generic	undef
+URI::_idna	undef
+URI::_ldap	1.12
+URI::_login	undef
+URI::_punycode	0.04
+URI::_query	undef
+URI::_segment	undef
+URI::_server	undef
+URI::_userpass	undef
+URI::data	undef
+URI::Escape	3.31
+URI::file	4.21
+URI::ftp	undef
+URI::gopher	undef
+URI::Heuristic	4.20
+URI::http	undef
+URI::https	undef
+URI::IRI	undef
+URI::ldap	1.12
+URI::ldapi	undef
+URI::ldaps	undef
+URI::mailto	undef
+URI::mms	undef
+URI::news	undef
+URI::nntp	undef
+URI::pop	undef
+URI::QueryParam	undef
+URI::rlogin	undef
+URI::rsync	undef
+URI::rtsp	undef
+URI::rtspu	undef
+URI::sip	0.11
+URI::sips	undef
+URI::snews	undef
+URI::Split	undef
+URI::ssh	undef
+URI::telnet	undef
+URI::tn3270	undef
+URI::URL	5.04
+URI::urn	undef
+URI::WithBase	2.20
+URI::file::Base	undef
+URI::file::FAT	undef
+URI::file::Mac	undef
+URI::file::OS2	undef
+URI::file::QNX	undef
+URI::file::Unix	undef
+URI::file::Win32	undef
+URI::urn::isbn	undef
+URI::urn::oid	undef
+WWW::RobotRules	6.01
+WWW::RobotRules::AnyDBM_File	6.00
+XML::NamespaceSupport	1.11
+XML::SAX	0.99
+XML::Simple	2.18
+XML::Writer	0.612
+XML::XPath	1.13
+XML::SAX::Base	1.08
+XML::SAX::DocumentLocator	undef
+XML::SAX::Exception	1.08
+XML::SAX::ParserFactory	1.01
+XML::SAX::PurePerl	0.99
+XML::SAX::PurePerl::DebugHandler	undef
+XML::SAX::PurePerl::DocType	undef
+XML::SAX::PurePerl::DTDDecls	undef
+XML::SAX::PurePerl::EncodingDetect	undef
+XML::SAX::PurePerl::Exception	undef
+XML::SAX::PurePerl::NoUnicodeExt	undef
+XML::SAX::PurePerl::Productions	undef
+XML::SAX::PurePerl::Reader	undef
+XML::SAX::PurePerl::UnicodeExt	undef
+XML::SAX::PurePerl::XMLDecl	undef
+XML::SAX::PurePerl::Reader::NoUnicodeExt	undef
+XML::SAX::PurePerl::Reader::Stream	undef
+XML::SAX::PurePerl::Reader::String	undef
+XML::SAX::PurePerl::Reader::UnicodeExt	undef
+XML::SAX::PurePerl::Reader::URI	undef
+XML::XPath::Boolean	undef
+XML::XPath::Builder	undef
+XML::XPath::Expr	undef
+XML::XPath::Function	undef
+XML::XPath::Literal	undef
+XML::XPath::LocationPath	undef
+XML::XPath::Node	undef
+XML::XPath::NodeSet	undef
+XML::XPath::Number	undef
+XML::XPath::Parser	undef
+XML::XPath::PerlSAX	undef
+XML::XPath::Root	undef
+XML::XPath::Step	undef
+XML::XPath::Variable	undef
+XML::XPath::XMLParser	undef
+XML::XPath::Node::Attribute	undef
+XML::XPath::Node::Comment	undef
+XML::XPath::Node::Element	undef
+XML::XPath::Node::Namespace	undef
+XML::XPath::Node::PI	undef
+XML::XPath::Node::Text	undef
+
+==================
+Alfred extensions:
+Adium Chat
+Adium Controls - Go Offline
+Adium Controls - Go Online
+Bartender: Show Menu
+Flux: Quit
+Toggle iTerm
+Applications
+Downloads
+Movies
+210x
+6240
+6411
+7148
+Check Jenkins Status
+Mission control
+New task
+Pomodoro > Long break
+Pomodoro > Pomodoro
+Pomodoro > Reset
+Pomodoro > Short break
+Pomodoro > Start
+Pomodoro > Stop
+Reeder
+Skype
+StarCraft II
+What is My IP
+Wi-Fi-toggle
+backport
+bashrc
+bug
+dont ignore scala crashes
+dothack
+dothackproto
+dotjenkins
+dotslate
+flags
+h2
+hack
+ignore crashes
+introduce-member
+java6
+java7
+java8
+locker
+master
+paradise
+pr
+proto-210x
+proto-master
+proto-paradise
+pullrequest
+quick
+resetattrs-this
+rtm
+runtime-internal
+si
+zzz
+
+==================
+Firefox extensions:
+css@xeno.by.xpi
+customizable-shortcuts@timtaubert.de.xpi
+firebug@software.joehewitt.com.xpi
+firegestures@xuldev.org.xpi
+jsonovich@lackoftalent.org.xpi
+keyconfig@petricek.net.xpi
+omnibar@ajitk.com.xpi
+onepassword@agilebits.com.xpi
+readability@readability.com.xpi
+testpilot@labs.mozilla.com.xpi
+{64161300-e22b-11db-8314-0800200c9a66}.xpi
+{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi
+{dc572301-7619-498c-a57d-39143191b318}.xpi
+
+==================
+KeyRemap4MacBook private.xml:
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>SUBLIME</appname>
+    <equal>com.sublimetext.2</equal>
+  </appdef>
+  <appdef>
+    <appname>ITERM2</appname>
+    <equal>com.googlecode.iterm2</equal>
+  </appdef>
+  <appdef>
+    <appname>EVERNOTE</appname>
+    <equal>com.evernote.Evernote</equal>
+  </appdef>
+  <appdef>
+    <appname>SKYPE</appname>
+    <equal>com.skype.skype</equal>
+  </appdef>
+  <appdef>
+    <appname>FIREFOX</appname>
+    <equal>org.mozilla.aurora</equal>
+  </appdef>
+  <appdef>
+    <appname>PREVIEW</appname>
+    <equal>com.apple.Preview</equal>
+  </appdef>
+  <appdef>
+    <appname>ECLIPSE</appname>
+    <equal>org.eclipse.eclipse</equal>
+  </appdef>
+  <appdef>
+    <appname>VIRTUALBOX</appname>
+    <equal>org.virtualbox.app.VirtualBoxVM</equal>
+  </appdef>
+  <appdef>
+    <appname>STARCRAFT</appname>
+    <equal>com.blizzard.starcraft2</equal>
+  </appdef>
+  <item>
+    <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
+    <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
+    <not>SUBLIME,VIRTUALBOX,STARCRAFT</not>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::NONE,
+      KeyCode::G, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_L,
+      KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_R,
+      KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Sublime) Shift + F3 -> Cmd + Shift + G</name>
+    <identifier>private.pc_like_search_prev_search_next_sublime</identifier>
+    <only>SUBLIME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_L,
+      KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F3, ModifierFlag::SHIFT_R,
+      KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Sublime) Fn + Left -> F18, Fn + Right -> F19</name>
+    <identifier>private.sublime_fnleft_navigateback</identifier>
+    <only>SUBLIME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::F18,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::F19,
+    </autogen>
+  </item>
+  <item>
+    <name>(Firefox) Fn + Left -> F18, Fn + Right -> F19, Cmd + Left -> Cmd + Shift + [, Cmd + Right -> Cmd + Shift + ]</name>
+    <identifier>private.firefox_fnleft_navigateback</identifier>
+    <only>FIREFOX</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::F18,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::F19,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(iTerm2) Option + Delete -> Esc, Delete</name>
+    <identifier>private.iterm2_backward_delete_word</identifier>
+    <only>ITERM2</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DELETE, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::ESCAPE, KeyCode::DELETE
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DELETE, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::ESCAPE, KeyCode::DELETE
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Left Control -> Option + Space</name>
+    <identifier>private.lcontrol_option_space</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::CONTROL_L, KeyCode::SPACE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Left Shift -> Command + Shift + [</name>
+    <identifier>private.lmod_prev_tab</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+      KeyCode::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Right Shift -> Command + Shift + ]</name>
+    <identifier>private.rmod_next_tab</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      KeyCode::SHIFT_R, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Control + Ф, Control + Shift + Ф, Control + У, Control + Shift + У</name>
+    <identifier>private.control_plus_nonenglish_letter_shortcuts</identifier>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::A, ModifierFlag::CONTROL_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::E, ModifierFlag::CONTROL_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+  </item>
+  <item>
+    <name>(Preview) Satechi Compat</name>
+    <identifier>private.preview_satechi_compat</identifier>
+    <only>PREVIEW</only>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::CURSOR_RIGHT,
+    </autogen>
+  </item>
+  <item>
+    <name>(Eclipse) Home/End</name>
+    <identifier>private.home_end</identifier>
+    <only>ECLIPSE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Starcraft) Cmd + Q => Cmd + Option + Q</name>
+    <identifier>private.starcraft_command_q_fix</identifier>
+    <only>STARCRAFT</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+</root>

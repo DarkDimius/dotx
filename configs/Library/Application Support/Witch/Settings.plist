@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Accessibility API Timeout</key>
+	<real>0.10000000149011612</real>
+	<key>Activate Item</key>
+	<false/>
+	<key>Activate On No Modifiers</key>
+	<true/>
+	<key>Alternate Panel Font</key>
+	<string>LucidaGrande</string>
+	<key>Application Exceptions</key>
+	<array>
+		<string>iTerm</string>
+		<string>*Pomodoro</string>
+		<string>Smart Button</string>
+	</array>
+	<key>Application Name Color</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJm
+	ZoMcKRo/AYY=
+	</data>
+	<key>Application Name Shadow</key>
+	<false/>
+	<key>Auto-Enabled Once</key>
+	<true/>
+	<key>Background Color</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMGhANA
+	QECEhIQITlNTdHJpbmcBlIQBKwZTeXN0ZW2GhJaYFXdpbmRvd0JhY2tncm91bmRDb2xv
+	coaEk5UDhAJmZoMAAAA/AYaG
+	</data>
+	<key>Cycle All Windows</key>
+	<dict>
+		<key>Backward</key>
+		<dict>
+			<key>Character</key>
+			<string></string>
+			<key>Key Code</key>
+			<string>48</string>
+			<key>Modifiers</key>
+			<string>1179914</string>
+			<key>Visual Representation</key>
+			<string>⇧⌘⇥</string>
+		</dict>
+		<key>Forward</key>
+		<dict>
+			<key>Character</key>
+			<string>	</string>
+			<key>Key Code</key>
+			<string>48</string>
+			<key>Modifiers</key>
+			<string>1048840</string>
+			<key>Visual Representation</key>
+			<string>⌘⇥</string>
+		</dict>
+	</dict>
+	<key>Icon Mode</key>
+	<integer>0</integer>
+	<key>Ignore Non-Standard Windows</key>
+	<true/>
+	<key>Invert Applications Sort Order</key>
+	<false/>
+	<key>Item Height</key>
+	<real>28</real>
+	<key>Keep Cycling</key>
+	<true/>
+	<key>Last Tab</key>
+	<string>license</string>
+	<key>Maximum Width</key>
+	<real>0.54178649187088013</real>
+	<key>Panel Delay</key>
+	<integer>100</integer>
+	<key>Panel Shadow</key>
+	<true/>
+	<key>Preview Delay</key>
+	<integer>2000</integer>
+	<key>Selection Border Color</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmAIM/bKA9g2QaNj8Bhg==
+	</data>
+	<key>Selection Color</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
+	ZmZmgxdrRD+D/FJfPwEBhg==
+	</data>
+	<key>Selection Gradient</key>
+	<integer>8</integer>
+	<key>Selection Window Name Color</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJm
+	ZgABhg==
+	</data>
+	<key>Show Application Names</key>
+	<false/>
+	<key>Show Document Icon Overlays</key>
+	<false/>
+	<key>Show Previews</key>
+	<false/>
+	<key>Show Shortcut Badges</key>
+	<false/>
+	<key>Step Forward Initially</key>
+	<true/>
+	<key>Switch Across Spaces</key>
+	<true/>
+	<key>Window Exceptions</key>
+	<array>
+		<string>Format*Palet*</string>
+		<string>Current Call</string>
+		<string>Visual Merge*</string>
+		<string>Contacts</string>
+		<string>Make Dir</string>
+		<string>Microsoft Word</string>
+	</array>
+	<key>Window Name Color</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJm
+	ZoOshLE+AYY=
+	</data>
+	<key>Window Name Shadow</key>
+	<false/>
+</dict>
+</plist>
