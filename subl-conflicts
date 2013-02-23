@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+
+for file in $(git-ls-merge-conflicts); do
+  subl -w "$file"
+done

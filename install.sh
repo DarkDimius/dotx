@@ -1,35 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ -z "$(which grealpath)" ]]; then
-  echo "Bad environment. Make sure that /usr/local/bin is on PATH"
-  exit 1
-fi
-
-if [[ ! -f "/usr/local/bin/realpath" ]]; then
-  ln -sv /usr/local/bin/grealpath /usr/local/bin/realpath
-fi
-
-if [[ ! -f "/usr/local/bin/mountainlion-window-restore-fix" ]]; then
-  # http://apple.stackexchange.com/questions/48439/how-to-default-to-not-open-all-the-apps-again-on-mac-os-x-lion
-  sudo defaults write com.apple.loginwindow LoginHook /usr/local/bin/mountainlion-window-restore-fix
-  sudo defaults read com.apple.loginwindow
-fi
-install-into-bin mountainlion-window-restore-fix
-defaults write com.apple.dock autohide -int 1
-defaults write com.apple.dock autohide-time-modifier -int 999999
-defaults write com.apple.dock tilesize -int 16
-defaults write com.apple.dock launchanim -int 0
-killall Dock
-defaults write com.apple.CrashReporter DialogType none
-
-hibernatemode="$(pmset -g | grep hibernatemode | grep 0)"
-if [[ $? != 0 ]]; then sudo pmset -a hibernatemode 0; fi
-if [[ -f //private/var/vm/sleepimage ]]; then
-  sudo rm /private/var/vm/sleepimage
-  sudo touch /private/var/vm/sleepimage
-  sudo chflags uchg /private/var/vm/sleepimage
-fi
-
 function install-into-destination() {
   dest=$1
   from=$2
@@ -86,6 +56,37 @@ function install-into-agents() {
     launchctl start local.$name
   fi
 }
+
+if [[ -z "$(which grealpath)" ]]; then
+  echo "Bad environment. Make sure that /usr/local/bin is on PATH"
+  exit 1
+fi
+if [[ ! -f "/usr/local/bin/realpath" ]]; then
+  ln -sv /usr/local/bin/grealpath /usr/local/bin/realpath
+fi
+if [[ ! -f "/usr/local/bin/mountainlion-window-restore-fix" ]]; then
+  # http://apple.stackexchange.com/questions/48439/how-to-default-to-not-open-all-the-apps-again-on-mac-os-x-lion
+  sudo defaults write com.apple.loginwindow LoginHook /usr/local/bin/mountainlion-window-restore-fix
+  sudo defaults read com.apple.loginwindow
+fi
+install-into-bin mountainlion-window-restore-fix
+defaults write com.apple.dock autohide -int 1
+defaults write com.apple.dock autohide-time-modifier -int 999999
+defaults write com.apple.dock tilesize -int 16
+defaults write com.apple.dock launchanim -int 0
+killall Dock
+defaults write com.apple.CrashReporter DialogType none
+
+hibernatemode="$(pmset -g | grep hibernatemode | grep 0)"
+if [[ $? != 0 ]]; then sudo pmset -a hibernatemode 0; fi
+if [[ -f /private/var/vm/sleepimage ]]; then
+  size="$(wc -c < /private/var/vm/sleepimage)"
+  if [[ "$size" -ne "0" ]]; then
+    sudo rm /private/var/vm/sleepimage
+    sudo touch /private/var/vm/sleepimage
+    sudo chflags uchg /private/var/vm/sleepimage
+  fi
+fi
 
 install-into-home .gitconfig
 install-into-home gitignore .gitignore
@@ -180,6 +181,8 @@ install-into-bin sc2
 install-into-bin unpack-st3-packages
 install-into-bin lzycompute
 install-into-bin scrutil
+install-into-bin git-ls-merge-conflicts
+install-into-bin subl-conflicts
 
 install-into-etc launchd.conf
 install-into-etc paths
