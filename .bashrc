@@ -180,6 +180,12 @@ complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
 alias sbtsnap="sbt -sbt-snapshot"
+alias s="scalac Test.scala"
+alias sm="scalac Macros.scala"
+alias ss="scalac Macros.scala && scalac Test.scala"
+alias r="scala Test"
+alias sr="scalac Test.scala && scala Test"
+alias ssr="scalac Macros.scala && scalac Test.scala && scala Test"
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
@@ -206,6 +212,9 @@ alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
 alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
 alias slick='cd "$HOME/Projects/Slick"'
 alias shared='cd "$HOME/../Shared/VirtualBox"'
+alias spiwo='cd "$HOME/Projects/scala-pickling_working"'
+alias spino='cd "$HOME/Projects/scala-pickling_notworking"'
+alias spinwo='cd "$HOME/Projects/scala-pickling_notworking"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -234,3 +243,9 @@ function sbresetattrs-this { target="$(hack-home "resetattrs-this")/sandbox"; if
 function kep7148 { target="$(hack-home "7148")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7148 { target="$(hack-home "7148")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7112-followup { target="$(hack-home "7112-followup")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7112-followup { target="$(hack-home "7112-followup")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

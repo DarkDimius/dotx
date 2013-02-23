@@ -130,7 +130,7 @@ try:
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:
-    # print tpe
+    print tpe
     print >> sys.stderr, value
-    # traceback.print_tb(tb)
+    traceback.print_tb(tb)
     sys.exit(1)

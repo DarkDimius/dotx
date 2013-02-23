@@ -20,6 +20,7 @@ defaults write com.apple.dock autohide-time-modifier -int 999999
 defaults write com.apple.dock tilesize -int 16
 defaults write com.apple.dock launchanim -int 0
 killall Dock
+defaults write com.apple.CrashReporter DialogType none
 
 hibernatemode="$(pmset -g | grep hibernatemode | grep 0)"
 if [[ $? != 0 ]]; then sudo pmset -a hibernatemode 0; fi
