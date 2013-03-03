@@ -181,14 +181,17 @@ complete -F _hack_homes hh
 alias gc="gaika compile"
 alias sbtsnap="sbt -sbt-snapshot"
 alias s="scalac Test.scala"
+alias sj="scalac Test.scala -Xmacro-jit"
 alias sm="scalac Macros.scala"
 alias ss="scalac Macros.scala && scalac Test.scala"
 alias r="scala Test"
 alias sr="scalac Test.scala && scala Test"
+alias srj="scalac Test.scala -Xmacro-jit && scala Test"
 alias ssr="scalac Macros.scala && scalac Test.scala && scala Test"
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
+alias acc='cd "$HOME/Projects/ACC/l3/compiler"'
 alias hm='cd "$HOME"'
 alias ubi='cd "/usr/local/bin"'
 alias db='cd "/media/XENO/Dropbox"'
@@ -197,6 +200,7 @@ alias prj='cd "$HOME/Projects"'
 alias ide='cd "$HOME/Projects/ScalaIDE"'
 alias ens='cd "$HOME/Projects/Ensime"'
 alias plugins='cd "$HOME/.sbt/0.12.1/plugins"'
+alias cf='cd "$HOME/Projects/codefest2013"'
 alias sens='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
 alias des='cd "$HOME/Library/Application Support/Sublime Text 2"'
 alias sens2='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
@@ -205,6 +209,7 @@ alias sens3='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/Ensim
 alias des3='cd "$HOME/Library/Application Support/Sublime Text 3"'
 alias stock3='cd "/Applications/Sublime Text 3.app/Contents/MacOS/Packages"'
 alias pap='cd "$HOME/Projects/Pages"'
+alias slang='cd "$HOME/Projects/ScalaLang"'
 alias dotx='cd "$HOME/Projects/Dotx"'
 alias docs='cd "$HOME/Projects/DocsScalaLang"'
 alias smock='cd "$HOME/Projects/ScalaMock"'
@@ -249,3 +254,11 @@ function kep7112-followup { target="$(hack-home "7112-followup")"; if [[ $? == 0
 function sb7112-followup { target="$(hack-home "7112-followup")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepdefaultnamed { target="$(hack-home "defaultnamed")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbdefaultnamed { target="$(hack-home "defaultnamed")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacrojit { target="$(hack-home "macrojit")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacrojit { target="$(hack-home "macrojit")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7190 { target="$(hack-home "7190")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7190 { target="$(hack-home "7190")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

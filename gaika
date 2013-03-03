@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, os, subprocess, json, shutil
+import sys, os, subprocess, json, shutil, time
 from subprocess import check_output, call, check_call, Popen, PIPE
 
 sublime = "--sublime" in sys.argv
@@ -52,11 +52,20 @@ try:
         check_call(["rm", "-rf", "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/server"])
         check_call(["cp", "-r", "/Users/xeno_by/Projects/Ensime/dist_2.10.0", "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/server"])
         sys.exit(0)
+      elif os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/ACC"):
+        root = git_root + "/l3/compiler"
+        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+        env["result_line_regex"] = ""
+        env["result_base_dir"] = root
+        cmd = ["sbt", "-Dsbt.log.noformat=true", "compile"] if sublime else ["sbt", "compile"]
+        sys.exit(call(cmd, cwd = root))
       elif args and args[0].endswith(".tex"):
         target = args[0]
         root = os.path.dirname(os.path.abspath(target))
         status = call(["pdflatex", target], cwd = root)
         if status: sys.exit(status)
+        call(["open", os.path.splitext(target)[0] + ".pdf"])
+        time.sleep(0.2)
         call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
         call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
       else:

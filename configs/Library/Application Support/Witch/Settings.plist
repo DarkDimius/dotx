@@ -15,6 +15,7 @@
 		<string>iTerm</string>
 		<string>*Pomodoro</string>
 		<string>Smart Button</string>
+		<string>Terminal</string>
 	</array>
 	<key>Application Name Color</key>
 	<data>
@@ -67,7 +68,7 @@
 	<key>Keep Cycling</key>
 	<true/>
 	<key>Last Tab</key>
-	<string>license</string>
+	<string>behavior</string>
 	<key>Maximum Width</key>
 	<real>0.54178649187088013</real>
 	<key>Panel Delay</key>

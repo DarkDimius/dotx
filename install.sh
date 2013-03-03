@@ -177,7 +177,6 @@ install-into-bin grade
 install-into-bin solution
 install-into-bin reeder-launch-app
 install-into-bin reeder-focus-unread
-install-into-bin sc2
 install-into-bin unpack-st3-packages
 install-into-bin lzycompute
 install-into-bin scrutil
