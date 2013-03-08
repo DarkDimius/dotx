@@ -35,8 +35,8 @@ def init_file(filename, default_content=""):
 def init_dir(dirname):
   os.makedirs(dirname)
   print "Created " + dirname
-  init_file(os.path.join(dirname, "Impls_1.scala"))
-  init_file(os.path.join(dirname, "Macros_Test_2.scala"))
+  init_file(os.path.join(dirname, "Macros_1.scala"))
+  init_file(os.path.join(dirname, "Test_2.scala"))
 
 if create_file: init_file(test_file)
 elif create_dir: init_dir(test_dir)

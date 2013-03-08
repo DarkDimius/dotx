@@ -7,7 +7,7 @@
   <key>category</key>
   <string>SCRIPTS</string>
   <key>command</key>
-  <string>stderr="$(hack snippet02 2&gt;&amp;1 1&gt;/dev/null)"
+  <string>stderr="$(hack macro-annotations 2&gt;&amp;1 1&gt;/dev/null)"
 if [[ -n "$stderr" ]]; then
   echo $stderr
 fi</string>
@@ -30,7 +30,7 @@ fi</string>
   <key>growloutputsticky</key>
   <false/>
   <key>keyword</key>
-  <string>snippet02</string>
+  <string>macro-annotations</string>
   <key>logging</key>
   <false/>
   <key>multifileargs</key>
@@ -40,8 +40,8 @@ fi</string>
   <key>silent</key>
   <true/>
   <key>subtitle</key>
-  <string>Hack the snippet02 project</string>
+  <string>Hack the macro-annotations project</string>
   <key>title</key>
-  <string>Project snippet02</string>
+  <string>Project macro-annotations</string>
 </dict>
 </plist>

@@ -46,6 +46,12 @@ function gpu { git pull upstream $(git rev-parse --abbrev-ref HEAD); }
 alias gs='git status'
 alias grb='git rebase'
 alias grbi='git rebase -i'
+alias grbi1='git rebase -i HEAD~1'
+alias grbi2='git rebase -i HEAD~2'
+alias grbi3='git rebase -i HEAD~3'
+alias grbi4='git rebase -i HEAD~4'
+alias grbi5='git rebase -i HEAD~5'
+alias grbi100='git rebase -i HEAD~100'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
 alias grbs='git rebase --skip'
@@ -180,14 +186,24 @@ complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
 alias sbtsnap="sbt -sbt-snapshot"
-alias s="scalac Test.scala"
-alias sj="scalac Test.scala -Xmacro-jit"
-alias sm="scalac Macros.scala"
-alias ss="scalac Macros.scala && scalac Test.scala"
+alias s="scalac *Test*.scala"
+alias sli="scalac *Test*.scala -Xlog-implicits"
+alias smd="scalac *Test*.scala -Ymacro-debug-verbose"
+alias src="scalac *Test*.scala -Yreify-copypaste"
+alias sm="scalac *Macros*.scala"
+alias ss="scalac *Macros*.scala && scalac Test*.scala"
+alias ssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
+alias ssmd="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
+alias ssrc="scalac *Macros*.scala && scalac Test*.scala -Yreify-copypaste"
 alias r="scala Test"
-alias sr="scalac Test.scala && scala Test"
-alias srj="scalac Test.scala -Xmacro-jit && scala Test"
-alias ssr="scalac Macros.scala && scalac Test.scala && scala Test"
+alias sr="scalac *Test*.scala && scala Test"
+alias slir="scalac *Test*.scala -Xlog-implicits && scala Test"
+alias smdr="scalac *Test*.scala -Ymacro-debug-verbose && scala Test"
+alias srcr="scalac *Test*.scala -Yreify-copypaste && scala Test"
+alias ssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
+alias sslir="scalac *Macros*.scala && scalac *Test*.scala -Xlog-implicits && scala Test"
+alias ssmdr="scalac *Macros*.scala && scalac *Test*.scala -Ymacro-debug-verbose && scala Test"
+alias ssrcr="scalac *Macros*.scala && scalac *Test*.scala -Yreify-copypaste && scala Test"
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
@@ -217,9 +233,7 @@ alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
 alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
 alias slick='cd "$HOME/Projects/Slick"'
 alias shared='cd "$HOME/../Shared/VirtualBox"'
-alias spiwo='cd "$HOME/Projects/scala-pickling_working"'
-alias spino='cd "$HOME/Projects/scala-pickling_notworking"'
-alias spinwo='cd "$HOME/Projects/scala-pickling_notworking"'
+alias spick='cd "$HOME/Projects/scala-pickling"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -248,17 +262,15 @@ function sbresetattrs-this { target="$(hack-home "resetattrs-this")/sandbox"; if
 function kep7148 { target="$(hack-home "7148")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7148 { target="$(hack-home "7148")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7112-followup { target="$(hack-home "7112-followup")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7112-followup { target="$(hack-home "7112-followup")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepdefaultnamed { target="$(hack-home "defaultnamed")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbdefaultnamed { target="$(hack-home "defaultnamed")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrojit { target="$(hack-home "macrojit")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrojit { target="$(hack-home "macrojit")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7190 { target="$(hack-home "7190")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7190 { target="$(hack-home "7190")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet02 { target="$(hack-home "snippet02")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet02 { target="$(hack-home "snippet02")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacro-annotations { target="$(hack-home "macro-annotations")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacro-annotations { target="$(hack-home "macro-annotations")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
