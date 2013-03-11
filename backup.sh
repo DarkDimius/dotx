@@ -51,11 +51,6 @@ echo "==================" >> "$target"
 echo "KeyRemap4MacBook private.xml:" >> "$target"
 cat "/Users/xeno_by/Library/Application Support/KeyRemap4MacBook/private.xml" >> "$target"
 
-src="/Users/xeno_by/Library/Application Support/Blizzard/StarCraft II/"
-dest="/Users/Shared/Dropbox/Saves/StarCraft II"
-if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
-cp -r "$src" "$dest"
-
 src="/Users/xeno_by/Library/Application Support/Alfred/extensions"
 dest="$(dirname $0)/configs/Library/Application Support/Alfred/extensions"
 if [[ -d "$dest" ]]; then rm -rf "$dest"; fi

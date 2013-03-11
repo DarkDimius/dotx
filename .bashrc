@@ -27,9 +27,15 @@ function parse_git_branch {
 }
 PS1="\$(date +%H:%M) \w\$(parse_git_branch)\$ "
 
+function git {
+  export LANG=C
+  export LC_ALL=en_US.UTF-8
+  /usr/local/bin/git $*
+}
 alias ga='git add'
 alias gai='git add -i'
 alias gap='git add -p'
+alias gaa='git add -A'
 alias gr='git remove'
 alias gch='git checkout'
 alias gco='git commit'
@@ -54,11 +60,11 @@ alias grbi5='git rebase -i HEAD~5'
 alias grbi10='git rebase -i HEAD~10'
 alias grbi20='git rebase -i HEAD~20'
 alias grbi100='git rebase -i HEAD~100'
-alias grbc='git rebase --continue'
+alias grbc='gaa && git rebase --continue'
 alias grba='git rebase --abort'
 alias grbs='git rebase --skip'
 alias gcp='git cherry-pick'
-alias gcpc='git cherry-pick --continue'
+alias gcpc='gaa && git cherry-pick --continue'
 alias gcpa='git cherry-pick --abort'
 alias gra='git remote add'
 alias grv='git remote -v'
@@ -82,6 +88,8 @@ alias grm5='git reset --mixed HEAD~5'
 alias gm='git merge'
 alias gma='git merge --abort'
 complete -F _git_branch gm grb grbi gch gb gbD
+alias cl='git-ls-merge-conflicts'
+alias cr='subl-conflicts'
 
 source "$HOME/Projects/Libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
@@ -191,10 +199,14 @@ alias sbtsnap="sbt -sbt-snapshot"
 alias s="scalac *Test*.scala"
 alias sli="scalac *Test*.scala -Xlog-implicits"
 alias st="scalac *Test*.scala -Xprint:typer"
+alias sy="scalac *Test*.scala -Ymacro-debug-lite"
+alias syy="scalac *Test*.scala -Ymacro-debug-verbose"
 alias sm="scalac *Macros*.scala"
 alias ss="scalac *Macros*.scala && scalac Test*.scala"
 alias ssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
 alias sst="scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
+alias ssy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
+alias ssyy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
 alias r="scala Test"
 alias sr="scalac *Test*.scala && scala Test"
 alias ssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
@@ -255,7 +267,6 @@ function kepresetattrs-this { target="$(hack-home "resetattrs-this")"; if [[ $? 
 function sbresetattrs-this { target="$(hack-home "resetattrs-this")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7148 { target="$(hack-home "7148")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7148 { target="$(hack-home "7148")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function kep7112-followup { target="$(hack-home "7112-followup")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7112-followup { target="$(hack-home "7112-followup")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepdefaultnamed { target="$(hack-home "defaultnamed")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -268,3 +279,10 @@ function kepmacro-annotations { target="$(hack-home "macro-annotations")"; if [[
 function sbmacro-annotations { target="$(hack-home "macro-annotations")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep6725 { target="$(hack-home "6725")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6725 { target="$(hack-home "6725")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7235 { target="$(hack-home "7235")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7235 { target="$(hack-home "7235")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function kep7240 { target="$(hack-home "7240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7240 { target="$(hack-home "7240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

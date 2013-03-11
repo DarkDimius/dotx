@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>category</key>
+	<string>SCRIPTS</string>
+	<key>command</key>
+	<string>#!/bin/bash
+cd "/Applications/Sc2gears"
+$(/usr/libexec/java_home -v 1.7)/bin/java -Xmx512m -cp lib/Sc2gears.jar:lib/jna.jar:lib/platform.jar:lib/jl1.0.1.jar:lib/mp3spi1.9.4.jar:lib/tritonus_share.jar:lib/squareness.jar:lib/OfficeLnFs_2.7.jar hu/belicza/andras/sc2gears/Sc2gears "$@"</string>
+	<key>disabled</key>
+	<false/>
+	<key>escapedollar</key>
+	<true/>
+	<key>escapequery</key>
+	<true/>
+	<key>escapequerybackquotes</key>
+	<true/>
+	<key>escapequerybrackets</key>
+	<true/>
+	<key>escapequeryquotes</key>
+	<true/>
+	<key>escapequerysemicolons</key>
+	<true/>
+	<key>growloutput</key>
+	<false/>
+	<key>growloutputsticky</key>
+	<false/>
+	<key>keyword</key>
+	<string>sc2gears</string>
+	<key>logging</key>
+	<false/>
+	<key>multifileargs</key>
+	<false/>
+	<key>parameter</key>
+	<integer>0</integer>
+	<key>silent</key>
+	<true/>
+	<key>subtitle</key>
+	<string></string>
+	<key>title</key>
+	<string>sc2gears</string>
+</dict>
+</plist>
