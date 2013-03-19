@@ -74,9 +74,10 @@ try:
         env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
         env["result_line_regex"] = ""
         env["result_base_dir"] = root
-        if tier == "quick":
+        if tier == "pack":
+          sys.exit(call(["ant"], cwd = root))
+        elif tier == "quick":
           sys.exit(call(["ant", "quick.comp"], cwd = root))
-          # sys.exit(call(["ant"], cwd = root))
         elif tier == "locker":
           sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
         else:
