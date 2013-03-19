@@ -75,8 +75,8 @@ try:
         env["result_line_regex"] = ""
         env["result_base_dir"] = root
         if tier == "quick":
-          # sys.exit(call(["ant", "quick.comp"], cwd = root))
-          sys.exit(call(["ant"], cwd = root))
+          sys.exit(call(["ant", "quick.comp"], cwd = root))
+          # sys.exit(call(["ant"], cwd = root))
         elif tier == "locker":
           sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
         else:

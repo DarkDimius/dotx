@@ -4,11 +4,13 @@ Apps:
 1Password.app
 Adium.app
 Alfred.app
+Anki.app
 App Store.app
 Araxis Merge.app
 AudioBookBinder.app
 Automator.app
 Bartender.app
+BusyCal.app
 Caffeine.app
 Calculator.app
 Calendar.app
@@ -55,6 +57,7 @@ Safari.app
 Sc2gears
 Skype.app
 SourceTree.app
+Spotify.app
 StarCraft II
 StartNinja.app
 Stickies.app
@@ -86,7 +89,9 @@ bash
 bash-completion
 coreutils
 findutils
+ghc
 git
+haskell-platform
 readline
 wget
 xz
@@ -3809,9 +3814,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-198.i5vwxC: Permission denied
+Can't cd to (/private/tmp/) launchd-197.S0gkE6: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-353.833AXk: Permission denied
+Can't cd to (/private/tmp/) launchd-353.BG7leA: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-5922.nHDfta: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3889,6 +3896,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permiss
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) T: Permission denied
@@ -3912,6 +3921,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3976,6 +3987,8 @@ Can't cd to (/private/var/spool/postfix/) saved: Permission denied
 Can't cd to (/private/var/spool/postfix/) trace: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/tmp/) launchd: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/System/Library/Caches/) com.apple.coresymbolicationd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/System/Library/DirectoryServices/DefaultLocalDB/) Default: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -8975,6 +8988,8 @@ Movies
 7148
 7190
 7235
+7240
+7251
 Check Jenkins Status
 Mission control
 New task
@@ -9010,6 +9025,7 @@ java8
 jekyll
 locker
 macro-annotations
+macro-trace
 macrojit
 master
 paradise
@@ -9024,9 +9040,11 @@ rtm
 runtime-internal
 sc2
 sc2gears
+shannon-entropy
 si
 slang
 snippet00
+snippet01
 spick
 tier-locker
 tier-quick

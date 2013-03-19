@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
   sys.exit(1)
 
 name = sys.argv[1]
-allowed_prefixes = ["files/run", "files/pos", "files/neg"]
+allowed_prefixes = ["files/run", "files/pos", "files/neg", "files/pickling"]
 if not filter(lambda prefix: name.startswith(prefix), allowed_prefixes):
   print "name should start with one of these prefixes: " + ", ".join(allowed_prefixes)
   sys.exit(1)

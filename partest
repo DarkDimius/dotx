@@ -5,7 +5,7 @@ all = "--all" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
 
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
-if root.startswith("/Users/xeno_by/Projects/scala-pickling") or root.startswith("/Users/xeno_by/Projects/spick") and not sys.argv[1:]:
+if (root.startswith("/Users/xeno_by/Projects/scala-pickling") or root.startswith("/Users/xeno_by/Projects/spick")) and not sys.argv[1:]:
   prefix = root + "/test/"
   sys.argv = sys.argv + map(lambda path: path[len(prefix):], glob.glob(root + "/test/files/pickling/*.scala"))
 

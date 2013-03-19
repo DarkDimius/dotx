@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>action</key>
+  <false/>
+  <key>category</key>
+  <string>SCRIPTS</string>
+  <key>command</key>
+  <string>stderr="$(hack shannon-entropy 2&gt;&amp;1 1&gt;/dev/null)"
+if [[ -n "$stderr" ]]; then
+  echo $stderr
+fi</string>
+  <key>disabled</key>
+  <false/>
+  <key>escapedollar</key>
+  <true/>
+  <key>escapequery</key>
+  <true/>
+  <key>escapequerybackquotes</key>
+  <true/>
+  <key>escapequerybrackets</key>
+  <true/>
+  <key>escapequeryquotes</key>
+  <true/>
+  <key>escapequerysemicolons</key>
+  <true/>
+  <key>growloutput</key>
+  <true/>
+  <key>growloutputsticky</key>
+  <false/>
+  <key>keyword</key>
+  <string>shannon-entropy</string>
+  <key>logging</key>
+  <false/>
+  <key>multifileargs</key>
+  <false/>
+  <key>parameter</key>
+  <integer>0</integer>
+  <key>silent</key>
+  <true/>
+  <key>subtitle</key>
+  <string>Hack the shannon-entropy project</string>
+  <key>title</key>
+  <string>Project shannon-entropy</string>
+</dict>
+</plist>

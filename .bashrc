@@ -286,3 +286,11 @@ function sb7235 { target="$(hack-home "7235")/sandbox"; if [[ $? == 0 ]]; then c
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function kep7240 { target="$(hack-home "7240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7240 { target="$(hack-home "7240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7251 { target="$(hack-home "7251")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7251 { target="$(hack-home "7251")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepshannon-entropy { target="$(hack-home "shannon-entropy")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbshannon-entropy { target="$(hack-home "shannon-entropy")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacro-trace { target="$(hack-home "macro-trace")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacro-trace { target="$(hack-home "macro-trace")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
