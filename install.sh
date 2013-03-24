@@ -182,6 +182,9 @@ install-into-bin lzycompute
 install-into-bin scrutil
 install-into-bin git-ls-merge-conflicts
 install-into-bin subl-conflicts
+install-into-bin translate
+install-into-bin scalad
+install-into-bin rm-classfiles
 
 install-into-etc launchd.conf
 install-into-etc paths

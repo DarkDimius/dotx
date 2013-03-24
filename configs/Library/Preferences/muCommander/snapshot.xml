@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Calendars/8AD20E3A-A940-4052-9866-8BC190BB150B.caldav/A2C43B8F-05C4-431A-BD10-6DD3DF798509.calendar/</location>
+                            <location>bookmark://Downloads/</location>
                         </tab-0>
                     </tabs>
                 </left>

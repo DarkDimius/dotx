@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SOURCE_LANGUAGE=$1
+DESTINATION_LANGUAGE=$2
+TEXT_TO_TRANSLATE=$3
+
+# Transform the text to something Google translate understands
+set +o histexpand
+
+# Call Google and ask for the answer
+curl -s -A "Mozilla" "http://translate.google.com.br/translate_a/t?client=t&text=$TEXT_TO_TRANSLATE&hl=pt-BR&sl=$SOURCE_LANGUAGE&tl=$DESTINATION_LANGUAGE&multires=1&ssel=0&tsel=0&sc=1" | iconv -f iso8859-1 -t utf-8 | awk -F'"' '{print $2}'

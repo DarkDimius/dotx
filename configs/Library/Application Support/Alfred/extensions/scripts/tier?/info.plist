@@ -7,8 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>echo quick &gt; ~/.scala_tier
-echo "tier set to quick"</string>
+	<string>cat ~/.scala_tier</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapedollar</key>
@@ -28,7 +27,7 @@ echo "tier set to quick"</string>
 	<key>growloutputsticky</key>
 	<false/>
 	<key>keyword</key>
-	<string>tier-quick</string>
+	<string>tier</string>
 	<key>logging</key>
 	<false/>
 	<key>multifileargs</key>
@@ -38,8 +37,8 @@ echo "tier set to quick"</string>
 	<key>silent</key>
 	<true/>
 	<key>subtitle</key>
-	<string>Set scala tier to quick</string>
+	<string>Prints the current tier of Scala</string>
 	<key>title</key>
-	<string>tier-quick</string>
+	<string>tier?</string>
 </dict>
 </plist>

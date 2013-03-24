@@ -7,8 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>echo quick &gt; ~/.scala_tier
-echo "tier set to quick"</string>
+	<string>curl -s -A "Mozilla" "http://translate.google.com.br/translate_a/t?client=t&amp;text={query}&amp;hl=pt-BR&amp;sl=en&amp;tl=fr&amp;multires=1&amp;ssel=0&amp;tsel=0&amp;sc=1" | iconv -f iso8859-1 -t utf-8 | awk -F'"' '{print $2}'</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapedollar</key>
@@ -28,7 +27,7 @@ echo "tier set to quick"</string>
 	<key>growloutputsticky</key>
 	<false/>
 	<key>keyword</key>
-	<string>tier-quick</string>
+	<string>fr</string>
 	<key>logging</key>
 	<false/>
 	<key>multifileargs</key>
@@ -38,8 +37,8 @@ echo "tier set to quick"</string>
 	<key>silent</key>
 	<true/>
 	<key>subtitle</key>
-	<string>Set scala tier to quick</string>
+	<string></string>
 	<key>title</key>
-	<string>tier-quick</string>
+	<string>Translate to French</string>
 </dict>
 </plist>

@@ -35,7 +35,7 @@ function git {
 alias ga='git add'
 alias gai='git add -i'
 alias gap='git add -p'
-alias gaa='git add -A'
+alias gaa='git add -A $(git rev-parse --show-toplevel 2>/dev/null)'
 alias gr='git remove'
 alias gch='git checkout'
 alias gco='git commit'
@@ -196,20 +196,23 @@ complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
 alias sbtsnap="sbt -sbt-snapshot"
-alias s="scalac *Test*.scala"
-alias sli="scalac *Test*.scala -Xlog-implicits"
-alias st="scalac *Test*.scala -Xprint:typer"
-alias sy="scalac *Test*.scala -Ymacro-debug-lite"
-alias syy="scalac *Test*.scala -Ymacro-debug-verbose"
-alias sm="scalac *Macros*.scala"
-alias ss="scalac *Macros*.scala && scalac Test*.scala"
-alias ssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
-alias sst="scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
-alias ssy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
-alias ssyy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
+alias rmc="rm-classfiles"
+alias s="rmc && scalac *Test*.scala"
+alias sli="rmc && scalac *Test*.scala -Xlog-implicits"
+alias st="rmc && scalac *Test*.scala -Xprint:typer"
+alias sy="rmc && scalac *Test*.scala -Ymacro-debug-lite"
+alias sty="rmc && scalac *Test*.scala -Ytyper-debug"
+alias syy="rmc && scalac *Test*.scala -Ymacro-debug-verbose"
+alias sm="rmc && scalac *Macros*.scala"
+alias ss="rmc && scalac *Macros*.scala && scalac Test*.scala"
+alias ssli="rmc && scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
+alias sst="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
+alias ssy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
+alias ssty="rmc && scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
+alias ssyy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
 alias r="scala Test"
-alias sr="scalac *Test*.scala && scala Test"
-alias ssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
+alias sr="rmc && scalac *Test*.scala && scala Test"
+alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
@@ -294,3 +297,9 @@ function kepshannon-entropy { target="$(hack-home "shannon-entropy")"; if [[ $? 
 function sbshannon-entropy { target="$(hack-home "shannon-entropy")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacro-trace { target="$(hack-home "macro-trace")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacro-trace { target="$(hack-home "macro-trace")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7276 { target="$(hack-home "7276")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7276 { target="$(hack-home "7276")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7271 { target="$(hack-home "7271")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7271 { target="$(hack-home "7271")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepsilence-the-log { target="$(hack-home "silence-the-log")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbsilence-the-log { target="$(hack-home "silence-the-log")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

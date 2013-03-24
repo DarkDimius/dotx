@@ -92,6 +92,7 @@ findutils
 ghc
 git
 haskell-platform
+html2text
 readline
 wget
 xz
@@ -3814,11 +3815,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-197.S0gkE6: Permission denied
+Can't cd to (/private/tmp/) launchd-198.2NiuVI: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-353.BG7leA: Permission denied
+Can't cd to (/private/tmp/) launchd-2453.5gHlt0: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-5922.nHDfta: Permission denied
+Can't cd to (/private/tmp/) launchd-343.32ICO4: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3895,8 +3896,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -8867,6 +8866,14 @@ Library::Perl::Extras::XML::XPath::Node::Namespace	undef
 Library::Perl::Extras::XML::XPath::Node::PI	undef
 Library::Perl::Extras::XML::XPath::Node::Text	undef
 xeno_by::CPAN::MyConfig	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 local::Cellar::git::lib::Git	0.01
 local::Cellar::git::lib::Git::I18N	undef
 local::Cellar::git::lib::Git::IndexInfo	undef
@@ -8990,6 +8997,8 @@ Movies
 7235
 7240
 7251
+7271
+7276
 Check Jenkins Status
 Mission control
 New task
@@ -9014,7 +9023,9 @@ dothack
 dothackproto
 dotjenkins
 dotslate
+en
 flags
+fr
 h2
 hack
 ignore crashes
@@ -9033,6 +9044,7 @@ pr
 proto-210x
 proto-master
 proto-paradise
+proto?
 pullrequest
 quick
 resetattrs-this
@@ -9042,12 +9054,15 @@ sc2
 sc2gears
 shannon-entropy
 si
+silence-the-log
 slang
 snippet00
 snippet01
 spick
 tier-locker
+tier-pack
 tier-quick
+tier?
 zzz
 
 ==================

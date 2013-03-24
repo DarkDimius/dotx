@@ -7,7 +7,8 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>echo locker &gt; ~/.scala_tier</string>
+	<string>echo locker &gt; ~/.scala_tier
+echo "tier set to locker"</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapedollar</key>
