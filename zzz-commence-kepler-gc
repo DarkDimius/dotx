@@ -41,6 +41,7 @@ def postprocess(branch):
     short_name = branch[len("remotes/origin/"):]
     if short_name == "master": return None
     if short_name == "paradise/macros": return None
+    if short_name == "paradise/macros210": return None
     if short_name == "pullrequest/paradise": return None
     if short_name == "backport/paradise": return None
     sys.stdout.write("Garbage? " + short_name + " (y/n) ")

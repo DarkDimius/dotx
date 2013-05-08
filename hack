@@ -57,6 +57,7 @@ try:
   sandbox = project_home + "/sandbox"
   sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/Projects")
   sublime_project = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-project"
+  print sublime_project
   sublime_workspace = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-workspace"
   bashrc = os.path.expandvars("$HOME/.bashrc")
   alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred/extensions/scripts")

@@ -4,6 +4,7 @@ if [[ $? == 128 ]]; then
   git status
 else
   cd "$(git rev-parse --show-toplevel)"
+  # no longer works with stree 1.6.0
   $(cd "/Users/xeno_by/Library/Application Support/SourceTree"; cp "openWindowList.clean" "openWindowList")
   stock-stree . &
 fi

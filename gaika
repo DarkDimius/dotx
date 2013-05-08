@@ -37,6 +37,13 @@ try:
     else:
       # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
       git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE).communicate()[0][:-1]
+      if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/scala-pickling"):
+        root = git_root
+        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+        env["result_line_regex"] = ""
+        env["result_base_dir"] = root
+        retcode = call(["sbt", "-Dsbt.log.noformat=true", "package"], cwd = root)
+        sys.exit(retcode)
       if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Ensime"):
         root = git_root
         env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
@@ -62,12 +69,26 @@ try:
       elif args and args[0].endswith(".tex"):
         target = args[0]
         root = os.path.dirname(os.path.abspath(target))
-        status = call(["pdflatex", target], cwd = root)
+        # status = call(["pdflatex", target], cwd = root)
+        status = call(["xelatex", target], cwd = root)
         if status: sys.exit(status)
-        call(["open", os.path.splitext(target)[0] + ".pdf"])
-        time.sleep(0.2)
-        call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
-        call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
+        # call(["open", os.path.splitext(target)[0] + ".pdf"])
+        # time.sleep(0.2)
+        # call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
+        # call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
+      elif args and args[0].endswith(".bib"):
+        bib = args[0]
+        (baseline, ext) = os.path.splitext(bib)
+        tex = baseline + ".tex"
+        root = os.path.dirname(os.path.abspath(bib))
+        status = call(["xelatex", tex], cwd = root)
+        if status: sys.exit(status)
+        status = call(["bibtex", baseline], cwd = root)
+        if status: sys.exit(status)
+        status = call(["xelatex", tex], cwd = root)
+        if status: sys.exit(status)
+        status = call(["xelatex", tex], cwd = root)
+        if status: sys.exit(status)
       else:
         root = check_output(["scala-root"]).strip()
         tier = check_output(["scala-tier"]).strip()

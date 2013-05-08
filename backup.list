@@ -8,6 +8,7 @@ Alfred.app
 Anki.app
 App Store.app
 Araxis Merge.app
+Audacity
 AudioBookBinder.app
 Automator.app
 Bartender.app
@@ -74,8 +75,10 @@ Unicode Rewriter
 Utilities
 VLC.app
 VirtualBox.app
+XLD.app
 Xcode.app
 Xerox
+YourKit_Java_Profiler_12.0.3.app
 gfxCardStatus.app
 iPhoto.app
 iTerm.app
@@ -88,12 +91,14 @@ Homebrew packages:
 ack
 bash
 bash-completion
+clojure
 coreutils
 findutils
 ghc
 git
 haskell-platform
 html2text
+leiningen
 readline
 wget
 xz
@@ -3816,13 +3821,15 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-198.bVVEZX: Permission denied
+Can't cd to (/private/tmp/) launchd-198.MLnccL: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-488.jwXNZ1: Permission denied
+Can't cd to (/private/tmp/) launchd-338.zGCtii: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-6956.W32wiC: Permission denied
+Can't cd to (/private/tmp/) launchd-65817.wc41iY: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-9195.ZMA6ym: Permission denied
+Can't cd to (/private/tmp/) launchd-864.FOAydN: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-86805.SD5Tez: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3845,6 +3852,8 @@ Can't cd to (/private/var/db/) geod: Permission denied
 Can't cd to (/private/var/db/) krb5kdc: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.0: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.200: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.202: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3879,6 +3888,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000007000001r/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3935,6 +3946,8 @@ Can't cd to (/private/var/) jabberd: Permission denied
 Can't cd to (/private/var/lib/) postfix: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.0: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/log/) com.apple.launchd.peruser.200: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.202: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4187,13 +4200,42 @@ Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Test	$Revision: 
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Typedef	$Revision: 1298084579 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::TypeHelper	$Revision: 1298084579 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Utilities	$Revision: 1334261201 $
-Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Var	$RevisionUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2702) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2711) line 6, <FILE> line 7.
+Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Var	$RevisionUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2705) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2705) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2705) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 2714) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 2714) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 2714) line 6, <FILE> line 7.
 : 1298084579 $
+Frameworks::Versions::share::autoconf::Autom4te::C4che	undef
+Frameworks::Versions::share::autoconf::Autom4te::ChannelDefs	undef
+Frameworks::Versions::share::autoconf::Autom4te::Channels	undef
+Frameworks::Versions::share::autoconf::Autom4te::Configure_ac	undef
+Frameworks::Versions::share::autoconf::Autom4te::FileUtils	undef
+Frameworks::Versions::share::autoconf::Autom4te::General	undef
+Frameworks::Versions::share::autoconf::Autom4te::Getopt	undef
+Frameworks::Versions::share::autoconf::Autom4te::Request	undef
+Frameworks::Versions::share::autoconf::Autom4te::XFile	1.2
+Frameworks::Versions::share::Automake::ChannelDefs	undef
+Frameworks::Versions::share::Automake::Channels	undef
+Frameworks::Versions::share::Automake::Condition	undef
+Frameworks::Versions::share::Automake::Config	1.12.2
+Frameworks::Versions::share::Automake::Configure_ac	undef
+Frameworks::Versions::share::Automake::DisjConditions	undef
+Frameworks::Versions::share::Automake::FileUtils	undef
+Frameworks::Versions::share::Automake::General	undef
+Frameworks::Versions::share::Automake::Getopt	undef
+Frameworks::Versions::share::Automake::Item	undef
+Frameworks::Versions::share::Automake::ItemDef	undef
+Frameworks::Versions::share::Automake::Location	undef
+Frameworks::Versions::share::Automake::Options	undef
+Frameworks::Versions::share::Automake::Rule	undef
+Frameworks::Versions::share::Automake::RuleDef	undef
+Frameworks::Versions::share::Automake::VarDef	undef
+Frameworks::Versions::share::Automake::Variable	undef
+Frameworks::Versions::share::Automake::Version	undef
+Frameworks::Versions::share::Automake::Wrap	undef
+Frameworks::Versions::share::Automake::XFile	1.2
 Perl::SVN::Base	undef
 Perl::SVN::Client	undef
 Perl::SVN::Core	..
@@ -4641,10 +4683,7 @@ Library::Perl::Module::Build::Version	0.77
 Library::Perl::Module::Build::YAML	0.50
 Library::Perl::Module::Build::Platform::aix	0.340201
 Library::Perl::Module::Build::Platform::Amiga	0.340201
-Library::Perl::Module::Build::PlatformUseless use of a constant (-tree) in void context at (eval 3154) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 3154) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3154) line 6, <FILE> line 75.
-::cygwin	0.340201
+Library::Perl::Module::Build::Platform::cygwin	0.340201
 Library::Perl::Module::Build::Platform::darwin	0.340201
 Library::Perl::Module::Build::Platform::Default	0.340201
 Library::Perl::Module::Build::Platform::EBCDIC	0.340201
@@ -4708,7 +4747,10 @@ Library::Perl::Pod::Perldoc::ToMan	undef
 Library::Perl::Pod::Perldoc::ToNroff	undef
 Library::Perl::Pod::Perldoc::ToPod	undef
 Library::Perl::Pod::Perldoc::ToRtf	undef
-Library::Perl::Pod::Perldoc::ToText	undef
+Library::Perl::Pod:Useless use of a constant (-tree) in void context at (eval 3157) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 3157) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3157) line 6, <FILE> line 75.
+:Perldoc::ToText	undef
 Library::Perl::Pod::Perldoc::ToTk	undef
 Library::Perl::Pod::Perldoc::ToXml	undef
 Library::Perl::Pod::Simple::BlackBox	undef
@@ -5247,7 +5289,10 @@ Library::Perl::Module::Build::PPMMaker	0.3603
 Library::Perl::Module::Build::Version	0.77
 Library::Perl::Module::Build::YAML	1.40
 Library::Perl::Module::Build::Platform::aix	0.3603
-Library::Perl::Module::Build::Platform::Amiga	0.3603
+Library::Perl::Module::Build::Platform::Amiga	0.3Useless use of a constant (-tree) in void context at (eval 3706) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 3706) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3706) line 6, <FILE> line 75.
+603
 Library::Perl::Module::Build::Platform::cygwin	0.360301
 Library::Perl::Module::Build::Platform::darwin	0.3603
 Library::Perl::Module::Build::Platform::Default	0.3603
@@ -5289,10 +5334,7 @@ Library::Perl::Parse::CPAN::Meta	1.40
 Library::Perl::PerlIO::via::QuotedPrint	0.06
 Library::Perl::Pod::Checker	1.45
 Library::Perl::Pod::Escapes	1.04
-LibrarUseless use of a constant (-tree) in void context at (eval 3703) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 3703) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 3703) line 6, <FILE> line 75.
-y::Perl::Pod::Find	1.35
+Library::Perl::Pod::Find	1.35
 Library::Perl::Pod::Functions	1.04
 Library::Perl::Pod::Html	1.09
 Library::Perl::Pod::InputObjects	1.31
@@ -8881,6 +8923,14 @@ xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_p
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
+xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 local::Cellar::git::lib::Git	0.01
 local::Cellar::git::lib::Git::I18N	undef
 local::Cellar::git::lib::Git::IndexInfo	undef
@@ -8995,9 +9045,12 @@ Applications
 Downloads
 Movies
 210x
+5353
+5923
 6240
 6411
 6725
+6937
 7112-followup
 7148
 7190
@@ -9006,6 +9059,10 @@ Movies
 7251
 7271
 7276
+7320
+7325
+7331
+7334
 Check Jenkins Status
 Mission control
 New task
@@ -9037,16 +9094,20 @@ h2
 hack
 ignore crashes
 introduce-member
+iso
 java6
 java7
 java8
 jekyll
 locker
 macro-annotations
+macro-qqq
 macro-trace
 macrojit
 master
+mpde
 paradise
+paradise210
 pr
 proto-210x
 proto-master
@@ -9059,6 +9120,7 @@ rtm
 runtime-internal
 sc2
 sc2gears
+scala2013
 shannon-entropy
 si
 silence-the-log
@@ -9066,6 +9128,7 @@ slang
 snippet00
 snippet01
 spick
+splice-error-message
 tier-locker
 tier-pack
 tier-quick
