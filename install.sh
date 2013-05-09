@@ -185,6 +185,7 @@ install-into-bin subl-conflicts
 install-into-bin translate
 install-into-bin scalad
 install-into-bin rm-classfiles
+install-into-bin sync-upstream
 
 install-into-etc launchd.conf
 install-into-etc paths

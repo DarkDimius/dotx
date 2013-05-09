@@ -218,6 +218,7 @@ alias r="scala Test"
 alias sr="rmc && scalac *Test*.scala && scala Test"
 alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias my="acc && sbt 'run ../examples/my.l3'"
+alias sus="sync-upstream"
 
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
@@ -331,3 +332,5 @@ function kep6937 { target="$(hack-home "6937")"; if [[ $? == 0 ]]; then cd "$tar
 function sb6937 { target="$(hack-home "6937")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepiso { target="$(hack-home "iso")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbiso { target="$(hack-home "iso")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7464 { target="$(hack-home "7464")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7464 { target="$(hack-home "7464")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

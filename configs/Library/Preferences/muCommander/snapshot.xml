@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>28</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>56</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 2/Projects/</location>
+                            <location>/Users/xeno_by/Projects/scala-pickling/core/src/pending/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>56</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/Paradise210/src/build/maven/</location>
+                            <location>/Users/xeno_by/Projects/scala-pickling/core/src/test/scala/pickling/</location>
                         </tab-0>
                     </tabs>
                 </right>
