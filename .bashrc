@@ -334,3 +334,9 @@ function kepiso { target="$(hack-home "iso")"; if [[ $? == 0 ]]; then cd "$targe
 function sbiso { target="$(hack-home "iso")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7464 { target="$(hack-home "7464")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7464 { target="$(hack-home "7464")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepmacros { target="$(hack-home "macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbmacros { target="$(hack-home "macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7461 { target="$(hack-home "7461")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7461 { target="$(hack-home "7461")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep210x-breakage { target="$(hack-home "210x-breakage")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb210x-breakage { target="$(hack-home "210x-breakage")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
