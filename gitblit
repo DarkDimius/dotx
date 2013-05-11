@@ -3,7 +3,7 @@ import os, sys, subprocess, webbrowser
 from subprocess import call, check_output, Popen, PIPE
 
 if len(sys.argv) == 1:
-  call(["java", "-jar", "gitblit.jar"], cwd = "/usr/local/gitblit")
+  call(["/usr/local/java/java", "-jar", "gitblit.jar"], cwd = "/usr/local/gitblit")
 else:
   command = sys.argv[1]
   args = sys.argv[2:]
