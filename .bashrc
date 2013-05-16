@@ -223,6 +223,7 @@ alias sus="sync-upstream"
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
 alias acc='cd "$HOME/Projects/ACC/l3/compiler"'
+alias vm='cd "$HOME/Projects/ACC/l3/vm"'
 alias hm='cd "$HOME"'
 alias ubi='cd "/usr/local/bin"'
 alias db='cd "/Users/Shared/Dropbox/Public"'
@@ -275,8 +276,6 @@ function kepruntime-internal { target="$(hack-home "runtime-internal")"; if [[ $
 function sbruntime-internal { target="$(hack-home "runtime-internal")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepintroduce-member { target="$(hack-home "introduce-member")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbintroduce-member { target="$(hack-home "introduce-member")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepresetattrs-this { target="$(hack-home "resetattrs-this")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbresetattrs-this { target="$(hack-home "resetattrs-this")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7148 { target="$(hack-home "7148")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7148 { target="$(hack-home "7148")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7112-followup { target="$(hack-home "7112-followup")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -285,37 +284,17 @@ function kepdefaultnamed { target="$(hack-home "defaultnamed")"; if [[ $? == 0 ]
 function sbdefaultnamed { target="$(hack-home "defaultnamed")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacrojit { target="$(hack-home "macrojit")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacrojit { target="$(hack-home "macrojit")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7190 { target="$(hack-home "7190")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7190 { target="$(hack-home "7190")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepmacro-annotations { target="$(hack-home "macro-annotations")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbmacro-annotations { target="$(hack-home "macro-annotations")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet00 { target="$(hack-home "snippet00")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet00 { target="$(hack-home "snippet00")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6725 { target="$(hack-home "6725")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6725 { target="$(hack-home "6725")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7235 { target="$(hack-home "7235")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7235 { target="$(hack-home "7235")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kep7240 { target="$(hack-home "7240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7240 { target="$(hack-home "7240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsnippet01 { target="$(hack-home "snippet01")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsnippet01 { target="$(hack-home "snippet01")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7251 { target="$(hack-home "7251")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7251 { target="$(hack-home "7251")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepshannon-entropy { target="$(hack-home "shannon-entropy")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbshannon-entropy { target="$(hack-home "shannon-entropy")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacro-trace { target="$(hack-home "macro-trace")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacro-trace { target="$(hack-home "macro-trace")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7276 { target="$(hack-home "7276")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7276 { target="$(hack-home "7276")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7271 { target="$(hack-home "7271")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7271 { target="$(hack-home "7271")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsilence-the-log { target="$(hack-home "silence-the-log")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsilence-the-log { target="$(hack-home "silence-the-log")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7320 { target="$(hack-home "7320")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7320 { target="$(hack-home "7320")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepsplice-error-message { target="$(hack-home "splice-error-message")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbsplice-error-message { target="$(hack-home "splice-error-message")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7331 { target="$(hack-home "7331")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7331 { target="$(hack-home "7331")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7334 { target="$(hack-home "7334")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -340,3 +319,5 @@ function kep7461 { target="$(hack-home "7461")"; if [[ $? == 0 ]]; then cd "$tar
 function sb7461 { target="$(hack-home "7461")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep210x-breakage { target="$(hack-home "210x-breakage")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb210x-breakage { target="$(hack-home "210x-breakage")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep5923-master { target="$(hack-home "5923-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb5923-master { target="$(hack-home "5923-master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

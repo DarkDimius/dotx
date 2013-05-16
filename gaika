@@ -20,12 +20,16 @@ env["working_dir"] = os.path.abspath(".")
 env["status"] = 0
 
 def notify(msg):
-  if (sublime): call(["growlnotify", "-n", "Kepler", "-m", msg])
+  if (sublime): call(["growlnotify", "-n", "Kepler", "-m", str(msg)])
   else: print msg
 
 try:
   if action == "compile":
-    if args and args[0].endswith(".c"):
+    target = args[0] if args else ""
+    if target.startswith("/Users/xeno_by/Projects/ACC/l3/vm"):
+      env["meaningful"] = 1
+      sys.exit(call(["make", "test"], cwd = "/Users/xeno_by/Projects/ACC/l3/vm"))
+    elif args and args[0].endswith(".c"):
       target = args[0]
       executable, _ = os.path.splitext(target)
       root = os.path.dirname(os.path.abspath(target))

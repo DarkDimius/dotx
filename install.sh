@@ -157,6 +157,7 @@ install-into-bin hack-homes
 install-into-bin hack-branch
 install-into-bin hack-prototype
 install-into-bin hack-si
+install-into-bin hack-gc
 install-into-bin zzz-commence-hack-gc
 install-into-bin zzz-commence-kepler-gc
 install-into-bin zzz-commence-kepler-backup
