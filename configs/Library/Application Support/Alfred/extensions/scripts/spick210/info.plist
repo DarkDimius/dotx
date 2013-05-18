@@ -7,7 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>subl --project "/Users/xeno_by/Library/Application Support/Sublime Text 2/Projects/scala-pickling.sublime-project"</string>
+	<string>subl --project "/Users/xeno_by/Library/Application Support/Sublime Text 2/Projects/scala-pickling-210.sublime-project"</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapedollar</key>
@@ -27,7 +27,7 @@
 	<key>growloutputsticky</key>
 	<false/>
 	<key>keyword</key>
-	<string>spick</string>
+	<string>spick210</string>
 	<key>logging</key>
 	<false/>
 	<key>multifileargs</key>
@@ -39,6 +39,6 @@
 	<key>subtitle</key>
 	<string></string>
 	<key>title</key>
-	<string>spick</string>
+	<string>spick210</string>
 </dict>
 </plist>

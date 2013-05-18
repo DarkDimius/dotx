@@ -7,10 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>stderr="$(hack paradise/macros 2&gt;&amp;1 1&gt;/dev/null)"
-if [[ -n "$stderr" ]]; then
-  echo $stderr
-fi</string>
+	<string>subl --project "/Users/xeno_by/Library/Application Support/Sublime Text 2/Projects/scala-pickling-211.sublime-project"</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapedollar</key>
@@ -26,11 +23,11 @@ fi</string>
 	<key>escapequerysemicolons</key>
 	<true/>
 	<key>growloutput</key>
-	<true/>
+	<false/>
 	<key>growloutputsticky</key>
 	<false/>
 	<key>keyword</key>
-	<string>paradise</string>
+	<string>spick211</string>
 	<key>logging</key>
 	<false/>
 	<key>multifileargs</key>
@@ -40,8 +37,8 @@ fi</string>
 	<key>silent</key>
 	<true/>
 	<key>subtitle</key>
-	<string>Hack the paradise project</string>
+	<string></string>
 	<key>title</key>
-	<string>Project paradise</string>
+	<string>spick211</string>
 </dict>
 </plist>

@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>48</width>
+                            <width>84</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/ACC/l3/vm/</location>
+                            <location>/Users/xeno_by/Documents/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>76</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/Shared/Dropbox/</location>
+                            <location>/Users/xeno_by/Projects/210x/build/quick/classes/</location>
                         </tab-0>
                     </tabs>
                 </right>
