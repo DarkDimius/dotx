@@ -56,11 +56,11 @@ def update_dotpartest():
       return test
     m1 = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line) # 2.10.x partest
     m2 = re.match(r"^Possible compiler crash during test of: (.*?)$", line) # 2.10.x partest
-    m3 = re.match(r"^\[partest\] !!\s+\d+ - (.*?) .*$", line) # master partest
+    m3 = re.match(r"^(?:.*?)!!(?:.*?)\s+\d+ - (.*?) .*$", line) # master partest
     m = m1 or m2 or m3
     if m: failures.append(fullname_from_match(m))
     m1 = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[  OK  \]\s*$", line) # 2.10.x partest
-    m2 = re.match(r"^\[partest\] ok\s+\d+ - (.*?) .*$", line) # master partest
+    m2 = re.match(r"^(?:.*?)ok(?:.*?)\s+\d+ - (.*)$", line) # master partest
     m = m1 or m2
     if m: successes.append(fullname_from_match(m))
   global tests
