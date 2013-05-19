@@ -17,9 +17,12 @@ try:
   data = map(lambda line: line.strip(), urllib2.urlopen(log_url).readlines())
   failures = []
   for line in data:
-    m = re.match(r"^\[partest\] testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
-    if m:
+    m1 = re.match(r"^\[partest\] testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
+    m2 = re.match(r"^\[partest\] !! \d+ - (.*?) .*$", line) # master partest
+    m = m1 or m2
+    if m: # 2.10.x partest
       test = m.group(1)
+      if not test.startswith("/"): test = "/" + test
       if not test.startswith("/files"): test = "/files" + test
       failures.append(test)
   for failure in failures:

@@ -6,6 +6,8 @@ if [[ $? != 0 ]]; then
   exit 1
 fi
 
+cd "$root"
 for file in $(git-ls-merge-conflicts); do
   subl -w "$root/$file"
+  git add "$root/$file"
 done
