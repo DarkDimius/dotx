@@ -18,7 +18,7 @@ try:
   failures = []
   for line in data:
     m1 = re.match(r"^\[partest\] testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line)
-    m2 = re.match(r"^\[partest\] !! \d+ - (.*?) .*$", line) # master partest
+    m2 = re.match(r"^\[partest\] !!\s+\d+ - (.*?) .*$", line) # master partest
     m = m1 or m2
     if m: # 2.10.x partest
       test = m.group(1)
