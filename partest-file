@@ -33,8 +33,14 @@ if export: # TODO: backup
 
 def process(filename):
   if export:
-    shutil.copyfile(filename, os.path.join(sandbox, os.path.basename(filename)))
-    print "exported " + os.path.join(os.path.basename(base), os.path.basename(filename))
+    targetname = os.path.basename(filename)
+    targetname = re.sub("^(.*?)_(\d+)\.scala$", r"\1.scala", targetname)
+    if targetname == "Impls.scala": targetname = "Macros.scala"
+    if targetname == "Macros_Test.scala": targetname = "Test.scala"
+    full_targetname = os.path.join(sandbox, targetname)
+    shutil.copyfile(filename, full_targetname)
+    relative_filename = os.path.join(os.path.basename(base), os.path.basename(filename))
+    print "exported " + relative_filename + " => " + targetname
   elif edit:
     subprocess.call(["subl", filename])
   else:
