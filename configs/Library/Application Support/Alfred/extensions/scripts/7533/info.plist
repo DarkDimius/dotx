@@ -7,7 +7,7 @@
   <key>category</key>
   <string>SCRIPTS</string>
   <key>command</key>
-  <string>stderr="$(hack macro-qqq-master 2&gt;&amp;1 1&gt;/dev/null)"
+  <string>stderr="$(hack 7533 2&gt;&amp;1 1&gt;/dev/null)"
 if [[ -n "$stderr" ]]; then
   echo $stderr
 fi</string>
@@ -30,7 +30,7 @@ fi</string>
   <key>growloutputsticky</key>
   <false/>
   <key>keyword</key>
-  <string>macro-qqq-master</string>
+  <string>7533</string>
   <key>logging</key>
   <false/>
   <key>multifileargs</key>
@@ -40,8 +40,8 @@ fi</string>
   <key>silent</key>
   <true/>
   <key>subtitle</key>
-  <string>Hack the macro-qqq-master project</string>
+  <string>Hack the 7533 project</string>
   <key>title</key>
-  <string>Project macro-qqq-master</string>
+  <string>Project 7533</string>
 </dict>
 </plist>

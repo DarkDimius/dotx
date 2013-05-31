@@ -187,6 +187,7 @@ install-into-bin translate
 install-into-bin scalad
 install-into-bin rm-classfiles
 install-into-bin sync-upstream
+install-into-bin cmp211
 
 install-into-etc launchd.conf
 install-into-etc paths
@@ -194,6 +195,7 @@ install-into-etc paths
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
 install-into-daemons by.xeno.ANT_OPTS
+install-into-daemons by.xeno.MAVEN_OPTS
 install-into-daemons by.xeno.EDITOR
 install-into-agents by.xeno.jenkins_agent
 

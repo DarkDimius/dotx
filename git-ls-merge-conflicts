@@ -1,17 +1,2 @@
 #!/usr/bin/env bash
-#
-# In a git repository with a working tree containing merge conflicts,
-# print the starting location of each conflict in the form
-#   path:lineno
-
-expr=$(which gexpr 2>/dev/null || echo expr)
-
-# sort by reverse line number per file so we can work upward
-# without tainting the line number data
-rawlines () {
-  for f in $(git diff --diff-filter=U --name-only) ; do
-    grep --with-filename -n '<<<<<<<' "$f" | gsort -t: -k2rn
-  done
-}
-
-rawlines | sed 's/:<<<<.*//'
+git ls-files -u | awk '{print $4}' | sort | uniq

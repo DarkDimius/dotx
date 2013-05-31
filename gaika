@@ -121,10 +121,11 @@ try:
     if target == "quick/compiler+reflect":
       clean_quick("compiler")
       clean_quick("reflect")
+      clean_quick("repl")
     elif target.startswith("quick/"):
       clean_quick(target[len("quick/"):])
     elif target == "all":
-      map(lambda target: clean_quick(target), ["library", "reflect", "compiler"])
+      map(lambda target: clean_quick(target), ["library", "reflect", "compiler", "repl"])
     else:
       notify("unknown clean target: " + target)
       sys.exit(1)

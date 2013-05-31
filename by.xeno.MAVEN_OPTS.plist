@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>local.by.xeno.MAVEN_OPTS</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>launchctl</string>
+    <string>setenv</string>
+    <string>MAVEN_OPTS</string>
+    <string>-Xms256M -Xmx1024M -Xss2M -XX:MaxPermSize=256M -XX:+UseParallelGC</string>
+  </array>
+  <key>QueueDirectories</key>
+  <array/>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>WatchPaths</key>
+  <array/>
+</dict>
+</plist>

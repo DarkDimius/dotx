@@ -43,6 +43,7 @@ def postprocess(branch):
     if short_name == "paradise/macros": return None
     if short_name == "paradise/macros210": return None
     if short_name == "paradise/macros211": return None
+    if short_name == "pullrequest/paradise": return None
     sys.stdout.write("Garbage? " + short_name + " (y/n) ")
     return short_name if yesno() else None
   return None

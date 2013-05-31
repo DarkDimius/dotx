@@ -223,6 +223,7 @@ alias sus="sync-upstream"
 alias ez='subl $HOME/Projects/Dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
 alias acc='cd "$HOME/Projects/ACC/l3/compiler"'
+alias sorm='cd "$HOME/Projects/Sorm"'
 alias vm='cd "$HOME/Projects/ACC/l3/vm"'
 alias hm='cd "$HOME"'
 alias ubi='cd "/usr/local/bin"'
@@ -249,7 +250,9 @@ alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
 alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
 alias slick='cd "$HOME/Projects/Slick"'
 alias shared='cd "$HOME/../Shared/VirtualBox"'
-alias spick='cd "$HOME/Projects/scala-pickling"'
+alias spick210='cd "$HOME/Projects/scala-pickling-210x"'
+alias spick211='cd "$HOME/Projects/scala-pickling-211"'
+alias spick=spick211
 alias sspick='cd "$HOME/Projects/Paradise210"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
@@ -263,6 +266,8 @@ function paradise210 { target="$(hack-home "paradise/macros210")"; if [[ $? == 0
 function sbparadise210 { target="$(hack-home "paradise/macros210")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function paradise211 { target="$(hack-home "paradise/macros211")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbparadise211 { target="$(hack-home "paradise/macros211")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function pullrequest { target="$(hack-home "pullrequest/paradise")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbpullrequest { target="$(hack-home "pullrequest/paradise")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
@@ -274,7 +279,6 @@ function kepintroduce-member { target="$(hack-home "introduce-member")"; if [[ $
 function sbintroduce-member { target="$(hack-home "introduce-member")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepdefaultnamed { target="$(hack-home "defaultnamed")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbdefaultnamed { target="$(hack-home "defaultnamed")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function kep7331 { target="$(hack-home "7331")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7331 { target="$(hack-home "7331")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7334 { target="$(hack-home "7334")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -283,7 +287,10 @@ function kepiso { target="$(hack-home "iso")"; if [[ $? == 0 ]]; then cd "$targe
 function sbiso { target="$(hack-home "iso")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7461 { target="$(hack-home "7461")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7461 { target="$(hack-home "7461")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepmacro-qqq-master { target="$(hack-home "macro-qqq-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmacro-qqq-master { target="$(hack-home "macro-qqq-master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepparadise2111 { target="$(hack-home "paradise2111")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbparadise2111 { target="$(hack-home "paradise2111")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function kep7533 { target="$(hack-home "7533")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7533 { target="$(hack-home "7533")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7375 { target="$(hack-home "7375")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7375 { target="$(hack-home "7375")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
