@@ -289,8 +289,10 @@ function kep7461 { target="$(hack-home "7461")"; if [[ $? == 0 ]]; then cd "$tar
 function sb7461 { target="$(hack-home "7461")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kepparadise2111 { target="$(hack-home "paradise2111")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sbparadise2111 { target="$(hack-home "paradise2111")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function kep7533 { target="$(hack-home "7533")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7533 { target="$(hack-home "7533")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7375 { target="$(hack-home "7375")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7375 { target="$(hack-home "7375")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7544 { target="$(hack-home "7544")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7544 { target="$(hack-home "7544")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_12.jdk/Contents/Home"

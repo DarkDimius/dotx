@@ -62,7 +62,6 @@ Sc2gears
 Skype.app
 SourceTree.app
 Spotify.app
-StarCraft II
 StartNinja.app
 Stickies.app
 Sublime Text 2.app
@@ -3827,15 +3826,13 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-200.cSGj7u: Permission denied
+Can't cd to (/private/tmp/) launchd-1122.IQzcxJ: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-2887.feHzfl: Permission denied
+Can't cd to (/private/tmp/) launchd-198.HJUDjG: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-302.ih48O3: Permission denied
+Can't cd to (/private/tmp/) launchd-355.PXKF3x: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-33052.ksWD0N: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-361.L7avIs: Permission denied
+Can't cd to (/private/tmp/) launchd-4009.87gZYU: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3892,8 +3889,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9045,8 +9040,10 @@ Movies
 6411
 7331
 7334
+7375
 7461
 7533
+7544
 Check Jenkins Status
 Mission control
 New task
@@ -9114,6 +9111,7 @@ zzz
 Firefox extensions:
 css@xeno.by.xpi
 customizable-shortcuts@timtaubert.de.xpi
+feedly@devhd.xpi
 firebug@software.joehewitt.com.xpi
 firefox@ghostery.com
 firegestures@xuldev.org.xpi
