@@ -242,6 +242,7 @@ alias sens3='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/Ensim
 alias des3='cd "$HOME/Library/Application Support/Sublime Text 3"'
 alias stock3='cd "/Applications/Sublime Text 3.app/Contents/MacOS/Packages"'
 alias pap='cd "$HOME/Projects/Pages"'
+alias pag='cd "$HOME/Projects/Pages"'
 alias slang='cd "$HOME/Projects/ScalaLang"'
 alias dotx='cd "$HOME/Projects/Dotx"'
 alias docs='cd "$HOME/Projects/DocsScalaLang"'
@@ -254,6 +255,7 @@ alias spick210='cd "$HOME/Projects/scala-pickling-210x"'
 alias spick211='cd "$HOME/Projects/scala-pickling-211"'
 alias spick=spick211
 alias sspick='cd "$HOME/Projects/Paradise210"'
+alias spark='cd "$HOME/Projects/Spark"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -295,4 +297,18 @@ function kep7375 { target="$(hack-home "7375")"; if [[ $? == 0 ]]; then cd "$tar
 function sb7375 { target="$(hack-home "7375")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function kep7544 { target="$(hack-home "7544")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb7544 { target="$(hack-home "7544")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_12.jdk/Contents/Home"
+function kep6221 { target="$(hack-home "6221")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb6221 { target="$(hack-home "6221")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7570 { target="$(hack-home "7570")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7570 { target="$(hack-home "7570")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7617 { target="$(hack-home "7617")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7617 { target="$(hack-home "7617")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kepquasiquotes { target="$(hack-home "quasiquotes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbquasiquotes { target="$(hack-home "quasiquotes")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function keprtp { target="$(hack-home "rtp")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbrtp { target="$(hack-home "rtp")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function kepstructural { target="$(hack-home "structural")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sbstructural { target="$(hack-home "structural")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep7657 { target="$(hack-home "7657")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function sb7657 { target="$(hack-home "7657")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

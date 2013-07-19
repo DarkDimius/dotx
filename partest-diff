@@ -17,9 +17,15 @@ test = root + "/test/" + output
 base, ext = os.path.splitext(test)
 flavor = os.path.basename(os.path.dirname(base))
 checkfile = base + ".check"
-if not os.path.exists(checkfile):
-  with file(checkfile, 'a'):
-    os.utime(checkfile, None)
 logfile = base + "-" + flavor + ".log"
-# subprocess.call(["bash", "-c", "diffmerge " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-subprocess.call(["bash", "-c", "araxisopendiff " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+if flavor == "scalacheck":
+  for line in open(logfile).readlines():
+    if line.startswith("+ "): continue
+    print line.strip()
+else:
+  if not os.path.exists(checkfile):
+    with file(checkfile, 'a'):
+      os.utime(checkfile, None)
+  # subprocess.call(["bash", "-c", "diffmerge " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  subprocess.call(["bash", "-c", "araxisopendiff " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)

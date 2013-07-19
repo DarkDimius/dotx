@@ -1,1 +1,1 @@
-scalamacros:paradise/macros
+scalamacros:2.10.x

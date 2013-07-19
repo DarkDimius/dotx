@@ -17,6 +17,7 @@ Caffeine.app
 Calculator.app
 Calendar.app
 Chess.app
+Cisco
 Contacts.app
 DVD Player.app
 DaisyDisk.app
@@ -41,6 +42,7 @@ KeyRemap4MacBook.app
 Keyboard Cleaner.app
 Launchpad.app
 Le Conjugueur Conjugaison.app
+LimeChat.app
 Lingon.app
 Mail.app
 Messages.app
@@ -49,6 +51,7 @@ Microsoft Messenger.app
 Microsoft Office 2011
 Mission Control.app
 Notes.app
+Pharo2.0.app
 Photo Booth.app
 Preview.app
 QuickTime Player.app
@@ -62,6 +65,7 @@ Sc2gears
 Skype.app
 SourceTree.app
 Spotify.app
+Stanza.app
 StartNinja.app
 Stickies.app
 Sublime Text 2.app
@@ -77,6 +81,7 @@ Utilities
 VLC.app
 Viber.app
 VirtualBox.app
+Why It's Nice to be Quoted.pdf
 XLD.app
 Xcode.app
 Xerox
@@ -98,17 +103,21 @@ coreutils
 findutils
 ghc
 git
+gmp
 haskell-platform
 html2text
 leiningen
+libffi
 maven
+pkg-config
 readline
 wget
 xz
 
 ==================
 Macports packages:
-/Users/xeno_by/Projects/Dotx/backup.sh: line 18: /opt/local/bin/port: No such file or directory
+Warning: port definitions are more than two weeks old, consider using selfupdate
+No ports are installed.
 
 ==================
 Python packages:
@@ -3826,13 +3835,11 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-1122.IQzcxJ: Permission denied
+Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-198.HJUDjG: Permission denied
+Can't cd to (/private/tmp/) launchd-199.fRdh2D: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-355.PXKF3x: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-4009.87gZYU: Permission denied
+Can't cd to (/private/tmp/) launchd-349.p53XCH: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3866,9 +3873,13 @@ Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.26: Permissi
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.4294967294: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.502: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.88: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.89: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.92: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/launchd.db/) com.apple.launchd.peruser.97: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3877,6 +3888,8 @@ Can't cd to (/private/var/db/) locationd: Permission denied
 Can't cd to (/private/var/db/) Spotlight: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/db/) sudo: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3912,8 +3925,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permiss
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) T: Permission denied
@@ -3938,8 +3949,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permiss
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/lib/) postfix: Permission denied
@@ -3956,9 +3965,13 @@ Can't cd to (/private/var/log/) com.apple.launchd.peruser.26: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.4294967294: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/log/) com.apple.launchd.peruser.502: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.88: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.89: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/log/) com.apple.launchd.peruser.92: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/log/) com.apple.launchd.peruser.97: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -8913,6 +8926,178 @@ Library::Perl::Extras::XML::XPath::Node::Element	undef
 Library::Perl::Extras::XML::XPath::Node::Namespace	undef
 Library::Perl::Extras::XML::XPath::Node::PI	undef
 Library::Perl::Extras::XML::XPath::Node::Text	undef
+xeno_by::build::blib::lib::CAM::PDF	1.59
+xeno_by::build::blib::lib::CAM::PDF::Content	1.59
+xeno_by::build::blib::lib::CAM::PDF::Decrypt	1.59
+xeno_by::build::blib::lib::CAM::PDF::GS	1.59
+xeno_by::build::blib::lib::CAM::PDF::Node	1.59
+xeno_by::build::blib::lib::CAM::PDF::PageText	1.59
+xeno_by::build::blib::lib::CAM::PDF::GS::NoText	1.59
+xeno_by::build::blib::lib::CAM::PDF::Renderer::Dump	1.59
+xeno_by::build::blib::lib::CAM::PDF::Renderer::Images	1.59
+xeno_by::build::blib::lib::CAM::PDF::Renderer::Text	1.59
+xeno_by::build::blib::lib::CAM::PDF::Renderer::TextFB	1.59
+xeno_by::build::lib::CAM::PDF	1.59
+xeno_by::build::lib::CAM::PDF::Content	1.59
+xeno_by::build::lib::CAM::PDF::Decrypt	1.59
+xeno_by::build::lib::CAM::PDFUseless use of numeric ge (>=) in void context at (eval 6071) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 6071) line 6, <FILE> line 28.
+::GS	1.59
+xeno_by::build::lib::CAM::PDF::Node	1.59
+xeno_by::build::lib::CAM::PDF::PageText	1.59
+xeno_by::build::lib::CAM::PDF::GS::NoText	1.59
+xeno_by::build::lib::CAM::PDF::Renderer::Dump	1.59
+xeno_by::build::lib::CAM::PDF::Renderer::Images	1.59
+xeno_by::build::lib::CAM::PDF::Renderer::Text	1.59
+xeno_by::build::lib::CAM::PDF::Renderer::TextFB	1.59
+xeno_by::build::blib::lib::CPAN::Meta	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::Converter	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::Feature	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::History	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::Prereqs	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::Spec	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::Validator	2.131560
+xeno_by::build::lib::CPAN::Meta	2.131560
+xeno_by::build::lib::CPAN::Meta::Converter	2.131560
+xeno_by::build::lib::CPAN::Meta::Feature	2.131560
+xeno_by::build::lib::CPAN::Meta::History	2.131560
+xeno_by::build::lib::CPAN::Meta::Prereqs	2.131560
+xeno_by::build::lib::CPAN::Meta::Spec	2.131560
+xeno_by::build::lib::CPAN::Meta::Validator	2.131560
+xeno_by::build::blib::lib::CPAN::Meta::Requirements	2.122
+xeno_by::build::lib::CPAN::Meta::Requirements	2.122
+xeno_by::build::blib::lib::CPAN::Meta::YAML	0.008
+xeno_by::build::lib::CPAN::Meta::YAML	0.008
+xeno_by::build::t::lib::Test	undef
+xeno_by::build::RC4	2.02
+xeno_by::build::blib::lib::Crypt::RC4	2.02
+xeno_by::build::blib::lib::JSON::PP	2.27202
+xeno_by::build::blib::lib::JSON::PP::Boolean	undef
+xeno_by::build::lib::JSON::PP	2.27202
+xeno_by::build::lib::JSON::PP::Boolean	undef
+xeno_by::build::t::_unicode_handling	undef
+xeno_by::build::blib::lib::inc::latest	0.4005
+xeno_by::build::blib::lib::inc::latest::private	0.4005
+xeno_by::build::blib::lib::Module::Build	0.4005
+xeno_by::build::blib::lib::Module::Build::Base	0.4005
+xeno_by::build::blib::lib::Module::Build::Compat	0.4005
+xeno_by::build::blib::lib::Module::Build::Config	0.4005
+xeno_by::build::blib::lib::Module::Build::ConfigData	undef
+xeno_by::build::blib::lib::Module::Build::Cookbook	0.4005
+xeno_by::build::blib::lib::Module::Build::Dumper	0.4005
+xeno_by::build::blib::lib::Module::Build::ModuleInfo	0.4005
+xeno_by::build::blib::lib::Module::Build::Notes	0.4005
+xeno_by::build::blib::lib::Module::Build::PodParser	0.4005
+xeno_by::build::blib::lib::Module::Build::PPMMaker	0.4005
+xeno_by::build::blib::lib::Module::Build::Version	0.87
+xeno_by::build::blib::lib::Module::Build::YAML	1.41
+xeno_by::build::blib::lib::Module::Build::Platform::aix	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::Amiga	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::cygwin	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::darwin	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::Default	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::EBCDIC	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::MacOS	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::MPEiX	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::os2	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::RiscOS	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::Unix	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::VMS	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::VOS	0.4005
+xeno_by::build::blib::lib::Module::Build::Platform::Windows	0.4005
+xeno_by::build::inc::MBVersion	0.86
+xeno_by::build::inc::Module::Metadata	1.000002
+xeno_by::build::inc::Perl::OSType	1.002
+xeno_by::build::lib::inc::latest	0.4005
+xeno_by::build::lib::inc::latest::private	0.4005
+xeno_by::build::lib::Module::Build	0.4005
+xeno_by::build::lib::Module::Build::Base	0.4005
+xeno_by::build::lib::Module::Build::Compat	0.4005
+xeno_by::build::lib::Module::Build::Config	0.4005
+xeno_by::build::lib::Module::Build::Cookbook	0.4005
+xeno_by::build::lib::Module::Build::Dumper	0.4005
+xeno_by::build::lib::Module::Build::ModuleInfo	0.4005
+xeno_by::build::lib::Module::Build::Notes	0.4005
+xeno_by::build::lib::Module::Build::PodParser	0.4005
+xeno_by::build::lib::Module::Build::PPMMaker	0.4005
+xeno_by::build::lib::Module::Build::Version	0.87
+xeno_by::build::lib::Module::Build::YAML	1.41
+xeno_by::build::lib::Module::Build::Platform::aix	0.4005
+xeno_by::build::lib::Module::Build::Platform::Amiga	0.4005
+xeno_by::build::lib::Module::Build::Platform::cygwin	0.4005
+xeno_by::build::lib::Module::Build::Platform::darwin	0.4005
+xeno_by::build::lib::Module::Build::Platform::Default	0.4005
+xeno_by::build::lib::Module::Build::Platform::EBCDIC	0.4005
+xeno_by::build::lib::Module::Build::Platform::MacOS	0.4005
+xeno_by::build::lib::Module::Build::Platform::MPEiX	0.4005
+xeno_by::build::lib::Module::Build::Platform::os2	0.4005
+xeno_by::build::lib::Module::Build::Platform::RiscOS	0.4005
+xeno_by::build::lib::Module::Build::Platform::Unix	0.4005
+xeno_by::build::lib::Module::Build::Platform::VMS	0.4005
+xeno_by::build::lib::Module::Build::Platform::VOS	0.4005
+xeno_by::build::lib::Module::Build::Platform::Windows	0.4005
+xeno_by::build::t::bundled::Software::License	9999
+xeno_by::build::t::bundled::Tie::CPHash	1.02
+xeno_by::build::t::lib::DistGen	0.01
+xeno_by::build::t::lib::MBTest	0.0101
+xeno_by::build::t::lib::Module::Signature	999
+xeno_by::build::t::lib::Software::License::VaporWare	0.001
+xeno_by::build::blib::lib::Module::Metadata	1.000014
+xeno_by::build::lib::Module::Metadata	1.000014
+xeno_by::build::t::lib::DistGen	0.01
+xeno_by::build::t::lib::ENDPOD	undef
+xeno_by::build::t::lib::MBTest	0.0101
+xeno_by::build::t::lib::0_1::Foo	0.1
+xeno_by::build::t::lib::0_2::Foo	0.2
+xeno_by::build::t::lib::BOMTest::UTF16BE	undef
+xeno_by::build::t::lib::BOMTest::UTF16LE	undef
+xeno_by::build::t::lib::BOMTest::UTF8	1
+xeno_by::build::t::lib::Tie::CPHash	1.02
+xeno_by::build::blib::lib::Parse::CPAN::Meta	1.4404
+xeno_by::build::lib::Parse::CPAN::Meta	1.4404
+xeno_by::build::t::lib::Parse::CPAN::Meta::Test	undef
+xeno_by::build::blib::lib::Perl::OSType	1.003
+xeno_by::build::lib::Perl::OSType	1.003
+xeno_by::build::blib::lib::Text::PDF	0.29
+xeno_by::build::blib::lib::Text::PDF::Array	undef
+xeno_by::build::blib::lib::Text::PDF::Bool	undef
+xeno_by::build::blib::lib::Text::PDF::Dict	undef
+xeno_by::build::blib::lib::Text::PDF::File	0.27
+xeno_by::build::blib::lib::Text::PDF::Filter	undef
+xeno_by::build::blib::lib::Text::PDF::Name	undef
+xeno_by::build::blib::lib::Text::PDF::Null	undef
+xeno_by::build::blib::lib::Text::PDF::Number	undef
+xeno_by::build::blib::lib::Text::PDF::Objind	undef
+xeno_by::build::blib::lib::Text::PDF::Page	undef
+xeno_by::build::blib::lib::Text::PDF::Pages	undef
+xeno_by::build::blib::lib::Text::PDF::SFont	undef
+xeno_by::build::blib::lib::Text::PDF::String	undef
+xeno_by::build::blib::lib::Text::PDF::TTFont	undef
+xeno_by::build::blib::lib::Text::PDF::TTFont0	undef
+xeno_by::build::blib::lib::Text::PDF::Utils	undef
+xeno_by::build::lib::Text::PDF	0.29
+xeno_by::build::lib::Text::PDF::Array	undef
+xeno_by::build::lib::Text::PDF::Bool	undef
+xeno_by::build::lib::Text::PDF::Dict	undef
+xeno_by::build::lib::Text::PDF::File	0.27
+xeno_by::build::lib::Text::PDF::Filter	undef
+xeno_by::build::lib::Text::PDF::Name	undef
+xeno_by::build::lib::Text::PDF::Null	undef
+xeno_by::build::lib::Text::PDF::Number	undef
+xeno_by::build::lib::Text::PDF::Objind	undef
+xeno_by::build::lib::Text::PDF::Page	undef
+xeno_by::build::lib::Text::PDF::Pages	undef
+xeno_by::build::lib::Text::PDF::SFont	undef
+xeno_by::build::lib::Text::PDF::String	undef
+xeno_by::build::lib::Text::PDF::TTFont	undef
+xeno_by::build::lib::Text::PDF::TTFont0	undef
+xeno_by::build::lib::Text::PDF::Utils	undef
+xeno_by::build::blib::lib::version	0.9902
+xeno_by::build::blib::lib::version::vxs	0.9902
+xeno_by::build::lib::version	0.9902
+xeno_by::build::t::coretests	undef
+xeno_by::build::vperl::vpp	0.9902
+xeno_by::build::vutil::lib::version::vxs	0.9902
 xeno_by::CPAN::MyConfig	undef
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
@@ -9036,6 +9221,7 @@ Applications
 Downloads
 Movies
 210x
+6221
 6240
 6411
 7331
@@ -9044,6 +9230,9 @@ Movies
 7461
 7533
 7544
+7570
+7617
+7657
 Check Jenkins Status
 Mission control
 New task
@@ -9091,8 +9280,10 @@ proto-master
 proto-paradise
 proto?
 pullrequest
+quasiquotes
 quick
 rtm
+rtp
 sc2
 sc2gears
 scala2013
@@ -9101,6 +9292,7 @@ slang
 sorm
 spick210
 spick211
+structural
 tier-locker
 tier-pack
 tier-quick
