@@ -94,7 +94,7 @@ alias cr='subl-conflicts'
 source "$HOME/Projects/Libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
-alias n="python -c 'import webbrowser; webbrowser.open("'"'"https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-main/buildWithParameters?publish=true"'"'")'"
+alias n="python -c 'import webbrowser; webbrowser.open("'"'"https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise211-nightly-main/buildWithParameters?publish=true"'"'")'"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
 alias t="partest"

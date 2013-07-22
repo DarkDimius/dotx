@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/Paradise/build/pack/</location>
+                            <location>/Users/xeno_by/Projects/scala-pickling-210x/core/target/scala-2.10/classes/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>75</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>56</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/Pages/paperstalks/</location>
+                            <location>/Users/xeno_by/Projects/210x/build/pack/lib/scala-library.jar/scala/</location>
                         </tab-0>
                     </tabs>
                 </right>
