@@ -18,7 +18,6 @@ source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
 source $HOME/.partest-completion.bash
-source $HOME/.grade-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 function parse_git_branch {
