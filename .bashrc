@@ -243,9 +243,3 @@ function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function fork6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6240 { target="$(hack-home "6240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function fork6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6240 { target="$(hack-home "6240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function 6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6240 { target="$(hack-home "6240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

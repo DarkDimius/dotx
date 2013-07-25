@@ -97,11 +97,11 @@ try:
     checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
-      bashrc.append("""function {} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
+      bashrc.append("""function s{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
       bashrc.append("""function sb{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
       return bashrc
     update_bashrc(create_aliases)
-    checkpoint("Created Bash aliases " + short_target + " and sb" + short_target)
+    checkpoint("Created Bash aliases s" + short_target + " and sb" + short_target)
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
@@ -116,11 +116,11 @@ try:
     comm(["rm", "-rf", alfredextension])
     checkpoint("Deleted the Alfred shortcut named " + short_target)
     def delete_aliases(bashrc):
-      alias = """function {} {""".replace("{}", short_target)
+      s_alias = """function s{} {""".replace("{}", short_target)
       sb_alias = """function sb{} {""".replace("{}", short_target)
-      return [line for line in bashrc if not line.startswith(alias) and not line.startswith(sb_alias)]
+      return [line for line in bashrc if not line.startswith(s_alias) and not line.startswith(sb_alias)]
     update_bashrc(delete_aliases)
-    checkpoint("Deleted Bash aliases " + short_target + " and sb" + short_target)
+    checkpoint("Deleted Bash aliases s" + short_target + " and sb" + short_target)
 
   if interactive:
     sublime_is_open = "Sublime" in check_output(["ps", "aux"])
@@ -142,7 +142,7 @@ try:
     if already_open():
       with open(hack_sublime, "w") as f: f.write(original_target + "\n" + sublime_project + "\n" + "FOCUS!")
       check_comm(["subl", "--command", "my_hack"])
-    else:
+    elif not delete:
       check_comm(["subl", "--project", sublime_project])
 except:
   tpe, value, tb = sys.exc_info()
