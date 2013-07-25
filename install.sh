@@ -7,7 +7,7 @@ function install-into-destination() {
   if [[ -z "$to" ]]; then to=$from; fi
 
   if [[ -L "$dest/$to" ]]; then
-    rm "$dest/$to"
+    # rm "$dest/$to"
     echo "$dest/$to already installed"
     return 0;
   fi
@@ -57,12 +57,17 @@ function install-into-agents() {
   fi
 }
 
-if [[ -z "$(which grealpath)" ]]; then
-  echo "Bad environment. Make sure that /usr/local/bin is on PATH"
+if [[ -z "$(which realpath)" ]]; then
+  echo "Bad environment. Probably /usr/local/bin isn't on PATH"
+  echo "Installing /etc/launchd.conf..."
+  if [[ -f "/etc/launchd.conf" ]]; then sudo mv -v "/etc/launchd.conf" "/etc/launchd.conf.bak"; fi
+  cd "$(dirname "$0")"
+  sudo ln -s -v "$(pwd -P)/launchd.conf" "/etc/launchd.conf"
+  echo "Installation successful. Now reboot for the changes to be applied"
+  if [[ ! -f "/usr/local/bin/realpath" ]]; then
+    ln -sv /usr/local/bin/grealpath /usr/local/bin/realpath
+  fi
   exit 1
-fi
-if [[ ! -f "/usr/local/bin/realpath" ]]; then
-  ln -sv /usr/local/bin/grealpath /usr/local/bin/realpath
 fi
 if [[ ! -f "/usr/local/bin/mountainlion-window-restore-fix" ]]; then
   # http://apple.stackexchange.com/questions/48439/how-to-default-to-not-open-all-the-apps-again-on-mac-os-x-lion
@@ -149,32 +154,19 @@ install-into-bin stree
 install-into-bin bug
 install-into-bin bug si
 install-into-bin hub-introspect
-install-into-bin toggle-notification-center
 install-into-bin hack
 install-into-bin hack-home
 install-into-bin hack-homes
 install-into-bin hack-branch
 install-into-bin hack-prototype
-install-into-bin hack-si
-install-into-bin hack-gc
-install-into-bin zzz-commence-hack-gc
-install-into-bin zzz-commence-kepler-gc
-install-into-bin zzz-commence-kepler-backup
 install-into-bin gaika
 install-into-bin gitblit
 install-into-bin sandbox
-install-into-bin solution
-install-into-bin reeder-launch-app
-install-into-bin reeder-focus-unread
 install-into-bin unpack-st3-packages
 install-into-bin git-ls-merge-conflicts
 install-into-bin subl-conflicts
-install-into-bin translate
-install-into-bin scalad
 install-into-bin rm-classfiles
 install-into-bin sync-upstream
-
-install-into-etc launchd.conf
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
@@ -184,6 +176,6 @@ install-into-daemons by.xeno.EDITOR
 install-into-agents by.xeno.jenkins_agent
 
 if [[ ! -d "/usr/local/sbt" ]]; then
-  git clone https://github.com/paulp/sbt-extras /usr/local/sbt
+  git clone https://github.com/xeno-by/sbt-extras /usr/local/sbt
   ln -sv /usr/local/sbt/sbt /usr/local/bin/sbt
 fi
