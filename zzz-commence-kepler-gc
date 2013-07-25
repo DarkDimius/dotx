@@ -40,7 +40,6 @@ def postprocess(branch):
   if branch.startswith("remotes/origin/") and manual:
     short_name = branch[len("remotes/origin/"):]
     if short_name == "master": return None
-    if short_name == "paradise/macros": return None
     if short_name == "paradise/macros210": return None
     if short_name == "paradise/macros211": return None
     if short_name == "pullrequest/paradise": return None

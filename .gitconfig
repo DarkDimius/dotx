@@ -20,10 +20,10 @@
 [rerere]
   enabled = 1
 [diff "javap"]
-  textconv = /Users/xeno_by/Projects/Libscala/git-java/textconv-javap
+  textconv = /usr/local/libscala/git-java/textconv-javap
   cachetextconv = true
 [diff "jar-toc"]
-  textconv = /Users/xeno_by/Projects/Libscala/git-java/textconv-jar
+  textconv = /usr/local/libscala/git-java/textconv-jar
   cachetextconv = true
 [difftool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"

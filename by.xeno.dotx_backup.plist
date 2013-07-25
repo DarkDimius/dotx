@@ -12,7 +12,7 @@
     <string>xeno_by</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/xeno_by/Projects/Dotx/backup.sh</string>
+        <string>/usr/local/dotx/backup.sh</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>

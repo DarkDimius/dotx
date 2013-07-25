@@ -101,6 +101,7 @@ bash
 bash-completion
 clojure
 coreutils
+erlang
 findutils
 ghc
 git
@@ -3838,11 +3839,13 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-4305.4jYaQh: Permission denied
+Can't cd to (/private/tmp/) launchd-203.WspyYN: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-4403.RnQecI: Permission denied
+Can't cd to (/private/tmp/) launchd-358.h8XsiV: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-6917.Lc0jN1: Permission denied
+Can't cd to (/private/tmp/) launchd-3995.OUt0UW: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-930.MIQVqj: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9233,11 +9236,13 @@ Movies
 7334
 7375
 7461
+7510
 7533
 7544
 7570
 7617
 7657
+7692
 Check Jenkins Status
 Mission control
 New task

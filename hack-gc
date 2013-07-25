@@ -17,7 +17,6 @@ def postprocess(branch):
   if "->" in branch: return None
   if "2.10.x" in branch: return None
   if "master" in branch: return None
-  if "paradise/macros" in branch: return None
   if "paradise/macros210" in branch: return None
   if "paradise/macros211" in branch: return None
   if "pullrequest/paradise" in branch: return None
@@ -46,7 +45,7 @@ for dir, branch in zip(dirs, branches):
     print dir.ljust(60, " ") + " " + status.ljust(20, " ") + " " + "ETA = " + str(estimated_time)
   if branch.startswith("scalamacros:topic/snippet") or branch.startswith("scalamacros:topic/macrosnippet"):
     verdict("* snippet")
-  elif branch == "scalamacros:master" or branch =="scalamacros:paradise/macros" or branch =="scalamacros:paradise/macros210" or branch =="scalamacros:paradise/macros211" or branch == "scalamacros:pullrequest/paradise":
+  elif branch == "scalamacros:master" or branch =="scalamacros:paradise/macros210" or branch =="scalamacros:paradise/macros211" or branch == "scalamacros:pullrequest/paradise":
     verdict("special")
   else:
     call(["git", "remote", "update"])

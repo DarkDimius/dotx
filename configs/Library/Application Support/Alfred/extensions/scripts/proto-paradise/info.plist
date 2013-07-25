@@ -7,7 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>echo scalamacros:paradise/macros &gt; ~/.hackproto
+	<string>echo scalamacros:paradise/macros211 &gt; ~/.hackproto
 echo "proto set to paradise"</string>
 	<key>disabled</key>
 	<false/>

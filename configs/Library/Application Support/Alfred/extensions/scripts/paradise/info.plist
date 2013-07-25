@@ -7,7 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>stderr="$(hack paradise/macros 2&gt;&amp;1 1&gt;/dev/null)"
+	<string>stderr="$(hack paradise/macros211 2&gt;&amp;1 1&gt;/dev/null)"
 if [[ -n "$stderr" ]]; then
   echo $stderr
 fi</string>
@@ -40,7 +40,7 @@ fi</string>
 	<key>silent</key>
 	<true/>
 	<key>subtitle</key>
-	<string>Hack the paradise project</string>
+	<string>Hack the paradise211 project</string>
 	<key>title</key>
 	<string>Project paradise</string>
 </dict>

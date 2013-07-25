@@ -91,10 +91,9 @@ complete -F _git_branch gm grb grbi gch gb gbD
 alias cl='git-ls-merge-conflicts'
 alias cr='subl-conflicts'
 
-source "$HOME/Projects/Libscala/libscala.sh"
+source "/usr/local/libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
-alias n="python -c 'import webbrowser; webbrowser.open("'"'"https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise211-nightly-main/buildWithParameters?publish=true"'"'")'"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
 alias t="partest"
@@ -195,7 +194,6 @@ alias hh="hack-homes --all"
 complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
-alias sbtsnap="sbt -sbt-snapshot"
 alias rmc="rm-classfiles"
 alias s="rmc && scalac *Test*.scala"
 alias sli="rmc && scalac *Test*.scala -Xlog-implicits"
@@ -217,23 +215,15 @@ alias ssyy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-ver
 alias r="scala Test"
 alias sr="rmc && scalac *Test*.scala && scala Test"
 alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
-alias my="acc && sbt 'run ../examples/my.l3'"
 alias sus="sync-upstream"
 
-alias ez='subl $HOME/Projects/Dotx/.bashrc'
+alias ez='subl /usr/local/dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
-alias acc='cd "$HOME/Projects/ACC/l3/compiler"'
-alias sorm='cd "$HOME/Projects/Sorm"'
-alias vm='cd "$HOME/Projects/ACC/l3/vm"'
 alias hm='cd "$HOME"'
 alias ubi='cd "/usr/local/bin"'
 alias db='cd "/Users/Shared/Dropbox/Public"'
 alias dl='cd "$HOME/Downloads"'
 alias prj='cd "$HOME/Projects"'
-alias ide='cd "$HOME/Projects/ScalaIDE"'
-alias ens='cd "$HOME/Projects/Ensime"'
-alias plugins='cd "$HOME/.sbt/0.12.1/plugins"'
-alias cf='cd "$HOME/Projects/codefest2013"'
 alias sens='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
 alias des='cd "$HOME/Library/Application Support/Sublime Text 2"'
 alias sens2='cd "$HOME/Library/Application Support/Sublime Text 2/Packages/Ensime"'
@@ -241,16 +231,10 @@ alias des2='cd "$HOME/Library/Application Support/Sublime Text 2"'
 alias sens3='cd "$HOME/Library/Application Support/Sublime Text 3/Packages/Ensime"'
 alias des3='cd "$HOME/Library/Application Support/Sublime Text 3"'
 alias stock3='cd "/Applications/Sublime Text 3.app/Contents/MacOS/Packages"'
-alias pap='cd "$HOME/Projects/Pages"'
-alias pag='cd "$HOME/Projects/Pages"'
-alias slang='cd "$HOME/Projects/ScalaLang"'
-alias dotx='cd "$HOME/Projects/Dotx"'
-alias docs='cd "$HOME/Projects/DocsScalaLang"'
-alias smock='cd "$HOME/Projects/ScalaMock"'
-alias gr='cd "$HOME/Projects/pp-2012-simulation-grades"'
-alias ssrc='cd "$HOME/Scratchpad/ScalaSrc"'
-alias slick='cd "$HOME/Projects/Slick"'
-alias shared='cd "$HOME/../Shared/VirtualBox"'
+alias pap='cd "$HOME/Projects/DocsScalamacrosOrg"'
+alias pag='cd "$HOME/Projects/DocsScalamacrosOrg"'
+alias dotx='cd "/usr/local/dotx"'
+alias docs='cd "$HOME/Projects/SiteDocsScalaLang"'
 alias spick210='cd "$HOME/Projects/scala-pickling-210x"'
 alias spick211='cd "$HOME/Projects/scala-pickling-211"'
 alias spick=spick211
@@ -262,53 +246,7 @@ function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$ta
 function sbmaster { target="$(hack-home "master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function paradise { target="$(hack-home "paradise/macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbparadise { target="$(hack-home "paradise/macros")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function paradise210 { target="$(hack-home "paradise/macros210")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbparadise210 { target="$(hack-home "paradise/macros210")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function paradise211 { target="$(hack-home "paradise/macros211")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbparadise211 { target="$(hack-home "paradise/macros211")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function pullrequest { target="$(hack-home "pullrequest/paradise")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbpullrequest { target="$(hack-home "pullrequest/paradise")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function kep6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6240 { target="$(hack-home "6240")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6411 { target="$(hack-home "6411")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6411 { target="$(hack-home "6411")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepintroduce-member { target="$(hack-home "introduce-member")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbintroduce-member { target="$(hack-home "introduce-member")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepdefaultnamed { target="$(hack-home "defaultnamed")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbdefaultnamed { target="$(hack-home "defaultnamed")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7331 { target="$(hack-home "7331")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7331 { target="$(hack-home "7331")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7334 { target="$(hack-home "7334")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7334 { target="$(hack-home "7334")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepiso { target="$(hack-home "iso")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbiso { target="$(hack-home "iso")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7461 { target="$(hack-home "7461")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7461 { target="$(hack-home "7461")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepparadise2111 { target="$(hack-home "paradise2111")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbparadise2111 { target="$(hack-home "paradise2111")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7533 { target="$(hack-home "7533")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7533 { target="$(hack-home "7533")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7375 { target="$(hack-home "7375")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7375 { target="$(hack-home "7375")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7544 { target="$(hack-home "7544")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7544 { target="$(hack-home "7544")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep6221 { target="$(hack-home "6221")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb6221 { target="$(hack-home "6221")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7570 { target="$(hack-home "7570")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7570 { target="$(hack-home "7570")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7617 { target="$(hack-home "7617")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7617 { target="$(hack-home "7617")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kepquasiquotes { target="$(hack-home "quasiquotes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbquasiquotes { target="$(hack-home "quasiquotes")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function keprtp { target="$(hack-home "rtp")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbrtp { target="$(hack-home "rtp")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function kepstructural { target="$(hack-home "structural")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbstructural { target="$(hack-home "structural")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kep7657 { target="$(hack-home "7657")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb7657 { target="$(hack-home "7657")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }

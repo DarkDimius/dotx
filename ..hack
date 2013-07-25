@@ -1,1 +1,1 @@
-scalamacros:2.10.x
+xeno-by:2.10.x

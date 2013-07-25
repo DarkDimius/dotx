@@ -21,10 +21,10 @@ if not origin: error("not a git repo")
 # Popen(["git", "remote", "update"], stdout=PIPE).communicate()[0][:-1]
 root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE).communicate()[0][:-1]
 
-def match1(): return re.match("^git://github.com/(?P<user>.*?)/(?P<repo>.*).git$", origin)
-def match2(): return re.match("^git@github.com:(?P<user>.*?)/(?P<repo>.*).git$", origin)
+def match1(): return re.match("^git://(github\.com|bitbucket\.org)/(?P<user>.*?)/(?P<repo>.*).git$", origin)
+def match2(): return re.match("^git@(github\.com|bitbucket\.org):(?P<user>.*?)/(?P<repo>.*).git$", origin)
 m = match1() or match2()
-if not m: error(root + ": origin (" + origin + ") doesn't point to a github repo")
+if not m: error(root + ": origin (" + origin + ") doesn't point to a github/bitbucket repo")
 user = m.expand("\g<user>")
 repo = m.expand("\g<repo>")
 

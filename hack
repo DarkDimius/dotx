@@ -53,7 +53,7 @@ try:
   prototype = check_output(["hack-home", prototype]).strip()
 
   projects = os.path.expandvars("$HOME/Projects/")
-  project_metadata = projects + "/Metadata/" + project_home[len(projects):]
+  project_metadata = projects + "/../Metadata/" + project_home[len(projects):]
   sandbox = project_home + "/sandbox"
   sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/Projects")
   sublime_project = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-project"

@@ -7,7 +7,7 @@ function install-into-destination() {
   if [[ -z "$to" ]]; then to=$from; fi
 
   if [[ -L "$dest/$to" ]]; then
-    # rm "$dest/$to"
+    rm "$dest/$to"
     echo "$dest/$to already installed"
     return 0;
   fi
