@@ -7,7 +7,7 @@
 	<key>category</key>
 	<string>SCRIPTS</string>
 	<key>command</key>
-	<string>subl /Users/xeno_by/Projects/Dotx/..hack</string>
+	<string>subl /usr/local/dotx/..hack</string>
 	<key>disabled</key>
 	<false/>
 	<key>escapedollar</key>
