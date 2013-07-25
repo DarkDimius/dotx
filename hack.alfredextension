@@ -36,7 +36,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>210x</string>
+  <string>$PROJECT_SHORTNAME</string>
   <key>objects</key>
   <array>
     <dict>
@@ -65,9 +65,9 @@ fi</string>
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>210x</string>
+        <string>$PROJECT_SHORTNAME</string>
         <key>text</key>
-        <string>210x</string>
+        <string>$PROJECT_SHORTNAME</string>
         <key>withspace</key>
         <false/>
       </dict>
@@ -94,7 +94,7 @@ fi</string>
         <key>text</key>
         <string>{query}</string>
         <key>title</key>
-        <string>210x</string>
+        <string>$PROJECT_SHORTNAME</string>
       </dict>
       <key>type</key>
       <string>alfred.workflow.output.notification</string>

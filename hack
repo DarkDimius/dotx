@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import sys, os, traceback, time, subprocess
+import sys, os, traceback, time, subprocess, uuid
 from subprocess import check_output, call, Popen, PIPE
 
 interactive = not "--batch" in sys.argv
@@ -43,7 +43,7 @@ try:
   branch = target[target.find(":") + 1:]
   short_target = target[target.rfind("/") + 1:]
   script = Popen(["hack-home", target], stdout=PIPE)
-  project_home = script.communicate()[0].strip() or os.path.expandvars("$HOME/Projects/") + "Kepler_" + short_target
+  project_home = script.communicate()[0].strip() or os.path.expandvars("$HOME/Projects/") + short_target
   exists = script.returncode == 0
   if exists and add: print >> sys.stderr, target + " already exists at " + project_home; sys.exit(1)
   if not exists and not add: print >> sys.stderr, target + " does not exist"; sys.exit(1)
@@ -60,13 +60,13 @@ try:
   print sublime_project
   sublime_workspace = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-workspace"
   bashrc = os.path.expandvars("$HOME/.bashrc")
-  alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred/extensions/scripts")
-  alfredextension = alfredextensions + "/" + short_target
+  alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows")
+  alfredextension = alfredextensions + "/user.workflow." + str(uuid.uuid4())
   alfredextension_plist = alfredextension + "/" + "info.plist"
 
   if add:
     check_comm(["git", "clone", prototype, project_home])
-    check_comm(["git", "remote", "set-url", "origin", "git@github.com:scalamacros/kepler.git"], cwd = project_home)
+    check_comm(["git", "remote", "set-url", "origin", "git@github.com:xeno-by/scala.git"], cwd = project_home)
     check_comm(["git", "remote", "add", "upstream", "git@github.com:scala/scala.git"], cwd = project_home)
     check_comm(["git", "remote", "update"], cwd = project_home)
     try: check_comm(["git", "checkout", branch], cwd = project_home)
@@ -97,11 +97,11 @@ try:
     checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
-      bashrc.append("""function kep{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
+      bashrc.append("""function {} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
       bashrc.append("""function sb{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
       return bashrc
     update_bashrc(create_aliases)
-    checkpoint("Created Bash aliases kep" + short_target + " and sb" + short_target)
+    checkpoint("Created Bash aliases " + short_target + " and sb" + short_target)
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
@@ -116,18 +116,34 @@ try:
     comm(["rm", "-rf", alfredextension])
     checkpoint("Deleted the Alfred shortcut named " + short_target)
     def delete_aliases(bashrc):
-      kep_alias = """function kep{} {""".replace("{}", short_target)
+      alias = """function {} {""".replace("{}", short_target)
       sb_alias = """function sb{} {""".replace("{}", short_target)
-      return [line for line in bashrc if not line.startswith(kep_alias) and not line.startswith(sb_alias)]
+      return [line for line in bashrc if not line.startswith(alias) and not line.startswith(sb_alias)]
     update_bashrc(delete_aliases)
-    checkpoint("Deleted Bash aliases kep" + short_target + " and sb" + short_target)
+    checkpoint("Deleted Bash aliases " + short_target + " and sb" + short_target)
 
   if interactive:
     sublime_is_open = "Sublime" in check_output(["ps", "aux"])
-    with open(os.path.expandvars("$HOME/.hack_sublime"), "w") as f: f.write(original_target + "\n" + project_home + "\n" + str(not sublime_is_open))
-    if not delete: check_comm(["subl", "--project", sublime_project])
-    if not sublime_is_open: time.sleep(0.5)
-    if not delete or sublime_is_open: check_comm(["subl", "--command", "my_hack"])
+    hack_sublime = os.path.expandvars("$HOME/.hack_sublime")
+    with open(hack_sublime, "w") as f: f.write(original_target + "\n" + sublime_project + "\n" + "OPEN?")
+    check_comm(["subl", "--command", "my_hack"])
+    def already_open():
+      def loop(retries_left):
+        with open(hack_sublime, "r") as f:
+          text = f.read().decode()
+          yep, nope = text == "YEP", text == "NOPE"
+          if yep or nope:
+            return yep
+          else:
+            time.sleep(0.1)
+            if retries_left: return loop(retries_left - 1)
+            else: return True
+      return loop(5)
+    if already_open():
+      with open(hack_sublime, "w") as f: f.write(original_target + "\n" + sublime_project + "\n" + "FOCUS!")
+      check_comm(["subl", "--command", "my_hack"])
+    else:
+      check_comm(["subl", "--project", sublime_project])
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:

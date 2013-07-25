@@ -13,11 +13,6 @@ if not branch:
   print "Create ~/.hack with a branchname to call " + sys.argv[0] + " without an argument"
   sys.exit(1)
 
-if branch == "snippet" or branch == "macrosnippet":
-  relevant = filter(lambda actual: actual.startswith(branch), check_output(["hack-homes", "--short-branches"]).splitlines())
-  next_index = max(map(lambda relevant: int(relevant[len(branch):]), relevant)) + 1 if relevant else 0
-  branch = "xeno-by:topic/" + branch + str(next_index).zfill(2)
-
 if not ":" in branch:
   hardcoded = ["master", "2.10.x"]
   if not branch in hardcoded:

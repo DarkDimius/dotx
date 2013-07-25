@@ -9,17 +9,17 @@ _hack() {
   if [[ ${#COMP_WORDS[@]} == 2 ]]; then
     if [[ ${cur} == -* ]] ; then
       opts="$(hack-homes --short-branches | while read line; do echo "-$line"; done)"
-      COMPREPLY=( $(compgen -W "${opts} snippet macrosnippet" -- ${cur}) )
+      COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
       return 0
     fi
 
     opts="$(hack-homes --short-branches | while read line; do echo "$line"; done)"
-    COMPREPLY=( $(compgen -W "${opts} snippet macrosnippet" -- ${cur}) )
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
     return 0
   elif [[ ${#COMP_WORDS[@]} == 3 ]]; then
     if [[ ${prev} == +* ]] ; then
       opts="$(hack-homes --short-branches | while read line; do echo "$line"; done)"
-      COMPREPLY=( $(compgen -W "${opts} snippet macrosnippet" -- ${cur}) )
+      COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
       return 0
     fi
   fi
