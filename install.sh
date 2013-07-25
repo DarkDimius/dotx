@@ -119,7 +119,6 @@ install-into-bin java6
 install-into-bin java7
 install-into-bin java8
 install-into-bin switch-java
-install-into-bin launch-iterm-with-cwd
 install-into-bin skype
 install-into-bin skype-menubar-updater
 install-into-bin jenkins-callback
@@ -147,7 +146,6 @@ install-into-bin partest-suite
 install-into-bin partest-create
 install-into-bin partest-file
 install-into-bin partest-macro
-install-into-bin shell
 if [[ -f "/usr/local/bin/stree" && ! -L "/usr/local/bin/stree" ]]; then mv "/usr/local/bin/stree" "/usr/local/bin/stock-stree"; fi
 if [[ ! -f "/usr/local/bin/subl" ]]; then ln -sv "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"; fi
 install-into-bin stree

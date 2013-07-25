@@ -34,12 +34,8 @@ cpan -l >> "$target" 2>&1
 
 echo "" >> "$target"
 echo "==================" >> "$target"
-echo "Alfred extensions:" >> "$target"
-ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/applescripts" >> "$target"
-ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/files" >> "$target"
-ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/filters" >> "$target"
-ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/scripts" >> "$target"
-ls "/Users/xeno_by/Library/Application Support/Alfred/extensions/workflows" >> "$target"
+echo "Alfred 2 extensions:" >> "$target"
+ls "/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/" >> "$target"
 
 echo "" >> "$target"
 echo "==================" >> "$target"
@@ -51,13 +47,8 @@ echo "==================" >> "$target"
 echo "KeyRemap4MacBook private.xml:" >> "$target"
 cat "/Users/xeno_by/Library/Application Support/KeyRemap4MacBook/private.xml" >> "$target"
 
-src="/Users/xeno_by/Library/Application Support/Alfred/extensions"
-dest="$(dirname $0)/configs/Library/Application Support/Alfred/extensions"
-if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
-cp -r "$src" "$dest"
-
-src="/Users/xeno_by/Library/Application Support/Alfred/hotkeys"
-dest="$(dirname $0)/configs/Library/Application Support/Alfred/hotkeys"
+src="/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows"
+dest="$(dirname $0)/configs/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows"
 if [[ -d "$dest" ]]; then rm -rf "$dest"; fi
 cp -r "$src" "$dest"
 
