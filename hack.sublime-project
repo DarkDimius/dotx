@@ -48,6 +48,10 @@
       "path": "/Users/xeno_by/Projects/$PROJECT_NAME/test/pending"
     },
     {
+      "folder_exclude_patterns":
+      [
+        "_site"
+      ],
       "name": "Docs",
       "path": "/Users/xeno_by/Projects/SiteDocsScalaLangOrg"
     },
@@ -81,7 +85,7 @@
         "*.sublime-workspace",
         "*.orig"
       ],
-      "path": "/Users/xeno_by/Library/Application Support/Sublime Text 2"
+      "path": "/Users/xeno_by/Library/Application Support/Sublime Text 3"
     }
   ]
 }

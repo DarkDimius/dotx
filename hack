@@ -55,7 +55,7 @@ try:
   projects = os.path.expandvars("$HOME/Projects/")
   project_metadata = projects + "/../Metadata/" + project_home[len(projects):]
   sandbox = project_home + "/sandbox"
-  sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 2/Projects")
+  sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 3/Projects")
   sublime_project = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-project"
   print sublime_project
   sublime_workspace = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-workspace"

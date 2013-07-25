@@ -16,13 +16,13 @@ if not branch:
 if branch == "snippet" or branch == "macrosnippet":
   relevant = filter(lambda actual: actual.startswith(branch), check_output(["hack-homes", "--short-branches"]).splitlines())
   next_index = max(map(lambda relevant: int(relevant[len(branch):]), relevant)) + 1 if relevant else 0
-  branch = "scalamacros:topic/" + branch + str(next_index).zfill(2)
+  branch = "xeno-by:topic/" + branch + str(next_index).zfill(2)
 
 if not ":" in branch:
-  hardcoded = ["master", "2.10.x", "paradise/macros210", "paradise/macros211", "pullrequest/paradise"]
+  hardcoded = ["master", "2.10.x"]
   if not branch in hardcoded:
     prefix = "ticket" if re.match("^\d+$", branch) else "topic"
     branch = prefix + "/" + branch
-  branch = "scalamacros:" + branch
+  branch = "xeno-by:" + branch
 
 print branch

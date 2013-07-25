@@ -102,3 +102,6 @@ test/coffees.trace.db
 Cache/
 *.bbl
 *.blg
+.SublimeREPLHistory
+Index
+*.sublime_metrics

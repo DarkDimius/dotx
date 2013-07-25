@@ -17,9 +17,9 @@ if not status.startswith("no changes"):
   print status
   sys.exit(1)
 
-if branch == "paradise/macros211":
+if repo == "paradise" and branch == "master":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise211-nightly-main/buildWithParameters?publish=true"
-elif branch == "paradise/macros210":
+elif repo == "paradise" and branch == "2.10.x":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise210-nightly-main/buildWithParameters?publish=true"
 else:
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/buildWithParameters"
