@@ -4,7 +4,6 @@ Apps:
 1Password.app
 Adium.app
 Alfred 2.app
-Alfred.app
 Anki.app
 App Store.app
 Araxis Merge.app
@@ -101,8 +100,10 @@ bash
 bash-completion
 clojure
 coreutils
+e2fsprogs
 erlang
 findutils
+gettext
 ghc
 git
 gmp
@@ -3918,45 +3919,27 @@ XML::XPath::Node::PI	undef
 XML::XPath::Node::Text	undef
 
 ==================
-Alfred extensions:
-Adium Chat
-Adium Controls - Go Offline
-Adium Controls - Go Online
-Bartender: Show Menu
-Toggle iTerm
-Applications
-Downloads
-Movies
-210x
-Mission control
-Skype
-Wi-Fi-toggle
-bashrc
-bug
-defaultnamed
-dont ignore scala crashes
-dothack
-dothackproto
-dotjenkins
-flags
-hack
-ignore crashes
-java6
-java7
-java8
-master
-paradise
-paradise210
-paradise211
-proto-210x
-proto-master
-proto-paradise
-proto?
-si
-tier-locker
-tier-pack
-tier-quick
-tier?
+Alfred 2 extensions:
+user.workflow.046E158B-7C12-467B-9890-5F0FD953B89F
+user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
+user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
+user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
+user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
+user.workflow.2B3ABB17-14EA-4557-AB1F-1F7E4A64154E
+user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
+user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
+user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
+user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
+user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
+user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
+user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
+user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
+user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
+user.workflow.B17864E9-DDDD-464D-8720-DDD06B609208
+user.workflow.B4316C18-A1BB-4257-BAD3-07717DE3FF8F
+user.workflow.BA45CD46-EF6A-46EE-81BA-AF2781C1FB14
+user.workflow.D4482E39-5319-449B-A33B-1A99946C19AB
+user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 
 ==================
 Firefox extensions:

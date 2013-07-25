@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>37</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>56</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 2/Projects/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -114,7 +114,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Alfred/extensions/scripts/210x/</location>
                         </tab-0>
                     </tabs>
                 </right>
