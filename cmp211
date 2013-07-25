@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-PARADISE="/Users/xeno_by/Projects/Paradise"
-PARADISE211="/Users/xeno_by/Projects/Paradise211"
-araxisopendiff "$PARADISE/$1" "$PARADISE211/$1"

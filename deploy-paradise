@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-cd /Users/xeno_by/Projects/Kepler_typemacros
-ant && {
-  cd /Users/xeno_by/Projects/Kepler_typemacros/build
-  zip -vr pack.zip pack/
-  mv pack.zip /Users/Shared/Dropbox/Public/pack.zip
-}

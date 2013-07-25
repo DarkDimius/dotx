@@ -107,7 +107,6 @@ install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
 install-into-home hack.alfredextension .hack.alfredextension
 install-into-home partest-completion.bash .partest-completion.bash
-install-into-home grade-completion.bash .grade-completion.bash
 install-into-home .scala_tier
 
 install-into-bin pullrequest
@@ -163,34 +162,19 @@ install-into-bin zzz-commence-kepler-gc
 install-into-bin zzz-commence-kepler-backup
 install-into-bin gaika
 install-into-bin gitblit
-install-into-bin h2
-install-into-bin pomodoro-launch-app
-install-into-bin pomodoro-pomodoro
-install-into-bin pomodoro-shortbreak
-install-into-bin pomodoro-longbreak
-install-into-bin pomodoro-start
-install-into-bin pomodoro-stop
-install-into-bin pomodoro-reset
 install-into-bin sandbox
-install-into-bin deploy-paradise
-install-into-bin paradise-prereqs
-install-into-bin grade
 install-into-bin solution
 install-into-bin reeder-launch-app
 install-into-bin reeder-focus-unread
 install-into-bin unpack-st3-packages
-install-into-bin lzycompute
-install-into-bin scrutil
 install-into-bin git-ls-merge-conflicts
 install-into-bin subl-conflicts
 install-into-bin translate
 install-into-bin scalad
 install-into-bin rm-classfiles
 install-into-bin sync-upstream
-install-into-bin cmp211
 
 install-into-etc launchd.conf
-install-into-etc paths
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
