@@ -142,6 +142,7 @@ try:
     if already_open():
       with open(hack_sublime, "w") as f: f.write(original_target + "\n" + sublime_project + "\n" + "FOCUS!")
       check_comm(["subl", "--command", "my_hack"])
+      check_comm(["subl", "--command", "my_hack"]) # repeat again, somehow sublime doesn't switch to the focused window on the first go
     elif not delete:
       check_comm(["subl", "--project", sublime_project])
 except:
