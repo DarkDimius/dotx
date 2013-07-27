@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/Packages/MyTweaks/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>75</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>48</width>
+                            <width>56</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/Packages/</location>
+                            <location>/Users/xeno_by/Downloads/Default.zip</location>
                         </tab-0>
                     </tabs>
                 </right>

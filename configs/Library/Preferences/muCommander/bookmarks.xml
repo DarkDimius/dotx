@@ -9,15 +9,15 @@
         <location>/Users/xeno_by/Downloads/</location>
     </bookmark>
     <bookmark>
-        <name>Sublime Text 2</name>
-        <location>/Users/xeno_by/Library/Application Support/Sublime Text 2/</location>
-    </bookmark>
-    <bookmark>
         <name>Dropbox</name>
         <location>/Users/Shared/Dropbox/</location>
     </bookmark>
     <bookmark>
-        <name>Sublime Text 3</name>
+        <name>Sublime Text 3.~</name>
         <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/</location>
+    </bookmark>
+    <bookmark>
+        <name>Sublime Text 3.app</name>
+        <location>/Applications/Sublime Text 3.app/Contents/MacOS/Packages/</location>
     </bookmark>
 </bookmarks>

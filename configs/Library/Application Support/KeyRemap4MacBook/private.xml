@@ -106,6 +106,16 @@
     </autogen>
   </item>
   <item>
+    <name>(Sublime) Fn + Click -> Command + Click</name>
+    <identifier>private.sublime_fnclick_commandclick</identifier>
+    <only>SUBLIME2,SUBLIME3</only>
+    <autogen>
+      __PointingButtonToPointingButton__
+      PointingButton::LEFT, ModifierFlag::FN,
+      PointingButton::LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+  <item>
     <name>(Firefox) Fn + Left -> F18, Fn + Right -> F19, Cmd + Left -> Cmd + Shift + [, Cmd + Right -> Cmd + Shift + ]</name>
     <identifier>private.firefox_fnleft_navigateback</identifier>
     <only>FIREFOX</only>

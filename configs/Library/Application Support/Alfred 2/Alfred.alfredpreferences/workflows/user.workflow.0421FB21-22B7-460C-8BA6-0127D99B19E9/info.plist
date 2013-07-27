@@ -6,19 +6,17 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>031A1F1A-74BE-4B2B-A64B-BCED6080A00F</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>7FCF4FA4-B3F2-40E1-879C-5E693C42B902</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
-		<array/>
 	</dict>
 	<key>createdby</key>
 	<string></string>
@@ -27,42 +25,56 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>si</string>
+	<string>scala-meetings</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>si</string>
-				<key>text</key>
-				<string>si</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>bug {query} 2&gt;&amp;1</string>
+				<string>if [[ -z "{query}" ]]; then
+  open "$(scala-meetings --create --alfred)"
+else
+  open "{query}"
+fi</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.script</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>7FCF4FA4-B3F2-40E1-879C-5E693C42B902</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>meetings-scala</string>
+				<key>runningsubtext</key>
+				<string>Loading document list...</string>
+				<key>script</key>
+				<string>scala-meetings --list --alfred</string>
+				<key>subtext</key>
+				<string>Simple UI for scala meeting notes</string>
+				<key>title</key>
+				<string>Scala meetings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>031A1F1A-74BE-4B2B-A64B-BCED6080A00F</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -71,15 +83,15 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>031A1F1A-74BE-4B2B-A64B-BCED6080A00F</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>7FCF4FA4-B3F2-40E1-879C-5E693C42B902</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
