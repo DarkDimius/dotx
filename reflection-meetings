@@ -1,0 +1,46 @@
+#!/usr/bin/env python
+import os, sys, httplib2, pprint, webbrowser, logging, subprocess
+from apiclient.discovery import build
+from apiclient.http import MediaFileUpload
+from oauth2client.client import OAuth2WebServerFlow
+logging.basicConfig()
+
+alfred = "--alfred" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
+if len(sys.argv) != 2: print("usage: " + sys.argv[0] + " list|create [--alfred]"); exit(1)
+action = sys.argv[1]
+
+def get_drive_service():
+  CLIENT_ID = open(os.path.expandvars("$GOOGLE_CLIENT_ID")).read().strip()
+  CLIENT_SECRET = open(os.path.expandvars("$GOOGLE_CLIENT_SECRET")).read().strip()
+  OAUTH_SCOPE = 'https://www.googleapis.com/auth/drive'
+  REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
+
+  flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, REDIRECT_URI)
+  authorize_url = flow.step1_get_authorize_url()
+  try:
+    OAUTH_CODE = open(os.path.expandvars("$GOOGLE_OAUTH_CODE")).read().strip()
+    credentials = flow.step2_exchange(OAUTH_CODE)
+    http = httplib2.Http()
+    http = credentials.authorize(http)
+    return build('drive', 'v2', http=http)
+  except:
+    subprocess.call([
+      "terminal-notifier",
+      "-title", "Google API",
+      "-message", "Failed to authorize with Drive. Click here to get an authorization code.",
+      "-open", authorize_url,
+      "-group", "Drive Service"
+    ], stdout = subprocess.PIPE)
+    return None
+
+drive_service = get_drive_service()
+if drive_service:
+  media_body = MediaFileUpload("foo.txt", mimetype='text/plain', resumable=True)
+  body = {
+    'title': 'My document',
+    'description': 'A test document',
+    'mimeType': 'text/plain'
+  }
+  file = drive_service.files().insert(body=body, media_body=media_body).execute()
+  pprint.pprint(file)
