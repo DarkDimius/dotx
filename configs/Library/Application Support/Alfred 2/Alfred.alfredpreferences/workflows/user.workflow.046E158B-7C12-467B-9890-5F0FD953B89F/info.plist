@@ -45,7 +45,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>stderr="$(hack 2.10.x 2&gt;&amp;1 1&gt;/dev/null)"
+				<string>stderr="$(hack master 2&gt;&amp;1 1&gt;/dev/null)"
 if [[ -n "$stderr" ]]; then
   echo $stderr
 fi</string>
@@ -84,7 +84,7 @@ fi</string>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>

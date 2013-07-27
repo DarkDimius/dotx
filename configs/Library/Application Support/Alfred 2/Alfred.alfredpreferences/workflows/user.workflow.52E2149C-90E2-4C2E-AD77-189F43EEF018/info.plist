@@ -45,7 +45,7 @@
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
@@ -70,6 +70,8 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
+				<string>hack</string>
+				<key>text</key>
 				<string>hack</string>
 				<key>withspace</key>
 				<true/>

@@ -14,7 +14,6 @@ args = sys.argv[2:]
 
 env = {}
 env["action"] = action
-env["meaningful"] = 0
 env["args"] = args
 env["working_dir"] = os.path.abspath(".")
 env["status"] = 0
@@ -23,91 +22,54 @@ def notify(msg):
   if (sublime): call(["growlnotify", "-n", "Kepler", "-m", str(msg)])
   else: print msg
 
+def exit(retcode):
+  # if sublime:
+  #   print("[Exited with code " + str(retcode) + "]")
+  print("[Exited with code " + str(retcode) + "]")
+  sys.exit(retcode)
+
 try:
   if action == "compile":
     target = args[0] if args else ""
-    if target.startswith("/Users/xeno_by/Projects/ACC/l3/vm"):
-      env["meaningful"] = 1
-      sys.exit(call(["make", "test"], cwd = "/Users/xeno_by/Projects/ACC/l3/vm"))
-    elif args and args[0].endswith(".c"):
-      target = args[0]
-      executable, _ = os.path.splitext(target)
-      root = os.path.dirname(os.path.abspath(target))
-      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]c):([0-9]+)"
+    # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
+    git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE).communicate()[0][:-1]
+    if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/scala-pickling"):
+      root = git_root
+      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
       env["result_line_regex"] = ""
       env["result_base_dir"] = root
-      status = call(["gcc", target, "-o", executable], cwd = root)
-      sys.exit(status)
+      exit(call(["sbt", "-Dsbt.log.noformat=true", "package"], cwd = root))
+    elif args and args[0].endswith(".tex"):
+      target = args[0]
+      root = os.path.dirname(os.path.abspath(target))
+      exit(call(["xelatex", target], cwd = root))
+    elif args and args[0].endswith(".bib"):
+      bib = args[0]
+      (baseline, ext) = os.path.splitext(bib)
+      tex = baseline + ".tex"
+      root = os.path.dirname(os.path.abspath(bib))
+      status = call(["xelatex", tex], cwd = root)
+      if status: sys.exit(status)
+      status = call(["bibtex", baseline], cwd = root)
+      if status: sys.exit(status)
+      status = call(["xelatex", tex], cwd = root)
+      if status: sys.exit(status)
+      status = call(["xelatex", tex], cwd = root)
+      exit(status)
     else:
-      # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
-      git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE).communicate()[0][:-1]
-      if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/scala-pickling"):
-        root = git_root
-        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-        env["result_line_regex"] = ""
-        env["result_base_dir"] = root
-        retcode = call(["sbt", "-Dsbt.log.noformat=true", "package"], cwd = root)
-        sys.exit(retcode)
-      if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Ensime"):
-        root = git_root
-        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-        env["result_line_regex"] = ""
-        env["result_base_dir"] = root
-        log_dir = "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/logs"
-        logs = ["server.log", "client.log"]
-        for log in logs:
-          log = os.path.join(log_dir, log)
-          if os.path.exists(log): os.unlink(log)
-        retcode = call(["sbt", "-Dsbt.log.noformat=true", "stage"], cwd = root)
-        if retcode != 0: sys.exit(retcode)
-        check_call(["rm", "-rf", "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/server"])
-        check_call(["cp", "-r", "/Users/xeno_by/Projects/Ensime/dist_2.10.0", "/Users/xeno_by/Library/Application Support/Sublime Text 2/Packages/Ensime/server"])
-        sys.exit(0)
-      elif os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/ACC"):
-        root = git_root + "/l3/compiler"
-        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-        env["result_line_regex"] = ""
-        env["result_base_dir"] = root
-        cmd = ["sbt", "-Dsbt.log.noformat=true", "compile"] if sublime else ["sbt", "compile"]
-        sys.exit(call(cmd, cwd = root))
-      elif args and args[0].endswith(".tex"):
-        target = args[0]
-        root = os.path.dirname(os.path.abspath(target))
-        # status = call(["pdflatex", target], cwd = root)
-        status = call(["xelatex", target], cwd = root)
-        if status: sys.exit(status)
-        # call(["open", os.path.splitext(target)[0] + ".pdf"])
-        # time.sleep(0.2)
-        # call(["osascript", "-e", "tell application \"Preview.app\" to activate"])
-        # call(["osascript", "-e", "tell application \"Sublime Text 2.app\" to activate"])
-      elif args and args[0].endswith(".bib"):
-        bib = args[0]
-        (baseline, ext) = os.path.splitext(bib)
-        tex = baseline + ".tex"
-        root = os.path.dirname(os.path.abspath(bib))
-        status = call(["xelatex", tex], cwd = root)
-        if status: sys.exit(status)
-        status = call(["bibtex", baseline], cwd = root)
-        if status: sys.exit(status)
-        status = call(["xelatex", tex], cwd = root)
-        if status: sys.exit(status)
-        status = call(["xelatex", tex], cwd = root)
-        if status: sys.exit(status)
-      else:
-        root = check_output(["scala-root"]).strip()
+      root = check_output(["scala-root"]).strip()
+      if os.path.abspath(".").startswith(root):
         tier = check_output(["scala-tier"]).strip()
         env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
         env["result_line_regex"] = ""
         env["result_base_dir"] = root
-        if tier == "pack":
-          sys.exit(call(["ant"], cwd = root))
-        elif tier == "quick":
-          sys.exit(call(["ant", "quick.comp"], cwd = root))
-        elif tier == "locker":
-          sys.exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
-        else:
-          print "unknown tier: " + str(tier)
-          sys.exit(1)
+        if tier == "pack": exit(call(["ant"], cwd = root))
+        elif tier == "quick": exit(call(["ant", "quick.comp"], cwd = root))
+        elif tier == "locker": exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
+        else: print "unknown tier: " + str(tier); exit(1)
+      else:
+        print("unsupported target at " + os.path.abspath("."))
+        exit(1)
   elif action == "clean":
     root = check_output(["scala-root"]).strip()
     def clean_quick(target):
@@ -118,20 +80,23 @@ try:
       if os.path.exists(classes): shutil.rmtree(classes)
       notify("Cleaned quick/" + target)
     target = args[0]
-    if target == "quick/compiler+reflect":
+    if target == "quick@compiler+reflect":
       clean_quick("compiler")
       clean_quick("reflect")
       clean_quick("repl")
-    elif target.startswith("quick/"):
-      clean_quick(target[len("quick/"):])
+      exit(0)
+    elif target.startswith("quick@"):
+      clean_quick(target[len("quick@"):])
+      exit(0)
     elif target == "all":
       map(lambda target: clean_quick(target), ["library", "reflect", "compiler", "repl"])
+      exit(0)
     else:
       notify("unknown clean target: " + target)
-      sys.exit(1)
+      exit(1)
   else:
     notify("unsupported action " + action)
-    sys.exit(1)
+    exit(1)
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:

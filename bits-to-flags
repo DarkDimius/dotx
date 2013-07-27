@@ -1,0 +1,94 @@
+#!/usr/bin/env python
+import sys
+
+alfred = "--alfred" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
+if len(sys.argv) != 2: error("usage: " + sys.argv[0] + " <number> [--alfred]")
+bits = int(sys.argv[1])
+
+# takes from scala/reflect/internal/Flags.scala
+reference = {
+   0: 'protected',
+   1: 'override',
+   2: 'private',
+   3: 'abstract',
+   4: '<deferred>',
+   5: 'final',
+   6: '<method>',
+   7: '<interface>',
+   8: '<module>',
+   9: 'implicit',
+  10: 'sealed',
+  11: 'case',
+  12: '<mutable>',
+  13: '<param>',
+  14: '<package>',
+  15: '<macro>',
+  16: '<bynameparam/captured/covariant>',
+  17: '<contravariant/inconstructor/label>',
+  18: 'absoverride',
+  19: '<local>',
+  20: '<java>',
+  21: '<synthetic>',
+  22: '<stable>',
+  23: '<static>',
+  24: '<caseaccessor>',
+  25: '<defaultparam/trait>',
+  26: '<bridge>',
+  27: '<accessor>',
+  28: '<superaccessor>',
+  29: '<paramaccessor>',
+  30: '<modulevar>',
+  31: 'lazy',
+  32: '<is_error>',
+  33: '<overloaded>',
+  34: '<lifted>',
+  35: '<existential/mixedin>',
+  36: '<expandedname>',
+  37: '<implclass/presuper>',
+  38: '<trans_flag>',
+  39: '<locked>',
+  40: '<specialized>',
+  41: '<defaultinit>',
+  42: '<vbridge>',
+  43: '<varargs>',
+  44: '<triedcooking>',
+  45: '<synchronized>',
+  46: '',
+  47: '<defaultmethod>',
+  48: '',
+  49: '',
+  50: '',
+  51: '<latedeferred>',
+  52: '<latefinal>',
+  53: '<latemethod>',
+  54: '<lateinterface>',
+  55: '<latemodule>',
+  56: '<notprotected>',
+  57: '<notoverride>',
+  58: '<notprivate>',
+  59: '',
+  60: '',
+  61: '',
+  62: '',
+  63: ''
+}
+
+flags = []
+for nbit in range(0, 64):
+  if bits & (1 << nbit) != 0:
+    flags.append(reference[nbit])
+
+if alfred:
+  formatted = map(lambda flag: { "title": flag, "subtitle": "" }, flags)
+  text = u"""
+  <item arg="%(title)s" uid="%(title)s" valid="no">
+    <title>%(title)s</title>
+    <subtitle>%(subtitle)s</subtitle>
+    <icon>scala.png</icon>
+  </item>
+  """
+  print ("<items>%s</items>" % "\n".join(text % entry for entry in formatted)).encode("ascii", "xmlcharrefreplace")
+else:
+  for flag in flags:
+    print flag

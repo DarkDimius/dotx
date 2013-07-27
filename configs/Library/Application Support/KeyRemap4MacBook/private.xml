@@ -1,8 +1,12 @@
 <?xml version="1.0"?>
 <root>
   <appdef>
-    <appname>SUBLIME</appname>
+    <appname>SUBLIME2</appname>
     <equal>com.sublimetext.2</equal>
+  </appdef>
+  <appdef>
+    <appname>SUBLIME3</appname>
+    <equal>com.sublimetext.3</equal>
   </appdef>
   <appdef>
     <appname>ITERM2</appname>
@@ -39,7 +43,7 @@
   <item>
     <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
-    <not>SUBLIME,VIRTUALBOX,STARCRAFT</not>
+    <not>SUBLIME2,SUBLIME3,VIRTUALBOX,STARCRAFT</not>
     <autogen>
       --KeyToKey--
       KeyCode::F3, ModifierFlag::NONE,
@@ -59,7 +63,7 @@
   <item>
     <name>(Sublime) Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_sublime</identifier>
-    <only>SUBLIME</only>
+    <only>SUBLIME2,SUBLIME3</only>
     <autogen>
       --KeyToKey--
       KeyCode::F3, ModifierFlag::SHIFT_L,
@@ -74,7 +78,7 @@
   <item>
     <name>(Sublime) Fn + Left -> F18, Fn + Right -> F19</name>
     <identifier>private.sublime_fnleft_navigateback</identifier>
-    <only>SUBLIME</only>
+    <only>SUBLIME2,SUBLIME3</only>
     <autogen>
       --KeyToKey--
       KeyCode::CURSOR_LEFT, ModifierFlag::FN,
@@ -84,6 +88,21 @@
       --KeyToKey--
       KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
       KeyCode::F19,
+    </autogen>
+  </item>
+  <item>
+    <name>(Sublime) Command + W -> F17</name>
+    <identifier>private.sublime_commandw_f17</identifier>
+    <only>SUBLIME2,SUBLIME3</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::F17,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::W, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::F17,
     </autogen>
   </item>
   <item>
@@ -245,16 +264,6 @@
       --KeyToKey--
       KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
       KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
-    </autogen>
-  </item>
-  <item>
-    <name>(Starcraft) Cmd + Q => Cmd + Option + Q</name>
-    <identifier>private.starcraft_command_q_fix</identifier>
-    <only>STARCRAFT</only>
-    <autogen>
-      --KeyToKey--
-      KeyCode::Q, ModifierFlag::COMMAND_L,
-      KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
     </autogen>
   </item>
 </root>

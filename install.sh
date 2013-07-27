@@ -165,6 +165,7 @@ install-into-bin git-ls-merge-conflicts
 install-into-bin subl-conflicts
 install-into-bin rm-classfiles
 install-into-bin sync-upstream
+install-into-bin bits-to-flags
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit

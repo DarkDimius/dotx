@@ -14,9 +14,11 @@ if os.path.abspath(".") == root:
 def rm_classfiles(root):
   for _, subdirs, files in os.walk(root):
     for file in files:
-      if file.endswith(".class"):
+      if file.endswith(".class") or file.endswith(".js") or file.endswith(".html"):
         os.unlink(os.path.join(root, file))
     for dir in subdirs:
+      if dir == "lib" or dir == "index":
+        shutil.rmtree(os.path.join(root, dir))
       rm_classfiles(os.path.join(root, dir))
   for _, subdirs, files in os.walk(root):
     if not subdirs and not files:
