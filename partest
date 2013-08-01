@@ -2,6 +2,7 @@
 import os, sys, subprocess, re, time, glob
 
 all = "--all" in sys.argv
+verbose = "--verbose" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
 
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
@@ -12,6 +13,8 @@ if (root.startswith("/Users/xeno_by/Projects/scala-pickling") or root.startswith
 bin = root + "/test/partest"
 dotpartest = root + "/.partest"
 dotpartestlog = root + "/.partestlog"
+
+flags = ["--verbose"] if verbose else []
 
 if not os.path.exists(bin):
   print bin + " does not exist"
@@ -102,7 +105,7 @@ if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
     sys.exit(1)
 
 try:
-  invocation = " ".join([bin] + tests)
+  invocation = " ".join([bin] + flags + tests)
   if not tests: invocation += " --all"
   invocation += " | tee " + dotpartestlog
   subprocess.call([os.environ["SHELL"], "-c", invocation], cwd = root + "/test")

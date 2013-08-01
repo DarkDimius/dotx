@@ -37,6 +37,32 @@
         "*.js",
         "*.orig"
       ],
+      "path": "/Users/xeno_by/Projects/$PROJECT_NAME/src/continuations"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.js",
+        "*.orig"
+      ],
+      "name": "ScalaIDE",
+      "path": "/Users/xeno_by/Projects/$PROJECT_NAME/src/scala-ide"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.js",
+        "*.orig"
+      ],
+      "name": "SBT",
+      "path": "/Users/xeno_by/Projects/sbt"
+    },
+    {
+      "file_exclude_patterns":
+      [
+        "*.js",
+        "*.orig"
+      ],
       "path": "/Users/xeno_by/Projects/$PROJECT_NAME/test/files"
     },
     {

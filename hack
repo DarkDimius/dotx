@@ -43,6 +43,7 @@ try:
   target = check_output(["hack-branch", target]).strip()
   branch = target[target.find(":") + 1:]
   short_target = target[target.rfind("/") + 1:]
+  bash_alias = "ticket" + short_target if short_target[0].isdigit() else short_target
   script = Popen(["hack-home", target], stdout=PIPE)
   project_home = script.communicate()[0].strip() or os.path.expandvars("$HOME/Projects/") + short_target
   exists = script.returncode == 0
@@ -58,7 +59,6 @@ try:
   sandbox = project_home + "/sandbox"
   sublime_projects = os.path.expandvars("$HOME/Library/Application Support/Sublime Text 3/Projects")
   sublime_project = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-project"
-  print sublime_project
   sublime_workspace = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-workspace"
   bashrc = os.path.expandvars("$HOME/.bashrc")
   alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows")
@@ -98,11 +98,10 @@ try:
     checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
-      bashrc.append("""function s{} { target="$(hack-home "{}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
-      bashrc.append("""function sb{} { target="$(hack-home "{}")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{}", short_target))
+      bashrc.append("""function {0} { target="$(hack-home "{1}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{0}", bash_alias).replace("{1}", short_target))
       return bashrc
     update_bashrc(create_aliases)
-    checkpoint("Created Bash aliases s" + short_target + " and sb" + short_target)
+    checkpoint("Created Bash alias " + bash_alias)
   elif delete:
     introspect = check_comm(["hub-introspect"], cwd = project_home)
     status = introspect[3]
@@ -117,11 +116,10 @@ try:
     comm(["rm", "-rf", alfredextension])
     checkpoint("Deleted the Alfred shortcut named " + short_target)
     def delete_aliases(bashrc):
-      s_alias = """function s{} {""".replace("{}", short_target)
-      sb_alias = """function sb{} {""".replace("{}", short_target)
-      return [line for line in bashrc if not line.startswith(s_alias) and not line.startswith(sb_alias)]
+      aliasdef_prefix = """function {0} {""".replace("{0}", bash_alias)
+      return [line for line in bashrc if not line.startswith(aliasdef_prefix)]
     update_bashrc(delete_aliases)
-    checkpoint("Deleted Bash aliases s" + short_target + " and sb" + short_target)
+    checkpoint("Deleted Bash alias " + bash_alias)
 
   if interactive:
     sublime_is_open = "Sublime" in check_output(["ps", "aux"])
@@ -148,8 +146,11 @@ try:
       check_comm(["subl", "--command", "my_hack"])
       check_comm(["subl", "--command", "my_hack"]) # repeat again, somehow sublime doesn't switch to the focused window on the first go
     elif status == False:
-      print "project not open, running subl --project"
-      if not delete: check_comm(["subl", "--project", sublime_project])
+      if not delete:
+        print "project not open, running subl --project"
+        check_comm(["subl", "--project", sublime_project])
+      else:
+        print "project not open, nothing more to do"
     elif status == None:
       if retry:
         print "tried retrying, but it failed to work again"

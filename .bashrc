@@ -98,6 +98,7 @@ alias pr="/usr/local/bin/pullrequest"
 alias t="partest"
 alias tmacro="partest-macro --macros-only"
 alias treify="partest-macro --macros-and-reify"
+alias tann="partest files/neg/macro-annotation-* files/run/macro-annotation-*"
 alias ta="partest --all"
 alias td="partest-diff"
 alias td1="partest-diff 1"
@@ -194,6 +195,7 @@ complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
 alias rmc="rm-classfiles"
+alias jd="open *.class"
 alias s="rmc && scalac *Test*.scala"
 alias sli="rmc && scalac *Test*.scala -Xlog-implicits"
 alias sp="rmc && scalac *Test*.scala -Xprint:parser"
@@ -211,9 +213,28 @@ alias ssy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite
 alias ssty="rmc && scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias ssiy="rmc && scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
 alias ssyy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
+alias ks="scalac *Test*.scala"
+alias ksli="scalac *Test*.scala -Xlog-implicits"
+alias ksp="scalac *Test*.scala -Xprint:parser"
+alias kst="scalac *Test*.scala -Xprint:typer"
+alias ksy="scalac *Test*.scala -Ymacro-debug-lite"
+alias ksty="scalac *Test*.scala -Ytyper-debug"
+alias ksiy="scalac *Test*.scala -Yinfer-debug"
+alias ksyy="scalac *Test*.scala -Ymacro-debug-verbose"
+alias ksm="scalac *Macros*.scala"
+alias kss="scalac *Macros*.scala && scalac Test*.scala"
+alias kssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
+alias kssp="scalac *Macros*.scala && scalac Test*.scala -Xprint:parser"
+alias ksst="scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
+alias kssy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
+alias kssty="scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
+alias kssiy="scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
+alias kssyy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
 alias r="scala Test"
 alias sr="rmc && scalac *Test*.scala && scala Test"
 alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
+alias ksr="scalac *Test*.scala && scala Test"
+alias kssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias sus="sync-upstream"
 
 alias ez='subl /usr/local/dotx/.bashrc'
@@ -236,10 +257,10 @@ alias spark='cd "$HOME/Projects/Spark"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sbmaster { target="$(hack-home "master")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function sb210x { target="$(hack-home "2.10.x")/sandbox"; if [[ $? == 0 ]]; then cd "$target"; fi }
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function ticket3772 { target="$(hack-home "3772")"; if [[ $? == 0 ]]; then cd "$target"; fi }

@@ -3842,9 +3842,13 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-116.ImlJf9: Permission denied
+Can't cd to (/private/tmp/) launchd-205.dBsyGM: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-362.bzOnpX: Permission denied
+Can't cd to (/private/tmp/) launchd-299.7MYAbU: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-532.TCNnSl: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-57236.IcpbT2: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3930,6 +3934,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permiss
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) T: Permission denied
@@ -3953,6 +3959,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9221,25 +9229,32 @@ user.workflow.046E158B-7C12-467B-9890-5F0FD953B89F
 user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
 user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
 user.workflow.0e9693af-ee8b-4df5-8f5b-87ad7bb78e1d
+user.workflow.0ea6dbfe-adba-43bc-b8bc-32ba9f15b09e
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2B3ABB17-14EA-4557-AB1F-1F7E4A64154E
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
+user.workflow.3ac62ba4-ce7c-42a6-8087-71e7ff567d09
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
+user.workflow.49e993d2-e939-4ea8-a34b-b77220717e1a
 user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
 user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
 user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
+user.workflow.896760af-b97f-4bb3-a3ed-20c015d6f4a5
+user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
 user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
+user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.A8682814-1EC6-486F-889B-A01BF60FE482
 user.workflow.B17864E9-DDDD-464D-8720-DDD06B609208
 user.workflow.B4316C18-A1BB-4257-BAD3-07717DE3FF8F
 user.workflow.BA45CD46-EF6A-46EE-81BA-AF2781C1FB14
 user.workflow.D4482E39-5319-449B-A33B-1A99946C19AB
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
+user.workflow.bdd9b57a-5ea7-4b27-b132-6152b208d374
 
 ==================
 Firefox extensions:
@@ -9535,6 +9550,30 @@ KeyRemap4MacBook private.xml:
       --KeyToKey--
       KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag :: SHIFT_L,
       KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Command + Shift + . => Command + Shift + ,</name>
+    <identifier>private.command_shift_dot_comma</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
     </autogen>
   </item>
 </root>

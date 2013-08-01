@@ -276,4 +276,28 @@
       KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
     </autogen>
   </item>
+  <item>
+    <name>(System-wide) Command + Shift + . => Command + Shift + ,</name>
+    <identifier>private.command_shift_dot_comma</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
+    </autogen>
+  </item>
 </root>
