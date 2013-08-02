@@ -48,6 +48,7 @@ function gci { git push origin $(git rev-parse --abbrev-ref HEAD); }
 function gci+ { git push origin +$(git rev-parse --abbrev-ref HEAD); }
 function gpo { git pull origin $(git rev-parse --abbrev-ref HEAD); }
 function gpu { git pull upstream $(git rev-parse --abbrev-ref HEAD); }
+alias git='git --no-pager'
 alias gs='git status'
 alias grb='git rebase'
 alias grbi='git rebase -i'
