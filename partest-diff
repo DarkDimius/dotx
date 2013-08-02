@@ -13,7 +13,7 @@ if script.returncode != 0:
 
 if output.endswith("/"): output = output[:-1]
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
-test = root + "/test/" + output
+test = root + "/test/files/" + output
 base, ext = os.path.splitext(test)
 flavor = os.path.basename(os.path.dirname(base))
 checkfile = base + ".check"

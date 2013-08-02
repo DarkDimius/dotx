@@ -27,11 +27,9 @@ def strip_trailing_slash(filename):
   return filename[:-1] if filename.endswith("/") else filename
 def strip_leading_slash(filename):
   return filename[1:] if filename.startswith("/") else filename
-def prepend_files_slash_if_necessary(filename):
-  return filename if filename.startswith("files/") else "files/" + filename
 tests = sys.argv[1:]
 tests = list([test for tests in map(explode_urls, tests) for test in tests])
-tests = map(prepend_files_slash_if_necessary, map(strip_leading_slash, map(strip_trailing_slash, tests)))
+tests = map(strip_leading_slash, map(strip_trailing_slash, tests))
 if all:
   if tests:
     print "can't provide any tests when --all is specified"
@@ -54,7 +52,8 @@ def update_dotpartest():
     def fullname_from_match(m):
       test = m.group(1)
       if not test.startswith("/"): test = "/" + test
-      if not test.startswith("/files"): test = "/files" + test
+      if test.startswith(root + "/test/files"): test = test[len(root + "/test/files"):]
+      if test.startswith("/files"): test = test[len("/files"):]
       if test.startswith("/"): test = test[1:]
       return test
     m1 = re.match(r"^testing: \[\.\.\.\](.*?)\s*\[FAILED\]\s*$", line) # 2.10.x partest
@@ -105,7 +104,7 @@ if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
     sys.exit(1)
 
 try:
-  invocation = " ".join([bin] + flags + tests)
+  invocation = " ".join([bin] + flags + map(lambda test: "files/" + test, tests))
   if not tests: invocation += " --all"
   invocation += " | tee " + dotpartestlog
   subprocess.call([os.environ["SHELL"], "-c", invocation], cwd = root + "/test")
