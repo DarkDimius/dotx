@@ -80,7 +80,7 @@ for nbit in range(0, 64):
     flags.append(reference[nbit])
 
 if alfred:
-  formatted = map(lambda flag: { "title": flag, "subtitle": "" }, flags)
+  formatted = map(lambda flag: { "title": flag.replace("<", "&lt;").replace(">", "&gt;"), "subtitle": "" }, flags)
   text = u"""
   <item arg="%(title)s" uid="%(title)s" valid="no">
     <title>%(title)s</title>
