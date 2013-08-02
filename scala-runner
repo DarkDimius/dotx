@@ -188,13 +188,13 @@ while [[ $# -gt 0 ]]; do
 done
 
 case $programName in
-    scala) addResidual "-language:experimental.macros" &&
+    scala) while read opt ; do addResidual "$opt"; done < <(scala-options) &&
            addJava "-Dscala.repl.autoruncode=$HOME/.scala_autorun" &&
            addScala "-Dscala.repl.autoruncode=$HOME/.scala_autorun";;
-   scalac) addResidual "-language:experimental.macros";;
-      fsc) ;;
- scaladoc) ;;
-   scalap) ;;
+   scalac) while read opt ; do addResidual "$opt"; done < <(scalac-options) ;;
+      fsc) while read opt ; do addResidual "$opt"; done < <(fsc-options) ;;
+ scaladoc) while read opt ; do addResidual "$opt"; done < <(scaladoc-options) ;;
+   scalap) while read opt ; do addResidual "$opt"; done < <(scalap-options) ;;
         *) ;;
 esac
 

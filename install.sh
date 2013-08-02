@@ -171,6 +171,11 @@ install-into-bin meeting-notes
 install-into-bin reflection-meetings
 install-into-bin scala-meetings
 install-into-bin subl-open-project
+install-into-bin scala-options scala-options
+install-into-bin scala-options scalac-options
+install-into-bin scala-options fsc-options
+install-into-bin scala-options scaladoc-options
+install-into-bin scala-options scalap-options
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
