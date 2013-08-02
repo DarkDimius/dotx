@@ -112,6 +112,7 @@ install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
 install-into-home hack.alfredextension .hack.alfredextension
 install-into-home partest-completion.bash .partest-completion.bash
+install-into-home subl-open-project-completion.bash .subl-open-project-completion.bash
 install-into-home .scala_tier
 
 install-into-bin pullrequest
@@ -169,6 +170,7 @@ install-into-bin bits-to-flags
 install-into-bin meeting-notes
 install-into-bin reflection-meetings
 install-into-bin scala-meetings
+install-into-bin subl-open-project
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit

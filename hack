@@ -4,7 +4,6 @@ from subprocess import check_output, call, Popen, PIPE
 
 interactive = not "--batch" in sys.argv
 force = "--force" in sys.argv
-retry = "--retry" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
 
 def check_comm(*args, **kwargs):
@@ -122,41 +121,8 @@ try:
     checkpoint("Deleted Bash alias " + bash_alias)
 
   if interactive:
-    sublime_is_open = "Sublime" in check_output(["ps", "aux"])
-    hack_sublime = os.path.expandvars("$HOME/.hack_sublime")
-    with open(hack_sublime, "w") as f: f.write(original_target + "\n" + sublime_project + "\n" + "OPEN?")
-    check_comm(["subl", "--command", "my_hack"])
-    def project_is_open():
-      def loop(retries_left):
-        with open(hack_sublime, "r") as f:
-          text = f.read().decode()
-          yep, nope = text == "YEP", text == "NOPE"
-          if yep or nope:
-            print "got status report from Sublime: " + str(text)
-            return yep
-          else:
-            time.sleep(0.1)
-            if retries_left: return loop(retries_left - 1)
-            else: print "didn't get a status report from Sublime"; return None
-      return loop(3)
-    status = project_is_open()
-    if status == True:
-      print "project is open, making it focused"
-      with open(hack_sublime, "w") as f: f.write(original_target + "\n" + sublime_project + "\n" + "FOCUS!")
-      check_comm(["subl", "--command", "my_hack"])
-      check_comm(["subl", "--command", "my_hack"]) # repeat again, somehow sublime doesn't switch to the focused window on the first go
-    elif status == False:
-      if not delete:
-        print "project not open, running subl --project"
-        check_comm(["subl", "--project", sublime_project])
-      else:
-        print "project not open, nothing more to do"
-    elif status == None:
-      if retry:
-        print "tried retrying, but it failed to work again"
-      else:
-        print "retrying the hack, because Sublime didn't respond to the previous one"
-        call(["hack", target, "--retry"]) # don't know why, but it helps
+    if not delete:
+      check_comm(["subl-open-project", sublime_project])
 except:
   tpe, value, tb = sys.exc_info()
   if tpe != SystemExit:

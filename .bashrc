@@ -18,6 +18,7 @@ source $(brew --prefix)/etc/bash_completion
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
 source $HOME/.partest-completion.bash
+source $HOME/.subl-open-project-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 function parse_git_branch {
@@ -237,6 +238,7 @@ alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias ksr="scalac *Test*.scala && scala Test"
 alias kssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias sus="sync-upstream"
+alias sop="subl-open-project"
 
 alias ez='subl /usr/local/dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
@@ -246,6 +248,7 @@ alias db='cd "/Users/Shared/Dropbox/Public"'
 alias dl='cd "$HOME/Downloads"'
 alias prj='cd "$HOME/Projects"'
 alias des='cd "$HOME/Library/Application Support/Sublime Text 3"'
+alias des3='des'
 alias pap='cd "$HOME/Projects/DocsScalamacrosOrg"'
 alias pag='cd "$HOME/Projects/DocsScalamacrosOrg"'
 alias dotx='cd "/usr/local/dotx"'
