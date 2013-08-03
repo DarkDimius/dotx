@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 import os, sys, subprocess, re, time, glob
+from subprocess import check_output, call, check_call, Popen, PIPE
 
 all = "--all" in sys.argv
 verbose = "--verbose" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
 
 root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
-if (root.startswith("/Users/xeno_by/Projects/scala-pickling") or root.startswith("/Users/xeno_by/Projects/spick")) and not sys.argv[1:]:
-  prefix = root + "/test/"
-  sys.argv = sys.argv + map(lambda path: path[len(prefix):], glob.glob(root + "/test/files/pickling/*.scala"))
+cwd = os.path.abspath(".")
+if not cwd.startswith(root) and not "/Paradise" in cwd:
+  print "not at scala root"
+  sys.exit(1)
 
 bin = root + "/test/partest"
 dotpartest = root + "/.partest"
 dotpartestlog = root + "/.partestlog"
-
-flags = ["--verbose"] if verbose else []
 
 if not os.path.exists(bin):
   print bin + " does not exist"
@@ -38,7 +38,7 @@ else:
   if not tests and os.path.exists(dotpartest):
     tests = subprocess.Popen(["partest-suite", "--view"], stdout=subprocess.PIPE, cwd = root).communicate()[0].splitlines()
   if not tests:
-    print "No tests in " + dotpartest
+    print "no tests in " + dotpartest
     sys.exit(1)
 
 def update_dotpartest():
@@ -104,7 +104,10 @@ if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
     sys.exit(1)
 
 try:
-  invocation = " ".join([bin] + flags + map(lambda test: "files/" + test, tests))
+  scalac_flags = check_output(["partest-options"]).strip().split("\n")
+  partest_flags = ["--verbose"] if verbose else []
+  os.environ["SCALAC_OPTS"] = " ".join(scalac_flags)
+  invocation = " ".join([bin] + partest_flags + map(lambda test: "files/" + test, tests))
   if not tests: invocation += " --all"
   invocation += " | tee " + dotpartestlog
   subprocess.call([os.environ["SHELL"], "-c", invocation], cwd = root + "/test")

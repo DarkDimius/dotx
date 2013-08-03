@@ -97,7 +97,8 @@ alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
-alias t="partest"
+alias t="gt"
+alias tall="partest --all"
 alias tmacro="partest-macro --macros-only"
 alias treify="partest-macro --macros-and-reify"
 alias tann="partest neg/macro-annotation-* run/macro-annotation-*"
@@ -196,6 +197,7 @@ alias hh="hack-homes --all"
 complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
+alias gt="gaika test"
 alias rmc="rm-classfiles"
 alias jd="open *.class"
 alias s="rmc && scalac *Test*.scala"

@@ -2,43 +2,47 @@
 import sys, os, subprocess, json, shutil, time
 from subprocess import check_output, call, check_call, Popen, PIPE
 
-sublime = "--sublime" in sys.argv
-sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
-
 if len(sys.argv) < 2:
-  print "usage: " + sys.argv[0] + " [--sublime] <action> [<args>]"
+  print "usage: " + sys.argv[0] + " <action> [<args>]"
   sys.exit(1)
 
 action = sys.argv[1]
 args = sys.argv[2:]
+cwd = os.path.abspath(".")
+git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
+scala_root = check_output(["scala-root"]).strip()
+root = git_root if not "fatal:" in git_root else cwd
 
 env = {}
 env["action"] = action
 env["args"] = args
 env["working_dir"] = os.path.abspath(".")
 env["status"] = 0
+env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
+env["result_line_regex"] = ""
+env["result_base_dir"] = "" # real value is set elsewhere
+
+parent_name = check_output(["ps", "-o", "command", str(os.getppid())])
+sublime = "Sublime Text" in parent_name
+sbt_core = ["sbt", "-Dsbt.log.noformat=true"] if sublime else ["sbt"]
 
 def notify(msg):
   if (sublime): call(["growlnotify", "-n", "Kepler", "-m", str(msg)])
   else: print msg
 
 def exit(retcode):
-  # if sublime:
-  #   print("[Exited with code " + str(retcode) + "]")
-  print("[Exited with code " + str(retcode) + "]")
+  # delay this so that everyone interested can chime in and set root
+  env["result_base_dir"] = root
+  if sublime:
+    print("[Exited with code " + str(retcode) + "]")
   sys.exit(retcode)
 
 try:
   if action == "compile":
     target = args[0] if args else ""
     # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
-    git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE).communicate()[0][:-1]
-    if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/scala-pickling"):
-      root = git_root
-      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-      env["result_line_regex"] = ""
-      env["result_base_dir"] = root
-      exit(call(["sbt", "-Dsbt.log.noformat=true", "package"], cwd = root))
+    if git_root != scala_root and os.path.exists(os.path.join(git_root, "project", "build.scala")):
+      exit(call(sbt_core + ["package"], cwd = root))
     elif args and args[0].endswith(".tex"):
       target = args[0]
       root = os.path.dirname(os.path.abspath(target))
@@ -57,12 +61,9 @@ try:
       status = call(["xelatex", tex], cwd = root)
       exit(status)
     else:
-      root = check_output(["scala-root"]).strip()
-      if os.path.abspath(".").startswith(root):
+      root = scala_root
+      if cwd.startswith(root):
         tier = check_output(["scala-tier"]).strip()
-        env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]scala):([0-9]+)"
-        env["result_line_regex"] = ""
-        env["result_base_dir"] = root
         if tier == "pack": exit(call(["ant"], cwd = root))
         elif tier == "quick": exit(call(["ant", "quick.comp"], cwd = root))
         elif tier == "locker": exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
@@ -71,7 +72,7 @@ try:
         print("unsupported target at " + os.path.abspath("."))
         exit(1)
   elif action == "clean":
-    root = check_output(["scala-root"]).strip()
+    root = scala_root
     def clean_quick(target):
       quick = os.path.join(root, "build/quick")
       complete = os.path.join(quick, target + ".complete")
@@ -94,6 +95,11 @@ try:
     else:
       notify("unknown clean target: " + target)
       exit(1)
+  elif action == "test":
+    if git_root != scala_root and os.path.exists(os.path.join(git_root, "project", "build.scala")):
+      exit(call(sbt_core + ["project tests", "test"] + args, cwd = root))
+    else:
+      exit(call(["partest"] + args, cwd = scala_root))
   else:
     notify("unsupported action " + action)
     exit(1)
