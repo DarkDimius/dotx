@@ -262,8 +262,7 @@ alias docs='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
 alias spick210='cd "$HOME/Projects/scala-pickling-210x"'
 alias spick211='cd "$HOME/Projects/scala-pickling-211"'
 alias spick=spick211
-alias sspick='cd "$HOME/Projects/Paradise210"'
-alias spark='cd "$HOME/Projects/Spark"'
+alias paradise='cd "$HOME/Projects/Paradise/sandbox/src/main/scala"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
