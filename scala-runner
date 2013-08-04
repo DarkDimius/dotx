@@ -188,13 +188,23 @@ while [[ $# -gt 0 ]]; do
 done
 
 case $programName in
-    scala) while read opt ; do addResidual "$opt"; done < <(scala-options) &&
-           addJava "-Dscala.repl.autoruncode=$HOME/.scala_autorun" &&
+    scala) addJava "-Dscala.repl.autoruncode=$HOME/.scala_autorun" &&
            addScala "-Dscala.repl.autoruncode=$HOME/.scala_autorun";;
-   scalac) while read opt ; do addResidual "$opt"; done < <(scalac-options) ;;
-      fsc) while read opt ; do addResidual "$opt"; done < <(fsc-options) ;;
- scaladoc) while read opt ; do addResidual "$opt"; done < <(scaladoc-options) ;;
-   scalap) while read opt ; do addResidual "$opt"; done < <(scalap-options) ;;
+   scalac) ;;
+      fsc) ;;
+ scaladoc) ;;
+   scalap) ;;
+        *) ;;
+esac
+
+input_residual_args=( ${residual_args[@]} )
+residual_args=( )
+case $programName in
+    scala) while read opt ; do addResidual "$opt"; done < <(scala-options "${input_residual_args[@]}") ;;
+   scalac) while read opt ; do addResidual "$opt"; done < <(scalac-options "${input_residual_args[@]}") ;;
+      fsc) while read opt ; do addResidual "$opt"; done < <(fsc-options "${input_residual_args[@]}") ;;
+ scaladoc) while read opt ; do addResidual "$opt"; done < <(scaladoc-options "${input_residual_args[@]}") ;;
+   scalap) while read opt ; do addResidual "$opt"; done < <(scalap-options "${input_residual_args[@]}") ;;
         *) ;;
 esac
 

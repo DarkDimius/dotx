@@ -2,10 +2,6 @@
 import os, sys, glob
 from subprocess import check_output, call, check_call, Popen, PIPE
 
-if len(sys.argv) != 1:
-  print >> sys.stderr, "usage: scala-options|scalac-options|fsc-options|scaladoc-options|scalap-options|partest-options"
-  sys.exit(1)
-
 program_name = os.path.basename(sys.argv[0])
 scalac = program_name == "scalac-options"
 scala = program_name == "scala-options"
@@ -13,7 +9,10 @@ fsc = program_name == "fsc-options"
 scaladoc = program_name == "scaladoc-options"
 scalap = program_name == "scalap-options"
 partest = program_name == "partest-options"
+options = sys.argv[1:]
 
 if scalac or scala:
-  print "-language:experimental.macros"
+  options.append("-language:experimental.macros")
 
+for opt in options:
+  print opt
