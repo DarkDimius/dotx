@@ -255,8 +255,8 @@ alias dl='cd "$HOME/Downloads"'
 alias prj='cd "$HOME/Projects"'
 alias des='cd "$HOME/Library/Application Support/Sublime Text 3"'
 alias des3='des'
-alias pap='cd "$HOME/Projects/DocsScalamacrosOrg"'
-alias pag='cd "$HOME/Projects/DocsScalamacrosOrg"'
+alias pap='cd "$HOME/Projects/SiteScalamacrosOrg"'
+alias pag='cd "$HOME/Projects/SiteScalamacrosOrg"'
 alias dotx='cd "/usr/local/dotx"'
 alias docs='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
 alias spick210='cd "$HOME/Projects/scala-pickling-210x"'
@@ -272,4 +272,4 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function ticket3772 { target="$(hack-home "3772")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function ticket6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
