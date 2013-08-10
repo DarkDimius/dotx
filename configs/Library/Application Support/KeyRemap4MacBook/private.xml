@@ -40,6 +40,10 @@
     <appname>STARCRAFT</appname>
     <equal>com.blizzard.starcraft2</equal>
   </appdef>
+  <appdef>
+    <appname>MAILTAB</appname>
+    <equal>com.fiplab.mailtab</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>

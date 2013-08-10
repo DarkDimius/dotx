@@ -273,3 +273,13 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function ticket6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function ticket7733 { target="$(hack-home "7733")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function compile-time-only { target="$(hack-home "compile-time-only")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kill-introduce-top-level { target="$(hack-home "kill-introduce-top-level")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function defdef-name-now-termname { target="$(hack-home "defdef-name-now-termname")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function showraw { target="$(hack-home "showraw")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function auto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function mk-type-completer { target="$(hack-home "mk-type-completer")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function ticket3772 { target="$(hack-home "3772")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function toolbox-current-run-compiles { target="$(hack-home "toolbox-current-run-compiles")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function macro-expansion-error-pos { target="$(hack-home "macro-expansion-error-pos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
