@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+import sys, re, os
+from subprocess import call, check_output, Popen
+
+if len(sys.argv) < 6:
+  print "usage: " + sys.argv[0] + " <file name> <line number> <text before click> <text after click> <cwd>"
+  sys.exit(1)
+
+file_name = sys.argv[1]
+line_number = sys.argv[2]
+before_click = sys.argv[3]
+after_click = sys.argv[4]
+cwd = sys.argv[5]
+
+def find(root, name):
+  # NOTE: find is too slow - I got too spoiled by Sublime
+  # names = check_output(["find", root, "-path", "*" + name]).strip().split("\n")
+  # if len(names) == 1: return names[0]
+  src = os.path.join(root, "src")
+  for dir_name in os.listdir(src):
+    # call(["terminal-notifier", "-message", dir_name])
+    candidate = os.path.join(src, dir_name, name)
+    if os.path.exists(candidate):
+      return candidate
+
+if file_name:
+  command = file_name + ":" + line_number if line_number else file_name
+  call(["subl", command])
+else:
+  prefix = before_click[before_click.rfind("\ ") + 1:]
+  suffix = after_click[0 : after_click.find("\ ")]
+  line = (prefix + suffix).replace("\(", "(").replace("\)", ")").strip()
+  m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
+  scala_root = check_output(["scala-root"], cwd = cwd).strip()
+  qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
+  full_name = find(scala_root, qualified_name)
+  if full_name:
+    command = full_name + ":" + m.group("line")
+    call(["subl", command])
+
