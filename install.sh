@@ -177,6 +177,7 @@ install-into-bin scala-options fsc-options
 install-into-bin scala-options scaladoc-options
 install-into-bin scala-options scalap-options
 install-into-bin scala-options partest-options
+install-into-bin subl-open-file-from-iterm
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit

@@ -54,6 +54,7 @@ Mission Control.app
 Notes.app
 Pharo2.0.app
 Photo Booth.app
+Pocket.app
 Preview.app
 QuickTime Player.app
 Racket v5.3.4
@@ -3843,13 +3844,9 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-206.c9EAdp: Permission denied
+Can't cd to (/private/tmp/) launchd-116.cEiM4X: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-359.099fyE: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-5638.JYSX8c: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-6065.0k5Aoc: Permission denied
+Can't cd to (/private/tmp/) launchd-355.jvQLke: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3958,8 +3955,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9226,10 +9221,15 @@ Alfred 2 extensions:
 user.workflow.0421FB21-22B7-460C-8BA6-0127D99B19E9
 user.workflow.0448b8b8-0ab9-4f85-97bb-4401758d6561
 user.workflow.046E158B-7C12-467B-9890-5F0FD953B89F
+user.workflow.04cfb4d5-5dad-4825-9316-767496b3f6f1
 user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
 user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
+user.workflow.0a3d295e-148c-46c7-9984-8e53345c4660
 user.workflow.0e9693af-ee8b-4df5-8f5b-87ad7bb78e1d
+user.workflow.1063ca71-d6db-4de0-9eaf-3f135161e469
+user.workflow.13b09ed3-ab6f-4a2a-99c8-6d370397524c
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
+user.workflow.2504b772-49f8-4faa-b48f-da8db2555f62
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2B3ABB17-14EA-4557-AB1F-1F7E4A64154E
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
@@ -9241,11 +9241,15 @@ user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
 user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
+user.workflow.72c06124-cfb7-4009-9ac5-06e3c0229586
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
 user.workflow.896760af-b97f-4bb3-a3ed-20c015d6f4a5
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
+user.workflow.8b54f0e1-e26e-456c-b027-facbb1d4c7ff
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
+user.workflow.982ece7e-a7f6-43ae-8d8d-c64ca678b958
 user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
+user.workflow.9958a65e-ee64-4740-b2e8-1967ba43c9cc
 user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.A8682814-1EC6-486F-889B-A01BF60FE482
 user.workflow.B17864E9-DDDD-464D-8720-DDD06B609208
@@ -9253,6 +9257,9 @@ user.workflow.B4316C18-A1BB-4257-BAD3-07717DE3FF8F
 user.workflow.BA45CD46-EF6A-46EE-81BA-AF2781C1FB14
 user.workflow.D4482E39-5319-449B-A33B-1A99946C19AB
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
+user.workflow.c62cba8b-a169-4808-852d-6ca3814774cb
+user.workflow.d3e3b3b6-e59a-4d4f-887e-52d0d85ee7f5
+user.workflow.f792d549-849b-4abb-a531-344cc32c0a8d
 
 ==================
 Firefox extensions:
@@ -9261,6 +9268,7 @@ customizable-shortcuts@timtaubert.de.xpi
 firebug@software.joehewitt.com.xpi
 firefox@ghostery.com.xpi
 firegestures@xuldev.org.xpi
+isreaditlater@ideashower.com
 jsonovich@lackoftalent.org.xpi
 keyconfig@petricek.net.xpi
 omnibar@ajitk.com.xpi

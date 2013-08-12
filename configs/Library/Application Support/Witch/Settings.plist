@@ -8,6 +8,8 @@
 	<false/>
 	<key>Activate On No Modifiers</key>
 	<true/>
+	<key>After-Close Selection</key>
+	<integer>3</integer>
 	<key>Alternate Panel Font</key>
 	<string>LucidaGrande</string>
 	<key>Application Exceptions</key>
@@ -35,18 +37,11 @@
 	coaEk5UDhAJmZoMAAAA/AYaG
 	</data>
 	<key>Cycle All Windows</key>
+	<dict/>
+	<key>Cycle Minimized Windows</key>
+	<dict/>
+	<key>Cycle Non-Minimized Windows</key>
 	<dict>
-		<key>Backward</key>
-		<dict>
-			<key>Character</key>
-			<string></string>
-			<key>Key Code</key>
-			<string>48</string>
-			<key>Modifiers</key>
-			<string>1179914</string>
-			<key>Visual Representation</key>
-			<string>⇧⌘⇥</string>
-		</dict>
 		<key>Forward</key>
 		<dict>
 			<key>Character</key>

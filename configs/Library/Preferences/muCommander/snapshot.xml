@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/Paradise/plugin/target/scala-2.10/</location>
+                            <location>/Users/xeno_by/Projects/jenkins-scripts/job/macro-paradise/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>56</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/jenkins-scripts/job/macro-paradise/paradise/plugin/target/scala-2.10/</location>
+                            <location>/Users/xeno_by/Projects/jenkins-scripts/job/macro-paradise/scala/</location>
                         </tab-0>
                     </tabs>
                 </right>

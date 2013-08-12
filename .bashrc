@@ -283,3 +283,6 @@ function mk-type-completer { target="$(hack-home "mk-type-completer")"; if [[ $?
 function ticket3772 { target="$(hack-home "3772")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function toolbox-current-run-compiles { target="$(hack-home "toolbox-current-run-compiles")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function macro-expansion-error-pos { target="$(hack-home "macro-expansion-error-pos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function fundep-materialization { target="$(hack-home "fundep-materialization")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function fundep-views { target="$(hack-home "fundep-views")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function approximate-abstracts { target="$(hack-home "approximate-abstracts")"; if [[ $? == 0 ]]; then cd "$target"; fi }
