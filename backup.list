@@ -3846,7 +3846,11 @@ Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-116.cEiM4X: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-12790.4Sgw01: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-355.jvQLke: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-5165.4oFvlX: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3955,6 +3959,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9242,6 +9248,7 @@ user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
 user.workflow.72c06124-cfb7-4009-9ac5-06e3c0229586
+user.workflow.8158a722-bdaf-4ac1-9b78-69d4c36f93b3
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
 user.workflow.896760af-b97f-4bb3-a3ed-20c015d6f4a5
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
@@ -9259,6 +9266,7 @@ user.workflow.D4482E39-5319-449B-A33B-1A99946C19AB
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 user.workflow.c62cba8b-a169-4808-852d-6ca3814774cb
 user.workflow.d3e3b3b6-e59a-4d4f-887e-52d0d85ee7f5
+user.workflow.e7390aab-bafc-4761-aeda-e8e36f3e8649
 user.workflow.f792d549-849b-4abb-a531-344cc32c0a8d
 
 ==================
@@ -9487,7 +9495,9 @@ KeyRemap4MacBook private.xml:
         --KeyToKey--
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::A, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -9497,7 +9507,9 @@ KeyRemap4MacBook private.xml:
         --KeyToKey--
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -9507,7 +9519,9 @@ KeyRemap4MacBook private.xml:
         --KeyToKey--
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::E, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -9517,7 +9531,9 @@ KeyRemap4MacBook private.xml:
         --KeyToKey--
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -9585,5 +9601,35 @@ KeyRemap4MacBook private.xml:
       KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
       KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
     </autogen>
+  </item>
+  <item>
+    <name>Command + H => Command + M</name>
+    <identifier>private.command_h_to_command_m</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_R,
+    </autogen>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_R,
+      </autogen>
+    </block>
   </item>
 </root>

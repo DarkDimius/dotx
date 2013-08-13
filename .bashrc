@@ -286,3 +286,4 @@ function macro-expansion-error-pos { target="$(hack-home "macro-expansion-error-
 function fundep-materialization { target="$(hack-home "fundep-materialization")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fundep-views { target="$(hack-home "fundep-views")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function approximate-abstracts { target="$(hack-home "approximate-abstracts")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function ticket7733-master { target="$(hack-home "7733-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }

@@ -205,7 +205,9 @@
         --KeyToKey--
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::A, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -215,7 +217,9 @@
         --KeyToKey--
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -225,7 +229,9 @@
         --KeyToKey--
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::E, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -235,7 +241,9 @@
         --KeyToKey--
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
         KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
         KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
       </autogen>
     </block>
@@ -303,5 +311,35 @@
       KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
       KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
     </autogen>
+  </item>
+  <item>
+    <name>Command + H => Command + M</name>
+    <identifier>private.command_h_to_command_m</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_R,
+    </autogen>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_R,
+      </autogen>
+    </block>
   </item>
 </root>

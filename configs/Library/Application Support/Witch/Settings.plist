@@ -39,7 +39,19 @@
 	<key>Cycle All Windows</key>
 	<dict/>
 	<key>Cycle Minimized Windows</key>
-	<dict/>
+	<dict>
+		<key>Forward</key>
+		<dict>
+			<key>Character</key>
+			<string>	</string>
+			<key>Key Code</key>
+			<string>48</string>
+			<key>Modifiers</key>
+			<string>524576</string>
+			<key>Visual Representation</key>
+			<string>⌥⇥</string>
+		</dict>
+	</dict>
 	<key>Cycle Non-Minimized Windows</key>
 	<dict>
 		<key>Forward</key>
