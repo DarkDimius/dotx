@@ -2,7 +2,7 @@
 import sys, re, os
 from subprocess import call, check_output, Popen
 
-if len(sys.argv) < 6:
+if len(sys.argv) != 6:
   print "usage: " + sys.argv[0] + " <file name> <line number> <text before click> <text after click> <cwd>"
   sys.exit(1)
 
@@ -23,12 +23,14 @@ def find(root, name):
     if os.path.exists(candidate):
       return candidate
 
-if file_name:
+if os.path.isabs(file_name) and os.path.exists(file_name):
   command = file_name + ":" + line_number if line_number else file_name
   call(["subl", command])
 else:
-  prefix = before_click[before_click.rfind("\ ") + 1:]
-  suffix = after_click[0 : after_click.find("\ ")]
+  cut_prefix = before_click.rfind("\ ") + 1
+  prefix = before_click[cut_prefix:]
+  cut_suffix = after_click.find("\ ") if after_click.find("\ ") != -1 else len(after_click)
+  suffix = after_click[0:cut_suffix]
   line = (prefix + suffix).replace("\(", "(").replace("\)", ")").strip()
   m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
   scala_root = check_output(["scala-root"], cwd = cwd).strip()
