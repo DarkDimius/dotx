@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+import os, sys, re
+from subprocess import call, check_output, Popen
+
+call(["mono", "/usr/local/nemerle/ncc.exe"] + sys.argv[1:])
