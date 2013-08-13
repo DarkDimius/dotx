@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 import os, sys, re, json, urllib2
-from subprocess import Popen, PIPE
+from subprocess import Popen, PIPE, check_output
 
 if len(sys.argv) > 2:
   print "usage: " + sys.argv[0] + " [<target branch>]"
-  print "if the target branch is not specified"
-  print "the script will try to load it from ~/.pullrequest"
+  print "if the target branch is not specified and we're at scala root"
+  print "the script will try to guess the branch"
+  print "choosing between scala:2.10.x and scala:master"
   sys.exit(1)
 target_branch = sys.argv[1] if len(sys.argv) == 2 else None
 
@@ -20,12 +21,16 @@ if not status.startswith("no changes"):
   print status
   sys.exit(1)
 
-try:
-  with open(os.path.expandvars("$HOME/.pullrequest"), "r") as f:
-    config = json.load(f)
-except Exception as e:
-  config = []
-target_branch = target_branch or config.get(user + ":" + repo)
+git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
+scala_root = check_output(["scala-root"]).strip()
+root = git_root if not "fatal:" in git_root else cwd
+if not target_branch and scala_root == git_root:
+  def is_rooted_in(branch):
+    merge_base_sha = check_output(["git", "merge-base", "HEAD", "origin/" + branch]).strip()
+    branch_sha = check_output(["git", "rev-parse", "origin/" + branch]).strip()
+    return merge_base_sha == branch_sha
+  if is_rooted_in("2.10.x"): target_branch = "scala:2.10.x"
+  if is_rooted_in("master"): target_branch = "scala:master"
 
 data = urllib2.urlopen("https://api.github.com/repos/scala/scala/pulls").read()
 pr = [pr for pr in json.loads(data) if pr["head"]["label"] == user + ":" + branch]
