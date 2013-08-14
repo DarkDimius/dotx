@@ -179,6 +179,11 @@ install-into-bin scala-options scalap-options
 install-into-bin scala-options partest-options
 install-into-bin click-through
 install-into-bin ncc
+install-into-bin pull
+install-into-bin sbt-root
+install-into-bin git-root
+install-into-bin sbt
+install-into-bin sbt-the-rebel-cut
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
@@ -186,8 +191,3 @@ install-into-daemons by.xeno.ANT_OPTS
 install-into-daemons by.xeno.MAVEN_OPTS
 install-into-daemons by.xeno.EDITOR
 install-into-agents by.xeno.jenkins_agent
-
-if [[ ! -d "/usr/local/sbt" ]]; then
-  git clone https://github.com/xeno-by/sbt-extras /usr/local/sbt
-  ln -sv /usr/local/sbt/sbt /usr/local/bin/sbt
-fi

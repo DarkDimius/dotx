@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+import os, sys, subprocess
+from subprocess import Popen, PIPE
+
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0]
+  sys.exit(1)
+
+git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
+if not "fatal:" in git_root:
+  print git_root
+else:
+  sys.exit(1)

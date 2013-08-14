@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+import os, sys, subprocess
+from subprocess import call
+
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0]
+  sys.exit(1)
+
+def check_sbt_root(path):
+  has_build_sbt = os.path.exists(os.path.join(path, "build.sbt"))
+  has_project = os.path.exists(os.path.join(path, "project"))
+  if has_build_sbt or has_project:
+    print path
+    sys.exit(0)
+
+path = os.path.abspath(".")
+check_sbt_root(path)
+
+while path != os.path.dirname(path):
+  path = os.path.dirname(path)
+  check_sbt_root(path)
+
+sys.exit(1)
