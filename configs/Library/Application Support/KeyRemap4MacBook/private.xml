@@ -315,6 +315,7 @@
   <item>
     <name>Command + H => Command + M</name>
     <identifier>private.command_h_to_command_m</identifier>
+    <not>SUBLIME2,SUBLIME3</not>
     <autogen>
       --KeyToKey--
       KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
@@ -341,5 +342,17 @@
         KeyCode::M, ModifierFlag::COMMAND_R,
       </autogen>
     </block>
+  </item>
+  <item>
+    <name>Double click => Cmd + click</name>
+    <identifier>private.iterm2.double_click_to_cmd_click</identifier>
+    <only>ITERM2</only>
+    <lastpressedphysicalkey_only>PointingButton::LEFT</lastpressedphysicalkey_only>
+    <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::300</elapsedtimesincelastpressed_lessthan>
+    <autogen>
+      __PointingButtonToPointingButton__
+      PointingButton::LEFT,
+      PointingButton::LEFT, ModifierFlag::COMMAND_L
+    </autogen>
   </item>
 </root>
