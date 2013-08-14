@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/usr/local/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/Packages/User/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,7 +107,7 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>48</width>
+                            <width>64</width>
                             <show>true</show>
                         </size>
                     </file_table>
