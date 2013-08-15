@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/Packages/User/</location>
+                            <location>bookmark://Projects/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>37</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -114,7 +114,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Downloads/</location>
+                            <location>/Users/xeno_by/Projects/jenkins-scripts/job/macro-paradise-virt/paradise/plugin/target/scala-2.10/</location>
                         </tab-0>
                     </tabs>
                 </right>

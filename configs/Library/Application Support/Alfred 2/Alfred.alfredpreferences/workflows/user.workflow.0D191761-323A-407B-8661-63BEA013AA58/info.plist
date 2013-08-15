@@ -6,11 +6,11 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>7AF27E73-BD73-4E9F-9602-B2824E88B85D</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>17961C3A-9931-4745-871B-3266CB442EFC</string>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,42 +25,42 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>paradise 2.10.3</string>
+	<string>pr</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>subl-open-project paradise2103</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>17961C3A-9931-4745-871B-3266CB442EFC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>keyword</key>
-				<string>paradise2103</string>
+				<string>pr</string>
 				<key>text</key>
-				<string>Paradise 2.10.3</string>
+				<string>pr</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>7AF27E73-BD73-4E9F-9602-B2824E88B85D</string>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>pull {query} 2&gt;&amp;1</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -69,15 +69,15 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>17961C3A-9931-4745-871B-3266CB442EFC</key>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>60</real>
 		</dict>
-		<key>7AF27E73-BD73-4E9F-9602-B2824E88B85D</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>60</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
