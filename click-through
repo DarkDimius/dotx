@@ -16,27 +16,38 @@ def find(root, name):
   # NOTE: find is too slow - I got too spoiled by Sublime
   # names = check_output(["find", root, "-path", "*" + name]).strip().split("\n")
   # if len(names) == 1: return names[0]
-  src = os.path.join(root, "src")
-  for dir_name in os.listdir(src):
-    # call(["terminal-notifier", "-message", dir_name])
-    candidate = os.path.join(src, dir_name, name)
+  for dir_name in os.listdir(root):
+    candidate = os.path.join(root, dir_name, name)
+    # open("/Users/xeno_by/log.txt", "a").write(candidate + "\n")
+    # open("/Users/xeno_by/log.txt", "a").write(str(os.path.exists(candidate)) + "\n")
+    # call(["terminal-notifier", "-message", candidate])
     if os.path.exists(candidate):
       return candidate
 
+def subl(full_name, line_number):
+  if full_name:
+    command = full_name + ":" + line_number if line_number else full_name
+    call(["subl", command])
+
+def find_then_subl(root, qualified_name, line_number):
+  full_name = find(root, qualified_name)
+  subl(full_name, line_number)
+
 if os.path.isabs(file_name) and os.path.exists(file_name):
-  command = file_name + ":" + line_number if line_number else file_name
-  call(["subl", command])
+  subl(file_name, line_number)
 else:
   cut_prefix = before_click.rfind("\ ") + 1
   prefix = before_click[cut_prefix:]
   cut_suffix = after_click.find("\ ") if after_click.find("\ ") != -1 else len(after_click)
   suffix = after_click[0:cut_suffix]
   line = (prefix + suffix).replace("\(", "(").replace("\)", ")").strip()
+  # call(["terminal-notifier", "-message", line])
   m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
-  scala_root = check_output(["scala-root"], cwd = cwd).strip()
   qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
-  full_name = find(scala_root, qualified_name)
-  if full_name:
-    command = full_name + ":" + m.group("line")
-    call(["subl", command])
-
+  if line.startswith("org.scalalang.macroparadise"):
+    git_root = check_output(["git-root"], cwd = cwd).strip()
+    plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
+    find_then_subl(plugin_src_root, qualified_name, m.group("line"))
+  else:
+    scala_root = check_output(["scala-root"], cwd = cwd).strip()
+    find_then_subl(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
