@@ -88,8 +88,8 @@ def update_dotpartest():
     config.writelines(map(lambda line: line + "\n", lines))
 
 def completion_stamps(tier):
-  if tier == "pack": return map(lambda project: root + "/build/pack/lib/scala-" + project + ".jar", ["library", "reflect", "compiler"])
-  else: return map(lambda project: root + "/build/" + tier + "/" + project + ".complete", ["library", "reflect", "compiler"])
+  if tier == "pack": return map(lambda project: root + "/build/pack/lib/scala-" + project + ".jar", ["library", "reflect", "compiler", "partest"])
+  else: return map(lambda project: root + "/build/" + tier + "/" + project + ".complete", ["library", "reflect", "compiler", "partest"])
 def last_mod(files):
   files = files if type(files) == list else [files]
   return max(map(lambda f: os.path.getmtime(f) if os.path.exists(f) else 0, files))
