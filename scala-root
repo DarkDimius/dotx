@@ -6,6 +6,18 @@ if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
   sys.exit(1)
 
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseMaster"):
+  print "/Users/xeno_by/Projects/Master"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2103"):
+  print "/Users/xeno_by/Projects/2.10.x"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseVirt"):
+  print "/Users/xeno_by/Projects/Virt"
+  sys.exit(0)
+
 root = None
 suffix = "/pull-binary-libs.sh"
 current = os.path.abspath(".")
