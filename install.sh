@@ -184,6 +184,7 @@ install-into-bin sbt-root
 install-into-bin git-root
 install-into-bin sbt
 install-into-bin sbt-the-rebel-cut
+install-into-bin commit
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
