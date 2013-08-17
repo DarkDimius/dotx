@@ -25,6 +25,8 @@ env["result_base_dir"] = "" # real value is set elsewhere
 parent_name = check_output(["ps", "-o", "command", str(os.getppid())])
 sublime = "Sublime Text" in parent_name
 sbt_core = ["sbt", "-Dsbt.log.noformat=true"] if sublime else ["sbt"]
+if git_root.endswith("/Users/xeno_by/Projects/ParadiseHooked"):
+  sbt_core.append("-Dparadise.scala.home=/Users/xeno_by/Projects/paradise-hooks/build/pack")
 
 def notify(msg):
   if (sublime): call(["growlnotify", "-n", "Kepler", "-m", str(msg)])

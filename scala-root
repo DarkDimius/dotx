@@ -10,6 +10,10 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseMaster"):
   print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
 
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseHooked"):
+  print "/Users/xeno_by/Projects/paradise-hooks"
+  sys.exit(0)
+
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2103"):
   print "/Users/xeno_by/Projects/2.10.x"
   sys.exit(0)
