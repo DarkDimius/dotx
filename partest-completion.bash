@@ -21,3 +21,4 @@ _partest() {
 }
 complete -F _partest partest
 complete -F _partest t
+complete -F _partest tt

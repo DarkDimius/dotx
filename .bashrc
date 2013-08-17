@@ -97,8 +97,11 @@ alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
+alias gt="gaika test"
 alias t="gt"
+function tt () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" t "$@"; }
 alias tall="partest --all"
+function ttall () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" tall "$@"; }
 alias tmacro="partest-macro --macros-only"
 alias treify="partest-macro --macros-and-reify"
 alias tann="partest neg/macro-annotation-* run/macro-annotation-*"
@@ -197,13 +200,13 @@ alias hh="hack-homes --all"
 complete -F _hack h
 complete -F _hack_homes hh
 alias gc="gaika compile"
-alias gt="gaika test"
 alias rmc="rm-classfiles"
 alias jd="open *.class"
 alias s="rmc && scalac *Test*.scala"
 alias sli="rmc && scalac *Test*.scala -Xlog-implicits"
 alias sp="rmc && scalac *Test*.scala -Xprint:parser"
 alias st="rmc && scalac *Test*.scala -Xprint:typer"
+alias sp="rmc && scalac *Test*.scala -Xprint:patmat"
 alias sy="rmc && scalac *Test*.scala -Ymacro-debug-lite"
 alias sty="rmc && scalac *Test*.scala -Ytyper-debug"
 alias siy="rmc && scalac *Test*.scala -Yinfer-debug"
@@ -214,6 +217,7 @@ alias ss="rmc && scalac *Macros*.scala && scalac Test*.scala"
 alias ssli="rmc && scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
 alias ssp="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:parser"
 alias sst="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
+alias ssp="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:patmat"
 alias ssy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
 alias ssty="rmc && scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias ssiy="rmc && scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
@@ -223,6 +227,7 @@ alias ks="scalac *Test*.scala"
 alias ksli="scalac *Test*.scala -Xlog-implicits"
 alias ksp="scalac *Test*.scala -Xprint:parser"
 alias kst="scalac *Test*.scala -Xprint:typer"
+alias ksp="scalac *Test*.scala -Xprint:patmat"
 alias ksy="scalac *Test*.scala -Ymacro-debug-lite"
 alias ksty="scalac *Test*.scala -Ytyper-debug"
 alias ksiy="scalac *Test*.scala -Yinfer-debug"
@@ -233,6 +238,7 @@ alias kss="scalac *Macros*.scala && scalac Test*.scala"
 alias kssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
 alias kssp="scalac *Macros*.scala && scalac Test*.scala -Xprint:parser"
 alias ksst="scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
+alias kssp="scalac *Macros*.scala && scalac Test*.scala -Xprint:patmat"
 alias kssy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
 alias kssty="scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias kssiy="scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
@@ -265,6 +271,7 @@ alias spick=spick211
 alias paradise='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradisemaster='cd "$HOME/Projects/ParadiseMaster/sandbox/src/main/scala"'
+alias paradisehooked='cd "$HOME/Projects/ParadiseHooked/sandbox/src/main/scala"'
 alias paradisevirt='cd "$HOME/Projects/ParadiseVirt/sandbox/src/main/scala"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
@@ -285,3 +292,5 @@ function ticket3772 { target="$(hack-home "3772")"; if [[ $? == 0 ]]; then cd "$
 function fundep-materialization { target="$(hack-home "fundep-materialization")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fundep-views { target="$(hack-home "fundep-views")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function ticket7733-master { target="$(hack-home "7733-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
