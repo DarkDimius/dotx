@@ -44,6 +44,10 @@
     <appname>MAILTAB</appname>
     <equal>com.fiplab.mailtab</equal>
   </appdef>
+  <appdef>
+    <appname>POCKET</appname>
+    <equal>com.readitlater.PocketMac</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -353,6 +357,21 @@
       __PointingButtonToPointingButton__
       PointingButton::LEFT,
       PointingButton::LEFT, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+  <item>
+    <name>(Pocket) B => Cmd + O, Y => A</name>
+    <identifier>private.pocket.b</identifier>
+    <only>POCKET</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, ModifierFlag::NONE,
+      KeyCode::O, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Y, ModifierFlag::NONE,
+      KeyCode::A,
     </autogen>
   </item>
 </root>
