@@ -71,6 +71,7 @@ alias gra='git remote add'
 alias grv='git remote -v'
 alias gru='git remote update'
 alias gl='git --no-pager log --pretty=oneline -20'
+alias gax='git log --pretty=oneline -S'
 alias grh='git reset --hard'
 alias grh0='git reset --hard HEAD'
 alias grh1='git reset --hard HEAD~1'
@@ -273,6 +274,8 @@ alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradisemaster='cd "$HOME/Projects/ParadiseMaster/sandbox/src/main/scala"'
 alias paradisehooked='cd "$HOME/Projects/ParadiseHooked/sandbox/src/main/scala"'
 alias paradisevirt='cd "$HOME/Projects/ParadiseVirt/sandbox/src/main/scala"'
+alias spores='cd "$HOME/Projects/Spores/sandbox/src/main/scala"'
+alias dex='cd "$HOME/Projects/Dex"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -283,14 +286,10 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function ticket6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function compile-time-only { target="$(hack-home "compile-time-only")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function kill-introduce-top-level { target="$(hack-home "kill-introduce-top-level")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function defdef-name-now-termname { target="$(hack-home "defdef-name-now-termname")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function auto-duplicate-expansions { target="$(hack-home "auto-duplicate-expansions")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function mk-type-completer { target="$(hack-home "mk-type-completer")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function ticket3772 { target="$(hack-home "3772")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function fundep-materialization { target="$(hack-home "fundep-materialization")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fundep-views { target="$(hack-home "fundep-views")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function ticket7733-master { target="$(hack-home "7733-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }

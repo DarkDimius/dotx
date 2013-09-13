@@ -4,7 +4,6 @@ Apps:
 1Password.app
 Adium.app
 Alfred 2.app
-Anki.app
 App Store.app
 Araxis Merge.app
 Audacity
@@ -36,7 +35,7 @@ Growl.app
 Heaven.app
 Image Capture.app
 JD-GUI.app
-KeePassX.app
+Kaleidoscope.app
 Keka.app
 KeyRemap4MacBook.app
 Keyboard Cleaner.app
@@ -46,6 +45,7 @@ LimeChat.app
 Lingon.app
 Mail.app
 MailTab for Gmail.app
+Mendeley Desktop.app
 Messages.app
 Microsoft Communicator.app
 Microsoft Messenger.app
@@ -69,6 +69,7 @@ Skype.app
 SourceTree.app
 Spotify.app
 Stanza.app
+StarCraft II
 StartNinja.app
 Stickies.app
 Sublime Text 3.app
@@ -84,7 +85,6 @@ Utilities
 VLC.app
 Viber.app
 VirtualBox.app
-Why It's Nice to be Quoted.pdf
 XLD.app
 Xcode.app
 Xerox
@@ -110,6 +110,7 @@ gettext
 ghc
 git
 gmp
+gradle
 haskell-platform
 html2text
 ivy
@@ -123,8 +124,13 @@ xz
 
 ==================
 Macports packages:
-Warning: port definitions are more than two weeks old, consider using selfupdate
-No ports are installed.
+The following ports are currently installed:
+  dmd @2.063_0 (active)
+  dmd-doc @2.063_0 (active)
+  dmd-tools @2.063_0 (active)
+  druntime @2.063_0 (active)
+  jline @0.9.94_0 (active)
+  phobos @2.063_0 (active)
 
 ==================
 Python packages:
@@ -3845,11 +3851,15 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-116.DaeEOA: Permission denied
+Can't cd to (/private/tmp/) launchd-208.wlFAkq: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-2623.IxVvvk: Permission denied
+Can't cd to (/private/tmp/) launchd-315.bmStUK: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-362.mRFCo3: Permission denied
+Can't cd to (/private/tmp/) launchd-368.bFqpfJ: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-3703.1vashK: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-992.bzCYsy: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -3901,6 +3911,8 @@ Can't cd to (/private/var/db/) sudo: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) T: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) C: Permission denied
@@ -3934,6 +3946,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9136,41 +9150,41 @@ local::Cellar::git::share::contrib::buildsystems::Generators	1.00
 local::Cellar::git::share::contrib::buildsystems::Generators::QMake	1.00
 local::Cellar::git::share::contrib::buildsystems::Generators::Vcproj	1.00
 local::lib::Git	0.01
-local::texlive::2012::doc::latex::xmlstyle::SGMLS	undef
-local::texlive::2012::doc::latex::xmlstyle::SGMLS::Output	undef
-local::texlive::2012::doc::latex::xmlstyle::SGMLS::Refs	undef
-local::texlive::2012::doc::latex::xmlstyle::SGMLS::SGMLS	undef
-local::texlive::2012::doc::latex::register::Reg_macro	undef
-local::texlive::2012::scripts::context::perl::path_tre	undef
-local::texlive::2012::scripts::Pedigree	undef
-local::texlive::2012::scripts::Pedigree::AbortionNode	undef
-local::texlive::2012::scripts::Pedigree::Area	undef
-local::texlive::2012::scripts::Pedigree::ChildlessNode	undef
-local::texlive::2012::scripts::Pedigree::Language	undef
-local::texlive::2012::scripts::Pedigree::MarriageNode	undef
-local::texlive::2012::scripts::Pedigree::Node	undef
-local::texlive::2012::scripts::Pedigree::Parser	undef
-local::texlive::2012::scripts::Pedigree::PersonNode	undef
-local::texlive::2012::scripts::Pedigree::TwinsNode	undef
-local::texlive::2012::scripts::xetex::perl::lib::PDF::Reuse	0.292
-local::texlive::2012::scripts::xetex::perl::lib::PDF::Reuse::Util	undef
-local::texlive::2012::source::fonts::script::MakeSPList	undef
-local::texlive::2012::source::latex::stex::bin::Modparse	undef
-local::texlive::2012::source::latex::stex::bin::TexId	undef
-local::texlive::2012::source::latex::stex::bin::rng2dot::ModelRNC	undef
-local::texlive::2012::tlpkg::TeXLive::Splashscreen	1.0
-local::texlive::2012::tlpkg::TeXLive::TeXCatalogue	undef
-local::texlive::2012::tlpkg::TeXLive::TLConfFile	undef
-local::texlive::2012::tlpkg::TeXLive::TLConfig	undef
-local::texlive::2012::tlpkg::TeXLive::TLDownload	undef
-local::texlive::2012::tlpkg::TeXLive::TLPaper	undef
-local::texlive::2012::tlpkg::TeXLive::TLPDB	undef
-local::texlive::2012::tlpkg::TeXLive::TLPOBJ	undef
-local::texlive::2012::tlpkg::TeXLive::TLPSRC	undef
-local::texlive::2012::tlpkg::TeXLive::TLTREE	undef
-local::texlive::2012::tlpkg::TeXLive::TLUtils	undef
-local::texlive::2012::tlpkg::TeXLive::TLWinGoo	undef
-local::texlive::2012::tlpkg::TeXLive::waitVariableX	1.0
+local::texlive::2013::doc::latex::ch7::SGMLS	undef
+local::texlive::2013::doc::latex::ch7::SGMLS::Output	undef
+local::texlive::2013::doc::latex::ch7::SGMLS::Refs	undef
+local::texlive::2013::doc::latex::ch7::SGMLS::SGMLS	undef
+local::texlive::2013::doc::latex::register::Reg_macro	undef
+local::texlive::2013::scripts::context::perl::path_tre	undef
+local::texlive::2013::scripts::Pedigree	undef
+local::texlive::2013::scripts::Pedigree::AbortionNode	undef
+local::texlive::2013::scripts::Pedigree::Area	undef
+local::texlive::2013::scripts::Pedigree::ChildlessNode	undef
+local::texlive::2013::scripts::Pedigree::Language	undef
+local::texlive::2013::scripts::Pedigree::MarriageNode	undef
+local::texlive::2013::scripts::Pedigree::Node	undef
+local::texlive::2013::scripts::Pedigree::Parser	undef
+local::texlive::2013::scripts::Pedigree::PersonNode	undef
+local::texlive::2013::scripts::Pedigree::TwinsNode	undef
+local::texlive::2013::scripts::xetex::perl::lib::PDF::Reuse	0.292
+local::texlive::2013::scripts::xetex::perl::lib::PDF::Reuse::Util	undef
+local::texlive::2013::source::fonts::script::MakeSPList	undef
+local::texlive::2013::source::latex::stex::bin::Modparse	undef
+local::texlive::2013::source::latex::stex::bin::TexId	undef
+local::texlive::2013::source::latex::stex::bin::rng2dot::ModelRNC	undef
+local::texlive::2013::tlpkg::TeXLive::Splashscreen	1.0
+local::texlive::2013::tlpkg::TeXLive::TeXCatalogue	undef
+local::texlive::2013::tlpkg::TeXLive::TLConfFile	undef
+local::texlive::2013::tlpkg::TeXLive::TLConfig	undef
+local::texlive::2013::tlpkg::TeXLive::TLDownload	undef
+local::texlive::2013::tlpkg::TeXLive::TLPaper	undef
+local::texlive::2013::tlpkg::TeXLive::TLPDB	undef
+local::texlive::2013::tlpkg::TeXLive::TLPOBJ	undef
+local::texlive::2013::tlpkg::TeXLive::TLPSRC	undef
+local::texlive::2013::tlpkg::TeXLive::TLTREE	undef
+local::texlive::2013::tlpkg::TeXLive::TLUtils	undef
+local::texlive::2013::tlpkg::TeXLive::TLWinGoo	undef
+local::texlive::2013::tlpkg::TeXLive::waitVariableX	1.0
 share::perl::Git	0.01
 share::perl::Git::I18N	undef
 share::perl::Git::IndexInfo	undef
@@ -9225,22 +9239,17 @@ share::headerdoc::Modules::HeaderDoc::Var	$Revision: 1298084579 $
 Alfred 2 extensions:
 user.workflow.0421FB21-22B7-460C-8BA6-0127D99B19E9
 user.workflow.046E158B-7C12-467B-9890-5F0FD953B89F
-user.workflow.04cfb4d5-5dad-4825-9316-767496b3f6f1
 user.workflow.058A61FB-3CC1-4FD7-99E4-01DF7C1B8636
 user.workflow.068A61FB-3CC1-4FD7-99E4-01DF7C1B8636
 user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
 user.workflow.0D191761-323A-407B-8661-63BEA013AA58
 user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
-user.workflow.0a3d295e-148c-46c7-9984-8e53345c4660
 user.workflow.0e9693af-ee8b-4df5-8f5b-87ad7bb78e1d
-user.workflow.1063ca71-d6db-4de0-9eaf-3f135161e469
-user.workflow.13b09ed3-ab6f-4a2a-99c8-6d370397524c
+user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
-user.workflow.2504b772-49f8-4faa-b48f-da8db2555f62
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
 user.workflow.2F578D79-E596-4316-B383-F2F560426418
-user.workflow.380cc790-0185-4e9e-90ff-a792bd10d79b
 user.workflow.3b17c9a7-b52f-45fd-b0ab-e1307744f9db
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
@@ -9250,20 +9259,20 @@ user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5CDDCD6A-35E0-4F95-A4C6-19185D483C89
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
+user.workflow.6f0542e4-52a2-413a-a0ed-16bfb1dfacec
 user.workflow.72c06124-cfb7-4009-9ac5-06e3c0229586
 user.workflow.761D1C8A-EE5D-45EF-9043-936F417F66EF
-user.workflow.8158a722-bdaf-4ac1-9b78-69d4c36f93b3
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
+user.workflow.85d9daa4-933a-4b6d-be4c-b36a07d494af
 user.workflow.896760af-b97f-4bb3-a3ed-20c015d6f4a5
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
-user.workflow.8b54f0e1-e26e-456c-b027-facbb1d4c7ff
-user.workflow.8d8c2778-2d83-4904-80c8-5f07939a6157
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
-user.workflow.982ece7e-a7f6-43ae-8d8d-c64ca678b958
 user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
+user.workflow.99978D79-E596-4316-B383-F2F560426419
 user.workflow.9CB68F67-7DAF-468F-94CA-E0B7FB673CC6
 user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9DBF494A-5F80-4096-9A9A-410DBE59F545
+user.workflow.9F578D79-E596-4316-B383-F2F560426419
 user.workflow.A8682814-1EC6-486F-889B-A01BF60FE482
 user.workflow.B17864E9-DDDD-464D-8720-DDD06B609208
 user.workflow.B4316C18-A1BB-4257-BAD3-07717DE3FF8F
@@ -9273,8 +9282,6 @@ user.workflow.D4482E39-5319-449B-A33B-1A99946C19AB
 user.workflow.E5E1EA9E-BE9A-4FEC-8CB5-401D24764D2F
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 user.workflow.F39EAAA9-932D-4688-8FEE-F704A7928D1D
-user.workflow.c62cba8b-a169-4808-852d-6ca3814774cb
-user.workflow.d3e3b3b6-e59a-4d4f-887e-52d0d85ee7f5
 user.workflow.e7390aab-bafc-4761-aeda-e8e36f3e8649
 
 ==================
