@@ -33,6 +33,9 @@ def find_then_subl(root, qualified_name, line_number):
   full_name = find(root, qualified_name)
   subl(full_name, line_number)
 
+def goto_commit(sha):
+  pass
+
 if os.path.isabs(file_name) and os.path.exists(file_name):
   subl(file_name, line_number)
 else:
@@ -43,11 +46,19 @@ else:
   line = (prefix + suffix).replace("\(", "(").replace("\)", ")").strip()
   # call(["terminal-notifier", "-message", line])
   m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
-  qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
-  if line.startswith("org.scalalang.macroparadise"):
-    git_root = check_output(["git-root"], cwd = cwd).strip()
-    plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
-    find_then_subl(plugin_src_root, qualified_name, m.group("line"))
+  if m:
+    qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
+    if line.startswith("org.scalalang.macroparadise"):
+      git_root = check_output(["git-root"], cwd = cwd).strip()
+      plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
+      find_then_subl(plugin_src_root, qualified_name, m.group("line"))
+    else:
+      scala_root = check_output(["scala-root"], cwd = cwd).strip()
+      find_then_subl(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
   else:
-    scala_root = check_output(["scala-root"], cwd = cwd).strip()
-    find_then_subl(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
+    m = re.match("^[0123456789abcdef]+$", line)
+    if m:
+      user, repo, branch, status = check_output(["hub-introspect"], cwd = cwd).strip().split("\n")
+      import webbrowser
+      webbrowser.open("http://github.com/" + user + "/" + repo + "/commit/" + line)
+
