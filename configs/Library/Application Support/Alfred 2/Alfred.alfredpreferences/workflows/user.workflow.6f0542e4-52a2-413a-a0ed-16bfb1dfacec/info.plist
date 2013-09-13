@@ -36,7 +36,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>7733</string>
+  <string>vampires</string>
   <key>objects</key>
   <array>
     <dict>
@@ -45,7 +45,7 @@
         <key>escaping</key>
         <integer>127</integer>
         <key>script</key>
-        <string>stderr="$(hack 7733 2&gt;&amp;1 1&gt;/dev/null)"
+        <string>stderr="$(hack vampires 2&gt;&amp;1 1&gt;/dev/null)"
 if [[ -n "$stderr" ]]; then
   echo $stderr
 fi</string>
@@ -65,9 +65,9 @@ fi</string>
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>7733</string>
+        <string>vampires</string>
         <key>text</key>
-        <string>7733</string>
+        <string>vampires</string>
         <key>withspace</key>
         <false/>
       </dict>
@@ -94,7 +94,7 @@ fi</string>
         <key>text</key>
         <string>{query}</string>
         <key>title</key>
-        <string>7733</string>
+        <string>vampires</string>
       </dict>
       <key>type</key>
       <string>alfred.workflow.output.notification</string>
