@@ -10,34 +10,44 @@ scaladoc = program_name == "scaladoc-options"
 scalap = program_name == "scalap-options"
 partest = program_name == "partest-options"
 options = sys.argv[1:]
+git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
 
-def append_paradise_plugin_from(dir):
-  global options
+def append_plugin(dir, name):
   jardir = os.path.join(os.path.abspath(dir), "plugin/target")
   jars = glob.glob(os.path.join(jardir, "*/*.jar"))
   jars.sort(key=lambda jar: os.path.getmtime(jar))
   if not "-Ystop-after:parser" in options: # this prevents a crash due to a bug in Global that I have no idea how to work around
     if jars:
       options.append("-Xplugin:" + jars[-1])
-      print "-Xplugin-require:macroparadise"
+      print "-Xplugin-require:" + name
     else:
-      print >> sys.stderr, "no paradise plugin found in " + jardir
-    options = map(lambda opt: opt if opt != "-Yquasiquote-debug" else "-P:macroparadise:-Yquasiquote-debug", options)
+      print >> sys.stderr, "no " + name + " plugin found in " + jardir
+
+def append_paradise_plugin(dir):
+  append_plugin(dir, "macroparadise")
+  global options
+  options = map(lambda opt: opt if opt != "-Yquasiquote-debug" else "-P:macroparadise:-Yquasiquote-debug", options)
+
+def append_spores_plugin(dir):
+  append_plugin(dir, "spores")
 
 # automatically enable the paradise plugin if in relevant directory
-git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
 if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Paradise"):
-  append_paradise_plugin_from(git_root)
+  append_paradise_plugin(git_root)
 
-if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
-  append_paradise_plugin_from("/Users/xeno_by/Projects/ParadiseMaster")
+# automatically enable the spores plugin if in relevant directory
+if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Spores"):
+  append_spores_plugin(git_root)
+
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
+#   append_paradise_plugin_from("/Users/xeno_by/Projects/ParadiseMaster")
 
 if os.environ.get("SCALAC_OPTS"):
   # TODO: tokenize this correctly
   scalac_opts = os.environ["SCALAC_OPTS"].split(" ")
   options += scalac_opts
 
-if scalac or scala:
+if scala:
   options.append("-language:experimental.macros")
 
 for opt in options:
