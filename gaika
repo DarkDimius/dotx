@@ -43,9 +43,7 @@ try:
   if action == "compile":
     target = args[0] if args else ""
     # TODO: looks like I can't reasonably get away without gaika supporting multiple compilation scenarios
-    if git_root != scala_root and os.path.exists(os.path.join(git_root, "project", "build.scala")):
-      exit(call(sbt_core + ["package"], cwd = root))
-    elif args and args[0].endswith(".tex"):
+    if args and args[0].endswith(".tex"):
       target = args[0]
       root = os.path.dirname(os.path.abspath(target))
       exit(call(["xelatex", target], cwd = root))
@@ -62,6 +60,8 @@ try:
       if status: sys.exit(status)
       status = call(["xelatex", tex], cwd = root)
       exit(status)
+    elif git_root != scala_root and os.path.exists(os.path.join(git_root, "project", "build.scala")):
+      exit(call(sbt_core + ["package"], cwd = root))
     else:
       root = scala_root
       if cwd.startswith(root):
