@@ -48,6 +48,14 @@
     <appname>POCKET</appname>
     <equal>com.readitlater.PocketMac</equal>
   </appdef>
+  <appdef>
+    <appname>SAFARI</appname>
+    <equal>com.apple.Safari</equal>
+  </appdef>
+  <appdef>
+    <appname>FINDER</appname>
+    <equal>com.apple.finder</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -67,6 +75,16 @@
       KeyCode::F3, ModifierFlag::SHIFT_R,
       KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
     </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::EXPOSE_ALL, ModifierFlag::SHIFT_L,
+      KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::EXPOSE_ALL, ModifierFlag::SHIFT_R,
+      KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
   </item>
   <item>
     <name>(Sublime) Shift + F3 -> Cmd + Shift + G</name>
@@ -80,6 +98,16 @@
     <autogen>
       --KeyToKey--
       KeyCode::F3, ModifierFlag::SHIFT_R,
+      KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::EXPOSE_ALL, ModifierFlag::SHIFT_L,
+      KeyCode::G, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::EXPOSE_ALL, ModifierFlag::SHIFT_R,
       KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
     </autogen>
   </item>
@@ -136,6 +164,41 @@
       --KeyToKey--
       KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
       KeyCode::F19,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Safari) Fn + Left -> Cmd + Left, Fn + Right -> Cmd + Right, Cmd + Left -> Cmd + Shift + [, Cmd + Right -> Cmd + Shift + ]</name>
+    <identifier>private.safari_fnleft_navigateback</identifier>
+    <only>SAFARI</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
     </autogen>
     <autogen>
       --KeyToKey--
@@ -372,6 +435,18 @@
       --KeyToKey--
       KeyCode::Y, ModifierFlag::NONE,
       KeyCode::A,
+    </autogen>
+  </item>
+  <item>
+    <name>(Finder) Cmd + Q => Cmd + Shift + W</name>
+    <identifier>private.finder</identifier>
+    <only>FINDER</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 </root>
