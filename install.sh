@@ -194,6 +194,7 @@ install-into-bin urlproxy
 install-into-bin lstool
 install-into-apps Browser.app
 lstool write internet Web Browser
+install-into-bin browser
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
