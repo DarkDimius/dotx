@@ -27,6 +27,11 @@ function install-into-etc() {
   install-into-destination "/etc" $1 $2
 }
 
+function install-into-apps() {
+  install-into-destination "/Applications" $1 $2
+  open "/Applications/$1"
+}
+
 function install-into-daemons() {
   name=$1
   from="$(realpath $(dirname $0))/$name.plist"
@@ -185,6 +190,10 @@ install-into-bin git-root
 install-into-bin sbt
 install-into-bin sbt-the-rebel-cut
 install-into-bin commit
+install-into-bin urlproxy
+install-into-bin lstool
+install-into-apps Browser.app
+lstool write internet Web Browser
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
