@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/usr/local/</location>
+                            <location>/Library/Internet Plug-Ins/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>76</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/Shared/Dropbox/Trips/2013-09-18 St. Louis/</location>
+                            <location>/Users/xeno_by/Library/Safari/Extensions/</location>
                         </tab-0>
                     </tabs>
                 </right>
