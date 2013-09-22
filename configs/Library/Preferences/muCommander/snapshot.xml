@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>48</width>
+                            <width>76</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Library/Internet Plug-Ins/</location>
+                            <location>/Users/xeno_by/Library/Application Support/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>37</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>76</width>
+                            <width>104</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Safari/Extensions/</location>
+                            <location>/Users/xeno_by/Downloads/</location>
                         </tab-0>
                     </tabs>
                 </right>
