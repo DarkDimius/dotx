@@ -56,13 +56,22 @@
     <appname>FINDER</appname>
     <equal>com.apple.finder</equal>
   </appdef>
+  <appdef>
+    <appname>CHROME</appname>
+    <equal>com.google.Chrome</equal>
+  </appdef>
   <item>
-    <name>(except Sublime, VirtualBox) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
+    <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
     <not>SUBLIME2,SUBLIME3,VIRTUALBOX,STARCRAFT</not>
     <autogen>
       --KeyToKey--
       KeyCode::F3, ModifierFlag::NONE,
+      KeyCode::G, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::EXPOSE_ALL, ModifierFlag::NONE,
       KeyCode::G, ModifierFlag::COMMAND_L,
     </autogen>
     <autogen>
@@ -219,6 +228,51 @@
       --KeyToKey--
       KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
       KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Chrome) Fn + Left -> Cmd + Left, Fn + Right -> Cmd + Right, Cmd + Left -> Cmd + Shift + [, Cmd + Right -> Cmd + Shift + ]</name>
+    <identifier>private.chrome_fnleft_navigateback</identifier>
+    <only>CHROME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::FN,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::FN,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Chrome) Cmd + Shift + H => Cmd + Y</name>
+    <identifier>private.chrome_show_history</identifier>
+    <only>CHROME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::Y, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
   <item>
@@ -445,6 +499,18 @@
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,
       KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Evernote) Cmd + Q => Cmd + H</name>
+    <identifier>private.evernote</identifier>
+    <only>EVERNOTE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_10MS,
       KeyCode::TAB, ModifierFlag::COMMAND_L,
     </autogen>
