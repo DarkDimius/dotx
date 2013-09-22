@@ -195,6 +195,8 @@ install-into-bin lstool
 install-into-apps Browser.app
 lstool write internet Web Browser
 install-into-bin browser
+install-into-bin bluetooth-toggle
+install-into-bin bluetooth-status
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit

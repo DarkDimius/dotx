@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dk.aiyo.wifi</string>
+	<key>connections</key>
+	<dict>
+		<key>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F197C20-F3B1-46DB-927F-32C6500E024A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jonas Eriksen</string>
+	<key>description</key>
+	<string>Turn WiFi On/Off</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Wi-Fi Toggle</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
+
+if [[ "{query}" == "off" ]]
+then
+	networksetup -setairportpower $DEVICE Off
+elif [[ "{query}" == "on" ]]
+then
+	networksetup -setairportpower $DEVICE On
+else
+	echo "{query}" | pbcopy
+fi</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6F197C20-F3B1-46DB-927F-32C6500E024A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>wifi</string>
+				<key>script</key>
+				<string>DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
+
+DEVICENAME=$(networksetup -listallhardwareports | grep -Eo "AirPort|Wi-Fi");
+
+echo "&lt;?xml version=\"1.0\"?&gt;"
+echo "&lt;items&gt;"
+
+if [[ $(networksetup -getairportpower $DEVICE | grep -c On) == 0 ]]
+then
+// Turn Wi-Fi On
+	echo "&lt;item uid=\"wifi turn on\" arg=\"on\"&gt;&lt;title&gt;$DEVICENAME On&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+
+else
+
+// Turn Wi-Fi Off
+echo "&lt;item uid=\"\" arg=\"off\"&gt;&lt;title&gt;$DEVICENAME Off&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+
+fi
+
+echo "&lt;/items&gt;"
+</string>
+				<key>subtext</key>
+				<string>Turn Wi-Fi On/Off</string>
+				<key>title</key>
+				<string>Wi-Fi Toggle</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>6F197C20-F3B1-46DB-927F-32C6500E024A</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.aiyo.dk/alfredapp/v2</string>
+</dict>
+</plist>
