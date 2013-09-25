@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>84</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Google/Chrome/Default/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/</location>
                         </tab-0>
                     </tabs>
                 </left>
