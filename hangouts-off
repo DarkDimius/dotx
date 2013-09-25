@@ -1,12 +1,13 @@
 #!/usr/bin/osascript
 on run argv
   if application "Google Chrome" is not running then
+    -- TODO: also make this background
     do shell script "open -a \"Google Chrome\""
     do shell script "sleep 0.5"
     do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd"
     do shell script "sleep 0.5"
   else
-    do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd"
+    do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd --background"
     do shell script "sleep 0.2"
   end
   tell application "Google Chrome"

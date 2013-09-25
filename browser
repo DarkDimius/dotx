@@ -1,11 +1,19 @@
 #!/usr/bin/osascript
 on run argv
   set this_URL to item 1 of argv
+  if (count of argv) > 1 then
+    set background to item 2 of argv = "--background"
+  else
+    set background to false
+  end if
   if application "Google Chrome" is not running then
     do shell script "open -a \"Google Chrome\" --args " & this_URL
   else
     tell application "Google Chrome"
-      activate
+      if not background then
+        activate
+      end
+
       set theUrl to this_URL
 
       if (count every window) = 0 then
