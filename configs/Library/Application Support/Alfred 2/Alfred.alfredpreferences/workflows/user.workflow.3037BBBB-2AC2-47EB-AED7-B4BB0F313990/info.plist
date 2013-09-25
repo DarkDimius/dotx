@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>by.xeno.hangouts</string>
+	<string>by.xeno.bluetooth</string>
 	<key>connections</key>
 	<dict>
 		<key>7EFD412A-E46B-4CF0-9C4B-4748E82AD366</key>
@@ -21,11 +21,11 @@
 	<key>createdby</key>
 	<string>Eugene Burmako</string>
 	<key>description</key>
-	<string>Turn Hangouts On/Off</string>
+	<string>Turn Bluetooth On/Off</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Hangouts Toggle</string>
+	<string>Bluetooth Toggle</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -34,11 +34,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>if [[ {query} == "on" ]]; then
-  hangouts-on
-else
-  hangouts-off
-fi</string>
+				<string>bluetooth-toggle</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -57,29 +53,29 @@ fi</string>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>hang</string>
+				<string>blue</string>
 				<key>script</key>
 				<string>echo "&lt;?xml version=\"1.0\"?&gt;"
 echo "&lt;items&gt;"
 
-if [[ $(hangouts-status) == 0 ]]
+if [[ $(bluetooth-status) == 0 ]]
 then
-// Turn Hangouts On
-	echo "&lt;item uid=\"hangouts turn on\" arg=\"on\"&gt;&lt;title&gt;Turn Hangouts On&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+// Turn Bluetooth On
+	echo "&lt;item uid=\"wifi turn on\" arg=\"on\"&gt;&lt;title&gt;Bluetooth On&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
 
 else
 
-// Turn Hangouts Off
-echo "&lt;item uid=\"\" arg=\"off\"&gt;&lt;title&gt;Turn Hangouts Off&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
+// Turn Bluetooth Off
+echo "&lt;item uid=\"\" arg=\"off\"&gt;&lt;title&gt;Bluetooth Off&lt;/title&gt;&lt;subtitle&gt;&lt;/subtitle&gt;&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;"
 
 fi
 
 echo "&lt;/items&gt;"
 </string>
 				<key>subtext</key>
-				<string>Turn Hangouts On/Off</string>
+				<string>Turn Bluetooth On/Off</string>
 				<key>title</key>
-				<string>Hangouts Toggle</string>
+				<string>Bluetooth Toggle</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>

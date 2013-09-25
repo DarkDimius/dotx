@@ -25,35 +25,18 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>fos1</string>
+	<string>paradise 2.10.2</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>subl-open-project fos1</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>17961C3A-9931-4745-871B-3266CB442EFC</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>fos1</string>
+				<string>paradise2102</string>
 				<key>text</key>
-				<string>Foundations of Software: Project 1</string>
+				<string>Paradise 2.10.2</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -61,6 +44,23 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>7AF27E73-BD73-4E9F-9602-B2824E88B85D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>subl-open-project paradise2102</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>17961C3A-9931-4745-871B-3266CB442EFC</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>

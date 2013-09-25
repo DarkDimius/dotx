@@ -197,7 +197,8 @@ lstool write internet Web Browser
 install-into-bin browser
 install-into-bin bluetooth-toggle
 install-into-bin bluetooth-status
-install-into-bin hangouts-toggle
+install-into-bin hangouts-on
+install-into-bin hangouts-off
 install-into-bin hangouts-status
 
 install-into-daemons by.xeno.dotx_backup
