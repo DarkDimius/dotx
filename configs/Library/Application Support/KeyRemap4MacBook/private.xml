@@ -499,8 +499,8 @@
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,
       KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
     </autogen>
   </item>
   <item>
@@ -511,8 +511,8 @@
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,
       KeyCode::M, ModifierFlag::COMMAND_L,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
     </autogen>
   </item>
   <item>
@@ -523,8 +523,17 @@
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,
       KeyCode::M, ModifierFlag::COMMAND_L,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>Separates LCmd + Tab and RCmd + Tab</name>
+    <identifier>private.cmdtab</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::F16, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 </root>
