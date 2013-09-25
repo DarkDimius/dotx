@@ -1,0 +1,23 @@
+#!/usr/bin/osascript
+on run argv
+  if application "Google Chrome" is not running then
+    do shell script "open -a \"Google Chrome\""
+    do shell script "sleep 0.5"
+    do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd"
+    do shell script "sleep 0.5"
+  else
+    do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd"
+    do shell script "sleep 0.2"
+  end
+  tell application "Google Chrome"
+    set w to window 1
+    set t to w's active tab
+    repeat while (loading of t)
+    end repeat
+    execute t javascript "document.evaluate('//*[@id=\"nckgahadagoaajjgafhacjanaoiihapd\"]/div/div[2]/div/label/input', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()"
+    do shell script "sleep 0.2"
+    if (count w's tabs) > 1 then
+      close t
+    end
+  end tell
+end open location
