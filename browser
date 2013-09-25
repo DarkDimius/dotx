@@ -6,6 +6,16 @@ on run argv
   else
     set background to false
   end if
+  set previouslyActiveApp to path to frontmost application as text
+  if previouslyActiveApp contains "Tweetbot.app" then
+    set background to true
+  end if
+  if previouslyActiveApp contains "Reeder.app" then
+    set background to true
+  end if
+  if previouslyActiveApp contains "Pocket.app" then
+    set background to true
+  end if
   if application "Google Chrome" is not running then
     do shell script "open -a \"Google Chrome\" --args " & this_URL
   else
@@ -55,7 +65,7 @@ on run argv
           set frontmost of process "Google Chrome" to true
         end tell
         activate
-      end
+      end if
     end tell
   end if
 end open location
