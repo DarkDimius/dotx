@@ -12,31 +12,39 @@ on run argv
         make new window
       end if
 
-      set found to false
+      set existingIndex to -1
+      set existingTab to null
+      set emptyIndex to -1
+      set emptyTab to null
       set theTabIndex to -1
       repeat with theWindow in every window
         set theTabIndex to 0
         repeat with theTab in every tab of theWindow
           set theTabIndex to theTabIndex + 1
           if theTab's URL = theUrl then
-            set found to true
-            exit repeat
+            set existingIndex to theTabIndex
+            set existingTab to theTab
+          end if
+          if theTab's URL = "chrome://newtab/" then
+            set emptyIndex to theTabIndex
+            set emptyTab to theTab
           end if
         end repeat
-
-        if found then
-          exit repeat
-        end if
       end repeat
 
-      if found then
-        tell theTab to reload
-        set theWindow's active tab index to theTabIndex
+      if not existingIndex = -1 then
+        tell existingTab to reload
+        set theWindow's active tab index to existingIndex
         set index of theWindow to 1
       else
-        tell window 1 to make new tab with properties {URL:theUrl}
+        if not emptyIndex = -1 then
+          set URL of emptyTab to theUrl
+          set theWindow's active tab index to emptyIndex
+          set index of theWindow to 1
+        else
+          tell window 1 to make new tab with properties {URL:theUrl}
+        end
       end if
     end tell
   end if
-
 end open location
