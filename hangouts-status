@@ -1,31 +1,7 @@
-#!/usr/bin/osascript
-on run argv
-  if application "Google Chrome" is not running then
-    return "0"
-  else
-    tell application "Google Chrome"
-      set w to window 1
-      set t to w's active tab
-      set probe to "{
-        var result = null;
-        if ('__hangoutsLoaded' in window) {
-          result = window.__hangoutsLoaded;
-        } else {
-          var script = document.createElement('script');
-          script.onload = function() { window.__hangoutsLoaded = 1; };
-          script.onerror = function() { window.__hangoutsLoaded = 0; };
-          script.src = 'chrome-extension://nckgahadagoaajjgafhacjanaoiihapd/scripts/ace-settings.js';
-          document.body.appendChild(script);
-        }
-        result
-      }"
-      execute t javascript "delete window.__hangoutsLoaded"
-      execute t javascript probe
-      do shell script "sleep 0.1"
-      return execute t javascript probe
-    end tell
-  end
-end open location
-
-
-
+#!/usr/bin/env bash
+talk_process="$(ps axu | grep 'GoogleTalkPlugin' | grep -v 'grep GoogleTalkPlugin')"
+if [[ $? == 0 ]]; then
+  echo "1"
+else
+  echo "0"
+fi
