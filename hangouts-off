@@ -14,7 +14,7 @@ on run argv
     set t to w's active tab
     repeat while (loading of t)
     end repeat
-    execute t javascript "var btn = document.evaluate('//*[@id=\"nckgahadagoaajjgafhacjanaoiihapd\"]/div/div[2]/div/label/input', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if (!!btn.value) btn.click()"
+    execute t javascript "var btn = document.evaluate('//*[@id=\"nckgahadagoaajjgafhacjanaoiihapd\"]/div/div[2]/div/label/input', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; if (!!btn.checked) btn.click()"
     do shell script "sleep 0.2"
     if (count w's tabs) > 1 then
       close t

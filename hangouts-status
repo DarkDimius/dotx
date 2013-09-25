@@ -1,9 +1,31 @@
-#!/usr/bin/env python
-import os, json
+#!/usr/bin/osascript
+on run argv
+  if application "Google Chrome" is not running then
+    return "0"
+  else
+    tell application "Google Chrome"
+      set w to window 1
+      set t to w's active tab
+      set probe to "{
+        var result = null;
+        if ('__hangoutsLoaded' in window) {
+          result = window.__hangoutsLoaded;
+        } else {
+          var script = document.createElement('script');
+          script.onload = function() { window.__hangoutsLoaded = 1; };
+          script.onerror = function() { window.__hangoutsLoaded = 0; };
+          script.src = 'chrome-extension://nckgahadagoaajjgafhacjanaoiihapd/scripts/ace-settings.js';
+          document.body.appendChild(script);
+        }
+        result
+      }"
+      execute t javascript "delete window.__hangoutsLoaded"
+      execute t javascript probe
+      do shell script "sleep 0.1"
+      return execute t javascript probe
+    end tell
+  end
+end open location
 
-if not "Chrome" in os.popen("ps axu").read():
-  print "0"
-else:
-  prefs = json.load(open("/Users/xeno_by/Library/Application Support/Google/Chrome/Default/Preferences"))
-  hangouts_settings = prefs["extensions"]["settings"]["nckgahadagoaajjgafhacjanaoiihapd"]
-  print "0" if "disable_reasons" in hangouts_settings else "1"
+
+
