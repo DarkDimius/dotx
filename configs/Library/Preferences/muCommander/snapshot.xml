@@ -10,10 +10,10 @@
         <window-0>
             <window_properties>
                 <split_orientation>vertical</split_orientation>
-                <height>771</height>
+                <height>746</height>
                 <width>1219</width>
-                <y>79</y>
-                <x>135</x>
+                <y>110</y>
+                <x>138</x>
             </window_properties>
             <panels>
                 <left>
@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>76</width>
+                            <width>56</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/</location>
+                            <location>/Users/xeno_by/Projects/jenkins-scripts/job/macro-paradise-master/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>104</width>
+                            <width>64</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Downloads/</location>
+                            <location>/Users/xeno_by/Projects/SiteScalamacrosOrg/paperstalks/</location>
                         </tab-0>
                     </tabs>
                 </right>

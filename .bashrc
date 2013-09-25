@@ -278,6 +278,10 @@ alias paradisevirt='cd "$HOME/Projects/ParadiseVirt/sandbox/src/main/scala"'
 alias spores='cd "$HOME/Projects/Spores/sandbox/src/main/scala"'
 alias dex='cd "$HOME/Projects/Dex"'
 alias spire='cd "$HOME/Projects/Spire"'
+alias jsm='cd "$HOME/Projects/jenkins-scripts/job/macro-paradise-master"'
+alias stl='cd "$HOME/Projects/StrangeLoop2013/slides/sessions"'
+alias fos='cd "$HOME/Projects/teaching/fos"'
+alias fose='cd "$HOME/Projects/teaching/fos/exercises"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -285,7 +289,6 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function ticket6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fundep-views { target="$(hack-home "fundep-views")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -295,3 +298,4 @@ function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"

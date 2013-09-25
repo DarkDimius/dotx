@@ -515,4 +515,16 @@
       KeyCode::TAB, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
+  <item>
+    <name>(Chrome) Cmd + Q => Cmd + H</name>
+    <identifier>private.chrome</identifier>
+    <only>CHROME</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
 </root>
