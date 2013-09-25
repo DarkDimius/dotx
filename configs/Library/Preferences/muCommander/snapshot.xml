@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>56</width>
+                            <width>84</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/jenkins-scripts/job/macro-paradise-master/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Google/Chrome/Default/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>37</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/SiteScalamacrosOrg/paperstalks/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Google/</location>
                         </tab-0>
                     </tabs>
                 </right>

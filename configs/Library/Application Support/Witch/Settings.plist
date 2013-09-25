@@ -55,13 +55,13 @@
 		<key>Forward</key>
 		<dict>
 			<key>Character</key>
-			<string>	</string>
+			<string></string>
 			<key>Key Code</key>
-			<string>48</string>
+			<string>106</string>
 			<key>Modifiers</key>
-			<string>1048840</string>
+			<string>9437448</string>
 			<key>Visual Representation</key>
-			<string>⌘⇥</string>
+			<string>⌘F16</string>
 		</dict>
 	</dict>
 	<key>Icon Mode</key>
@@ -75,7 +75,7 @@
 	<key>Keep Cycling</key>
 	<true/>
 	<key>Last Tab</key>
-	<string>behavior</string>
+	<string>triggers</string>
 	<key>Maximum Width</key>
 	<real>0.54178649187088013</real>
 	<key>Panel Delay</key>
