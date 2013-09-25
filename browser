@@ -10,10 +10,6 @@ on run argv
     do shell script "open -a \"Google Chrome\" --args " & this_URL
   else
     tell application "Google Chrome"
-      if not background then
-        activate
-      end
-
       set theUrl to this_URL
 
       if (count every window) = 0 then
@@ -39,20 +35,27 @@ on run argv
           end if
         end repeat
       end repeat
+      set theWindow to window 1
 
       if not existingIndex = -1 then
-        tell existingTab to reload
         set theWindow's active tab index to existingIndex
-        set index of theWindow to 1
+        tell existingTab to reload
       else
         if not emptyIndex = -1 then
-          set URL of emptyTab to theUrl
           set theWindow's active tab index to emptyIndex
-          set index of theWindow to 1
+          set URL of emptyTab to theUrl
         else
-          tell window 1 to make new tab with properties {URL:theUrl}
+          tell theWindow to make new tab with properties {URL:theUrl}
         end
       end if
+
+      if not background then
+        -- doesn't help the situation of existingIndex != -1
+        tell application "System Events"
+          set frontmost of process "Google Chrome" to true
+        end tell
+        activate
+      end
     end tell
   end if
 end open location
