@@ -6,19 +6,17 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
-		<array/>
 	</dict>
 	<key>createdby</key>
 	<string></string>
@@ -27,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>6240</string>
+	<string>Reload Sublime Projects</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -36,14 +34,14 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>subl-open-project 6240</string>
+				<string>alfred-sync-projects</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -53,16 +51,18 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>6240</string>
+				<string>reload</string>
+				<key>subtext</key>
+				<string>Synchronizes Sublime Text 3 projects and Alfred 2 project opening workflows</string>
 				<key>text</key>
-				<string>6240</string>
+				<string>Reload Sublime Projects</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -71,12 +71,12 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>

@@ -60,9 +60,6 @@ try:
   sublime_project = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-project"
   sublime_workspace = sublime_projects + "/" + project_home[len(projects):].lower() + ".sublime-workspace"
   bashrc = os.path.expandvars("$HOME/.bashrc")
-  alfredextensions = os.path.expandvars("$HOME/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows")
-  alfredextension = alfredextensions + "/user.workflow." + str(uuid.uuid4())
-  alfredextension_plist = alfredextension + "/" + "info.plist"
 
   if add:
     check_comm(["git", "clone", prototype, project_home])
@@ -89,11 +86,7 @@ try:
     with open(sublime_project, "w") as f: f.write(template)
     checkpoint("Created a Sublime project at " + sublime_project)
 
-    check_comm(["mkdir", alfredextension])
-    template = open(os.path.expandvars("$HOME/.hack.alfredextension")).read()
-    template = template.replace("$PROJECT_SHORTNAME", short_target)
-    template = os.path.expandvars(template)
-    with open(alfredextension_plist, "w") as f: f.write(template)
+    check_comm(["alfred-sync-projects"])
     checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
@@ -112,7 +105,7 @@ try:
     comm(["rm", sublime_project])
     comm(["rm", sublime_workspace])
     checkpoint("Deleted the Sublime project at " + sublime_project)
-    comm(["rm", "-rf", alfredextension])
+    comm(["alfred-sync-projects"])
     checkpoint("Deleted the Alfred shortcut named " + short_target)
     def delete_aliases(bashrc):
       aliasdef_prefix = """function {0} {""".replace("{0}", bash_alias)

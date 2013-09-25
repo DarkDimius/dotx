@@ -18,16 +18,7 @@
 			</dict>
 		</array>
 		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string></string>
@@ -45,10 +36,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>stderr="$(hack master 2&gt;&amp;1 1&gt;/dev/null)"
-if [[ -n "$stderr" ]]; then
-  echo $stderr
-fi</string>
+				<string>subl-open-project master</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -78,42 +66,12 @@ fi</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>master</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
 		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
-		<dict>
-			<key>ypos</key>
-			<real>60</real>
-		</dict>
-		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>

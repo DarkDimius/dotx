@@ -115,9 +115,10 @@ install-into-home ..hack .hack
 install-into-home ..hackproto .hackproto
 install-into-home hack-completion.bash .hack-completion.bash
 install-into-home hack.sublime-project .hack.sublime-project
-install-into-home hack.alfredextension .hack.alfredextension
+install-into-home alfredproject.alfredextension .alfredproject.alfredextension
 install-into-home partest-completion.bash .partest-completion.bash
 install-into-home subl-open-project-completion.bash .subl-open-project-completion.bash
+install-into-home alfred-completion.bash .alfred-completion.bash
 install-into-home .scala_tier
 
 install-into-bin pullrequest
@@ -200,6 +201,7 @@ install-into-bin bluetooth-status
 install-into-bin hangouts-on
 install-into-bin hangouts-off
 install-into-bin hangouts-status
+install-into-bin alfred-sync-projects
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit

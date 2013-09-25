@@ -1,0 +1,66 @@
+#!/usr/bin/env python
+import os, plistlib, re, sys, shutil, uuid
+from send2trash import send2trash
+
+dry = "--dry" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
+
+if len(sys.argv) != 1:
+  print "usage: " + sys.argv[0] + " [--dry]"
+  sys.exit(1)
+
+alfred_projects = []
+alfred_project_ids = {}
+alfred_extension_path = "/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/"
+for dir in os.listdir(alfred_extension_path):
+  alfred_project_id = re.match(r"^user\.workflow\.(.*?)$", dir).group(1)
+  plist_path = os.path.join(alfred_extension_path, dir, "info.plist")
+  if os.path.exists(plist_path):
+    plist = plistlib.readPlist(plist_path)
+    for obj in plist["objects"]:
+      if obj.get("type") == "alfred.workflow.action.script":
+        m = re.match(r"^\s*subl-open-project\s+(.*?)\s*$", obj["config"]["script"])
+        alfred_project = m and m.group(1)
+        if alfred_project:
+          alfred_projects.append(alfred_project)
+          alfred_project_ids[alfred_project] = alfred_project_id
+
+sublime_projects = []
+sublime_projects_path = "/Users/xeno_by/Library/Application Support/Sublime Text 3/Projects/"
+for file in os.listdir(sublime_projects_path):
+  m = re.match(r"^(.*?).sublime-project$", file)
+  sublime_project = m and m.group(1)
+  if sublime_project:
+    sublime_projects.append(sublime_project)
+
+missing_projects = [x for x in sublime_projects if x not in alfred_projects]
+if missing_projects:
+  print "Missing:"
+  for missing_project in missing_projects:
+    sys.stdout.write("* " + missing_project)
+    if dry:
+      print ""
+    else:
+      sys.stdout.write("... ")
+      alfred_project_id = str(uuid.uuid4())
+      alfred_project_dir = os.path.join(alfred_extension_path, "user.workflow." + alfred_project_id)
+      alfred_project_plist = os.path.join(alfred_project_dir, "info.plist")
+      os.mkdir(alfred_project_dir)
+      template = open(os.path.expandvars("$HOME/.alfredproject.alfredextension")).read()
+      template = template.replace("$PROJECT_SHORTNAME", missing_project)
+      template = os.path.expandvars(template)
+      with open(alfred_project_plist, "w") as f: f.write(template)
+      print "CREATED"
+
+obsolete_projects = [x for x in alfred_projects if x not in sublime_projects]
+if obsolete_projects:
+  print "Obsolete:"
+  for obsolete_project in obsolete_projects:
+    sys.stdout.write("* " + obsolete_project)
+    if dry:
+      print ""
+    else:
+      sys.stdout.write("... ")
+      alfred_project_dir = os.path.join(alfred_extension_path, "user.workflow." + alfred_project_ids[obsolete_project])
+      send2trash(alfred_project_dir)
+      print "DELETED"

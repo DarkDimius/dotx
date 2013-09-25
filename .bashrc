@@ -19,6 +19,7 @@ source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
 source $HOME/.partest-completion.bash
 source $HOME/.subl-open-project-completion.bash
+source $HOME/.alfred-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 function parse_git_branch {
