@@ -191,6 +191,7 @@ install-into-bin git-root
 install-into-bin sbt
 install-into-bin sbt-the-rebel-cut
 install-into-bin commit
+install-into-bin commit sha
 install-into-bin urlproxy
 install-into-bin lstool
 install-into-apps Browser.app
