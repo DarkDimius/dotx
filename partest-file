@@ -21,7 +21,7 @@ if script.returncode != 0:
   print output
   sys.exit(script.returncode)
 
-test = root + "/test/" + output
+test = root + "/test/files/" + output
 base, ext = os.path.splitext(test)
 
 if export: # TODO: backup
@@ -36,7 +36,8 @@ def process(filename):
     targetname = os.path.basename(filename)
     targetname = re.sub("^(.*?)_(\d+)\.scala$", r"\1.scala", targetname)
     if targetname == "Impls.scala": targetname = "Macros.scala"
-    if targetname == "Macros_Test.scala": targetname = "Test.scala"
+    elif targetname == "Macros_Test.scala": targetname = "Test.scala"
+    else: targetname = "Test.scala"
     full_targetname = os.path.join(sandbox, targetname)
     shutil.copyfile(filename, full_targetname)
     relative_filename = os.path.join(os.path.basename(base), os.path.basename(filename))
