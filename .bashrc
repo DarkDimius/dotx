@@ -301,4 +301,5 @@ function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd 
 function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function unapply-copier { target="$(hack-home "unapply-copier")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function static-bundles { target="$(hack-home "static-bundles")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function bundles { target="$(hack-home "bundles")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function vampires-master { target="$(hack-home "vampires-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
