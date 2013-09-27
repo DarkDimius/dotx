@@ -27,45 +27,64 @@ def find(root, name):
 def subl(full_name, line_number):
   if full_name:
     command = full_name + ":" + line_number if line_number else full_name
-    call(["subl", command])
+    call(["subl", command], cwd = cwd)
+    sys.exit(0)
 
 def find_then_subl(root, qualified_name, line_number):
   full_name = find(root, qualified_name)
   subl(full_name, line_number)
 
 def goto_commit(sha):
-  pass
+  user, repo, branch, status = check_output(["hub-introspect"], cwd = cwd).strip().split("\n")
+  import webbrowser
+  webbrowser.open("http://github.com/" + user + "/" + repo + "/commit/" + sha)
+  sys.exit(0)
 
+def partest_diff(test_name):
+  call(["partest-diff", test_name], cwd = cwd)
+  sys.exit(0)
+
+cut_prefix = before_click.rfind("\ ") + 1
+prefix = before_click[cut_prefix:]
+cut_suffix = after_click.find("\ ") if after_click.find("\ ") != -1 else len(after_click)
+suffix = after_click[0:cut_suffix]
+line = (prefix + suffix).replace("\(", "(").replace("\)", ")").replace("\[", "[").replace("\]", "]").replace("\!", "!").strip()
+# call(["terminal-notifier", "-message", line])
+
+# CASE 1: CLICK ON EXISTING FILENAME
 if os.path.isabs(file_name) and os.path.exists(file_name):
   subl(file_name, line_number)
-else:
-  cut_prefix = before_click.rfind("\ ") + 1
-  prefix = before_click[cut_prefix:]
-  cut_suffix = after_click.find("\ ") if after_click.find("\ ") != -1 else len(after_click)
-  suffix = after_click[0:cut_suffix]
-  line = (prefix + suffix).replace("\(", "(").replace("\)", ")").strip()
-  # call(["terminal-notifier", "-message", line])
-  m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
-  if m:
-    qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
-    if line.startswith("org.scalalang.macroparadise"):
-      git_root = check_output(["git-root"], cwd = cwd).strip()
-      plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
-      find_then_subl(plugin_src_root, qualified_name, m.group("line"))
-    else:
-      scala_root = check_output(["scala-root"], cwd = cwd).strip()
-      find_then_subl(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
-  else:
-    m = re.match("^[0123456789abcdef]+$", line)
-    if m:
-      user, repo, branch, status = check_output(["hub-introspect"], cwd = cwd).strip().split("\n")
-      import webbrowser
-      webbrowser.open("http://github.com/" + user + "/" + repo + "/commit/" + line)
-    else:
-      test_prefixes = ["neg", "pos", "run"]
-      if filter(lambda prefix: line.startswith(prefix + "/"), test_prefixes):
-        scala_root = check_output(["scala-root"], cwd = cwd).strip()
-        file_name = os.path.join(scala_root, "test", "files", line)
-        if os.path.isabs(file_name) and os.path.exists(file_name):
-          subl(file_name, line_number)
 
+# CASE 2: CLICK ON SOMETHING THAT LOOKS LIKE FAILED TEST
+test_prefixes = ["neg", "pos", "run"]
+if filter(lambda prefix: line.startswith(prefix + "/"), test_prefixes):
+  scala_root = check_output(["scala-root"], cwd = cwd).strip()
+  file_name = os.path.join(scala_root, "test", "files", line)
+  if os.path.isabs(file_name) and os.path.exists(file_name):
+    subl(file_name, line_number)
+
+# CASE 3: CLICK ON SOMETHING THAT LOOKS LIKE TEST FAILURE
+if line == "[output" or line == "differs]":
+  cut_prefix = before_click.rfind("\!\!") + 4
+  test_name = before_click[cut_prefix:]
+  cut_prefix = test_name.rfind("-\ ") + 3
+  test_name = test_name[cut_prefix:]
+  cut_suffix = test_name.find("\ ")
+  test_name = test_name[0:cut_suffix]
+  partest_diff(test_name)
+
+# CASE 4: CLICK ON SOMETHING THAT LOOKS LIKE SHA
+m = re.match("^[0123456789abcdefABCDEF]+$", line)
+if m: goto_commit(line)
+
+# CASE 5: CLICK ON STACK TRACE
+m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
+if m:
+  qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
+  if line.startswith("org.scalalang.macroparadise"):
+    git_root = check_output(["git-root"], cwd = cwd).strip()
+    plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
+    find_then_subl(plugin_src_root, qualified_name, m.group("line"))
+  else:
+    scala_root = check_output(["scala-root"], cwd = cwd).strip()
+    find_then_subl(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
