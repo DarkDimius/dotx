@@ -76,6 +76,12 @@ if line == "\[output" or line == "differs\]" or line == "\[compilation" or line 
   cut_suffix = test_name.find("\ ")
   test_name = test_name[0:cut_suffix]
   partest_diff(test_name)
+if line == "\!\!":
+  cut_prefix = after_click.find("\ -\ ") + 5
+  test_name = after_click[cut_prefix:]
+  cut_suffix = test_name.find("\ ")
+  test_name = test_name[0:cut_suffix]
+  partest_diff(test_name)
 
 # CASE 4: CLICK ON SOMETHING THAT LOOKS LIKE SHA
 m = re.match("^[0123456789abcdefABCDEF]+$", line)
