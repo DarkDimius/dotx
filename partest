@@ -109,7 +109,9 @@ try:
   os.environ["SCALAC_OPTS"] = " ".join(scalac_flags)
   invocation = " ".join([bin] + partest_flags + map(lambda test: "test/files/" + test, tests))
   if not tests: invocation += " --all"
-  invocation += " | tee " + dotpartestlog
+  is210 = not "jline-2.11.jar" in check_output(["scala-toolcp"])
+  if is210: invocation += " | tee " + dotpartestlog
+  else: invocation += " | gsed -u '1,11d' | gsed -u '/# Failed test paths/,$d' | tee " + dotpartestlog
   subprocess.call([os.environ["SHELL"], "-c", invocation], cwd = root)
   update_dotpartest()
 except KeyboardInterrupt:
