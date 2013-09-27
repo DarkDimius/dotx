@@ -19,4 +19,10 @@ jline210 = os.path.join(root, "lib/jline.jar")
 jline211 = os.path.expandvars("$HOME/.m2/repository/jline/jline/2.11/jline-2.11.jar")
 forkjoin = os.path.join(root, "lib/forkjoin.jar")
 library, reflect, compiler, scalap, repl, scaladoc = map(lambda name: os.path.join(classes, name), ["library", "reflect", "compiler", "scalap", "repl", "scaladoc"])
-print ":".join([asm, jline210, jline211, forkjoin, library, reflect, compiler, scalap, repl, scaladoc])
+
+is210 = not os.path.exists(repl)
+jline = jline210 if is210 else jline211
+cp = [asm, jline, forkjoin, library, reflect, compiler, scalap, repl, scaladoc]
+cp = filter(lambda entry: os.path.exists(entry), cp)
+
+print ":".join(cp)
