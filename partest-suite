@@ -22,7 +22,7 @@ if view:
       tests = map(figure_out, tests)
       for idx, test in enumerate(tests):
         msg = test
-        if numbers: msg = "\033[31;1m!!\033[0m " + str(idx + 1).rjust(len(str(len(tests)))) + " - " + msg
+        if numbers: msg = "\033[31;1m!!\033[0m " + str(idx + 1).rjust(len(str(len(tests)))) + " - " + msg.ljust(42) + "[test failed]"
         print msg
 else:
   root = subprocess.Popen(["scala-root"], stdout=subprocess.PIPE).communicate()[0][:-1]
