@@ -41,7 +41,7 @@ def project_is_open():
         time.sleep(0.1)
         if retries_left: return loop(retries_left - 1)
         else: print "didn't get a status report from Sublime"; return None
-  return loop(3)
+  return loop(5)
 status = project_is_open()
 if status == True:
   print "project is open, making it focused"
