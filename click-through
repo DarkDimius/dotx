@@ -10,7 +10,7 @@ file_name = sys.argv[1]
 line_number = sys.argv[2]
 before_click = sys.argv[3]
 after_click = sys.argv[4]
-cwd = sys.argv[5]
+cwd = sys.argv[5] or "."
 
 def find(root, name):
   # NOTE: find is too slow - I got too spoiled by Sublime
