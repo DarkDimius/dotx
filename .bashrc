@@ -99,6 +99,7 @@ alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
+function prb () { gru && git rebase "$(pullproto)" --onto "upstream/$(pullproto)"; }
 alias gt="gaika test"
 alias t="gt"
 function tt () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" t "$@"; }
@@ -303,3 +304,4 @@ export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Ho
 function unapply-copier { target="$(hack-home "unapply-copier")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function bundles { target="$(hack-home "bundles")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires-master { target="$(hack-home "vampires-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }

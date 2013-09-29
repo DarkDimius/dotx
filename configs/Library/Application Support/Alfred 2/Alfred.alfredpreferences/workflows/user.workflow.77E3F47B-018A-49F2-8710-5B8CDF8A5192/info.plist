@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>pull</string>
+	<string>Dropbox</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -34,7 +34,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>pull {query} 2&gt;&amp;1</string>
+				<string>open /Users/Shared/Dropbox/</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -49,11 +49,11 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>keyword</key>
-				<string>pull</string>
+				<string>dropbox</string>
 				<key>text</key>
-				<string>pull</string>
+				<string>Dropbox</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
