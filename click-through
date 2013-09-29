@@ -24,15 +24,26 @@ def find(root, name):
     if os.path.exists(candidate):
       return candidate
 
-def subl(full_name, line_number):
+def subl(full_name, line_number, force_file):
   if full_name:
-    command = full_name + ":" + line_number if line_number else full_name
-    call(["subl", command], cwd = cwd)
-    sys.exit(0)
+    if os.path.isdir(full_name) and force_file:
+      for file in os.listdir(full_name):
+        call(["subl", os.path.join(full_name, file)], cwd = cwd)
+      sys.exit(0)
+    else:
+      command = full_name + ":" + line_number if line_number else full_name
+      call(["subl", command], cwd = cwd)
+      sys.exit(0)
 
-def find_then_subl(root, qualified_name, line_number):
+def subl_file(full_name, line_number):
+  subl(full_name, line_number, force_file = True)
+
+def subl_file_or_dir(full_name, line_number):
+  subl(full_name, line_number, force_file = False)
+
+def find_then_subl_file(root, qualified_name, line_number):
   full_name = find(root, qualified_name)
-  subl(full_name, line_number)
+  subl_file(full_name, line_number)
 
 def goto_commit(sha):
   user, repo, branch, status = check_output(["hub-introspect"], cwd = cwd).strip().split("\n")
@@ -53,7 +64,7 @@ line = (prefix + suffix).replace("\(", "(").replace("\)", ")").strip()
 
 # CASE 1: CLICK ON EXISTING FILENAME
 if os.path.isabs(file_name) and os.path.exists(file_name):
-  subl(file_name, line_number)
+  subl_file_or_dir(file_name, line_number)
 
 # CASE 2: CLICK ON SOMETHING THAT LOOKS LIKE FAILED TEST
 test_prefixes = ["neg", "pos", "run"]
@@ -65,7 +76,7 @@ if filter(lambda prefix: line.startswith(prefix + "/") or line.startswith("\[...
   else:
     file_name = os.path.join(scala_root, "test", "files", line)
   if os.path.isabs(file_name) and os.path.exists(file_name):
-    subl(file_name, line_number)
+    subl_file(file_name, line_number)
 
 # CASE 3: CLICK ON SOMETHING THAT LOOKS LIKE TEST FAILURE
 if line == "\[output" or line == "differs\]" or line == "\[compilation" or line == "\[test" or line == "failed\]" or line == "\[FAILED\]":
@@ -94,7 +105,7 @@ if m:
   if line.startswith("org.scalalang.macroparadise"):
     git_root = check_output(["git-root"], cwd = cwd).strip()
     plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
-    find_then_subl(plugin_src_root, qualified_name, m.group("line"))
+    find_then_subl_file(plugin_src_root, qualified_name, m.group("line"))
   else:
     scala_root = check_output(["scala-root"], cwd = cwd).strip()
-    find_then_subl(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
+    find_then_subl_file(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
