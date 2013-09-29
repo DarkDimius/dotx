@@ -35,7 +35,7 @@ def process(filename):
   if export:
     targetname = os.path.basename(filename)
     targetname = re.sub("^(.*?)_(\d+)\.scala$", r"\1.scala", targetname)
-    if targetname == "Impls.scala": targetname = "Macros.scala"
+    if targetname == "Impls.scala" or targetname == "Impls_Macros.scala" or targetname == "Macros.scala" or targetname == "Macro.scala": targetname = "Macros.scala"
     elif targetname == "Macros_Test.scala": targetname = "Test.scala"
     else: targetname = "Test.scala"
     full_targetname = os.path.join(sandbox, targetname)
