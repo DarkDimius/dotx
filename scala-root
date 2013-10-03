@@ -6,20 +6,12 @@ if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
   sys.exit(1)
 
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseMaster"):
-  print "/Users/xeno_by/Projects/Master"
-  sys.exit(0)
-
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseHooked"):
-  print "/Users/xeno_by/Projects/paradise-hooks"
-  sys.exit(0)
-
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2102"):
-  print "/Users/xeno_by/Projects/210x"
-  sys.exit(0)
-
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2103"):
   print "/Users/xeno_by/Projects/210x"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110"):
+  print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Spores"):
@@ -28,6 +20,10 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Spores"):
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseVirt"):
   print "/Users/xeno_by/Projects/Virt"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/eleven"):
+  print "/Users/xeno_by/Projects/Palladium"
   sys.exit(0)
 
 root = None

@@ -40,7 +40,7 @@ if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xe
   append_spores_plugin(git_root)
 
 # if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
-#   append_paradise_plugin_from("/Users/xeno_by/Projects/ParadiseMaster")
+#   append_paradise_plugin_from("/Users/xeno_by/Projects/Paradise2110")
 
 if os.environ.get("SCALAC_OPTS"):
   # TODO: tokenize this correctly
