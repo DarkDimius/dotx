@@ -31,6 +31,12 @@ function sudo {
   /usr/bin/sudo "$@"
   export DYLD_LIBRARY_PATH=$backup
 }
+function ps {
+  local backup=$DYLD_LIBRARY_PATH
+  unset DYLD_LIBRARY_PATH
+  /bin/ps "$@"
+  export DYLD_LIBRARY_PATH=$backup
+}
 
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
