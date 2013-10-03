@@ -17,8 +17,6 @@ if not status.startswith("no changes"):
   print status
   sys.exit(1)
 
-print repo, branch
-
 if repo == "palladium" and branch == "palladium":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/palladium-nightly-main/buildWithParameters?publish=true"
 elif repo == "paradise" and branch == "2.10.3":
