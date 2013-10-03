@@ -24,6 +24,7 @@ try:
       test = m.group(1)
       if not test.startswith("/"): test = "/" + test
       if not test.startswith("/files"): test = "/files" + test
+      test = test[len("/files/"):]
       failures.append(test)
   for failure in failures:
     print failure
