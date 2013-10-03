@@ -24,6 +24,7 @@ Dashboard.app
 Day-O.app
 Dictionary.app
 DjVu Browser Plugin
+DjVuReader.app
 Dropbox.app
 Evernote.app
 FaceTime.app
@@ -58,7 +59,7 @@ Photo Booth.app
 Pocket.app
 Preview.app
 QuickTime Player.app
-Racket v5.3.4
+Racket v5.3.6
 Reeder.app
 Reminders.app
 Remote Desktop Connection.app
@@ -186,9 +187,9 @@ fattr (2.2.1)
 gli (2.8.0)
 highline (1.6.19)
 httparty (0.11.0)
-jekyll (1.0.2, 0.12.1)
+jekyll (1.2.1, 1.0.2, 0.12.1)
 kramdown (1.0.2, 0.14.2)
-liquid (2.5.0)
+liquid (2.5.2, 2.5.0)
 main (4.7.7)
 map (4.3.0)
 maruku (0.6.1)
@@ -199,6 +200,7 @@ multi_xml (0.5.5)
 paint (0.8.6)
 posix-spawn (0.3.6)
 pygments.rb (0.5.0, 0.3.7)
+redcarpet (2.3.0)
 safe_yaml (0.7.1)
 syntax (1.0.0)
 terminal-notifier (1.4.2)
@@ -3900,11 +3902,9 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-207.Mgyxo6: Permission denied
+Can't cd to (/private/tmp/) launchd-34235.wolRmh: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-2790.BUpd6Y: Permission denied
- at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-383.mAltPn: Permission denied
+Can't cd to (/private/tmp/) launchd-34687.3tEVc3: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
