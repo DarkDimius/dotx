@@ -19,14 +19,14 @@ if not status.startswith("no changes"):
 
 print repo, branch
 
-if repo == "paradise" and branch == "2.10.2":
-  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-2.10.2/build"
+if repo == "palladium" and branch == "palladium":
+  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/palladium-nightly-main/buildWithParameters?publish=true"
 elif repo == "paradise" and branch == "2.10.3":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-2.10.3/build"
+elif repo == "paradise" and branch == "2.11.0":
+  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-2.11.0/build"
 elif repo == "paradise" and branch == "virt":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-virt/build"
-elif repo == "paradise" and branch == "master":
-  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-master/build"
 else:
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/job/scala-checkin-manual/buildWithParameters"
   jenkins_url += "?githubUsername=" + user + "&repository=" + repo
