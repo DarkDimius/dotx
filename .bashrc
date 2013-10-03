@@ -22,6 +22,16 @@ source $HOME/.subl-open-project-completion.bash
 source $HOME/.alfred-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
+# cannot put this in launchd.conf because:
+# http://stackoverflow.com/questions/12064725/dyld-dyld-environment-variables-being-ignored-because-main-executable-usr-bi
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib
+function sudo {
+  local backup=$DYLD_LIBRARY_PATH
+  unset DYLD_LIBRARY_PATH
+  /usr/bin/sudo "$@"
+  export DYLD_LIBRARY_PATH=$backup
+}
+
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
   echo " ("${ref#refs/heads/}")"
@@ -284,6 +294,7 @@ alias jsm='cd "$HOME/Projects/jenkins-scripts/job/macro-paradise-master"'
 alias stl='cd "$HOME/Projects/StrangeLoop2013/slides/sessions"'
 alias fos='cd "$HOME/Projects/teaching/fos"'
 alias fose='cd "$HOME/Projects/teaching/fos/exercises"'
+alias cusamples='cd "/Developer/NVIDIA/CUDA-5.5/samples/"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -299,9 +310,6 @@ function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$ta
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function unapply-copier { target="$(hack-home "unapply-copier")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function bundles { target="$(hack-home "bundles")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires-master { target="$(hack-home "vampires-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
