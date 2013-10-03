@@ -6,4 +6,4 @@ if [[ $? != 0 ]]; then
 fi
 
 cd "$sbt_root"
-sbt-the-rebel-cut "$@"
+sbt-the-rebel-cut -Dmy.scala.home="$(scala-root)" "$@"
