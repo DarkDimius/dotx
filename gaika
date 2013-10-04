@@ -11,6 +11,7 @@ args = sys.argv[2:]
 cwd = os.path.abspath(".")
 git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
 scala_root = check_output(["scala-root"]).strip()
+sbt_root = check_output(["sbt-root"]).strip()
 root = git_root if not "fatal:" in git_root else cwd
 
 env = {}
@@ -25,8 +26,6 @@ env["result_base_dir"] = "" # real value is set elsewhere
 parent_name = check_output(["ps", "-o", "command", str(os.getppid())])
 sublime = "Sublime Text" in parent_name
 sbt_core = ["sbt", "-Dsbt.log.noformat=true"] if sublime else ["sbt"]
-if git_root.endswith("/Users/xeno_by/Projects/ParadiseHooked"):
-  sbt_core.append("-Dparadise.scala.home=/Users/xeno_by/Projects/paradise-hooks/build/pack")
 
 def notify(msg):
   if (sublime): call(["growlnotify", "-n", "Kepler", "-m", str(msg)])
@@ -67,7 +66,8 @@ try:
       if status: sys.exit(status)
       status = call(["xelatex", tex], cwd = root)
       exit(status)
-    elif git_root != scala_root and os.path.exists(os.path.join(git_root, "project", "build.scala")):
+    elif sbt_root and sbt_root != scala_root:
+      root = sbt_root
       exit(call(sbt_core + ["package"], cwd = root))
     else:
       root = scala_root
@@ -105,7 +105,7 @@ try:
       notify("unknown clean target: " + target)
       exit(1)
   elif action == "test":
-    if git_root != scala_root and os.path.exists(os.path.join(git_root, "project", "build.scala")):
+    if sbt_root and sbt_root != scala_root:
       exit(call(sbt_core + ["project tests", "test"] + args, cwd = root))
     else:
       exit(call(["partest"] + args, cwd = scala_root))
