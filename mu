@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-source $HOME/.bashrc
-
 talk_process="$(ps axu | grep 'muCommander' | grep -v 'grep muCommander')"
 if [[ $? == 1 ]]; then
   open -a muCommander
-  sleep 1.5
+  sleep 2.0
 fi
 
 open -a muCommander ${1:-.}

@@ -25,18 +25,6 @@ export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 # cannot put this in launchd.conf because:
 # http://stackoverflow.com/questions/12064725/dyld-dyld-environment-variables-being-ignored-because-main-executable-usr-bi
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib
-function sudo {
-  local backup=$DYLD_LIBRARY_PATH
-  unset DYLD_LIBRARY_PATH
-  /usr/bin/sudo "$@"
-  export DYLD_LIBRARY_PATH=$backup
-}
-function ps {
-  local backup=$DYLD_LIBRARY_PATH
-  unset DYLD_LIBRARY_PATH
-  /bin/ps "$@"
-  export DYLD_LIBRARY_PATH=$backup
-}
 
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
@@ -302,7 +290,6 @@ function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 
 function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function vampires-master { target="$(hack-home "vampires-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
