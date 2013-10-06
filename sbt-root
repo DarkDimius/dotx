@@ -19,5 +19,3 @@ check_sbt_root(path)
 while path != os.path.dirname(path):
   path = os.path.dirname(path)
   check_sbt_root(path)
-
-sys.exit(1)

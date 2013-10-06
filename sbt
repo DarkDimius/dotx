@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 sbt_root="$(sbt-root)"
-if [[ $? != 0 ]]; then
+if [[ -z "$sbt_root" ]]; then
   echo "not at sbt root"
   exit 1
 fi
