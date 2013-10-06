@@ -209,6 +209,7 @@ install-into-bin todo
 install-into-bin sudo
 install-into-bin ps
 install-into-bin osascript
+install-into-bin jnaerate
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
