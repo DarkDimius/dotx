@@ -24,7 +24,7 @@ export PYTHONSTARTUP=/Users/xeno_by/.pystartup
 
 # cannot put this in launchd.conf because:
 # http://stackoverflow.com/questions/12064725/dyld-dyld-environment-variables-being-ignored-because-main-executable-usr-bi
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/opt/local/libexec/llvm-3.3/lib/
 
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
