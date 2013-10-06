@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>36</width>
+                            <width>34</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>48</width>
+                            <width>84</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018/</location>
+                            <location>/opt/local/libexec/llvm-3.3/lib/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>84</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/usr/local/dotx/</location>
+                            <location>bookmark://Downloads/</location>
                         </tab-0>
                     </tabs>
                 </right>
