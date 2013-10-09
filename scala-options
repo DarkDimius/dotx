@@ -39,6 +39,11 @@ if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xe
 if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Spores"):
   append_spores_plugin(git_root)
 
+# automatically enable the virtual classes plugin if in relevant directory
+if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/ScalaVC"):
+  options.append("-Xplugin:" + git_root + "/build/quick/misc/scala-devel/plugins/virtualclasses.jar")
+  print "-Xplugin-require:virtualclasses"
+
 # if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
 #   append_paradise_plugin_from("/Users/xeno_by/Projects/Paradise2110")
 
