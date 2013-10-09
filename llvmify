@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ $# != 1 ]]; then
+  echo "usage: llmify <input>"
+  exit 1
+fi
+
+input_file="$1"
+bitcode_file="$(mktemp $TMPDIR/bc.XXXXXXXX)"
+o_file="$(mktemp $TMPDIR/o.XXXXXXXX)"
+output_file="${input_file%.*}.cpp"
+
+clang -emit-llvm -c "$input_file" -o "$bitcode_file"
+llc -march=cpp "$bitcode_file" -o "$output_file"
+g++ $(llvm-config --cppflags --ldflags --libs) "$output_file" -o "$o_file"
