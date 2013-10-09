@@ -276,6 +276,7 @@ alias fos='cd "$HOME/Projects/teaching/fos"'
 alias fose='cd "$HOME/Projects/teaching/fos/exercises"'
 alias pl='cd "$HOME/Projects/Palladium"'
 alias el='cd "$HOME/Projects/Eleven"'
+alias jna='cd "$HOME/Projects/Eleven/llvm/src/main/java"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
