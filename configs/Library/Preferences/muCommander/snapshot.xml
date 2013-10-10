@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>76</width>
+                            <width>64</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/hw0-linuxosx/</location>
+                            <location>/Users/xeno_by/Projects/ScalaVC/build/quick/misc/scala-devel/plugins/</location>
                         </tab-0>
                     </tabs>
                 </left>

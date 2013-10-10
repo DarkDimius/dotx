@@ -211,6 +211,7 @@ install-into-bin ps
 install-into-bin osascript
 install-into-bin jnaerate
 install-into-bin llvmify
+install-into-bin integrate
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
