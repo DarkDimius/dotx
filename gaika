@@ -110,10 +110,8 @@ try:
     if sbt_root and sbt_root != scala_root:
       exit(call(sbt_core + ["project tests", "test"] + args, cwd = root))
     else:
-      if extras:
-        exit(call(["partest"] + args, cwd = scala_root))
-      else
-        exit(call(["partest"] + args, cwd = scala_root))
+      if extras: exit(call(["integrate"] + args, cwd = scala_root))
+      else: exit(call(["partest"] + args, cwd = scala_root))
   else:
     notify("unsupported action " + action)
     exit(1)

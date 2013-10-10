@@ -13,6 +13,7 @@ SCALAHASH=${SCALAHASH:0:7}
 SCALAVERSION=$SCALAMAJOR-$SCALAMINOR-$SCALAPATCH-$SCALAHASH-SNAPSHOT
 if [[ $SCALAMINOR -eq 10 ]]; then
   echo "don't know how to integrate $SCALAMAJOR.$SCALAMINOR"
+  exit 1
 fi
 
 ant distpack-maven
