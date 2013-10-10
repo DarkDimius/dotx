@@ -105,10 +105,15 @@ try:
       notify("unknown clean target: " + target)
       exit(1)
   elif action == "test":
+    extras = "--extras" in args
+    args = filter(lambda arg: arg != "--extras", args)
     if sbt_root and sbt_root != scala_root:
       exit(call(sbt_core + ["project tests", "test"] + args, cwd = root))
     else:
-      exit(call(["partest"] + args, cwd = scala_root))
+      if extras:
+        exit(call(["partest"] + args, cwd = scala_root))
+      else
+        exit(call(["partest"] + args, cwd = scala_root))
   else:
     notify("unsupported action " + action)
     exit(1)

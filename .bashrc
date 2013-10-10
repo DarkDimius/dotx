@@ -106,6 +106,7 @@ alias pr="/usr/local/bin/pullrequest"
 function prb () { gru && git rebase "$(pullproto)" --onto "upstream/$(pullproto)"; }
 alias gt="gaika test"
 alias t="gt"
+alias tt="gt --extras"
 function tt () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" t "$@"; }
 alias tall="partest --all"
 function ttall () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" tall "$@"; }
