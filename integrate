@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -e
+
+cd "$(scala-root)"
+SCALAMAJOR=$(sed -nE 's/version.major=([0-9])/\1/p' build.number)
+SCALAMINOR=$(sed -nE 's/version.minor=([0-9])/\1/p' build.number)
+SCALAPATCH=$(sed -nE 's/version.patch=([0-9])/\1/p' build.number)
+SCALAHASH=$(git rev-parse HEAD)
+SCALAHASH=${SCALAHASH:0:7}
+SCALAVERSION=$SCALAMAJOR-$SCALAMINOR-$SCALAPATCH-$SCALAHASH-SNAPSHOT
+
+ant distpack-maven
+cd dists/maven/latest
+ant -Dmaven.version.number=$SCALAVERSION deploy.local
+
+cd "$HOME/Projects/scala-partest"
+sbt -sbt-dir .sbt/ "reboot full" clean "set every scalaVersion := \"$SCALAVERSION\"" "show scala-instance" package
