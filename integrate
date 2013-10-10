@@ -35,4 +35,5 @@ if [[ -d .sbt ]]; then
   mavenLocal: file://$HOME/.m2/repository
 EOF
 fi
-sbt -sbt-dir .sbt "reboot full" clean "set every scalaVersion := \"$SCALAVERSION\"" "show scala-instance" package
+# sbt -sbt-dir .sbt "reboot full" clean "set every scalaVersion := \"$SCALAVERSION\"" "show scala-instance" package
+sbt -sbt-dir .sbt "reboot full" clean "set scalaHome := Some(file(\"$SCALA_SOURCE_DIR/build/pack\"))" "show scala-instance" package
