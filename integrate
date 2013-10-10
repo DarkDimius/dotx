@@ -1,17 +1,37 @@
 #!/usr/bin/env bash
 set -e
 
-cd "$(scala-root)"
+SCALA_SOURCE_DIR="$(scala-root)"
+PARTEST_SOURCE_DIR="$HOME/Projects/scala-partest"
+
+cd "$SCALA_SOURCE_DIR"
 SCALAMAJOR=$(sed -nE 's/version.major=([0-9])/\1/p' build.number)
 SCALAMINOR=$(sed -nE 's/version.minor=([0-9])/\1/p' build.number)
 SCALAPATCH=$(sed -nE 's/version.patch=([0-9])/\1/p' build.number)
 SCALAHASH=$(git rev-parse HEAD)
 SCALAHASH=${SCALAHASH:0:7}
 SCALAVERSION=$SCALAMAJOR-$SCALAMINOR-$SCALAPATCH-$SCALAHASH-SNAPSHOT
+if [[ $SCALAMINOR -eq 10 ]]; then
+  echo "don't know how to integrate $SCALAMAJOR.$SCALAMINOR"
+fi
 
 ant distpack-maven
 cd dists/maven/latest
 ant -Dmaven.version.number=$SCALAVERSION deploy.local
 
-cd "$HOME/Projects/scala-partest"
-sbt -sbt-dir .sbt/ "reboot full" clean "set every scalaVersion := \"$SCALAVERSION\"" "show scala-instance" package
+cd "$PARTEST_SOURCE_DIR"
+git checkout v1.0-RC4
+if [[ -d .sbt ]]; then
+  rm -rf .sbt
+  mkdir .sbt
+  cat > .sbt/repositories <<EOF
+[repositories]
+  maven-central
+  local
+  typesafe-ivy-releases: http://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]
+  sonatype-snapshots: https://oss.sonatype.org/content/repositories/snapshots
+  sonatype-releases: https://oss.sonatype.org/content/repositories/releases
+  mavenLocal: file://$HOME/.m2/repository
+EOF
+fi
+sbt -sbt-dir .sbt "reboot full" clean "set every scalaVersion := \"$SCALAVERSION\"" "show scala-instance" package
