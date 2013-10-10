@@ -10,7 +10,7 @@ SCALAMINOR=$(sed -nE 's/version.minor=([0-9])/\1/p' build.number)
 SCALAPATCH=$(sed -nE 's/version.patch=([0-9])/\1/p' build.number)
 SCALAHASH=$(git rev-parse HEAD)
 SCALAHASH=${SCALAHASH:0:7}
-SCALAVERSION=$SCALAMAJOR-$SCALAMINOR-$SCALAPATCH-$SCALAHASH-SNAPSHOT
+SCALAVERSION=$SCALAMAJOR.$SCALAMINOR.$SCALAPATCH-$SCALAHASH-SNAPSHOT
 if [[ $SCALAMINOR -eq 10 ]]; then
   echo "don't know how to integrate $SCALAMAJOR.$SCALAMINOR"
   exit 1
