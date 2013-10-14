@@ -2,13 +2,13 @@
 <preferences version="0.9.0">
     <quit_confirmation>false</quit_confirmation>
     <show_splash_screen>true</show_splash_screen>
-    <enable_system_notifications>true</enable_system_notifications>
     <lookAndFeel>com.apple.laf.AquaLookAndFeel</lookAndFeel>
+    <enable_system_notifications>true</enable_system_notifications>
     <date_format>dd.MM.yy</date_format>
     <time_format>HH:mm</time_format>
     <display_compact_file_size>false</display_compact_file_size>
-    <preferred_encodings>UTF-8,UTF-16,ISO-8859-1,windows-1252,KOI8-R,Big5,GB18030,EUC-KR,Shift_JIS,ISO-2022-JP,EUC-JP</preferred_encodings>
     <language>EN</language>
+    <preferred_encodings>UTF-8,UTF-16,ISO-8859-1,windows-1252,KOI8-R,Big5,GB18030,EUC-KR,Shift_JIS,ISO-2022-JP,EUC-JP</preferred_encodings>
     <check_for_updates_on_startup>true</check_for_updates_on_startup>
     <date_separator>.</date_separator>
     <mail>
@@ -50,8 +50,8 @@
         <show_system_folders>true</show_system_folders>
         <cd_follows_symlinks>false</cd_follows_symlinks>
         <show_folders_first>true</show_folders_first>
-        <show_hidden_files>true</show_hidden_files>
         <show_ds_store_files>true</show_ds_store_files>
+        <show_hidden_files>true</show_hidden_files>
     </file_table>
     <log>
         <level>WARNING</level>
