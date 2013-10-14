@@ -3921,9 +3921,11 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-116.u9MgCr: Permission denied
+Can't cd to (/private/tmp/) launchd-1685.eQHtZP: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-382.IyhSKR: Permission denied
+Can't cd to (/private/tmp/) launchd-211.h6W3pQ: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-400.Dd9pgD: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -4032,6 +4034,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
+ at /System/Library/Perl/5.12/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /System/Library/Perl/5.12/App/Cpan.pm line 906
@@ -9476,6 +9480,10 @@ KeyRemap4MacBook private.xml:
     <appname>CHROME</appname>
     <equal>com.google.Chrome</equal>
   </appdef>
+  <appdef>
+    <appname>VIBER</appname>
+    <equal>com.viber.osx</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -9950,6 +9958,18 @@ KeyRemap4MacBook private.xml:
       --KeyToKey--
       KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
       KeyCode::F16, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Viber) Cmd + Q => Cmd + H</name>
+    <identifier>private.viber</identifier>
+    <only>VIBER</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
     </autogen>
   </item>
 </root>

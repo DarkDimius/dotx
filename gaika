@@ -108,7 +108,8 @@ try:
     extras = "--extras" in args
     args = filter(lambda arg: arg != "--extras", args)
     if sbt_root and sbt_root != scala_root:
-      exit(call(sbt_core + ["project tests", "test"] + args, cwd = root))
+      project = "llvm" if "eleven" in sbt_root else "tests"
+      exit(call(sbt_core + ["project " + project, "test"] + args, cwd = root))
     else:
       if extras: exit(call(["integrate"] + args, cwd = scala_root))
       else: exit(call(["partest"] + args, cwd = scala_root))

@@ -7,3 +7,4 @@ fi
 
 cd "$sbt_root"
 sbt-the-rebel-cut -Dmy.scala.home="$(scala-root)" "$@"
+# sbt-the-rebel-cut "$@"

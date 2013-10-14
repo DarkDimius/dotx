@@ -60,6 +60,10 @@
     <appname>CHROME</appname>
     <equal>com.google.Chrome</equal>
   </appdef>
+  <appdef>
+    <appname>VIBER</appname>
+    <equal>com.viber.osx</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -534,6 +538,18 @@
       --KeyToKey--
       KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
       KeyCode::F16, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(Viber) Cmd + Q => Cmd + H</name>
+    <identifier>private.viber</identifier>
+    <only>VIBER</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
     </autogen>
   </item>
 </root>
