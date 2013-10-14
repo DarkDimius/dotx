@@ -63,14 +63,14 @@ function install-into-agents() {
 }
 
 if [[ -z "$(which realpath)" ]]; then
-  echo "Bad environment. Probably /usr/local/bin isn't on PATH"
+  echo "Bad environment. Probably /opt/local/bin isn't on PATH"
   echo "Installing /etc/launchd.conf..."
   if [[ -f "/etc/launchd.conf" ]]; then sudo mv -v "/etc/launchd.conf" "/etc/launchd.conf.bak"; fi
   cd "$(dirname "$0")"
   sudo ln -s -v "$(pwd -P)/launchd.conf" "/etc/launchd.conf"
   echo "Installation successful. Now reboot for the changes to be applied"
   if [[ ! -f "/usr/local/bin/realpath" ]]; then
-    ln -sv /usr/local/bin/grealpath /usr/local/bin/realpath
+    ln -sv /opt/local/bin/grealpath /opt/local/bin/realpath
   fi
   exit 1
 fi

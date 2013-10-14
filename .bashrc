@@ -14,7 +14,7 @@ export HISTTIMEFORMAT='%F %T ' # http://www.thegeekstuff.com/2008/08/15-examples
 
 # environment variables have been moved to launchd.conf
 
-source $(brew --prefix)/etc/bash_completion
+source /opt/local/etc/profile.d/bash_completion.sh
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
 source $HOME/.partest-completion.bash
@@ -35,7 +35,7 @@ PS1="\$(date +%H:%M) \w\$(parse_git_branch)\$ "
 function git {
   export LANG=C
   export LC_ALL=en_US.UTF-8
-  /usr/local/bin/git $*
+  /opt/local/bin/git $*
 }
 alias ga='git add'
 alias gai='git add -i'
@@ -98,7 +98,6 @@ complete -F _git_branch gm grb grbi gch gb gbD
 alias cl='git-ls-merge-conflicts'
 alias cr='subl-conflicts'
 
-source "/usr/local/libscala/libscala.sh"
 alias gl='git --no-pager log --pretty=oneline -20'
 alias j="jenkins-submit"
 alias js="jenkins-scan"
@@ -261,7 +260,6 @@ alias sus="sync-upstream"
 alias ez='subl /usr/local/dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
 alias hm='cd "$HOME"'
-alias ubi='cd "/usr/local/bin"'
 alias db='cd "/Users/Shared/Dropbox/Public"'
 alias dl='cd "$HOME/Downloads"'
 alias prj='cd "$HOME/Projects"'
@@ -292,6 +290,6 @@ function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 
 function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
