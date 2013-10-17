@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>56</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/usr/local/etc/bash_completion.d/</location>
+                            <location>/Users/xeno_by/Projects/teaching/fos/exercises/projects/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>56</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/Shared/</location>
+                            <location>bookmark://Projects/</location>
                         </tab-0>
                     </tabs>
                 </right>

@@ -99,8 +99,8 @@ alias gma='git merge --abort'
 complete -F _git_branch gm grb grbi gch gb gbD
 alias cl='git-ls-merge-conflicts'
 alias cr='subl-conflicts'
-
 alias gl='git --no-pager log --pretty=oneline -20'
+
 alias j="jenkins-submit"
 alias js="jenkins-scan"
 alias pr="/usr/local/bin/pullrequest"
@@ -259,6 +259,7 @@ alias ksr="scalac *Test*.scala && scala Test"
 alias kssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias sus="sync-upstream"
 
+alias octave='octave -q'
 alias ez='subl /usr/local/dotx/.bashrc'
 alias az='source $HOME/.bash_profile'
 alias hm='cd "$HOME"'
@@ -295,3 +296,5 @@ function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 
 function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function typeid { target="$(hack-home "typeid")"; if [[ $? == 0 ]]; then cd "$target"; fi }
