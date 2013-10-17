@@ -14,7 +14,9 @@ export HISTTIMEFORMAT='%F %T ' # http://www.thegeekstuff.com/2008/08/15-examples
 
 # environment variables have been moved to launchd.conf
 
-source /opt/local/etc/profile.d/bash_completion.sh
+source /opt/local/etc/bash_completion
+source /opt/local/share/git-core/contrib/completion/git-prompt.sh
+source /opt/local/share/git-core/contrib/completion/git-completion.bash
 source $HOME/.git-completion.bash
 source $HOME/.hack-completion.bash
 source $HOME/.partest-completion.bash
