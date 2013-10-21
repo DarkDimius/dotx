@@ -79,7 +79,7 @@ if filter(lambda prefix: line.startswith(prefix + "/") or line.startswith("\[...
     subl_file(file_name, line_number)
 
 # CASE 3: CLICK ON SOMETHING THAT LOOKS LIKE TEST FAILURE
-if line == "\[output" or line == "differs\]" or line == "\[compilation" or line == "\[test" or line == "failed\]" or line == "\[FAILED\]":
+if line == "\[output" or line == "differs\]" or line == "\[compilation" or line == "\[test" or line == "failed\]" or line == "\[FAILED\]" or line == "\[non-zero" or line == "exit" or line == "code\]":
   cut_prefix = before_click.rfind("\!\!") + 4
   test_name = before_click[cut_prefix:]
   cut_prefix = test_name.rfind("-\ ") + 3
