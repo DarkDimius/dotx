@@ -214,7 +214,7 @@ alias s="rmc && scalac *Test*.scala"
 alias sli="rmc && scalac *Test*.scala -Xlog-implicits"
 alias sp="rmc && scalac *Test*.scala -Xprint:parser"
 alias st="rmc && scalac *Test*.scala -Xprint:typer"
-alias sp="rmc && scalac *Test*.scala -Xprint:patmat"
+alias spm="rmc && scalac *Test*.scala -Xprint:patmat"
 alias sy="rmc && scalac *Test*.scala -Ymacro-debug-lite"
 alias sty="rmc && scalac *Test*.scala -Ytyper-debug"
 alias siy="rmc && scalac *Test*.scala -Yinfer-debug"
@@ -225,7 +225,7 @@ alias ss="rmc && scalac *Macros*.scala && scalac Test*.scala"
 alias ssli="rmc && scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
 alias ssp="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:parser"
 alias sst="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
-alias ssp="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:patmat"
+alias sspm="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:patmat"
 alias ssy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
 alias ssty="rmc && scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias ssiy="rmc && scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
@@ -235,7 +235,7 @@ alias ks="scalac *Test*.scala"
 alias ksli="scalac *Test*.scala -Xlog-implicits"
 alias ksp="scalac *Test*.scala -Xprint:parser"
 alias kst="scalac *Test*.scala -Xprint:typer"
-alias ksp="scalac *Test*.scala -Xprint:patmat"
+alias kspm="scalac *Test*.scala -Xprint:patmat"
 alias ksy="scalac *Test*.scala -Ymacro-debug-lite"
 alias ksty="scalac *Test*.scala -Ytyper-debug"
 alias ksiy="scalac *Test*.scala -Yinfer-debug"
@@ -246,7 +246,7 @@ alias kss="scalac *Macros*.scala && scalac Test*.scala"
 alias kssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
 alias kssp="scalac *Macros*.scala && scalac Test*.scala -Xprint:parser"
 alias ksst="scalac *Macros*.scala && scalac Test*.scala -Xprint:typer"
-alias kssp="scalac *Macros*.scala && scalac Test*.scala -Xprint:patmat"
+alias ksspm="scalac *Macros*.scala && scalac Test*.scala -Xprint:patmat"
 alias kssy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
 alias kssty="scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias kssiy="scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
@@ -295,6 +295,12 @@ function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typeid { target="$(hack-home "typeid")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function deprecate { target="$(hack-home "deprecate")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function macro-ctors { target="$(hack-home "macro-ctors")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function broken-master { target="$(hack-home "broken-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
+function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function macro-impl-wrong-shape { target="$(hack-home "macro-impl-wrong-shape")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function broken-windows { target="$(hack-home "broken-windows")"; if [[ $? == 0 ]]; then cd "$target"; fi }

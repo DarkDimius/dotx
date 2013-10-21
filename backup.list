@@ -92,6 +92,7 @@ gfxCardStatus.app
 iPhoto.app
 iTerm.app
 iTunes.app
+iWork '09
 muCommander.app
 uTorrent.app
 
@@ -149,7 +150,6 @@ The following ports are currently installed:
   gettext @0.18.3.1_1 (active)
   ghc @7.6.3_2+gcc48 (active)
   ghostscript @9.10_0 (active)
-  git-core @1.8.4_0+credential_osxkeychain+doc+pcre+python27
   git-core @1.8.4_0+bash_completion+credential_osxkeychain+doc+pcre+python27 (active)
   glib2 @2.38.0_1 (active)
   glpk @4.48_0 (active)
@@ -1117,6 +1117,12 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-214.a4ujBk: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-3018.1ws8HJ: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-484.vaOpqr: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/at/) tabs: Permission denied
@@ -1179,8 +1185,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permiss
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) T: Permission denied
@@ -1202,6 +1206,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -7056,11 +7062,13 @@ user.workflow.068A61FB-3CC1-4FD7-99E4-01DF7C1B8636
 user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
 user.workflow.0D191761-323A-407B-8661-63BEA013AA58
 user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
+user.workflow.0e816348-ccd5-4c4f-9004-8a9d5d80e020
 user.workflow.0e9693af-ee8b-4df5-8f5b-87ad7bb78e1d
 user.workflow.1AAFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
+user.workflow.1d901ab7-2045-438a-ad68-f7ba9dc30962
 user.workflow.2680995a-b1a3-4307-b1d4-d85e20ca1e0e
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
@@ -7071,8 +7079,10 @@ user.workflow.3037AAAA-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037AF79-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037BBBB-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.32f32d14-c94c-4763-871d-1406f08a67e8
+user.workflow.357376e1-3ee5-4a94-8253-8d75061b5038
 user.workflow.4373DD4A-9C72-41DC-B98B-5C4D401C55F3
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
+user.workflow.47f616d1-29ef-4227-a60e-7083d43aea3a
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
 user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
 user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
@@ -7091,8 +7101,10 @@ user.workflow.82DE8877-0899-4F4F-A948-5A054BAA5EB4
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
 user.workflow.8C6C947F-04D5-4B6F-B752-AD2F16D7BBE9
+user.workflow.8ca3b027-c963-46db-a71e-abbd0f4dfa48
 user.workflow.91AA50E9-CF3E-4550-89FF-8CDB3F44E434
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
+user.workflow.95d73013-53f2-4e58-a6e8-1e5f49d49dd5
 user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
 user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9DBF494A-5F80-4096-9A9A-410DBE59F545
@@ -7122,6 +7134,7 @@ jsonovich@lackoftalent.org.xpi
 keyconfig@petricek.net.xpi
 omnibar@ajitk.com.xpi
 readability@readability.com.xpi
+staged
 testpilot@labs.mozilla.com.xpi
 {d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi
 {dc572301-7619-498c-a57d-39143191b318}.xpi
