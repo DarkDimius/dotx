@@ -12,6 +12,7 @@ cwd = os.path.abspath(".")
 git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
 scala_root = check_output(["scala-root"]).strip()
 sbt_root = check_output(["sbt-root"]).strip()
+make_root = check_output(["make-root"]).strip()
 root = git_root if not "fatal:" in git_root else cwd
 
 env = {}
@@ -26,6 +27,7 @@ env["result_base_dir"] = "" # real value is set elsewhere
 parent_name = check_output(["ps", "-o", "command", str(os.getppid())])
 sublime = "Sublime Text" in parent_name
 sbt_core = ["sbt", "-Dsbt.log.noformat=true"] if sublime else ["sbt"]
+make_core = ["make"]
 
 def notify(msg):
   if (sublime): call(["growlnotify", "-n", "Kepler", "-m", str(msg)])
@@ -69,12 +71,19 @@ try:
     elif sbt_root and sbt_root != scala_root:
       root = sbt_root
       exit(call(sbt_core + ["package"], cwd = root))
+    elif make_root:
+      root = make_root
+      env["working_dir"] = root
+      env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]cpp):([0-9]+)"
+      exit(call(make_core, cwd = root))
     else:
       root = scala_root
       if cwd.startswith(root):
+        print scala_root
         tier = check_output(["scala-tier"]).strip()
         if tier == "pack": exit(call(["ant"], cwd = root))
-        elif tier == "quick": exit(call(["ant", "quick.repl"], cwd = root))
+        elif tier == "quick" and "210" in scala_root: exit(call(["ant", "quick.comp"], cwd = root))
+        elif tier == "quick" and not "210" in scala_root: exit(call(["ant", "quick.repl"], cwd = root))
         elif tier == "locker": exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
         else: print "unknown tier: " + str(tier); exit(1)
       else:
