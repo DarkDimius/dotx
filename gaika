@@ -77,7 +77,9 @@ try:
       root = make_root
       env["working_dir"] = root
       env["result_file_regex"] = "([:.a-z_A-Z0-9\\\\/-]+[.]cpp):([0-9]+)"
-      exit(call(make_core, cwd = root))
+      retcode = call(make_core, cwd = root)
+      if retcode != 0: sys.exit(retcode)
+      exit(call(["./transforms", "demo.txt"], cwd = root))
     else:
       root = scala_root
       if cwd.startswith(root):
