@@ -54,6 +54,8 @@ try:
     if args and args[0].endswith(".tex"):
       target = args[0]
       root = os.path.dirname(os.path.abspath(target))
+      base, ext = os.path.splitext(target)
+      if os.path.exists(base + ".aux"): os.unlink(base + ".aux")
       exit(call(["xelatex", target], cwd = root))
     elif args and args[0].endswith(".bib"):
       bib = args[0]
