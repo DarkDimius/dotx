@@ -64,6 +64,14 @@
     <appname>VIBER</appname>
     <equal>com.viber.osx</equal>
   </appdef>
+  <appdef>
+    <appname>SKIM</appname>
+    <equal>net.sourceforge.skim-app.skim</equal>
+  </appdef>
+  <appdef>
+    <appname>HW</appname>
+    <equal>org.pqrs.unknownapp.transforms</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -374,9 +382,9 @@
     </block>
   </item>
   <item>
-    <name>(Preview) Satechi Compat</name>
-    <identifier>private.preview_satechi_compat</identifier>
-    <only>PREVIEW</only>
+    <name>(Preview, Skim) Satechi Compat</name>
+    <identifier>private.satechi_compat</identifier>
+    <only>PREVIEW, SKIM</only>
     <autogen>
       --ConsumerToKey--
       ConsumerKeyCode::MUSIC_PREV_18,

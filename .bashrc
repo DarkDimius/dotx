@@ -287,20 +287,10 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function ticket6240 { target="$(hack-home "6240")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function fundep-views { target="$(hack-home "fundep-views")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function vampires { target="$(hack-home "vampires")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function ticket7340 { target="$(hack-home "7340")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function typeid { target="$(hack-home "typeid")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function deprecate { target="$(hack-home "deprecate")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function macro-ctors { target="$(hack-home "macro-ctors")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function broken-master { target="$(hack-home "broken-master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
 function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function macro-impl-wrong-shape { target="$(hack-home "macro-impl-wrong-shape")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function broken-windows { target="$(hack-home "broken-windows")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
