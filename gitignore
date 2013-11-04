@@ -88,7 +88,7 @@ Gist.sublime-settings
 *.bak
 *.hi
 *.o
-scala-2.10.1
+*.a
 .DS_Store
 .partest
 .jenkins
