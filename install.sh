@@ -120,6 +120,7 @@ install-into-home partest-completion.bash .partest-completion.bash
 install-into-home subl-open-project-completion.bash .subl-open-project-completion.bash
 install-into-home alfred-completion.bash .alfred-completion.bash
 install-into-home .scala_tier
+install-into-home .octaverc
 
 install-into-bin pullrequest
 install-into-bin java6
