@@ -271,6 +271,7 @@ alias dotx='cd "/usr/local/dotx"'
 alias smo='cd "$HOME/Projects/SiteScalamacrosOrg"'
 alias slo='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
+alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110='cd "$HOME/Projects/Paradise2110/sandbox/src/main/scala"'
 alias dex='cd "$HOME/Projects/Dex"'
 alias spire='cd "$HOME/Projects/Spire"'
@@ -278,7 +279,10 @@ alias fos='cd "$HOME/Projects/teaching/fos"'
 alias fose='cd "$HOME/Projects/teaching/fos/exercises"'
 alias pl='cd "$HOME/Projects/Palladium"'
 alias el='cd "$HOME/Projects/Eleven"'
-alias jna='cd "$HOME/Projects/Eleven/llvm/src/main/java"'
+alias hw2='cd "$HOME/Projects/hw2-linuxosx"'
+alias hw3='cd "$HOME/Projects/hw3"'
+alias ml1='cd "$HOME/Projects/mlclass-ex1"'
+alias ml2='cd "$HOME/Projects/mlclass-ex2"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
@@ -291,6 +295,7 @@ function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 
 function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function blackbox { target="$(hack-home "blackbox")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
+function is-term-macro { target="$(hack-home "is-term-macro")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function implicit-macros-invalidate-on-error { target="$(hack-home "implicit-macros-invalidate-on-error")"; if [[ $? == 0 ]]; then cd "$target"; fi }

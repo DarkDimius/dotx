@@ -10,8 +10,16 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2103"):
   print "/Users/xeno_by/Projects/210x"
   sys.exit(0)
 
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise210x"):
+  print "/Users/xeno_by/Projects/210x"
+  sys.exit(0)
+
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110"):
   print "/Users/xeno_by/Projects/Master"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M5"):
+  print "/Users/xeno_by/Projects/Scala2100M5"
   sys.exit(0)
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Spores"):

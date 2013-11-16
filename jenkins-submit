@@ -21,6 +21,8 @@ if repo == "palladium" and branch == "palladium":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/palladium-nightly-main/buildWithParameters?publish=true"
 elif repo == "paradise" and branch == "2.10.3":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-2.10.3/build"
+elif repo == "paradise" and branch == "2.10.x":
+  jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-2.10.x/build"
 elif repo == "paradise" and branch == "2.11.0":
   jenkins_url = "https://scala-webapps.epfl.ch/jenkins/view/misc/job/macro-paradise-nightly-2.11.0/build"
 elif repo == "paradise" and branch == "virt":
