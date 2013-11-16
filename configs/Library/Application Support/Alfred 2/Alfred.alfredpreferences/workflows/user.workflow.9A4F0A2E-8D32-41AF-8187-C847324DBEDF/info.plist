@@ -6,11 +6,11 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>EA49C0E6-6564-4181-9AD0-9F982C6AB9C7</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>6EEC5713-CB6E-4823-ABD4-20973075CFAE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,42 +25,42 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>hw2</string>
+	<string>Downloads</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>hw2</string>
-				<key>text</key>
-				<string>hw2</string>
-				<key>withspace</key>
+				<key>paths</key>
+				<array>
+					<string>/Users/Shared/Dropbox/Papers/Reading List</string>
+				</array>
+				<key>toggle</key>
 				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<string>6EEC5713-CB6E-4823-ABD4-20973075CFAE</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>subl-open-project hw2</string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>reading</string>
+				<key>text</key>
+				<string>Reading List</string>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>EA49C0E6-6564-4181-9AD0-9F982C6AB9C7</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -69,15 +69,15 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>6EEC5713-CB6E-4823-ABD4-20973075CFAE</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>EA49C0E6-6564-4181-9AD0-9F982C6AB9C7</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

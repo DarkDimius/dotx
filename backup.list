@@ -1122,7 +1122,15 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-391.SQfanf: Permission denied
+Can't cd to (/private/tmp/) launchd-116.e8BVh5: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-1403.uyCmOf: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-373.20uGqR: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-3851.SMLg1m: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-7801.j2dc7m: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1174,8 +1182,6 @@ Can't cd to (/private/var/db/) sudo: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) T: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) C: Permission denied
@@ -1191,8 +1197,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000007000001r/) C: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000007000001r/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1277,6 +1281,8 @@ Can't cd to (/private/var/log/) radius: Permission denied
 Can't cd to (/private/var/) pgsql_socket_alt: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) root: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/run/) .vfs_rsrc_streams_0x18f4b10f4870a32b0: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/run/) mds: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -7071,10 +7077,14 @@ user.workflow.068A61FB-3CC1-4FD7-99E4-01DF7C1B8636
 user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
 user.workflow.0D191761-323A-407B-8661-63BEA013AA58
 user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
+user.workflow.0aa7824a-6c29-401a-9939-665a32026477
+user.workflow.0b787ebf-4e20-45b5-9c89-208bbc21c74c
+user.workflow.0e16b189-9a86-421e-8ace-6c0f249afcf9
 user.workflow.1AAFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
+user.workflow.1f7ace56-d011-4eda-aff0-ad5d80184512
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
 user.workflow.2F578D79-E596-4316-B383-F2F560426418
@@ -7097,7 +7107,7 @@ user.workflow.607477fe-d194-493e-82cd-7c892adf3b09
 user.workflow.641b5221-e831-4548-9a54-b4af6e55f8de
 user.workflow.761D1C8A-EE5D-45EF-9043-936F417F66EF
 user.workflow.77E3F47B-018A-49F2-8710-5B8CDF8A5192
-user.workflow.8114b686-985d-449f-a15f-952bc76ebd3a
+user.workflow.7e43f115-b703-4760-b387-24d69a89650a
 user.workflow.82DE8877-0899-4F4F-A948-5A054BAA5EB4
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
@@ -7106,6 +7116,7 @@ user.workflow.8ca3b027-c963-46db-a71e-abbd0f4dfa48
 user.workflow.91AA50E9-CF3E-4550-89FF-8CDB3F44E434
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
 user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
+user.workflow.9A4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9DBF494A-5F80-4096-9A9A-410DBE59F545
 user.workflow.9F578D79-E596-4316-B383-F2F560426419
@@ -7118,7 +7129,8 @@ user.workflow.DA7D1AF6-3DB4-47A0-B70D-81CC873BA433
 user.workflow.E5E1EA9E-BE9A-4FEC-8CB5-401D24764D2F
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 user.workflow.F39EAAA9-932D-4688-8FEE-F704A7928D1D
-user.workflow.ae8989da-312c-4faf-ab41-fc704c44ffcf
+user.workflow.ca4dd404-efe7-4107-972d-aabfd3cc0dca
+user.workflow.cc50aaf5-5f6a-46d1-98a8-8ce4a3719fa8
 
 ==================
 Firefox extensions:

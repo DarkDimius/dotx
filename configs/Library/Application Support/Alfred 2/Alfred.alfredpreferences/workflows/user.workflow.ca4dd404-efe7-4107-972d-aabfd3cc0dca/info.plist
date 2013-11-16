@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>hw2</string>
+	<string>fos4</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -34,9 +34,9 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>hw2</string>
+				<string>fos4</string>
 				<key>text</key>
-				<string>hw2</string>
+				<string>Foundations of Software: Project 4</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -53,7 +53,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>subl-open-project hw2</string>
+				<string>subl-open-project fos4</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

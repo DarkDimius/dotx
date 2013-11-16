@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>hw1</string>
+  <string>mlclass-ex1</string>
   <key>objects</key>
   <array>
     <dict>
@@ -34,7 +34,7 @@
         <key>escaping</key>
         <integer>127</integer>
         <key>script</key>
-        <string>subl-open-project hw1</string>
+        <string>subl-open-project mlclass-ex1</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -51,9 +51,9 @@
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>hw1</string>
+        <string>mlclass-ex1</string>
         <key>text</key>
-        <string>hw1</string>
+        <string>mlclass-ex1</string>
         <key>withspace</key>
         <false/>
       </dict>
