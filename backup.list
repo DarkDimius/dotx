@@ -2,6 +2,7 @@ Apps:
 .localized
 1Password.app
 Adium.app
+Adobe Reader.app
 Alfred 2.app
 App Store.app
 Araxis Merge.app
@@ -98,6 +99,7 @@ Homebrew packages:
 Macports packages:
 The following ports are currently installed:
   apache-ant @1.9.2_0 (active)
+  apple-gcc42 @5666.3_13 (active)
   aquaterm @1.1.1_0 (active)
   arpack @3.1.3_0+accelerate+gcc48 (active)
   atlas @3.10.1_5+mpclang33 (active)
@@ -108,9 +110,12 @@ The following ports are currently installed:
   bzip2 @1.0.6_0 (active)
   cairo @1.12.16_0+x11
   cairo @1.12.16_1+x11 (active)
-  cctools @839_2+llvm33 (active)
-  cctools-headers @839_0 (active)
-  clang-3.3 @3.3_1+analyzer+python27 (active)
+  cctools @839_2+llvm33
+  cctools @845_0+llvm33 (active)
+  cctools-headers @839_0
+  cctools-headers @845_0 (active)
+  clang-3.3 @3.3_1+analyzer+python27
+  clang-3.3 @3.3_2+analyzer+python27 (active)
   clang_select @0.1_0 (active)
   clojure @1.5.1_0 (active)
   clojure-contrib @1.2.0_0 (active)
@@ -124,11 +129,16 @@ The following ports are currently installed:
   db_select @0.1_2 (active)
   desktop-file-utils @0.15_1 (active)
   djvulibre @3.5.25_6 (active)
-  dmd @2.063_0 (active)
-  dmd-doc @2.063_0 (active)
-  dmd-tools @2.063_0 (active)
-  druntime @2.063_0 (active)
-  erlang @R16B01_1+ssl (active)
+  dmd @2.063_0
+  dmd @2.064_0 (active)
+  dmd-doc @2.063_0
+  dmd-doc @2.064_0 (active)
+  dmd-tools @2.063_0
+  dmd-tools @2.064_0 (active)
+  druntime @2.063_0
+  druntime @2.064_0 (active)
+  erlang @R16B01_1+ssl
+  erlang @R16B02_1+hipe+ssl (active)
   expat @2.1.0_0 (active)
   fftw-3 @3.3.3_3 (active)
   fftw-3-single @3.3.3_3 (active)
@@ -137,7 +147,8 @@ The following ports are currently installed:
   fontconfig @2.11.0_0 (active)
   freetype @2.5.0_1 (active)
   ftgl @2.1.3-rc5_0 (active)
-  gawk @4.0.2_0 (active)
+  gawk @4.0.2_0
+  gawk @4.1.0_0 (active)
   gcc48 @4.8.1_3
   gcc48 @4.8.2_0 (active)
   gcc_select @0.1_8 (active)
@@ -148,14 +159,17 @@ The following ports are currently installed:
   ghostscript @9.10_0
   ghostscript @9.10_1+x11 (active)
   git-core @1.8.4_0+bash_completion+credential_osxkeychain+doc+pcre+python27
-  git-core @1.8.4.1_0+bash_completion+credential_osxkeychain+doc+pcre+python27 (active)
+  git-core @1.8.4.1_0+bash_completion+credential_osxkeychain+doc+pcre+python27
+  git-core @1.8.4.2_0+bash_completion+credential_osxkeychain+doc+pcre+python27 (active)
   glib2 @2.38.0_1
-  glib2 @2.38.1_0 (active)
+  glib2 @2.38.1_0
+  glib2 @2.38.2_0 (active)
   glpk @4.48_0 (active)
   gmp @5.1.2_0 (active)
   gnuplot @4.6.3_4+aquaterm+luaterm+pangocairo+x11
   gnuplot @4.6.3_5+aquaterm+luaterm+pangocairo+wxwidgets+x11
-  gnuplot @4.6.4_0+aquaterm+luaterm+pangocairo+wxwidgets+x11 (active)
+  gnuplot @4.6.4_0+aquaterm+luaterm+pangocairo+wxwidgets+x11
+  gnuplot @4.6.4_1+aquaterm+luaterm+pangocairo+wxwidgets+x11 (active)
   gnutls @3.1.10_1 (active)
   gobject-introspection @1.36.0_1
   gobject-introspection @1.38.0_1 (active)
@@ -165,7 +179,8 @@ The following ports are currently installed:
   gsed @4.2.2_0 (active)
   harfbuzz @0.9.21_0
   harfbuzz @0.9.22_0
-  harfbuzz @0.9.23_0 (active)
+  harfbuzz @0.9.23_0
+  harfbuzz @0.9.24_0 (active)
   haskell-platform @2013.2.0.0_0 (active)
   hdf5-18 @1.8.11_0+cxx (active)
   hs-alex @3.0.5_1 (active)
@@ -224,9 +239,11 @@ The following ports are currently installed:
   libgpg-error @1.12_0 (active)
   libiconv @1.14_0 (active)
   libidn @1.26_0 (active)
+  libksba @1.0.8_0 (active)
   libmpc @1.0.1_0 (active)
   libpaper @1.1.24_0 (active)
-  libpixman @0.30.2_0 (active)
+  libpixman @0.30.2_0
+  libpixman @0.32.2_0 (active)
   libpng @1.5.17_0 (active)
   libtasn1 @2.11_0 (active)
   libtool @2.4.2_3 (active)
@@ -234,6 +251,7 @@ The following ports are currently installed:
   libvpx @1.2.0_1 (active)
   libxml2 @2.9.1_0 (active)
   libxslt @1.1.28_0 (active)
+  libyaml @0.1.4_1 (active)
   llvm-3.3 @3.3_1 (active)
   llvm-gcc42 @2336.11_1 (active)
   llvm_select @0.2_0 (active)
@@ -244,7 +262,8 @@ The following ports are currently installed:
   maven3 @3.0.5_0 (active)
   maven_select @0.3_1 (active)
   mercurial @2.7_0
-  mercurial @2.7.2_0+bash_completion (active)
+  mercurial @2.7.2_0+bash_completion
+  mercurial @2.8_0+bash_completion (active)
   metis @5.1.0_0 (active)
   mpfr @3.1.1-p2_0 (active)
   ncurses @5.9_2 (active)
@@ -256,12 +275,14 @@ The following ports are currently installed:
   p5.12-error @0.170.160_4 (active)
   p5.12-term-readkey @2.300.0_3 (active)
   p11-kit @0.20.1_0 (active)
-  pango @1.36.0_0+x11 (active)
+  pango @1.36.0_0+x11
+  pango @1.36.1_0+x11 (active)
   pcre @8.33_0 (active)
   pdflib @7.0.5_1 (active)
   perl5 @5.12.4_0+perl5_12 (active)
   perl5.12 @5.12.4_2 (active)
-  phobos @2.063_0 (active)
+  phobos @2.063_0
+  phobos @2.064_0 (active)
   pkgconfig @0.28_0 (active)
   popt @1.16_0 (active)
   py-xhtml2pdf @0.0.4_0 (active)
@@ -271,9 +292,11 @@ The following ports are currently installed:
   py27-pypdf @1.13_1 (active)
   py27-reportlab @2.7_0 (active)
   py27-roman @2.0.0_0 (active)
-  py27-tkinter @2.7.5_0 (active)
+  py27-tkinter @2.7.5_0
+  py27-tkinter @2.7.6_0 (active)
   py27-xhtml2pdf @0.0.4_0 (active)
-  python27 @2.7.5_1 (active)
+  python27 @2.7.5_1
+  python27 @2.7.6_0 (active)
   python_select @0.3_2
   python_select @0.3_3 (active)
   qhull @2012.1_2 (active)
@@ -285,13 +308,16 @@ The following ports are currently installed:
   SuiteSparse @4.2.1_0 (active)
   tcl @8.6.1_0+corefoundation+threads (active)
   texinfo @4.13_2 (active)
-  tiff @4.0.3_1 (active)
-  tk @8.6.1_0+quartz (active)
+  tiff @4.0.3_1
+  tiff @4.0.3_2 (active)
+  tk @8.6.1_0+quartz
+  tk @8.6.1_1+quartz (active)
   urw-fonts @1.0.7pre44_0 (active)
   webp @0.3.1_0 (active)
   wget @1.14_5+ssl (active)
   wxWidgets-3.0 @3.0.0_1
-  wxWidgets-3.0 @3.0.0_2 (active)
+  wxWidgets-3.0 @3.0.0_2
+  wxWidgets-3.0 @3.0.0_4 (active)
   wxWidgets_select @1.0_0 (active)
   Xft2 @2.3.1_0 (active)
   xorg-kbproto @1.0.6_0 (active)
@@ -307,7 +333,8 @@ The following ports are currently installed:
   xorg-renderproto @0.11.1_0 (active)
   xorg-xcb-proto @1.8_0+python27 (active)
   xorg-xcb-util @0.3.9_0 (active)
-  xorg-xextproto @7.2.1_0 (active)
+  xorg-xextproto @7.2.1_0
+  xorg-xextproto @7.2.99.901_0 (active)
   xorg-xproto @7.0.24_0 (active)
   xpm @3.5.11_0 (active)
   xrender @0.9.8_0 (active)
@@ -328,13 +355,15 @@ commander (4.1.5, 4.1.3)
 directory_watcher (1.5.1, 1.4.1)
 fast-stemmer (1.0.2)
 fattr (2.2.1)
+ffi (1.9.3)
 gli (2.8.1, 2.8.0)
-highline (1.6.19)
+highline (1.6.20, 1.6.19)
 httparty (0.11.0)
-jekyll (1.2.1, 1.0.2, 0.12.1)
-json (1.8.0)
+jekyll (1.3.0, 1.2.1, 1.0.2, 0.12.1)
+json (1.8.1, 1.8.0)
 kramdown (1.2.0, 1.0.2, 0.14.2)
-liquid (2.5.3, 2.5.2, 2.5.0)
+liquid (2.5.4, 2.5.3, 2.5.2, 2.5.0)
+listen (1.3.1)
 main (5.2.0, 4.7.7)
 map (6.5.1, 4.3.0)
 maruku (0.7.0, 0.6.1)
@@ -344,7 +373,10 @@ multi_json (1.8.2, 1.8.0)
 multi_xml (0.5.5)
 paint (0.8.6)
 posix-spawn (0.3.6)
-pygments.rb (0.5.2, 0.5.0, 0.3.7)
+pygments.rb (0.5.4, 0.5.2, 0.5.0, 0.3.7)
+rb-fsevent (0.9.3)
+rb-inotify (0.9.2)
+rb-kqueue (0.2.0)
 redcarpet (2.3.0)
 safe_yaml (0.9.7, 0.7.1)
 syntax (1.0.0)
@@ -1122,15 +1154,17 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-116.e8BVh5: Permission denied
+Can't cd to (/private/tmp/) cvcd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-1403.uyCmOf: Permission denied
+Can't cd to (/private/tmp/) launchd-1124.4IdSKb: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-373.20uGqR: Permission denied
+Can't cd to (/private/tmp/) launchd-116.N9RiMA: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-3851.SMLg1m: Permission denied
+Can't cd to (/private/tmp/) launchd-2887.0tZgje: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-7801.j2dc7m: Permission denied
+Can't cd to (/private/tmp/) launchd-375.b2Df0f: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-803.E7XCCf: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1220,8 +1254,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permiss
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) T: Permission denied
@@ -1281,8 +1313,6 @@ Can't cd to (/private/var/log/) radius: Permission denied
 Can't cd to (/private/var/) pgsql_socket_alt: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) root: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/run/) .vfs_rsrc_streams_0x18f4b10f4870a32b0: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/run/) mds: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -7129,6 +7159,7 @@ user.workflow.DA7D1AF6-3DB4-47A0-B70D-81CC873BA433
 user.workflow.E5E1EA9E-BE9A-4FEC-8CB5-401D24764D2F
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 user.workflow.F39EAAA9-932D-4688-8FEE-F704A7928D1D
+user.workflow.a5f93cbd-56d7-4236-b853-565db24939fe
 user.workflow.ca4dd404-efe7-4107-972d-aabfd3cc0dca
 user.workflow.cc50aaf5-5f6a-46d1-98a8-8ce4a3719fa8
 

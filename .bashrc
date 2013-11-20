@@ -283,6 +283,8 @@ alias hw2='cd "$HOME/Projects/hw2-linuxosx"'
 alias hw3='cd "$HOME/Projects/hw3"'
 alias ml1='cd "$HOME/Projects/mlclass-ex1"'
 alias ml2='cd "$HOME/Projects/mlclass-ex2"'
+alias ml3='cd "$HOME/Projects/mlclass-ex3"'
+alias talks='cd "$HOME/Projects/Talks"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }

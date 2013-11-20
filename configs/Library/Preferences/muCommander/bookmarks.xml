@@ -13,11 +13,15 @@
         <location>/Users/Shared/Dropbox/</location>
     </bookmark>
     <bookmark>
-        <name>Sublime Text 3.~</name>
+        <name>Sublime Text 3.conf</name>
         <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/</location>
     </bookmark>
     <bookmark>
         <name>Sublime Text 3.app</name>
         <location>/Applications/Sublime Text 3.app/Contents/MacOS/Packages/</location>
+    </bookmark>
+    <bookmark>
+        <name>Reading List</name>
+        <location>/Users/Shared/Dropbox/Papers/Reading List/</location>
     </bookmark>
 </bookmarks>
