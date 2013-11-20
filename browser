@@ -16,6 +16,9 @@ on run argv
   if previouslyActiveApp contains "Pocket.app" then
     set background to true
   end if
+  if previouslyActiveApp contains "Airmail.app" then
+    set background to true
+  end if
   if application "Google Chrome" is not running then
     do shell script "open -a \"Google Chrome\" --args " & this_URL
   else
