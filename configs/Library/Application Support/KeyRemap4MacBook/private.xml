@@ -72,6 +72,10 @@
     <appname>HW</appname>
     <equal>org.pqrs.unknownapp.transforms</equal>
   </appdef>
+  <appdef>
+    <appname>AIRMAIL</appname>
+    <equal>it.bloop.airmail</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -555,6 +559,36 @@
     <autogen>
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Airmail) Cmd + Q => Cmd + H, Cmd + Enter => Cmd + Enter and Cmd + Tab, Cmd + Shift + Enter => Cmd + Shift + Enter and Cmd + Tab</name>
+    <identifier>private.airmail</identifier>
+    <only>AIRMAIL</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::RETURN, ModifierFlag::COMMAND_L,
+      KeyCode::RETURN, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::VK_WAIT_50MS,
       KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
