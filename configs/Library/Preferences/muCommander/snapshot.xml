@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>76</width>
+                            <width>84</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/Shared/Dropbox/Backups/Obsolete/</location>
+                            <location>/Users/xeno_by/Downloads/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>36</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -114,7 +114,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/</location>
+                            <location>/Users/xeno_by/Projects/talks/2013-11-25-Google/</location>
                         </tab-0>
                     </tabs>
                 </right>
