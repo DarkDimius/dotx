@@ -35,7 +35,7 @@ def get_drive_service():
   return build('drive', 'v2', http=http)
 
 today = datetime.date.today()
-next_meeting = today + datetime.timedelta((8 - today.weekday()) % 7)
+next_meeting = today + datetime.timedelta((10 - today.weekday()) % 7)
 next_meeting_title = topic + " Meeting %04d-%02d-%02d" % (next_meeting.year, next_meeting.month, next_meeting.day)
 
 drive_service = get_drive_service()
