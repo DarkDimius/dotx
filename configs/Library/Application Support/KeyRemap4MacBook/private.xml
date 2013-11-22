@@ -577,7 +577,7 @@
     </autogen>
     <autogen>
       --KeyToKey--
-      KeyCode::RETURN, ModifierFlag::COMMAND_L,
+      KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
       KeyCode::RETURN, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::M, ModifierFlag::COMMAND_L,
@@ -586,12 +586,22 @@
     </autogen>
     <autogen>
       --KeyToKey--
-      KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag::NONE,
       KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
     </autogen>
   </item>
 </root>

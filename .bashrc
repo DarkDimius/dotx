@@ -298,6 +298,6 @@ function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$ta
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
 function is-term-macro { target="$(hack-home "is-term-macro")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function implicit-macros-invalidate-on-error { target="$(hack-home "implicit-macros-invalidate-on-error")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
