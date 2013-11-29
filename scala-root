@@ -6,6 +6,10 @@ if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
   sys.exit(1)
 
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2102"):
+  print "/Users/xeno_by/Projects/Scala2102"
+  sys.exit(0)
+
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2103"):
   print "/Users/xeno_by/Projects/210x"
   sys.exit(0)
