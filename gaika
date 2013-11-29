@@ -86,8 +86,10 @@ try:
         print scala_root
         tier = check_output(["scala-tier"]).strip()
         if tier == "pack": exit(call(["ant"], cwd = root))
-        elif tier == "quick" and "210" in scala_root: exit(call(["ant", "quick.comp"], cwd = root))
-        elif tier == "quick" and not "210" in scala_root: exit(call(["ant", "quick.repl"], cwd = root))
+        elif tier == "quick":
+          is210 = "210" in scala_root or "toolbox-rangepos" in scala_root
+          target = "quick.comp" if is210 else "quick.repl"
+          exit(call(["ant", target], cwd = root))
         elif tier == "locker": exit(call(["ant", "locker.unlock", "locker.done"], cwd = root))
         else: print "unknown tier: " + str(tier); exit(1)
       else:
