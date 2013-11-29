@@ -11,7 +11,7 @@ if not "^" in task:
   task = task + " ^today"
 
 try:
-  check_output(["milkmaid", "task", "add", task], stderr=STDOUT)
+  check_output(["rtmcli", "add", task], stderr=STDOUT)
 except CalledProcessError, err:
   message = err.output
   m = re.match("^.*FATAL -- : ERROR: .*?, Message: (.*?)[\.]?\s*\(.*", message)
