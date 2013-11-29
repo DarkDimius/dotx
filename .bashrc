@@ -270,6 +270,7 @@ alias des='cd "$HOME/Library/Application Support/Sublime Text 3"'
 alias dotx='cd "/usr/local/dotx"'
 alias smo='cd "$HOME/Projects/SiteScalamacrosOrg"'
 alias slo='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
+alias paradise2102='cd "$HOME/Projects/Paradise2102/sandbox/src/main/scala"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110='cd "$HOME/Projects/Paradise2110/sandbox/src/main/scala"'
@@ -298,6 +299,6 @@ function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$ta
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function is-term-macro { target="$(hack-home "is-term-macro")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function implicit-macros-invalidate-on-error { target="$(hack-home "implicit-macros-invalidate-on-error")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function toolbox-rangepos { target="$(hack-home "toolbox-rangepos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function pure-expression-does-nothing { target="$(hack-home "pure-expression-does-nothing")"; if [[ $? == 0 ]]; then cd "$target"; fi }

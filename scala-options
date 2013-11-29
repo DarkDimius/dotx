@@ -54,7 +54,7 @@ if os.environ.get("SCALAC_OPTS"):
   scalac_opts = os.environ["SCALAC_OPTS"].split(" ")
   options += scalac_opts
 
-if scala and not any(option.endswith(".scala") for option in options):
+if scala and not any(option.endswith(".scala") for option in options) and not "fos-2013-grading" in git_root:
   options.append("-language:experimental.macros")
 
 for opt in options:

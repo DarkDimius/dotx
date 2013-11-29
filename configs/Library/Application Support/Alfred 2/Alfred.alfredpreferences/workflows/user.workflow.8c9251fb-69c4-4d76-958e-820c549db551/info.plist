@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>implicit-macros-invalidate-on-error</string>
+  <string>pure-expression-does-nothing</string>
   <key>objects</key>
   <array>
     <dict>
@@ -34,7 +34,7 @@
         <key>escaping</key>
         <integer>127</integer>
         <key>script</key>
-        <string>subl-open-project implicit-macros-invalidate-on-error</string>
+        <string>subl-open-project pure-expression-does-nothing</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -51,9 +51,9 @@
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>implicit-macros-invalidate-on-error</string>
+        <string>pure-expression-does-nothing</string>
         <key>text</key>
-        <string>implicit-macros-invalidate-on-error</string>
+        <string>pure-expression-does-nothing</string>
         <key>withspace</key>
         <false/>
       </dict>

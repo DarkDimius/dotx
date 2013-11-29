@@ -13,3 +13,5 @@ Credits:
   * mountainlion-window-restore-fix is taken from http://apple.stackexchange.com/questions/48439/how-to-default-to-not-open-all-the-apps-again-on-mac-os-x-lion
   * sbt-the-rebel-cut is taken from https://github.com/paulp/sbt-extras
   * skype-menubar-updater is taken from http://scriptd.tumblr.com/post/23319145310/adding-unread-skype-message-count-to-the-os-x-menu-bar
+  * rtmcli is taken from http://www.davidwaring.net/projects/rtm.html
+  * terminal-notifier.app is taken from https://github.com/alloy/terminal-notifier/downloads
