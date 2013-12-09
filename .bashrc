@@ -274,6 +274,7 @@ alias paradise2102='cd "$HOME/Projects/Paradise2102/sandbox/src/main/scala"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110='cd "$HOME/Projects/Paradise2110/sandbox/src/main/scala"'
+alias paradisehooked='cd "$HOME/Projects/ParadiseHooked/sandbox/src/main/scala"'
 alias dex='cd "$HOME/Projects/Dex"'
 alias spire='cd "$HOME/Projects/Spire"'
 alias fos='cd "$HOME/Projects/teaching/fos"'
@@ -285,6 +286,8 @@ alias hw3='cd "$HOME/Projects/hw3"'
 alias ml1='cd "$HOME/Projects/mlclass-ex1"'
 alias ml2='cd "$HOME/Projects/mlclass-ex2"'
 alias ml3='cd "$HOME/Projects/mlclass-ex3"'
+alias ml4='cd "$HOME/Projects/mlclass-ex4"'
+alias ml5='cd "$HOME/Projects/mlclass-ex5"'
 alias talks='cd "$HOME/Projects/Talks"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function sb { cd sandbox; }
@@ -299,6 +302,9 @@ function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$ta
 function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function toolbox-rangepos { target="$(hack-home "toolbox-rangepos")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function pure-expression-does-nothing { target="$(hack-home "pure-expression-does-nothing")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
+function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function wildbox-macros { target="$(hack-home "wildbox-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function macrodef-returntype-inference { target="$(hack-home "macrodef-returntype-inference")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function compile-time-only { target="$(hack-home "compile-time-only")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target"; fi }

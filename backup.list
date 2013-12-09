@@ -98,6 +98,7 @@ Homebrew packages:
 
 ==================
 Macports packages:
+Warning: port definitions are more than two weeks old, consider updating them by running 'port selfupdate'.
 The following ports are currently installed:
   apache-ant @1.9.2_0 (active)
   apple-gcc42 @5666.3_13 (active)
@@ -290,9 +291,11 @@ The following ports are currently installed:
   py27-docutils @0.11_0 (active)
   py27-html5lib @1.0b3_0 (active)
   py27-pil @1.1.7_6 (active)
+  py27-pip @1.4.1_0 (active)
   py27-pypdf @1.13_1 (active)
   py27-reportlab @2.7_0 (active)
   py27-roman @2.0.0_0 (active)
+  py27-setuptools @1.3.2_0 (active)
   py27-tkinter @2.7.5_0
   py27-tkinter @2.7.6_0 (active)
   py27-xhtml2pdf @0.0.4_0 (active)
@@ -304,7 +307,8 @@ The following ports are currently installed:
   qrupdate @1.1.2_2+atlas+gcc48 (active)
   readline @6.2.000_0 (active)
   rsync @3.0.9_2 (active)
-  sqlite3 @3.8.0.2_0 (active)
+  sqlite3 @3.8.0.2_0
+  sqlite3 @3.8.1_0 (active)
   SuiteSparse @4.1.0_0
   SuiteSparse @4.2.1_0 (active)
   tcl @8.6.1_0+corefoundation+threads (active)
@@ -344,12 +348,67 @@ The following ports are currently installed:
 
 ==================
 Python packages:
-/usr/local/dotx/backup.sh: line 23: /usr/local/bin/pip: No such file or directory
+PyRSS2Gen==1.0.0
+Send2Trash==1.3.0
+Twisted==12.0.0
+altgraph==0.10.2
+bdist-mpkg==0.4.4
+bonjour-py==0.3
+google-api-python-client==1.1
+httplib2==0.8
+macholib==1.5.1
+modulegraph==0.10.4
+numpy==1.6.1
+py2app==0.7.3
+pyOpenSSL==0.13
+pyobjc-core==2.3.2a0
+pyobjc-framework-AddressBook==2.3.2a0
+pyobjc-framework-AppleScriptKit==2.3.2a0
+pyobjc-framework-AppleScriptObjC==2.3.2a0
+pyobjc-framework-Automator==2.3.2a0
+pyobjc-framework-CFNetwork==2.3.2a0
+pyobjc-framework-CalendarStore==2.3.2a0
+pyobjc-framework-Cocoa==2.3.2a0
+pyobjc-framework-Collaboration==2.3.2a0
+pyobjc-framework-CoreData==2.3.2a0
+pyobjc-framework-CoreLocation==2.3.2a0
+pyobjc-framework-CoreText==2.3.2a0
+pyobjc-framework-DictionaryServices==2.3.2a0
+pyobjc-framework-ExceptionHandling==2.3.2a0
+pyobjc-framework-FSEvents==2.3.2a0
+pyobjc-framework-InputMethodKit==2.3.2a0
+pyobjc-framework-InstallerPlugins==2.3.2a0
+pyobjc-framework-InstantMessage==2.3.2a0
+pyobjc-framework-InterfaceBuilderKit==2.3.2a0
+pyobjc-framework-LatentSemanticMapping==2.3.2a0
+pyobjc-framework-LaunchServices==2.3.2a0
+pyobjc-framework-Message==2.3.2a0
+pyobjc-framework-OpenDirectory==2.3.2a0
+pyobjc-framework-PreferencePanes==2.3.2a0
+pyobjc-framework-PubSub==2.3.2a0
+pyobjc-framework-QTKit==2.3.2a0
+pyobjc-framework-Quartz==2.3.2a0
+pyobjc-framework-ScreenSaver==2.3.2a0
+pyobjc-framework-ScriptingBridge==2.3.2a0
+pyobjc-framework-SearchKit==2.3.2a0
+pyobjc-framework-ServerNotification==2.3.2a0
+pyobjc-framework-ServiceManagement==2.3.2a0
+pyobjc-framework-SyncServices==2.3.2a0
+pyobjc-framework-SystemConfiguration==2.3.2a0
+pyobjc-framework-WebKit==2.3.2a0
+pyobjc-framework-XgridFoundation==2.3.2a0
+pyrtm==0.3
+python-dateutil==1.5
+python-gflags==2.0
+six==1.4.1
+vboxapi==1.0
+wsgiref==0.1.2
+xattr==0.6.2
+zope.interface==3.5.1
 
 ==================
 Ruby gems:
-trollop (2.0)
-wkpdf (0.6.11 universal-darwin)
+
 
 ==================
 Perl modules:
@@ -1124,9 +1183,11 @@ Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-219.UGDH4K: Permission denied
+Can't cd to (/private/tmp/) launchd-116.RlKTma: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-92247.sP5psG: Permission denied
+Can't cd to (/private/tmp/) launchd-423.JlcevW: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-8508.SwPN3l: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1178,8 +1239,6 @@ Can't cd to (/private/var/db/) sudo: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) T: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) C: Permission denied
@@ -1191,8 +1250,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) T: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000007000001r/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -7064,6 +7121,7 @@ share::headerdoc::Modules::HeaderDoc::Var	$Revision: 1298084579 $
 
 ==================
 Alfred 2 extensions:
+user.workflow.0163489a-e2ed-4f38-aa83-1e7ec109ce2d
 user.workflow.0421FB21-22B7-460C-8BA6-0127D99B19E9
 user.workflow.046E158B-7C12-467B-9890-5F0FD953B89F
 user.workflow.058A61FB-3CC1-4FD7-99E4-01DF7C1B8636
@@ -7076,6 +7134,7 @@ user.workflow.1AAFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
+user.workflow.1e10d670-8da5-4a41-bbff-a5f6a0815bcd
 user.workflow.1f7ace56-d011-4eda-aff0-ad5d80184512
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
@@ -7086,11 +7145,12 @@ user.workflow.3037AAAA-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037AF79-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037BBBB-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.32f32d14-c94c-4763-871d-1406f08a67e8
-user.workflow.40dc0e9b-6747-4f11-976d-073c6234ff9a
 user.workflow.4373DD4A-9C72-41DC-B98B-5C4D401C55F3
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
 user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
+user.workflow.4c200f2b-fdd2-462c-9ea4-735034b37958
+user.workflow.4e2cd76f-d4a0-4dbb-a14f-211312bcc1c5
 user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
 user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
@@ -7105,7 +7165,6 @@ user.workflow.82DE8877-0899-4F4F-A948-5A054BAA5EB4
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
 user.workflow.8C6C947F-04D5-4B6F-B752-AD2F16D7BBE9
-user.workflow.8c9251fb-69c4-4d76-958e-820c549db551
 user.workflow.8ca3b027-c963-46db-a71e-abbd0f4dfa48
 user.workflow.91AA50E9-CF3E-4550-89FF-8CDB3F44E434
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
@@ -7114,6 +7173,7 @@ user.workflow.9A4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9DBF494A-5F80-4096-9A9A-410DBE59F545
 user.workflow.9F578D79-E596-4316-B383-F2F560426419
+user.workflow.9FA8F9B0-6553-4172-AD72-B4049C74E349
 user.workflow.A8682814-1EC6-486F-889B-A01BF60FE482
 user.workflow.B17864E9-DDDD-464D-8720-DDD06B609208
 user.workflow.B4316C18-A1BB-4257-BAD3-07717DE3FF8F
@@ -7126,7 +7186,9 @@ user.workflow.F39EAAA9-932D-4688-8FEE-F704A7928D1D
 user.workflow.a5f93cbd-56d7-4236-b853-565db24939fe
 user.workflow.ca4dd404-efe7-4107-972d-aabfd3cc0dca
 user.workflow.cc50aaf5-5f6a-46d1-98a8-8ce4a3719fa8
+user.workflow.db11abbc-2bb3-4018-ba65-404310c718ee
 user.workflow.e40307b5-61e6-47af-94c5-8f2da8215503
+user.workflow.eaf1fbc9-7de3-4f5f-8c1d-9ec21314ee95
 
 ==================
 Firefox extensions:
@@ -7705,6 +7767,18 @@ KeyRemap4MacBook private.xml:
     <name>(Viber) Cmd + Q => Cmd + H</name>
     <identifier>private.viber</identifier>
     <only>VIBER</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Skype) Cmd + Q => Cmd + H</name>
+    <identifier>private.skype</identifier>
+    <only>SKYPE</only>
     <autogen>
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,

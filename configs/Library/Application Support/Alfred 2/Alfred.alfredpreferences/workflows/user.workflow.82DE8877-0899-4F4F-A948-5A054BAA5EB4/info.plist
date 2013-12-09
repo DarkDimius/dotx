@@ -7,7 +7,16 @@
 	<key>connections</key>
 	<dict>
 		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B202500E-23E3-4810-AABF-289C037917B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
@@ -36,7 +45,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>todo '{query}'</string>
+				<string>todo '{query}' 2&gt;&amp;1 | tee '/Users/xeno_by/.alfred_error'</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -66,6 +75,29 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B202500E-23E3-4810-AABF-289C037917B4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -77,6 +109,11 @@
 			<real>60</real>
 		</dict>
 		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>B202500E-23E3-4810-AABF-289C037917B4</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>

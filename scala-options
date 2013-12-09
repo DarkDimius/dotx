@@ -44,10 +44,16 @@ if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xe
   options.append("-Xplugin:" + git_root + "/build/quick/misc/scala-devel/plugins/virtualclasses.jar")
   print "-Xplugin-require:virtualclasses"
 
+if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/copy-untyped"):
+  append_paradise_plugin("/Users/xeno_by/Projects/Paradise2110")
 # if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
 #   append_paradise_plugin("/Users/xeno_by/Projects/Paradise2110")
-if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/210x"):
-  append_paradise_plugin("/Users/xeno_by/Projects/Paradise210x")
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/210x"):
+#   append_paradise_plugin("/Users/xeno_by/Projects/Paradise210x")
+
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
+#   options.append("-cp")
+#   options.append("/Users/xeno_by/Projects/scala-blitz/target/scala-2.11.0-SNAPSHOT/classes:.")
 
 if os.environ.get("SCALAC_OPTS"):
   # TODO: tokenize this correctly
@@ -56,6 +62,9 @@ if os.environ.get("SCALAC_OPTS"):
 
 if scala and not any(option.endswith(".scala") for option in options) and not "fos-2013-grading" in git_root:
   options.append("-language:experimental.macros")
+
+options.append("-deprecation")
+options.append("-feature")
 
 for opt in options:
   print opt

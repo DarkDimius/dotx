@@ -23,7 +23,15 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110"):
   sys.exit(0)
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M5"):
-  print "/Users/xeno_by/Projects/Scala2100M5"
+  print "/Users/xeno_by/Projects/Scala2110M5"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M7"):
+  print "/Users/xeno_by/Projects/Scala2110M7"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseHooked"):
+  print "/Users/xeno_by/Projects/macro-plugin-interface"
   sys.exit(0)
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Spores"):
@@ -36,6 +44,14 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseVirt"):
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/eleven"):
   print "/Users/xeno_by/Projects/Palladium"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/TestMacros"):
+  print "/Users/xeno_by/Projects/Master"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/scala-macro-serialization"):
+  print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
 
 root = None

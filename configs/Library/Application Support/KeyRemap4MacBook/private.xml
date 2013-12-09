@@ -565,6 +565,18 @@
     </autogen>
   </item>
   <item>
+    <name>(Skype) Cmd + Q => Cmd + H</name>
+    <identifier>private.skype</identifier>
+    <only>SKYPE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
     <name>(Airmail) Cmd + Q => Cmd + H, Cmd + Enter => Cmd + Enter and Cmd + Tab, Cmd + Shift + Enter => Cmd + Shift + Enter and Cmd + Tab</name>
     <identifier>private.airmail</identifier>
     <only>AIRMAIL</only>
