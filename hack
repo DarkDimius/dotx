@@ -73,8 +73,8 @@ try:
     checkpoint("Created a Git repo at " + project_home[len(projects):] + " using " + prototype[len(projects):] + " as a prototype")
 
     check_comm(["cp", "-r", prototype + "/build", project_home + "/build"])
-    partest_properties = project_name + "/build/pack/partest.properties"
-    if os.file.exists(partest_properties): check_comm(["rm", partest_properties])
+    partest_properties = project_home + "/build/pack/partest.properties"
+    if os.path.exists(partest_properties): check_comm(["rm", partest_properties])
     checkpoint("Cannibalized " + project_home + "/build")
 
     check_comm(["mkdir", sandbox])
