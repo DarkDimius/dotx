@@ -92,7 +92,7 @@ try:
     checkpoint("Created an Alfred shortcut named " + short_target)
 
     def create_aliases(bashrc):
-      bashrc.append("""function {0} { target="$(hack-home "{1}")"; if [[ $? == 0 ]]; then cd "$target"; fi }""".replace("{0}", bash_alias).replace("{1}", short_target))
+      bashrc.append("""function {0} { target="$(hack-home "{1}")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }""".replace("{0}", bash_alias).replace("{1}", short_target))
       return bashrc
     update_bashrc(create_aliases)
     checkpoint("Created Bash alias " + bash_alias)

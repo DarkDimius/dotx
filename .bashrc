@@ -289,22 +289,16 @@ alias ml3='cd "$HOME/Projects/mlclass-ex3"'
 alias ml4='cd "$HOME/Projects/mlclass-ex4"'
 alias ml5='cd "$HOME/Projects/mlclass-ex5"'
 alias talks='cd "$HOME/Projects/Talks"'
-function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function sb { cd sandbox; }
-function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function manns { target="$(hack-home "manns")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function paradise-hooks { target="$(hack-home "paradise-hooks")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function patmat { target="$(hack-home "patmat")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function patmat2 { target="$(hack-home "patmat2")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function typed-annotated { target="$(hack-home "typed-annotated")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function fancy-java-classes { target="$(hack-home "fancy-java-classes")"; if [[ $? == 0 ]]; then cd "$target"; fi }
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
-function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function wildbox-macros { target="$(hack-home "wildbox-macros")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function macrodef-returntype-inference { target="$(hack-home "macrodef-returntype-inference")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function compile-time-only { target="$(hack-home "compile-time-only")"; if [[ $? == 0 ]]; then cd "$target"; fi }
-function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target"; fi }
+function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function wildbox-macros { target="$(hack-home "wildbox-macros")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function macrodef-returntype-inference { target="$(hack-home "macrodef-returntype-inference")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function compile-time-only { target="$(hack-home "compile-time-only")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
