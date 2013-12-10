@@ -98,7 +98,6 @@ Homebrew packages:
 
 ==================
 Macports packages:
-Warning: port definitions are more than two weeks old, consider updating them by running 'port selfupdate'.
 The following ports are currently installed:
   apache-ant @1.9.2_0 (active)
   apple-gcc42 @5666.3_13 (active)
@@ -1187,6 +1186,8 @@ Can't cd to (/private/tmp/) launchd-116.RlKTma: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-423.JlcevW: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-53624.TQIuJG: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) launchd-8508.SwPN3l: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
@@ -1238,6 +1239,8 @@ Can't cd to (/private/var/db/) Spotlight: Permission denied
 Can't cd to (/private/var/db/) sudo: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) C: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -7151,6 +7154,7 @@ user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
 user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
 user.workflow.4c200f2b-fdd2-462c-9ea4-735034b37958
 user.workflow.4e2cd76f-d4a0-4dbb-a14f-211312bcc1c5
+user.workflow.4f8f49f6-615d-4ee0-b08a-cf0d46f1f47e
 user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
 user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
@@ -7189,6 +7193,7 @@ user.workflow.cc50aaf5-5f6a-46d1-98a8-8ce4a3719fa8
 user.workflow.db11abbc-2bb3-4018-ba65-404310c718ee
 user.workflow.e40307b5-61e6-47af-94c5-8f2da8215503
 user.workflow.eaf1fbc9-7de3-4f5f-8c1d-9ec21314ee95
+user.workflow.f6268840-6296-45bb-8b3f-031501d54443
 
 ==================
 Firefox extensions:
