@@ -4,7 +4,7 @@ from subprocess import check_output, call, check_call, Popen, PIPE
 
 program_name = os.path.basename(sys.argv[0])
 scalac = program_name == "scalac-options"
-scala = program_name == "scala-options"
+repl = program_name == "scala-options"
 fsc = program_name == "fsc-options"
 scaladoc = program_name == "scaladoc-options"
 scalap = program_name == "scalap-options"
@@ -60,11 +60,12 @@ if os.environ.get("SCALAC_OPTS"):
   scalac_opts = os.environ["SCALAC_OPTS"].split(" ")
   options += scalac_opts
 
-if scala and not any(option.endswith(".scala") for option in options) and not "fos-2013-grading" in git_root:
+if repl and not any(option.endswith(".scala") for option in options) and not "fos-2013-grading" in git_root:
   options.append("-language:experimental.macros")
 
-options.append("-deprecation")
-options.append("-feature")
+if not partest:
+  options.append("-deprecation")
+  options.append("-feature")
 
 for opt in options:
   print opt

@@ -104,8 +104,9 @@ if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
     sys.exit(1)
 
 try:
-  scalac_flags = check_output(["partest-options"]).strip().split("\n")
+  scalac_flags = filter(lambda flag: flag, check_output(["partest-options"]).strip().split("\n"))
   partest_flags = ["--verbose"] if verbose else []
+  if scalac_flags: print "[info] this partest invocation uses non-empty SCALAC_OPTS: " + " ".join(scalac_flags)
   os.environ["SCALAC_OPTS"] = " ".join(scalac_flags)
   invocation = " ".join([bin] + partest_flags + map(lambda test: "test/files/" + test, tests))
   if not tests: invocation += " --all"
