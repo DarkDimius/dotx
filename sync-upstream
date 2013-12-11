@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd "$(scala-root)" && \
 git remote update && \
 git pull upstream "$(git rev-parse --abbrev-ref HEAD)" && \
 git push origin "$(git rev-parse --abbrev-ref HEAD)" && \
