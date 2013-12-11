@@ -299,6 +299,8 @@ function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$targ
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
 function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function wildbox-macros { target="$(hack-home "wildbox-macros")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function macrodef-returntype-inference { target="$(hack-home "macrodef-returntype-inference")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function compile-time-only { target="$(hack-home "compile-time-only")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function typeCheck { target="$(hack-home "typeCheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function wildbox-macros-210x { target="$(hack-home "wildbox-macros-210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function duplicate-macro-args-210x { target="$(hack-home "duplicate-macro-args-210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function duplicate-macro-args { target="$(hack-home "duplicate-macro-args")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }

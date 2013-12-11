@@ -12,6 +12,8 @@ if not cwd.startswith(root) and not "/Paradise" in cwd:
   print "not at scala root"
   sys.exit(1)
 
+is210 = not "jline-2.11.jar" in check_output(["scala-toolcp"])
+is211 = not is210
 bin = root + "/test/partest"
 dotpartest = root + "/.partest"
 dotpartestlog = root + "/.partestlog"
@@ -104,9 +106,12 @@ if locker_time > quick_time or quick_time > bin_time or bin_time == 0:
     sys.exit(1)
 
 try:
-  scalac_flags = filter(lambda flag: flag, check_output(["partest-options"]).strip().split("\n"))
+  scalac_flags = " ".join(filter(lambda flag: flag, check_output(["partest-options"]).strip().split("\n")))
   partest_flags = ["--verbose"] if verbose else []
-  if scalac_flags: print "[info] this partest invocation uses non-empty SCALAC_OPTS: " + " ".join(scalac_flags)
+  if is210 and scalac_flags != "": print "[info] this partest invocation uses non-standard SCALAC_OPTS: " + scalac_flags
+  # TODO: seems to be breaking partest :(
+  # if is211 and scalac_flags != "-optimize": print "[info] this partest invocation uses non-standard SCALAC_OPTS: " + scalac_flags
+  if is211 and scalac_flags != "": print "[info] this partest invocation uses non-standard SCALAC_OPTS: " + scalac_flags
   os.environ["SCALAC_OPTS"] = " ".join(scalac_flags)
   invocation = " ".join([bin] + partest_flags + map(lambda test: "test/files/" + test, tests))
   if not tests: invocation += " --all"

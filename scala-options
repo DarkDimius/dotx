@@ -11,6 +11,8 @@ scalap = program_name == "scalap-options"
 partest = program_name == "partest-options"
 options = sys.argv[1:]
 git_root = Popen(["git", "rev-parse", "--show-toplevel"], stdout=PIPE, stderr=PIPE).communicate()[0][:-1]
+is210 = not "jline-2.11.jar" in check_output(["scala-toolcp"])
+is211 = not is210
 
 def append_plugin(dir, name):
   jardir = os.path.join(os.path.abspath(dir), "plugin/target")
@@ -67,6 +69,9 @@ if not partest:
   options.append("-deprecation")
   options.append("-feature")
 
+# TODO: doesn't look like this works well with partest
+# if partest and not is210:
+#   options.append("-optimize")
+
 for opt in options:
   print opt
-

@@ -41,7 +41,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>77</width>
+                            <width>37</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Downloads/default.zip/default/src/</location>
+                            <location>/Users/xeno_by/Projects/typeCheck/build/</location>
                         </tab-0>
                     </tabs>
                 </left>
