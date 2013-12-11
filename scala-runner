@@ -123,7 +123,16 @@ trap onExit INT
 
 # Constructing the java classpath
 toolClasspath () {
-  [[ -n "$toolcp" ]] && echo "$toolcp" || echo "$(scala-toolcp)"
+  [[ -n "$toolcp" ]] && echo "$toolcp" || {
+    case $programName in
+        scala) echo "$(scala-toolcp)" ;;
+       scalac) echo "$(scalac-toolcp)" ;;
+          fsc) echo "$(fsc-toolcp)" ;;
+     scaladoc) echo "$(scaladoc-toolcp)" ;;
+       scalap) echo "$(scalap-toolcp)" ;;
+            *) ;;
+    esac
+  }
 }
 
 # If using the boot classpath, also pass an empty classpath

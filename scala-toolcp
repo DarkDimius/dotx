@@ -6,6 +6,14 @@ if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
   sys.exit(1)
 
+program_name = os.path.basename(sys.argv[0])
+scalac = program_name == "scalac-toolcp"
+repl = program_name == "scala-toolcp"
+fsc = program_name == "fsc-toolcp"
+scaladoc = program_name == "scaladoc-toolcp"
+scalap = program_name == "scalap-toolcp"
+partest = program_name == "partest-toolcp"
+
 root = check_output(["scala-root"]).strip()
 tier = check_output(["scala-tier"]).strip()
 if tier == "pack": classdir = "quick"
@@ -24,5 +32,9 @@ is210 = not os.path.exists(repl)
 jline = jline210 if is210 else jline211
 cp = [asm, jline, forkjoin, library, reflect, compiler, scalap, repl, scaladoc, contlib]
 cp = filter(lambda entry: os.path.exists(entry), cp)
+
+if scaladoc:
+  cp.append("/Users/xeno_by/.m2/repository/org/scala-lang/scala-xml/2.11.0-M4/scala-xml-2.11.0-M4.jar")
+  cp.append("/Users/xeno_by/.m2/repository/org/scala-lang/scala-parser-combinators/2.11.0-M4/scala-parser-combinators-2.11.0-M4.jar")
 
 print ":".join(cp)

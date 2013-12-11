@@ -216,6 +216,12 @@ install-into-bin integrate
 install-into-bin make-root
 install-into-bin rtmcli
 install-into-bin terminal-notifier terminal-notifier
+install-into-bin scala-toolcp scala-toolcp
+install-into-bin scala-toolcp scalac-toolcp
+install-into-bin scala-toolcp fsc-toolcp
+install-into-bin scala-toolcp scaladoc-toolcp
+install-into-bin scala-toolcp scalap-toolcp
+install-into-bin scala-toolcp partest-toolcp
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
