@@ -76,6 +76,14 @@
     <appname>AIRMAIL</appname>
     <equal>it.bloop.airmail</equal>
   </appdef>
+  <appdef>
+    <appname>IMESSAGE</appname>
+    <equal>com.apple.iChat</equal>
+  </appdef>
+  <appdef>
+    <appname>TWEETBOT</appname>
+    <equal>com.tapbots.TweetbotMac</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -614,6 +622,30 @@
       --KeyToKey--
       KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
       KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(iMessage) Cmd + Q => Cmd + H</name>
+    <identifier>private.imessage</identifier>
+    <only>IMESSAGE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Tweetbot) Cmd + Q => Cmd + H</name>
+    <identifier>private.tweetbot</identifier>
+    <only>TWEETBOT</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
     </autogen>
   </item>
 </root>

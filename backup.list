@@ -48,7 +48,6 @@ MATLAB_R2013a.app
 MacDependency.app
 MacPorts
 Mail.app
-Mendeley Desktop.app
 Messages.app
 Microsoft Communicator.app
 Microsoft Messenger.app
@@ -1180,15 +1179,7 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) cvcd: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-116.RlKTma: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-423.JlcevW: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-53624.TQIuJG: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-8508.SwPN3l: Permission denied
+Can't cd to (/private/tmp/) launchd-96927.5AR1ZM: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1277,6 +1268,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1399,10 +1392,16 @@ Error::Simple	undef
 Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
 Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
 Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::IndexInfo	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN	undef
 Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
 Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::GlobSpec	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Log	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Migration	undef
 Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
 Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
+Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Utils	undef
 Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 Contents::Developer::Library::Perl::SVN::Base	undef
 Contents::Developer::Library::Perl::SVN::Client	undef
@@ -1446,17 +1445,14 @@ Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Function	$Revisi
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Group	$Revision: 1298084578 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::HashObject	$Revision: 1298084578 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Header	$Revision: 1306450222 $
-Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::HeaderElement	$Revision: 1368570551 $
+CoUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 729) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 729) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 729) line 6, <FILE> line 7.
+ntents::Developer::usr::share::headerdoc::Modules::HeaderDoc::HeaderElement	$Revision: 1368570551 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::IncludeHash	$Revision: 1298084578 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::LineRange	$Revision: 1298084578 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::MacroFilter	$Revision: 1298084578 $
-Contents::Developer::usr::share::headerdoc::Modules::HeaderDoUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 729) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 729) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 729) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 738) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 738) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 738) line 6, <FILE> line 7.
-c::Method	$Revision: 1298084578 $
+Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::Method	$Revision: 1298084578 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::MinorAPIElement	$Revision: 1306444400 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::ObjCCategory	$Revision: 1298084578 $
 Contents::Developer::usr::share::headerdoc::Modules::HeaderDoc::ObjCClass	$Revision: 1298084578 $
@@ -1513,7 +1509,13 @@ Perl::SVN::Ra	undef
 Perl::SVN::Repos	undef
 Perl::SVN::Wc	undef
 Perl::SNMP	5.06
-Perl::NetSNMP::agent	5.06
+Perl::NetSNMUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 738) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 738) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 738) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 739) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 739) line 6, <FILE> line 7.
+Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 739) line 6, <FILE> line 7.
+P::agent	5.06
 Perl::NetSNMP::ASN	5.06
 Perl::NetSNMP::default_store	5.06
 Perl::NetSNMP::OID	5.06
@@ -1530,10 +1532,7 @@ Perl::SVN::Ra	undef
 Perl::SVN::Repos	undef
 Perl::SVN::Wc	undef
 Perl::SVN::Base	undef
-Perl::SVNUse of uninitialized value $SVN::Core::VER_MAJOR in concatenation (.) or string at (eval 739) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MINOR in concatenation (.) or string at (eval 739) line 6, <FILE> line 7.
-Use of uninitialized value $SVN::Core::VER_MICRO in concatenation (.) or string at (eval 739) line 6, <FILE> line 7.
-::Client	undef
+Perl::SVN::Client	undef
 Perl::SVN::Core	..
 Perl::SVN::Delta	undef
 Perl::SVN::Fs	undef
@@ -2019,7 +2018,10 @@ local::lib::perl5::Pod::Find	1.35
 local::lib::perl5::Pod::Functions	1.04
 local::lib::perl5::Pod::Html	1.09
 local::lib::perl5::Pod::InputObjects	1.31
-local::lib::perl5::Pod::LaTeX	0.58
+local::lib::perlUseless use of a constant (-tree) in void context at (eval 1191) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 1191) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 1191) line 6, <FILE> line 75.
+5::Pod::LaTeX	0.58
 local::lib::perl5::Pod::Man	2.23
 local::lib::perl5::Pod::ParseLink	1.10
 local::lib::perl5::Pod::Parser	1.37
@@ -2031,10 +2033,7 @@ local::lib::perl5::Pod::Select	1.36
 local::lib::perl5::Pod::Simple	3.14
 local::lib::perl5::Pod::Text	3.14
 local::lib::perl5::Pod::Usage	1.36
-local::lib::perl5::Pod::Perldoc::BaUseless use of a constant (-tree) in void context at (eval 1191) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 1191) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 1191) line 6, <FILE> line 75.
-seTo	undef
+local::lib::perl5::Pod::Perldoc::BaseTo	undef
 local::lib::perl5::Pod::Perldoc::GetOptsOO	undef
 local::lib::perl5::Pod::Perldoc::ToChecker	undef
 local::lib::perl5::Pod::Perldoc::ToMan	undef
@@ -2641,7 +2640,10 @@ Library::Perl::Module::Load::Conditional	0.30
 Library::Perl::Module::Pluggable::Object	3.9
 Library::Perl::Net::Cmd	2.29
 Library::Perl::Net::Config	1.11
-Library::Perl::Net::Domain	2.20
+LibraryUseless use of a constant (-tree) in void context at (eval 1752) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 1752) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 1752) line 6, <FILE> line 75.
+::Perl::Net::Domain	2.20
 Library::Perl::Net::FTP	2.77
 Library::Perl::Net::hostent	1.01
 Library::Perl::Net::netent	1.00
@@ -2655,10 +2657,7 @@ Library::Perl::Net::SMTP	2.31
 Library::Perl::Net::Time	2.10
 Library::Perl::Net::FTP::A	1.18
 Library::Perl::Net::FTP::dataconn	0.11
-Library::Perl::Net::FUseless use of a constant (-tree) in void context at (eval 1752) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 1752) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 1752) line 6, <FILE> line 75.
-TP::E	0.01
+Library::Perl::Net::FTP::E	0.01
 Library::Perl::Net::FTP::I	1.12
 Library::Perl::Net::FTP::L	0.01
 Library::Perl::Object::Accessor	0.34
@@ -3202,10 +3201,7 @@ Library::Perl::Math::BigInt	1.89_01
 Library::Perl::Math::BigRat	0.24
 Library::Perl::Math::Complex	1.56
 Library::Perl::Math::Trig	1.2
-Library::Perl::Math::BigFloat::TrUseless use of a constant (-tree) in void context at (eval 2301) line 6, <FILE> line 75.
-Useless use of a variable in void context at (eval 2301) line 6, <FILE> line 75.
-Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 2301) line 6, <FILE> line 75.
-ace	0.01
+Library::Perl::Math::BigFloat::Trace	0.01
 Library::Perl::Math::BigInt::Calc	0.52
 Library::Perl::Math::BigInt::CalcEmu	0.05
 Library::Perl::Math::BigInt::Trace	0.01
@@ -3298,7 +3294,10 @@ Library::Perl::Pod::Perldoc::ToChecker	undef
 Library::Perl::Pod::Perldoc::ToMan	undef
 Library::Perl::Pod::Perldoc::ToNroff	undef
 Library::Perl::Pod::Perldoc::ToPod	undef
-Library::Perl::Pod::Perldoc::ToRtf	undef
+LibrarUseless use of a constant (-tree) in void context at (eval 2301) line 6, <FILE> line 75.
+Useless use of a variable in void context at (eval 2301) line 6, <FILE> line 75.
+Use of uninitialized value $Tk::Pod::VERSION in numeric ge (>=) at (eval 2301) line 6, <FILE> line 75.
+y::Perl::Pod::Perldoc::ToRtf	undef
 Library::Perl::Pod::Perldoc::ToText	undef
 Library::Perl::Pod::Perldoc::ToTk	undef
 Library::Perl::Pod::Perldoc::ToXml	undef
@@ -6837,7 +6836,9 @@ Library::Perl::Extras::XML::SAX::PurePerl::Reader::UnicodeExt	undef
 Library::Perl::Extras::XML::SAX::PurePerl::Reader::URI	undef
 Library::Perl::Extras::XML::XPath::Boolean	undef
 Library::Perl::Extras::XML::XPath::Builder	undef
-Library::Perl::Extras::XML::XPath::Expr	undef
+Library::Perl::Extras::Useless use of numeric ge (>=) in void context at (eval 4666) line 6, <FILE> line 28.
+Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 4666) line 6, <FILE> line 28.
+XML::XPath::Expr	undef
 Library::Perl::Extras::XML::XPath::Function	undef
 Library::Perl::Extras::XML::XPath::Literal	undef
 Library::Perl::Extras::XML::XPath::LocationPath	undef
@@ -6846,9 +6847,7 @@ Library::Perl::Extras::XML::XPath::NodeSet	undef
 Library::Perl::Extras::XML::XPath::Number	undef
 Library::Perl::Extras::XML::XPath::Parser	undef
 Library::Perl::Extras::XML::XPath::PerlSAX	undef
-Library::Perl::Extras::XML::XPath::Root	undUseless use of numeric ge (>=) in void context at (eval 4666) line 6, <FILE> line 28.
-Use of uninitialized value $YAML::VERSION in numeric ge (>=) at (eval 4666) line 6, <FILE> line 28.
-ef
+Library::Perl::Extras::XML::XPath::Root	undef
 Library::Perl::Extras::XML::XPath::Step	undef
 Library::Perl::Extras::XML::XPath::Variable	undef
 Library::Perl::Extras::XML::XPath::XMLParser	undef
@@ -7152,6 +7151,7 @@ user.workflow.4373DD4A-9C72-41DC-B98B-5C4D401C55F3
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
 user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
+user.workflow.4c159225-6a6b-4937-abf3-3f77f6df7445
 user.workflow.4c200f2b-fdd2-462c-9ea4-735034b37958
 user.workflow.4e2cd76f-d4a0-4dbb-a14f-211312bcc1c5
 user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
@@ -7159,6 +7159,7 @@ user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5CDDCD6A-35E0-4F95-A4C6-19185D483C89
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
+user.workflow.5c48f1b4-bb6e-447c-9456-fb00697902b2
 user.workflow.607477fe-d194-493e-82cd-7c892adf3b09
 user.workflow.641b5221-e831-4548-9a54-b4af6e55f8de
 user.workflow.761D1C8A-EE5D-45EF-9043-936F417F66EF
@@ -7188,10 +7189,12 @@ user.workflow.E5E1EA9E-BE9A-4FEC-8CB5-401D24764D2F
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 user.workflow.F39EAAA9-932D-4688-8FEE-F704A7928D1D
 user.workflow.a5f93cbd-56d7-4236-b853-565db24939fe
+user.workflow.aefac927-6cfb-407b-bb69-e972c8431c03
 user.workflow.b5b9c6d9-51a8-44d3-b44b-6dad9fe7cabc
 user.workflow.ca4dd404-efe7-4107-972d-aabfd3cc0dca
 user.workflow.cc50aaf5-5f6a-46d1-98a8-8ce4a3719fa8
 user.workflow.cf51ee7a-99b1-436f-8079-ae5af008c2b4
+user.workflow.e253eea9-ff42-4275-8ca4-47c8920a1e8d
 user.workflow.e40307b5-61e6-47af-94c5-8f2da8215503
 user.workflow.eaf1fbc9-7de3-4f5f-8c1d-9ec21314ee95
 user.workflow.ee9fa75c-8620-4736-ac57-f796c4023c94
@@ -7293,6 +7296,14 @@ KeyRemap4MacBook private.xml:
   <appdef>
     <appname>AIRMAIL</appname>
     <equal>it.bloop.airmail</equal>
+  </appdef>
+  <appdef>
+    <appname>IMESSAGE</appname>
+    <equal>com.apple.iChat</equal>
+  </appdef>
+  <appdef>
+    <appname>TWEETBOT</appname>
+    <equal>com.tapbots.TweetbotMac</equal>
   </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
@@ -7832,6 +7843,30 @@ KeyRemap4MacBook private.xml:
       --KeyToKey--
       KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
       KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+  <item>
+    <name>(iMessage) Cmd + Q => Cmd + H</name>
+    <identifier>private.imessage</identifier>
+    <only>IMESSAGE</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(Tweetbot) Cmd + Q => Cmd + H</name>
+    <identifier>private.tweetbot</identifier>
+    <only>TWEETBOT</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
     </autogen>
   </item>
 </root>

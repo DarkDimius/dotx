@@ -6,28 +6,20 @@ if len(sys.argv) > 1:
   print "usage: " + sys.argv[0]
   sys.exit(1)
 
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2102"):
-  print "/Users/xeno_by/Projects/Scala2102"
-  sys.exit(0)
-
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2103"):
-  print "/Users/xeno_by/Projects/210x"
+  print "/Users/xeno_by/Projects/Scala2103"
   sys.exit(0)
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise210x"):
   print "/Users/xeno_by/Projects/210x"
   sys.exit(0)
 
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110"):
-  print "/Users/xeno_by/Projects/Master"
-  sys.exit(0)
-
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M5"):
-  print "/Users/xeno_by/Projects/Scala2110M5"
-  sys.exit(0)
-
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M7"):
   print "/Users/xeno_by/Projects/Scala2110M7"
+  sys.exit(0)
+
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise211x"):
+  print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
 
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseHooked"):
@@ -38,20 +30,8 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Spores"):
   print "/Users/xeno_by/Projects/210x"
   sys.exit(0)
 
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseVirt"):
-  print "/Users/xeno_by/Projects/Virt"
-  sys.exit(0)
-
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/eleven"):
   print "/Users/xeno_by/Projects/Palladium"
-  sys.exit(0)
-
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/TestMacros"):
-  print "/Users/xeno_by/Projects/Master"
-  sys.exit(0)
-
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/scala-macro-serialization"):
-  print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
 
 root = None

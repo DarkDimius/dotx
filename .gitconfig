@@ -26,7 +26,7 @@
   textconv = /usr/local/libscala/git-java/textconv-jar
   cachetextconv = true
 [difftool "sourcetree"]
-	cmd = /Users/xeno_by/Library/Application Support/SourceTree/SourceTree 1.5.8/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/araxiscompare-w.sh -2 \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = subl -w $MERGED
