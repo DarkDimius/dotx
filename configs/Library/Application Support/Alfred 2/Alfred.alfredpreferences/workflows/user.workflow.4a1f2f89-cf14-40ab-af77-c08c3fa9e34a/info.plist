@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>log-implicits</string>
+  <string>macros-playground</string>
   <key>objects</key>
   <array>
     <dict>
@@ -34,7 +34,7 @@
         <key>escaping</key>
         <integer>127</integer>
         <key>script</key>
-        <string>subl-open-project log-implicits</string>
+        <string>subl-open-project macros-playground</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -51,9 +51,9 @@
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>log-implicits</string>
+        <string>macros-playground</string>
         <key>text</key>
-        <string>log-implicits</string>
+        <string>macros-playground</string>
         <key>withspace</key>
         <false/>
       </dict>

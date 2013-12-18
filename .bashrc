@@ -272,7 +272,7 @@ alias smo='cd "$HOME/Projects/SiteScalamacrosOrg"'
 alias slo='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
-alias paradise2110m7='cd "$HOME/Projects/Paradise2110M7/sandbox/src/main/scala"'
+alias paradise2110M7='cd "$HOME/Projects/Paradise2110M7/sandbox/src/main/scala"'
 alias paradise211x='cd "$HOME/Projects/Paradise211x/sandbox/src/main/scala"'
 alias paradisehooked='cd "$HOME/Projects/ParadiseHooked/sandbox/src/main/scala"'
 alias dex='cd "$HOME/Projects/Dex"'
@@ -288,20 +288,23 @@ alias ml2='cd "$HOME/Projects/mlclass-ex2"'
 alias ml3='cd "$HOME/Projects/mlclass-ex3"'
 alias ml4='cd "$HOME/Projects/mlclass-ex4"'
 alias ml5='cd "$HOME/Projects/mlclass-ex5"'
-alias ml5='cd "$HOME/Projects/mlclass-ex6"'
+alias ml6='cd "$HOME/Projects/mlclass-ex6"'
+alias ml7='cd "$HOME/Projects/mlclass-ex7"'
 alias talks='cd "$HOME/Projects/Talks"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+alias 2103='cd "$HOME/Projects/Scala2103"'
+alias masterM7='cd "$HOME/Projects/Scala2110M7"'
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
 function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function wildbox-macros { target="$(hack-home "wildbox-macros")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function typeCheck { target="$(hack-home "typeCheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function wildbox-macros-210x { target="$(hack-home "wildbox-macros-210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function duplicate-macro-args-210x { target="$(hack-home "duplicate-macro-args-210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function duplicate-macro-args { target="$(hack-home "duplicate-macro-args")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function cosmetics { target="$(hack-home "cosmetics")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }

@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>unliftable-3</string>
+  <string>sbt-example-paradise</string>
   <key>objects</key>
   <array>
     <dict>
@@ -34,7 +34,7 @@
         <key>escaping</key>
         <integer>127</integer>
         <key>script</key>
-        <string>subl-open-project unliftable-3</string>
+        <string>subl-open-project sbt-example-paradise</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -51,9 +51,9 @@
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>unliftable-3</string>
+        <string>sbt-example-paradise</string>
         <key>text</key>
-        <string>unliftable-3</string>
+        <string>sbt-example-paradise</string>
         <key>withspace</key>
         <false/>
       </dict>

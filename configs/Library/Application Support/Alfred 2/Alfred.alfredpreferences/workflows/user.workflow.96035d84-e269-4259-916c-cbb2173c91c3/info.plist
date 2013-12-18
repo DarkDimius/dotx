@@ -6,11 +6,11 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>paradise 2.11.x</string>
+	<string>paradise 2.11.0-M7</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -34,16 +34,16 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>paradise211x</string>
+				<string>paradise2110m7</string>
 				<key>text</key>
-				<string>Paradise 2.11.x</string>
+				<string>Paradise 2.11.0-M7</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -53,14 +53,14 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>subl-open-project paradise211x</string>
+				<string>subl-open-project paradise2110M7</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -69,12 +69,12 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
-		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>

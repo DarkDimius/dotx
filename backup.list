@@ -125,6 +125,7 @@ The following ports are currently installed:
   curl @7.33.0_0+ssl (active)
   curl-ca-bundle @7.32.0_0
   curl-ca-bundle @7.33.0_0 (active)
+  cyrus-sasl2 @2.1.26_1+kerberos (active)
   db46 @4.6.21_8 (active)
   db_select @0.1_2 (active)
   desktop-file-utils @0.15_1 (active)
@@ -166,6 +167,7 @@ The following ports are currently installed:
   glib2 @2.38.2_0 (active)
   glpk @4.48_0 (active)
   gmp @5.1.2_0 (active)
+  gnupg @1.4.15_0 (active)
   gnuplot @4.6.3_4+aquaterm+luaterm+pangocairo+x11
   gnuplot @4.6.3_5+aquaterm+luaterm+pangocairo+wxwidgets+x11
   gnuplot @4.6.4_0+aquaterm+luaterm+pangocairo+wxwidgets+x11
@@ -227,10 +229,12 @@ The following ports are currently installed:
   jbig2dec @0.11_1 (active)
   jline @0.9.94_0 (active)
   jpeg @9_1 (active)
+  kerberos5 @1.11.3_0 (active)
   lcms @1.19_5 (active)
   lcms2 @2.4_2 (active)
   ld64 @136_2+llvm33 (active)
   leiningen @2.1.3_0 (active)
+  libcomerr @1.42.7_2 (active)
   libedit @20121213-3.0_0 (active)
   libffi @3.0.13_0 (active)
   libgcc @4.8.1_3
@@ -247,6 +251,8 @@ The following ports are currently installed:
   libpng @1.5.17_0 (active)
   libtasn1 @2.11_0 (active)
   libtool @2.4.2_3 (active)
+  libusb @1.0.17_0 (active)
+  libusb-compat @0.1.4_0 (active)
   libvpx @1.1.0_0
   libvpx @1.2.0_1 (active)
   libxml2 @2.9.1_0 (active)
@@ -271,6 +277,7 @@ The following ports are currently installed:
   ocaml @4.00.1_1
   ocaml @4.01.0_0 (active)
   octave @3.2.4_16+atlas+gcc48 (active)
+  openldap @2.4.31_4 (active)
   openssl @1.0.1e_1 (active)
   p5.12-error @0.170.160_4 (active)
   p5.12-term-readkey @2.300.0_3 (active)
@@ -310,6 +317,7 @@ The following ports are currently installed:
   SuiteSparse @4.1.0_0
   SuiteSparse @4.2.1_0 (active)
   tcl @8.6.1_0+corefoundation+threads (active)
+  tcp_wrappers @20_2 (active)
   texinfo @4.13_2 (active)
   tiff @4.0.3_1
   tiff @4.0.3_2 (active)
@@ -1167,6 +1175,8 @@ Can't cd to (/Library/Caches/) com.apple.Spotlight: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/Library/Caches/) com.google.SoftwareUpdate.0: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/opt/local/var/run/) openldap-data: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't opendir(/private/etc/cups/certs): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) certs: Permission denied
@@ -1179,7 +1189,13 @@ Can't cd to (/private/etc/raddb/) sites-enabled: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/etc/raddb/) sql: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-96927.5AR1ZM: Permission denied
+Can't cd to (/private/tmp/) cvcd: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-217.pkgYUT: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-5895.t4w9DF: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/tmp/) launchd-697.9QtgOS: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1231,8 +1247,6 @@ Can't cd to (/private/var/db/) sudo: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/vm/cv9y734j1g52b8x3xty9rwsh0000gp/) T: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't opendir(/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond.temp): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/) C: Permission denied
@@ -1268,8 +1282,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -7028,6 +7040,20 @@ xeno_by::build::t::coretests	undef
 xeno_by::build::vperl::vpp	0.9902
 xeno_by::build::vutil::lib::version::vxs	0.9902
 xeno_by::CPAN::MyConfig	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::IndexInfo	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Editor	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Fetcher	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::GlobSpec	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Log	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Migration	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Prompt	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Ra	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Utils	undef
+xeno_by::Contents::Resources::git_local::lib::perl5::site_perl::Git::SVN::Memoize::YAML	undef
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Error	0.15009
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git	0.01
 xeno_by::Library::SourceTree::Contents::Resources::git_local::lib::perl5::site_perl::Git::I18N	undef
@@ -7136,8 +7162,9 @@ user.workflow.1AAFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
-user.workflow.1e10d670-8da5-4a41-bbff-a5f6a0815bcd
 user.workflow.1f7ace56-d011-4eda-aff0-ad5d80184512
+user.workflow.2579a197-8a11-4381-8bab-82cbc0446862
+user.workflow.260348d2-a11c-4e8e-b00b-48d8733c39ca
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
 user.workflow.2F578D79-E596-4316-B383-F2F560426418
@@ -7151,6 +7178,8 @@ user.workflow.4373DD4A-9C72-41DC-B98B-5C4D401C55F3
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
 user.workflow.4FD4D5FF-9DF3-45A1-BAE2-D8B77A84F010
+user.workflow.4a1f2f89-cf14-40ab-af77-c08c3fa9e34a
+user.workflow.4a930407-d542-4345-8fe0-89de30cc83f4
 user.workflow.4c159225-6a6b-4937-abf3-3f77f6df7445
 user.workflow.4c200f2b-fdd2-462c-9ea4-735034b37958
 user.workflow.4e2cd76f-d4a0-4dbb-a14f-211312bcc1c5
@@ -7159,7 +7188,6 @@ user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5CDDCD6A-35E0-4F95-A4C6-19185D483C89
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
-user.workflow.5c48f1b4-bb6e-447c-9456-fb00697902b2
 user.workflow.607477fe-d194-493e-82cd-7c892adf3b09
 user.workflow.641b5221-e831-4548-9a54-b4af6e55f8de
 user.workflow.761D1C8A-EE5D-45EF-9043-936F417F66EF
@@ -7167,11 +7195,13 @@ user.workflow.77E3F47B-018A-49F2-8710-5B8CDF8A5192
 user.workflow.7e43f115-b703-4760-b387-24d69a89650a
 user.workflow.82DE8877-0899-4F4F-A948-5A054BAA5EB4
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
+user.workflow.88d51057-334d-47da-8d9e-37196744ce98
 user.workflow.8A841CF2-A8A1-417B-A238-564BCAE234A8
 user.workflow.8C6C947F-04D5-4B6F-B752-AD2F16D7BBE9
 user.workflow.8ca3b027-c963-46db-a71e-abbd0f4dfa48
 user.workflow.91AA50E9-CF3E-4550-89FF-8CDB3F44E434
 user.workflow.91BA50E9-CF3E-4550-89FF-8CDB3F44E434
+user.workflow.96035d84-e269-4259-916c-cbb2173c91c3
 user.workflow.983BBCBA-44D1-461E-91EF-91DCCAF15C6E
 user.workflow.9A4F0A2E-8D32-41AF-8187-C847324DBEDF
 user.workflow.9D4F0A2E-8D32-41AF-8187-C847324DBEDF
@@ -7189,7 +7219,6 @@ user.workflow.E5E1EA9E-BE9A-4FEC-8CB5-401D24764D2F
 user.workflow.EA83714A-2869-43A4-B9C6-0C889DF2A8B3
 user.workflow.F39EAAA9-932D-4688-8FEE-F704A7928D1D
 user.workflow.a5f93cbd-56d7-4236-b853-565db24939fe
-user.workflow.aefac927-6cfb-407b-bb69-e972c8431c03
 user.workflow.b5b9c6d9-51a8-44d3-b44b-6dad9fe7cabc
 user.workflow.ca4dd404-efe7-4107-972d-aabfd3cc0dca
 user.workflow.cc50aaf5-5f6a-46d1-98a8-8ce4a3719fa8
