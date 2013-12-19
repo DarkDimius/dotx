@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-meeting-notes "Scala" $*
+meeting-notes "Scala" "Tuesday" "$@"

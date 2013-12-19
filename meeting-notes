@@ -1,20 +1,23 @@
 #!/usr/bin/env python
-import os, sys, httplib2, pprint, webbrowser, logging, subprocess, traceback, tempfile, datetime
+import os, sys, httplib2, pprint, webbrowser, logging, subprocess, traceback, tempfile, time, datetime
 from apiclient.discovery import build
 from apiclient.http import MediaFileUpload
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 logging.basicConfig()
 
-def fail(): print("usage: " + sys.argv[0] + " <topic> --list|--create [--alfred]"); exit(1)
+def fail(): print("usage: " + sys.argv[0] + " <topic> <weekday> --list|(--create <title>) [--alfred]"); exit(1)
 alfred = "--alfred" in sys.argv
 action_list = "--list" in sys.argv
 action_create = "--create" in sys.argv
 if action_list and action_create: fail()
 if not action_list and not action_create: fail()
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
-if len(sys.argv) != 2: fail()
+if action_list and len(sys.argv) != 3: fail()
+if action_create and len(sys.argv) != 4: fail()
 topic = sys.argv[1]
+weekday = time.strptime(sys.argv[2], "%A").tm_wday
+title = sys.argv[3] if action_create else None
 
 def get_drive_service():
   CLIENT_ID = open(os.path.expandvars("$GOOGLE_CLIENT_ID")).read().strip()
@@ -34,9 +37,17 @@ def get_drive_service():
   http = credentials.authorize(http)
   return build('drive', 'v2', http=http)
 
-today = datetime.date.today()
-next_meeting = today + datetime.timedelta((10 - today.weekday()) % 7)
-next_meeting_title = topic + " Meeting %04d-%02d-%02d" % (next_meeting.year, next_meeting.month, next_meeting.day)
+def future_meetings():
+  next_meeting = datetime.date.today()
+  while True:
+    while next_meeting.weekday() != weekday:
+      next_meeting = next_meeting + datetime.timedelta(days = 1)
+    yield topic + " Meeting %04d-%02d-%02d" % (next_meeting.year, next_meeting.month, next_meeting.day)
+    next_meeting = next_meeting + datetime.timedelta(days = 1)
+
+def next_meetings():
+  meetings = future_meetings()
+  return [meetings.next(), meetings.next()]
 
 drive_service = get_drive_service()
 if drive_service:
@@ -45,8 +56,9 @@ if drive_service:
     # pprint.pprint(response)
     docs = map(lambda doc: {"title": doc["title"].replace("/", "-"), "url": doc["alternateLink"], "image": "existing.png"}, response["items"])
     docs = sorted(docs, key=lambda doc: doc["title"], reverse=True)
-    if not filter(lambda doc: doc["title"] == next_meeting_title, docs):
-      docs.insert(0, {"title": next_meeting_title, "url": "", "image": "new.png"})
+    for next_meeting in reversed(next_meetings()):
+      if not filter(lambda doc: doc["title"] == next_meeting, docs):
+        docs.insert(0, {"title": next_meeting, "url": next_meeting, "image": "new.png"})
     if alfred:
       text = u"""
       <item arg="%(url)s" uid="%(title)s" valid="yes">
@@ -60,11 +72,11 @@ if drive_service:
       for doc in docs: print doc
   elif action_create:
     folder = open(os.path.expandvars("$GOOGLEDOCS_SCALA_SHARED")).read().strip()
-    hlocal, FILENAME = tempfile.mkstemp(".txt", next_meeting_title + ".")
+    hlocal, FILENAME = tempfile.mkstemp(".txt", title + ".")
     os.write(hlocal, " ")
     media_body = MediaFileUpload(FILENAME, mimetype='text/plain', resumable=True)
     response = drive_service.files().insert(
-      body={"title": next_meeting_title, "mimeType": "text/plain", "parents": [{"id": folder}]},
+      body={"title": title, "mimeType": "text/plain", "parents": [{"id": folder}]},
       media_body=media_body,
       convert=True
     ).execute()
