@@ -308,3 +308,4 @@ function wildbox-macros-210x { target="$(hack-home "wildbox-macros-210x")"; if [
 function duplicate-macro-args-210x { target="$(hack-home "duplicate-macro-args-210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function duplicate-macro-args { target="$(hack-home "duplicate-macro-args")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function cosmetics { target="$(hack-home "cosmetics")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function f-interpolator { target="$(hack-home "f-interpolator")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
