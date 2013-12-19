@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+ant_root="$(ant-root)"
+if [[ -z "$sbt_root" ]]; then
+  echo "not in an Ant project"
+  exit 1
+fi
+
+cd "$ant_root"
+/opt/local/bin/ant "$@"

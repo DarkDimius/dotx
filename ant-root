@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+import os, sys, subprocess
+from subprocess import call
+
+if len(sys.argv) > 1:
+  print "usage: " + sys.argv[0]
+  sys.exit(1)
+
+def check_ant_root(path):
+  has_build_xml = os.path.exists(os.path.join(path, "build.xml"))
+  if has_build_xml:
+    print path
+    sys.exit(0)
+
+path = os.path.abspath(".")
+check_ant_root(path)
+
+while path != os.path.dirname(path):
+  path = os.path.dirname(path)
+  check_ant_root(path)

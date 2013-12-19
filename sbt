@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 sbt_root="$(sbt-root)"
 if [[ -z "$sbt_root" ]]; then
-  echo "not at sbt root"
+  echo "not in an SBT project"
   exit 1
 fi
 
