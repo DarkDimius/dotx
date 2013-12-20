@@ -64,14 +64,6 @@ function install-into-agents() {
 
 if [[ -z "$(which realpath)" ]]; then
   echo "Bad environment. Probably /opt/local/bin isn't on PATH"
-  echo "Installing /etc/launchd.conf..."
-  if [[ -f "/etc/launchd.conf" ]]; then sudo mv -v "/etc/launchd.conf" "/etc/launchd.conf.bak"; fi
-  cd "$(dirname "$0")"
-  sudo ln -s -v "$(pwd -P)/launchd.conf" "/etc/launchd.conf"
-  echo "Installation successful. Now reboot for the changes to be applied"
-  if [[ ! -f "/usr/local/bin/realpath" ]]; then
-    ln -sv /opt/local/bin/grealpath /opt/local/bin/realpath
-  fi
   exit 1
 fi
 if [[ ! -f "/usr/local/bin/mountainlion-window-restore-fix" ]]; then
@@ -104,6 +96,7 @@ install-into-home .scala_autorun
 install-into-home .scala_history
 install-into-home .scala_ignore_crashes
 install-into-home .bashrc
+install-into-home .wgetrc
 install-into-home .bash_profile
 install-into-home .slate
 install-into-home .inputrc
@@ -229,6 +222,9 @@ install-into-bin core-meetings
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
 install-into-daemons by.xeno.ANT_OPTS
-install-into-daemons by.xeno.MAVEN_OPTS
+install-into-daemons by.xeno.DYLD_LIBRARY_PATH
 install-into-daemons by.xeno.EDITOR
+install-into-daemons by.xeno.MAVEN_OPTS
+install-into-daemons by.xeno.PATH
+install-into-daemons by.xeno.PYTHONPATH
 install-into-agents by.xeno.jenkins_agent

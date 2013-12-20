@@ -12,7 +12,9 @@ if [[ "$TERM" != "dumb" ]]; then stty stop ""; fi
 export PROMPT_COMMAND='history -a' # http://users.livejournal.com/_winnie/371322.html
 export HISTTIMEFORMAT='%F %T ' # http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/
 
-# environment variables have been moved to launchd.conf
+# environment variables have been moved to launch daemons
+# however PATH seems to be broken when processed by launchd in mavericks, so I'm setting it here
+export PATH=/usr/local/bin:/opt/X11/bin:/usr/texbin:/usr/local/java:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/libscala/bin:/Users/xeno_by/.cabal/bin:/usr/local/cuda/bin:/Users/xeno_by/.rvm/bin
 
 source /opt/local/etc/bash_completion
 source /opt/local/share/git-core/contrib/completion/git-prompt.sh
@@ -23,10 +25,6 @@ source $HOME/.partest-completion.bash
 source $HOME/.subl-open-project-completion.bash
 source $HOME/.alfred-completion.bash
 export PYTHONSTARTUP=/Users/xeno_by/.pystartup
-
-# cannot put this in launchd.conf because:
-# http://stackoverflow.com/questions/12064725/dyld-dyld-environment-variables-being-ignored-because-main-executable-usr-bi
-export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/opt/local/libexec/llvm-3.3/lib/
 
 function parse_git_branch {
   ref=$(git rev-parse --abbrev-ref HEAD 2> /dev/null) || return
@@ -300,10 +298,10 @@ alias masterM7='cd "$HOME/Projects/Scala2110M7"'
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
 function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function typeCheck { target="$(hack-home "typeCheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function duplicate-macro-args { target="$(hack-home "duplicate-macro-args")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function cosmetics { target="$(hack-home "cosmetics")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function f-interpolator { target="$(hack-home "f-interpolator")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"

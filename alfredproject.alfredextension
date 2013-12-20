@@ -34,7 +34,8 @@
         <key>escaping</key>
         <integer>127</integer>
         <key>script</key>
-        <string>subl-open-project $PROJECT_SHORTNAME</string>
+        <string>source ~/.bashrc
+subl-open-project $PROJECT_SHORTNAME</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
