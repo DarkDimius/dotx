@@ -32,12 +32,12 @@
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>126</integer>
 				<key>script</key>
-				<string>if [[ -z "{query}" ]]; then
-  open "$(scala-meetings --create --alfred)"
-else
+				<string>if [[ "{query}" == https* ]]; then
   open "{query}"
+else
+  open "$(scala-meetings --create "{query}" --alfred)"
 fi</string>
 				<key>type</key>
 				<integer>0</integer>

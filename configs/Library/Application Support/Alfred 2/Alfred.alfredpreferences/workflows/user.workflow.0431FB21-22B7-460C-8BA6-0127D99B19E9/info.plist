@@ -6,11 +6,11 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>017E9EAB-945D-4F6D-833F-39331E9F04D9</key>
+		<key>031A1F1A-74BE-4B2B-A64B-BCED6080A00F</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>347ED79D-E479-4371-9512-519B20EB4B7F</string>
+				<string>7FCF4FA4-B3F2-40E1-879C-5E693C42B902</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,38 +25,9 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>reflection-meetings</string>
+	<string>core-meetings</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>keyword</key>
-				<string>meetings-reflection</string>
-				<key>runningsubtext</key>
-				<string>Loading document list...</string>
-				<key>script</key>
-				<string>reflection-meetings --list --alfred</string>
-				<key>subtext</key>
-				<string>Simple UI for reflection meeting notes</string>
-				<key>title</key>
-				<string>Reflection meetings</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>017E9EAB-945D-4F6D-833F-39331E9F04D9</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -66,7 +37,7 @@
 				<string>if [[ "{query}" == https* ]]; then
   open "{query}"
 else
-  open "$(reflection-meetings --create "{query}" --alfred)"
+  open "$(core-meetings --create "{query}" --alfred)"
 fi</string>
 				<key>type</key>
 				<integer>0</integer>
@@ -74,7 +45,36 @@ fi</string>
 			<key>type</key>
 			<string>alfred.workflow.output.script</string>
 			<key>uid</key>
-			<string>347ED79D-E479-4371-9512-519B20EB4B7F</string>
+			<string>7FCF4FA4-B3F2-40E1-879C-5E693C42B902</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>meetings-core</string>
+				<key>runningsubtext</key>
+				<string>Loading document list...</string>
+				<key>script</key>
+				<string>core-meetings --list --alfred</string>
+				<key>subtext</key>
+				<string>Simple UI for core meeting notes</string>
+				<key>title</key>
+				<string>Core meetings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>031A1F1A-74BE-4B2B-A64B-BCED6080A00F</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -83,12 +83,12 @@ fi</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>017E9EAB-945D-4F6D-833F-39331E9F04D9</key>
+		<key>031A1F1A-74BE-4B2B-A64B-BCED6080A00F</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>347ED79D-E479-4371-9512-519B20EB4B7F</key>
+		<key>7FCF4FA4-B3F2-40E1-879C-5E693C42B902</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
