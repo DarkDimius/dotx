@@ -34,7 +34,8 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>subl "/Users/xeno_by/Library/Application Support/KeyRemap4MacBook/private.xml"</string>
+				<string>source ~/.bashrc
+subl "/Users/xeno_by/Library/Application Support/KeyRemap4MacBook/private.xml"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

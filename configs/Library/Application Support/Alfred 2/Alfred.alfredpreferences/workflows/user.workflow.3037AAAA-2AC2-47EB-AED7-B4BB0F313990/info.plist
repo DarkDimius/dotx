@@ -34,7 +34,8 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>if [[ {query} == "on" ]]; then
+				<string>source ~/.bashrc
+if [[ {query} == "on" ]]; then
   hangouts-on
 else
   hangouts-off

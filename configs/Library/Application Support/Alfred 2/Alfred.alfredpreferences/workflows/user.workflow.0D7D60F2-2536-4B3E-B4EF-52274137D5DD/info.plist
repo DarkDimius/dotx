@@ -42,25 +42,20 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source ~/.bashrc
+echo xeno-by:2.10.x &gt; ~/.hackproto
+cp "/usr/local/dotx/hack210x.plist" "/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018/info.plist"
+echo "proto set to 2.10.x"</string>
+				<key>type</key>
 				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>proto-210x</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -86,19 +81,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>echo xeno-by:2.10.x &gt; ~/.hackproto
-cp "/usr/local/dotx/hack210x.plist" "/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018/info.plist"
-echo "proto set to 2.10.x"</string>
-				<key>type</key>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
 				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>proto-210x</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>

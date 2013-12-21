@@ -53,7 +53,8 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>subl-open-project paradise2110M7</string>
+				<string>source ~/.bashrc
+subl-open-project paradise2110M7</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

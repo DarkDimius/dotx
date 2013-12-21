@@ -40,7 +40,8 @@
 				<key>runningsubtext</key>
 				<string>Loading document list...</string>
 				<key>script</key>
-				<string>reflection-meetings --list --alfred</string>
+				<string>source ~/.bashrc
+reflection-meetings --list --alfred</string>
 				<key>subtext</key>
 				<string>Simple UI for reflection meeting notes</string>
 				<key>title</key>
@@ -63,7 +64,8 @@
 				<key>escaping</key>
 				<integer>126</integer>
 				<key>script</key>
-				<string>if [[ "{query}" == https* ]]; then
+				<string>source ~/.bashrc
+if [[ "{query}" == https* ]]; then
   open "{query}"
 else
   open "$(reflection-meetings --create "{query}" --alfred)"

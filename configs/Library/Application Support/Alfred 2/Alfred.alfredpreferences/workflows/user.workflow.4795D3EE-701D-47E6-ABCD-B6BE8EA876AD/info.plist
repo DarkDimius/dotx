@@ -55,7 +55,8 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>bug {query} 2&gt;&amp;1</string>
+				<string>source ~/.bashrc
+bug {query} 2&gt;&amp;1</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

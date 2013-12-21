@@ -31,23 +31,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>subl-open-project nemerle</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>2323C1D0-B6C4-4E1F-BE2B-3FE8BF4B27C4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -61,6 +44,24 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>F7FF1969-C896-48D9-9E4F-105808872726</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>source ~/.bashrc
+subl-open-project nemerle</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2323C1D0-B6C4-4E1F-BE2B-3FE8BF4B27C4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>

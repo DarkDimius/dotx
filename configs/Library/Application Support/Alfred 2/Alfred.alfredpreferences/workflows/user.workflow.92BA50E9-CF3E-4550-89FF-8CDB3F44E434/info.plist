@@ -6,11 +6,11 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>C0599899-ADDA-4673-96A5-3A353EF86396</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>BA485DB9-5D5D-4C39-B037-F0F78AF590A3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>fos4</string>
+	<string>Movies</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -34,33 +34,33 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>fos4</string>
+				<string>videos</string>
 				<key>text</key>
-				<string>Foundations of Software: Project 4</string>
+				<string>Videos</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<string>C0599899-ADDA-4673-96A5-3A353EF86396</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>subl-open-project fos4</string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>paths</key>
+				<array>
+					<string>~/Movies</string>
+				</array>
+				<key>toggle</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>BA485DB9-5D5D-4C39-B037-F0F78AF590A3</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -69,12 +69,12 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>BA485DB9-5D5D-4C39-B037-F0F78AF590A3</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>C0599899-ADDA-4673-96A5-3A353EF86396</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>

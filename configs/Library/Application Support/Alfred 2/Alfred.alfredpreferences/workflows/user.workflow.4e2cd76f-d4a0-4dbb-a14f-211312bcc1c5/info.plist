@@ -53,7 +53,8 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>subl-open-project paradisehooked</string>
+				<string>source ~/.bashrc
+subl-open-project paradisehooked</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

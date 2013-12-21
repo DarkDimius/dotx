@@ -34,9 +34,9 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>videos</string>
+				<string>movies</string>
 				<key>text</key>
-				<string>Videos</string>
+				<string>Movies</string>
 				<key>withspace</key>
 				<false/>
 			</dict>

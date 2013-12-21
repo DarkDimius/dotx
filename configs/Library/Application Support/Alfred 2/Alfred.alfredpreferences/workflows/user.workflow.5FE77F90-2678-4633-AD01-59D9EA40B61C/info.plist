@@ -28,7 +28,8 @@
 				<key>runningsubtext</key>
 				<string>Computing flag names...</string>
 				<key>script</key>
-				<string>bits-to-flags {query} --alfred</string>
+				<string>source ~/.bashrc
+bits-to-flags {query} --alfred</string>
 				<key>subtext</key>
 				<string>Extracts flag names from bits</string>
 				<key>title</key>
