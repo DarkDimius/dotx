@@ -19,7 +19,7 @@ for dir in os.listdir(alfred_extension_path):
     plist = plistlib.readPlist(plist_path)
     for obj in plist["objects"]:
       if obj.get("type") == "alfred.workflow.action.script":
-        m = re.match(r"^\s*subl-open-project\s+(.*?)\s*$", obj["config"]["script"])
+        m = re.search(r"subl-open-project\s+(\S+)", obj["config"]["script"])
         alfred_project = m and m.group(1)
         if alfred_project:
           alfred_projects.append(alfred_project)
