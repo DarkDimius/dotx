@@ -63,6 +63,7 @@ fi</string>
 				<string>echo "&lt;?xml version=\"1.0\"?&gt;"
 echo "&lt;items&gt;"
 
+source ~/.bashrc
 if [[ $(hangouts-status) == 0 ]]
 then
 // Turn Hangouts On
