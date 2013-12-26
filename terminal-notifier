@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+source /Users/xeno_by/.bashrc
 "$(dirname "$(realpath "$0")")/terminal-notifier.app/Contents/MacOS/terminal-notifier" "$@"
