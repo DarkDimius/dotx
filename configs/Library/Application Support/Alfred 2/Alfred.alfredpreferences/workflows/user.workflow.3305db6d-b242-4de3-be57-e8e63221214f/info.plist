@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>duplicate-macro-args</string>
+  <string>palladium1</string>
   <key>objects</key>
   <array>
     <dict>
@@ -35,7 +35,7 @@
         <integer>127</integer>
         <key>script</key>
         <string>source ~/.bashrc
-subl-open-project duplicate-macro-args</string>
+subl-open-project palladium1</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -52,9 +52,9 @@ subl-open-project duplicate-macro-args</string>
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>duplicate-macro-args</string>
+        <string>palladium1</string>
         <key>text</key>
-        <string>duplicate-macro-args</string>
+        <string>palladium1</string>
         <key>withspace</key>
         <false/>
       </dict>

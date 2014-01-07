@@ -6,11 +6,11 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,25 +25,25 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>f-interpolator</string>
+	<string>pull</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>keyword</key>
-				<string>f-interpolator</string>
+				<string>pull</string>
 				<key>text</key>
-				<string>f-interpolator</string>
+				<string>pull</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -54,14 +54,14 @@
 				<integer>127</integer>
 				<key>script</key>
 				<string>source ~/.bashrc
-subl-open-project f-interpolator</string>
+pull {query} 2&gt;&amp;1</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -70,12 +70,12 @@ subl-open-project f-interpolator</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
-		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>

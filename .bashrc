@@ -217,7 +217,7 @@ alias sy="rmc && scalac *Test*.scala -Ymacro-debug-lite"
 alias sty="rmc && scalac *Test*.scala -Ytyper-debug"
 alias siy="rmc && scalac *Test*.scala -Yinfer-debug"
 alias syy="rmc && scalac *Test*.scala -Ymacro-debug-verbose"
-alias syyy="rmc && scalac *Test*.scala -Yquasiquote-debug"
+alias stt="rmc && scalac *Test*.scala -Xprint:typer -Yshow-syms -uniqid"
 alias sm="rmc && scalac *Macros*.scala"
 alias ss="rmc && scalac *Macros*.scala && scalac Test*.scala"
 alias ssli="rmc && scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
@@ -228,7 +228,7 @@ alias ssy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite
 alias ssty="rmc && scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias ssiy="rmc && scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
 alias ssyy="rmc && scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
-alias ssyyy="rmc && scalac *Macros*.scala && scalac Test*.scala -Yquasiquote-debug"
+alias sstt="rmc && scalac *Macros*.scala && scalac Test*.scala -Xprint:typer -Yshow-syms -uniqid"
 alias ks="scalac *Test*.scala"
 alias ksli="scalac *Test*.scala -Xlog-implicits"
 alias ksp="scalac *Test*.scala -Xprint:parser"
@@ -238,7 +238,7 @@ alias ksy="scalac *Test*.scala -Ymacro-debug-lite"
 alias ksty="scalac *Test*.scala -Ytyper-debug"
 alias ksiy="scalac *Test*.scala -Yinfer-debug"
 alias ksyy="scalac *Test*.scala -Ymacro-debug-verbose"
-alias ksyyy="scalac *Test*.scala -Yquasiquote-debug"
+alias kstt="scalac *Test*.scala -Xprint:typer -Yshow-syms"
 alias ksm="scalac *Macros*.scala"
 alias kss="scalac *Macros*.scala && scalac Test*.scala"
 alias kssli="scalac *Macros*.scala && scalac Test*.scala -Xlog-implicits"
@@ -249,7 +249,7 @@ alias kssy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-lite"
 alias kssty="scalac *Macros*.scala && scalac Test*.scala -Ytyper-debug"
 alias kssiy="scalac *Macros*.scala && scalac Test*.scala -Yinfer-debug"
 alias kssyy="scalac *Macros*.scala && scalac Test*.scala -Ymacro-debug-verbose"
-alias kssyy="scalac *Macros*.scala && scalac Test*.scala -Yquasiquote-debug"
+alias ksstt="scalac *Macros*.scala && scalac Test*.scala -Xprint:typer -Yshow-syms -uniqid"
 alias r="scala Test"
 alias sr="rmc && scalac *Test*.scala && scala Test"
 alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
@@ -294,6 +294,6 @@ alias masterM7='cd "$HOME/Projects/Scala2110M7"'
 function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function typeCheck { target="$(hack-home "typeCheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function duplicate-macro-args { target="$(hack-home "duplicate-macro-args")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function f-interpolator { target="$(hack-home "f-interpolator")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home"
+function palladium1 { target="$(hack-home "palladium1")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function remove-symbol-based-factories { target="$(hack-home "remove-symbol-based-factories")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
