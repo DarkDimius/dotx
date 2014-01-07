@@ -24,4 +24,8 @@
         <name>Reading List</name>
         <location>/Users/Shared/Dropbox/Papers/Reading List/</location>
     </bookmark>
+    <bookmark>
+        <name>dotx</name>
+        <location>/usr/local/dotx/</location>
+    </bookmark>
 </bookmarks>
