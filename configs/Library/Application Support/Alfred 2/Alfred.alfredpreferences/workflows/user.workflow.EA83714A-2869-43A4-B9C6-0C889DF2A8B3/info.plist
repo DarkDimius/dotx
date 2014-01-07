@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B2BFE2A5-C193-4421-AAB6-4DFB9A929DA7</string>
+				<string>899BBC6F-9831-43D4-84AD-3CF0E9BFD433</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Hotkey: Cmd+`</string>
+	<string>Hotkey: Cmd + `</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -56,37 +56,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>on is_running(appName)
-    tell application "System Events" to (name of processes) contains appName
-end is_running
-
-on run argv
-  set iterm_is_running to is_running("iTerm")
-
-  if not iterm_is_running then
-    tell application "iTerm" to activate
-  else
-    tell application "System Events"
-      set theName to name of the first process whose frontmost is true
-    end tell
-    if theName is "iTerm" then
-      tell application "System Events" to set visible of process "iTerm" to false
-    else
-      tell application "iTerm" to activate
-    end if
-  end if
-end run
-</string>
-				<key>type</key>
-				<integer>6</integer>
+				<key>paths</key>
+				<array>
+					<string>/Applications/iTerm.app</string>
+				</array>
+				<key>toggle</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
-			<string>B2BFE2A5-C193-4421-AAB6-4DFB9A929DA7</string>
+			<string>899BBC6F-9831-43D4-84AD-3CF0E9BFD433</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -100,7 +80,7 @@ end run
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
-		<key>B2BFE2A5-C193-4421-AAB6-4DFB9A929DA7</key>
+		<key>899BBC6F-9831-43D4-84AD-3CF0E9BFD433</key>
 		<dict>
 			<key>ypos</key>
 			<real>60</real>
