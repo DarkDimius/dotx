@@ -218,6 +218,7 @@ install-into-bin scala-toolcp partest-toolcp
 install-into-bin ant
 install-into-bin ant-root
 install-into-bin core-meetings
+install-into-bin blueutil
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit

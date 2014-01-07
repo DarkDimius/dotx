@@ -1,17 +1,7 @@
-#!/usr/bin/osascript
-on run argv
-  tell application "System Events" to set UI elements enabled to true
-  tell application "System Preferences"
-    set current pane to pane id "com.apple.preferences.bluetooth"
-    tell application "System Events"
-      tell process "System Preferences"
-        if value of checkbox 2 of window "Bluetooth" is 0 then
-          return "0"
-        else
-          return "1"
-        end if
-      end tell
-    end tell
-    quit
-  end tell
-end run
+#!/usr/bin/env bash
+source ~/.bashrc
+if [[ "$(blueutil status)" == "Status: on" ]]; then
+  echo "1"
+else
+  echo "0"
+fi
