@@ -69,7 +69,6 @@ try:
     try: check_comm(["git", "checkout", branch], cwd = project_home)
     except: check_comm(["git", "checkout", "-b", branch], cwd = project_home)
     with open(project_home + "/.hack", "w") as f: f.write(target)
-    with open(project_home + "/.gitignore", "w") as f: f.write("*.jar")
     checkpoint("Created a Git repo at " + project_home[len(projects):] + " using " + prototype[len(projects):] + " as a prototype")
 
     check_comm(["cp", "-r", prototype + "/build", project_home + "/build"])
