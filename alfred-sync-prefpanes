@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+import os, plistlib, re, sys, shutil, uuid
+from send2trash import send2trash
+from subprocess import check_output
+from xml.sax.saxutils import escape
+from glob import glob
+
+dry = "--dry" in sys.argv
+sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
+
+if len(sys.argv) != 1:
+  print "usage: " + sys.argv[0] + " [--dry]"
+  sys.exit(1)
+
+alfred_prefpanes = []
+alfred_prefpane_ids = {}
+alfred_extension_path = "/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/"
+for dir in os.listdir(alfred_extension_path):
+  alfred_prefpane_id = re.match(r"^user\.workflow\.(.*?)$", dir).group(1)
+  plist_path = os.path.join(alfred_extension_path, dir, "info.plist")
+  if os.path.exists(plist_path):
+    plist = plistlib.readPlist(plist_path)
+    m = re.search(r"Opens the (.*?) \((?:.*?)\) preference pane", plist["description"])
+    alfred_prefpane = m and m.group(1)
+    if alfred_prefpane:
+      alfred_prefpanes.append(alfred_prefpane)
+      alfred_prefpane_ids[alfred_prefpane] = alfred_prefpane_id
+
+system_prefpanes = []
+system_prefpanes_path = "/System/Library/PreferencePanes"
+spotlight_exclusions = check_output(["spotlight-exclusions"]).strip().split("\n")
+for file in os.listdir(system_prefpanes_path):
+  if not os.path.join(system_prefpanes_path, file) in spotlight_exclusions:
+    m = re.match(r"^(.*?)\.prefPane$", file)
+    system_prefpane = m and m.group(1)
+    if system_prefpane:
+      system_prefpanes.append(system_prefpane)
+
+missing_prefpanes = [x for x in system_prefpanes if x not in alfred_prefpanes]
+if missing_prefpanes:
+  print "Missing:"
+  for missing_prefpane in missing_prefpanes:
+    sys.stdout.write("* " + missing_prefpane)
+    if dry:
+      print ""
+    else:
+      sys.stdout.write("... ")
+      prefpane_path = os.path.join(system_prefpanes_path, missing_prefpane + ".prefPane")
+      prefpane_plist = plistlib.readPlist(os.path.join(prefpane_path, "Contents", "Info.plist"))
+      prefpane_icon = os.path.join(prefpane_path, "Contents", "Resources", prefpane_plist.get("CFBundleIconFile") or missing_prefpane)
+      prefpane_icon_paths = filter(lambda path: path.endswith(".icns"), glob(prefpane_icon + "*"))
+      if len(prefpane_icon_paths) == 1: prefpane_icon_path = prefpane_icon_paths[0]
+      else: raise Exception("can't find icon " + str(prefpane_icon))
+      alfred_project_id = str(uuid.uuid4())
+      alfred_project_dir = os.path.join(alfred_extension_path, "user.workflow." + alfred_project_id)
+      alfred_project_plist = os.path.join(alfred_project_dir, "info.plist")
+      os.mkdir(alfred_project_dir)
+      template = open(os.path.expandvars("$HOME/.prefpane.alfredextension")).read()
+      template = template.replace("$PREFPANE_ID", escape(missing_prefpane))
+      template = template.replace("$PREFPANE_NAME", escape(prefpane_plist.get("CFBundleName") or missing_prefpane))
+      template = template.replace("$PREFPANE_PATH", escape(prefpane_path))
+      template = os.path.expandvars(template)
+      with open(alfred_project_plist, "w") as f: f.write(template)
+      shutil.copyfile(prefpane_icon_path, os.path.join(alfred_project_dir, "icon.png"))
+      print "CREATED"
+
+obsolete_prefpanes = [x for x in alfred_prefpanes if x not in system_prefpanes]
+if obsolete_prefpanes:
+  print "Obsolete:"
+  for obsolete_prefpane in obsolete_prefpanes:
+    sys.stdout.write("* " + obsolete_prefpane)
+    if dry:
+      print ""
+    else:
+      sys.stdout.write("... ")
+      alfred_prefpane_dir = os.path.join(alfred_extension_path, "user.workflow." + alfred_prefpane_ids[obsolete_prefpane])
+      send2trash(alfred_prefpane_dir)
+      print "DELETED"

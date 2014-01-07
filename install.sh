@@ -114,6 +114,7 @@ install-into-home subl-open-project-completion.bash .subl-open-project-completio
 install-into-home alfred-completion.bash .alfred-completion.bash
 install-into-home .scala_tier
 install-into-home .octaverc
+install-into-home prefpane.alfredextension .prefpane.alfredextension
 
 install-into-bin pullrequest
 install-into-bin java6
@@ -219,6 +220,8 @@ install-into-bin ant
 install-into-bin ant-root
 install-into-bin core-meetings
 install-into-bin blueutil
+install-into-bin spotlight-exclusions
+install-into-bin alfred-sync-prefpanes
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
