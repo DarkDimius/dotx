@@ -61,7 +61,7 @@ if drive_service:
         docs.insert(0, {"title": next_meeting, "url": next_meeting, "image": "new.png"})
     if alfred:
       text = u"""
-      <item arg="%(url)s" uid="%(title)s" valid="yes">
+      <item arg="%(url)s" uid="" valid="yes">
         <title>%(title)s</title>
         <subtitle></subtitle>
         <icon>%(image)s</icon>
