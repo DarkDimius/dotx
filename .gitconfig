@@ -13,7 +13,7 @@
   quotepath = true
 	excludesfile = /Users/xeno_by/.gitignore
   bare = false
-  symlinks = false
+  symlinks = true
   ignorecase = true
   hideDotFiles = dotGitOnly
   attributesfile = /Users/xeno_by/.gitattributes
