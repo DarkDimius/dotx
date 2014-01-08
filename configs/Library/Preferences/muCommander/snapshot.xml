@@ -28,8 +28,8 @@
                             <show>true</show>
                         </extension>
                         <sort>
-                            <order>desc</order>
-                            <by>date</by>
+                            <order>asc</order>
+                            <by>name</by>
                         </sort>
                         <name>
                             <position>1</position>
@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/</location>
+                            <location>/Applications/Google Notifier.app/Contents/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -92,7 +92,7 @@
                         </owner>
                         <permissions>
                             <position>4</position>
-                            <width>37</width>
+                            <width>35</width>
                             <show>true</show>
                         </permissions>
                         <group>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>76</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>bookmark://dotx/</location>
+                            <location>/Applications/Airmail.app/Contents/Resources/</location>
                         </tab-0>
                     </tabs>
                 </right>
