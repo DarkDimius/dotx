@@ -1,17 +1,18 @@
 #!/usr/bin/osascript
 on run argv
   if application "Google Chrome" is not running then
-    -- TODO: also make this background
     do shell script "open -a \"Google Chrome\""
     do shell script "sleep 0.5"
-    do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd"
-    do shell script "sleep 0.5"
-  else
-    do shell script "browser chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd --background"
-    do shell script "sleep 0.2"
   end
   tell application "Google Chrome"
+    set hadWindows to true
+    if (count every window) = 0 then
+      set hadWindows to false
+      make new window
+    end if
     set w to window 1
+    tell w to make new tab with properties {URL:"chrome://extensions-frame/?id=nckgahadagoaajjgafhacjanaoiihapd"}
+    do shell script "sleep 0.2"
     set t to w's active tab
     repeat while (loading of t)
     end repeat
@@ -20,5 +21,8 @@ on run argv
     if (count w's tabs) > 0 then
       close t
     end
+    if not hadWindows then
+      close w
+    end if
   end tell
 end open location
