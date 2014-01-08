@@ -189,9 +189,6 @@ install-into-bin commit
 install-into-bin commit sha
 install-into-bin urlproxy
 install-into-bin lstool
-install-into-apps Browser.app
-lstool write internet Web Browser
-install-into-bin browser
 install-into-bin bluetooth-toggle
 install-into-bin bluetooth-status
 install-into-bin hangouts-on
