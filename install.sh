@@ -219,6 +219,8 @@ install-into-bin core-meetings
 install-into-bin blueutil
 install-into-bin spotlight-exclusions
 install-into-bin alfred-sync-prefpanes
+install-into-bin zvonok-refresh
+install-into-bin zvonok-fetch
 
 install-into-daemons by.xeno.dotx_backup
 install-into-daemons by.xeno.gitblit
