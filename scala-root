@@ -26,10 +26,6 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise211x"):
   print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
 
-if os.path.abspath(".").startswith("/Users/xeno_by/Projects/ParadiseHooked"):
-  print "/Users/xeno_by/Projects/macro-plugin-interface"
-  sys.exit(0)
-
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Spores"):
   print "/Users/xeno_by/Projects/210x"
   sys.exit(0)

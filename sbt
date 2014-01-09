@@ -6,10 +6,4 @@ if [[ -z "$sbt_root" ]]; then
 fi
 
 cd "$sbt_root"
-
-if [[ "$sbt_root" == "/Users/xeno_by/Projects/ParadiseHooked" ]]; then
-  # sbt-the-rebel-cut "$@"
-  sbt-the-rebel-cut -Dparadise.scala.home="$(scala-root)/build/pack" "$@"
-else
-  sbt-the-rebel-cut "$@"
-fi
+sbt-the-rebel-cut "$@"
