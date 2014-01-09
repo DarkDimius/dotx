@@ -8,13 +8,25 @@ def fail(): print("usage: " + sys.argv[0]); exit(1)
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
 if len(sys.argv) != 1: fail()
 
+def dump_newmail_db(contents):
+  prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
+  newmail_db_path = prefix + "_newmail"
+  with open(newmail_db_path, 'w') as newmail_db:
+    newmail_db.write(contents)
+
+def dump_inbox_db(contents):
+  prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
+  inbox_db_path = prefix + "_inbox"
+  with open(inbox_db_path, 'w') as inbox_db:
+    inbox_db.write(contents)
+
 def get_auth_string():
   CLIENT_ID = open(os.path.expandvars("$GOOGLE_CLIENT_ID")).read().strip()
   CLIENT_SECRET = open(os.path.expandvars("$GOOGLE_CLIENT_SECRET")).read().strip()
   OAUTH_SCOPE = 'https://mail.google.com/'
   REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
   flow = OAuth2WebServerFlow(CLIENT_ID, CLIENT_SECRET, OAUTH_SCOPE, REDIRECT_URI)
-  storage = Storage(os.path.expandvars("$GOOGLEMAIL_OAUTH_STORAGE") + "1")
+  storage = Storage(os.path.expandvars("$GOOGLEMAIL_OAUTH_STORAGE"))
   credentials = storage.get()
   if credentials:
     if credentials.access_token_expired: credentials.refresh(httplib2.Http())
@@ -30,3 +42,6 @@ imap_conn = imaplib.IMAP4_SSL('imap.gmail.com')
 imap_conn.debug = 4
 imap_conn.authenticate('XOAUTH2', lambda x: get_auth_string())
 imap_conn.select('INBOX')
+
+dump_newmail_db("newmail_db")
+dump_inbox_db("inbox_db")
