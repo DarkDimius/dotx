@@ -221,13 +221,14 @@ install-into-bin spotlight-exclusions
 install-into-bin alfred-sync-prefpanes
 install-into-bin zvonok-refresh
 install-into-bin zvonok-fetch
+install-into-bin palladium-meetings
 
-install-into-daemons by.xeno.dotx_backup
-install-into-daemons by.xeno.gitblit
-install-into-daemons by.xeno.ANT_OPTS
-install-into-daemons by.xeno.DYLD_LIBRARY_PATH
-install-into-daemons by.xeno.EDITOR
-install-into-daemons by.xeno.MAVEN_OPTS
-install-into-daemons by.xeno.PATH
-install-into-daemons by.xeno.PYTHONPATH
-install-into-agents by.xeno.jenkins_agent
+install-into-daemons local.by.xeno.dotx_backup
+install-into-daemons local.by.xeno.gitblit
+install-into-daemons local.by.xeno.ANT_OPTS
+install-into-daemons local.by.xeno.DYLD_LIBRARY_PATH
+install-into-daemons local.by.xeno.EDITOR
+install-into-daemons local.by.xeno.MAVEN_OPTS
+install-into-daemons local.by.xeno.PATH
+install-into-daemons local.by.xeno.PYTHONPATH
+install-into-agents local.by.xeno.jenkins_agent
