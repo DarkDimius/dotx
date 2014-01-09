@@ -97,21 +97,21 @@ for datum_idx in range(len(messages)):
   raw_sender = data[datum_idx * 4 + 1][1]
   raw_body_size = data[datum_idx * 4 + 2][0]
   raw_body = data[datum_idx * 4 + 2][1]
-  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) FLAGS \((.*?)\) BODYSTRUCTURE (?:\()+\"TEXT\" \"PLAIN\" \(\"CHARSET\" \"([^\"]*?)\"\) (?:.*?) BODY\[HEADER\.FIELDS \(SUBJECT\)\] \{\d+\}$", raw_id_flags_bodystructure)
-  if not m: print raw_id_flags_bodystructure
+  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) FLAGS \((.*?)\) BODYSTRUCTURE (.*?) BODY\[HEADER\.FIELDS \(SUBJECT\)\] \{\d+\}$", raw_id_flags_bodystructure)
   message_idx = int(m.group(1))
   id = hex(int(m.group(2)))[2:]
   unread = not "\Seen" in m.group(3)
-  charset = m.group(4)
-  print charset
+  body_structure = m.group(4)
+  m = re.match(r"^(?:\()+\"TEXT\" \"(?:PLAIN|HTML)\" \(\"CHARSET\" \"([^\"]+)\"", body_structure)
+  if not m: raise Exception("unexpected body structure: " + body_structure)
+  charset = m.group(1)
   subject = decode_header(raw_subject, 'subject')
   sender = decode_header(raw_sender, 'from')
   m = re.match(r"^\s*BODY\[1\]<0> \{(\d+)\}$", raw_body_size)
-  if not m: raise Exception("unexpected body format")
+  if not m: raise Exception("unexpected body format: " + raw_body_size)
   body = decode_body(raw_body, charset)
   messages[len(messages) - message_idx] = dict(id = id, unread = unread, subject = subject, sender = process_sender(sender), body = process_body(body))
 
-sys.exit(0)
 prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
 dump_messages(prefix + "_newmail", filter(lambda msg: msg["unread"], messages))
 dump_messages(prefix + "_inbox", messages)
