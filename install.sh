@@ -222,6 +222,7 @@ install-into-bin alfred-sync-prefpanes
 install-into-bin zvonok-refresh
 install-into-bin palladium-meetings
 install-into-bin zvonok-daemon
+install-into-bin zvonok-reset
 
 install-into-daemons local.by.xeno.dotx_backup
 install-into-daemons local.by.xeno.gitblit

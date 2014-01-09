@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os, sys, httplib2, imaplib, logging, webbrowser, email, re
+from xml.sax.saxutils import escape
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 logging.basicConfig()
@@ -7,18 +8,6 @@ logging.basicConfig()
 def fail(): print("usage: " + sys.argv[0]); exit(1)
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
 if len(sys.argv) != 1: fail()
-
-def dump_newmail_db(contents):
-  prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
-  newmail_db_path = prefix + "_newmail"
-  with open(newmail_db_path, 'w') as newmail_db:
-    newmail_db.write(contents)
-
-def dump_inbox_db(contents):
-  prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
-  inbox_db_path = prefix + "_inbox"
-  with open(inbox_db_path, 'w') as inbox_db:
-    inbox_db.write(contents)
 
 def get_auth_string():
   CLIENT_ID = open(os.path.expandvars("$GOOGLE_CLIENT_ID")).read().strip()
@@ -39,6 +28,9 @@ def get_auth_string():
   return 'user=%s\1auth=Bearer %s\1\1' % (os.path.expandvars("$GOOGLEMAIL_USERNAME"), credentials.access_token)
 
 def process_sender(sender):
+  # I've seen two typical formats here
+  # 1: First Last <email>
+  # 2: "First Last" <email>
   m = re.match(r"^(?:\")?(.*?)(?:\")?\s*(?:<.*)$", sender)
   if m: sender = m.group(1).strip()
   return sender
@@ -49,17 +41,38 @@ def process_body(body):
   if m: body = m.group(1).strip()
   m = re.match(r"^(.*?)<html>.*$", body)
   if m: body = m.group(1).strip()
-  body = ' '.join(body.split())
+  body = ' '.join(body.split()) # replace continuous whitespace groups with single whitespace
   return body[0:450]
 
+def dump_messages(path, messages):
+  def msg_to_datum(msg):
+    return dict(
+      url = escape("https://mail.google.com/mail/u/0/#inbox/" + msg["id"]),
+      title = escape(msg["subject"] or "No subject"),
+      subtitle = escape(msg["sender"] + ": " + msg["body"]),
+      icon = "newmail.png" if msg["unread"] else "oldmail.png")
+  data = map(msg_to_datum, messages)
+  if not data:
+    YAY = "http://fc00.deviantart.net/fs70/i/2012/252/6/c/fluttershy__s_yay_badge_by_zutheskunk-d3e8usb.png"
+    data = [dict(url = YAY, title = "Inbox zero", subtitle = "Enjoy while it lasts!", icon = "oldmail.png")]
+  template = u"""
+  <item arg="%(url)s" uid="" valid="yes">
+    <title>%(title)s</title>
+    <subtitle>%(subtitle)s</subtitle>
+    <icon>%(icon)s</icon>
+  </item>
+  """
+  contents = ("<items>%s</items>" % "\n".join(template % datum for datum in data))
+  with open(path, 'w') as f: f.write(contents.encode("utf-8"))
+
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
-mail.debug = 4 # VERY USEFUL!
+# mail.debug = 4 # VERY USEFUL!
 mail.authenticate('XOAUTH2', lambda x: get_auth_string())
 mail.select('INBOX')
 status, data = mail.search(None, 'ALL')
-fetch_ids = ','.join(data[0].split())
+inbox_ids = ','.join(data[0].split())
 messages = [None] * len(data[0].split())
-status, data = mail.fetch(fetch_ids, '(X-GM-MSGID BODY.PEEK[])')
+status, data = mail.fetch(inbox_ids, '(X-GM-MSGID FLAGS BODY.PEEK[])')
 for datum_idx in range(len(messages)):
   # for N emails, we get 2 * N entries in data
   # even entries have 2 sub-entries that say:
@@ -68,9 +81,10 @@ for datum_idx in range(len(messages)):
   # odd entries have 1 sub-entry that says ")"
   subentry1 = data[datum_idx * 2 + 0][0]
   subentry2 = data[datum_idx * 2 + 0][1]
-  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) BODY\[\] \{\d+\}$", subentry1)
+  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) FLAGS \((.*?)\) BODY\[\] \{\d+\}$", subentry1)
   message_idx = int(m.group(1))
   id = hex(int(m.group(2)))[2:]
+  unread = not "\Seen" in m.group(3)
   msg = email.message_from_string(subentry2)
   subject = msg['subject']
   sender = msg['from']
@@ -78,8 +92,14 @@ for datum_idx in range(len(messages)):
   body = ""
   if msg.is_multipart():
     for payload in msg.get_payload():
-      body += payload.get_payload(decode=True)
+      decoded = payload.get_payload(decode=True)
+      if decoded: body += decoded
   else:
-    body += msg.get_payload(decode=True)
+    decoded = msg.get_payload(decode=True)
+    if decoded: body += decoded
   body = body.decode(charset)
-  messages[len(messages) - message_idx] = dict(id = id, subject = subject, sender = process_sender(sender), body = process_body(body))
+  messages[len(messages) - message_idx] = dict(id = id, unread = unread, subject = subject, sender = process_sender(sender), body = process_body(body))
+
+prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
+dump_messages(prefix + "_newmail", filter(lambda msg: msg["unread"], messages))
+dump_messages(prefix + "_inbox", messages)
