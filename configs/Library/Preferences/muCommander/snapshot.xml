@@ -63,7 +63,7 @@
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Applications/Google Notifier.app/Contents/</location>
+                            <location>/Users/xeno_by/Library/Developer/Xcode/DerivedData/</location>
                         </tab-0>
                     </tabs>
                 </left>
@@ -107,14 +107,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>76</width>
+                            <width>48</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Applications/Airmail.app/Contents/Resources/</location>
+                            <location>/System/Library/Frameworks/</location>
                         </tab-0>
                     </tabs>
                 </right>

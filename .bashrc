@@ -314,7 +314,6 @@ alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110M7='cd "$HOME/Projects/Paradise2110M7/sandbox/src/main/scala"'
 alias paradise211x='cd "$HOME/Projects/Paradise211x/sandbox/src/main/scala"'
-alias paradisehooked='cd "$HOME/Projects/ParadiseHooked/sandbox/src/main/scala"'
 alias dex='cd "$HOME/Projects/Dex"'
 alias spire='cd "$HOME/Projects/Spire"'
 alias fos='cd "$HOME/Projects/teaching/fos"'
@@ -333,10 +332,10 @@ alias masterM7='cd "$HOME/Projects/Scala2110M7"'
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function macro-plugin-interface { target="$(hack-home "macro-plugin-interface")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function copy-untyped { target="$(hack-home "copy-untyped")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function typeCheck { target="$(hack-home "typeCheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function palladium1 { target="$(hack-home "palladium1")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function remove-symbol-based-factories { target="$(hack-home "remove-symbol-based-factories")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function existential-type-tree { target="$(hack-home "existential-type-tree")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function topic42type { target="$(hack-home "42.type")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function pres-compiler-macros { target="$(hack-home "pres-compiler-macros")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }

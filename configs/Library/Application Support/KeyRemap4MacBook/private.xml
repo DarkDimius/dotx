@@ -84,6 +84,14 @@
     <appname>TWEETBOT</appname>
     <equal>com.tapbots.TweetbotMac</equal>
   </appdef>
+  <appdef>
+    <appname>ALFRED</appname>
+    <equal>com.runningwithcrayons.Alfred-2</equal>
+  </appdef>
+  <appdef>
+    <appname>REEDER</appname>
+    <equal>com.reederapp.mac</equal>
+  </appdef>
   <item>
     <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -650,6 +658,31 @@
     <name>(Tweetbot) Cmd + Q => Cmd + H</name>
     <identifier>private.tweetbot</identifier>
     <only>TWEETBOT</only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+      KeyCode::VK_WAIT_50MS,
+      KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>Cmd + Shift + Comma => Invoke Mailer</name>
+    <identifier>private.mailer</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::SPACE, ModifierFlag::COMMAND_L,
+      KeyCode::M,
+      KeyCode::A,
+      KeyCode::I,
+      KeyCode::L
+    </autogen>
+  </item>
+  <item>
+    <name>(Reeder) Cmd + Q => Cmd + H</name>
+    <identifier>private.reeder</identifier>
+    <only>REEDER</only>
     <autogen>
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,

@@ -61,9 +61,9 @@
   Alfred's results, so can be actioned and revealed in finder.
 --&gt;
 
-  &lt;item uid="image" autocomplete="My holiday photo" type="file"&gt; 
+  &lt;item uid="image" autocomplete="My holiday photo" type="file" arg="~/email.txt"&gt; 
     &lt;title&gt;My holiday photo&lt;/title&gt; 
-    &lt;subtitle&gt;~/Pictures/My holiday photo.jpg&lt;/subtitle&gt; 
+    &lt;subtitle&gt;~/email.txt&lt;/subtitle&gt; 
     &lt;icon type="filetype"&gt;public.jpeg&lt;/icon&gt; 
   &lt;/item&gt; 
 
@@ -81,6 +81,8 @@ EOB</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>6C68D0BB-A89A-4FDD-BB99-B5A5B460646E</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
