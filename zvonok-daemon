@@ -42,7 +42,7 @@ def process_body(body):
   m = re.match(r"^(.*?)<html>.*$", body)
   if m: body = m.group(1).strip()
   body = ' '.join(body.split()) # replace continuous whitespace groups with single whitespace
-  return body[0:450]
+  return body[0:150]
 
 def dump_messages(path, messages):
   def msg_to_datum(msg):
@@ -56,7 +56,7 @@ def dump_messages(path, messages):
     YAY = "http://fc00.deviantart.net/fs70/i/2012/252/6/c/fluttershy__s_yay_badge_by_zutheskunk-d3e8usb.png"
     data = [dict(url = YAY, title = "Inbox zero", subtitle = "Enjoy while it lasts!", icon = "oldmail.png")]
   template = u"""
-  <item arg="%(url)s" uid="" valid="yes">
+  <item arg="%(url)s">
     <title>%(title)s</title>
     <subtitle>%(subtitle)s</subtitle>
     <icon>%(icon)s</icon>
