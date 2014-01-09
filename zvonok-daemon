@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, httplib2, imaplib, logging, webbrowser, email
+import os, sys, httplib2, imaplib, logging, webbrowser, email, re
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 logging.basicConfig()
@@ -38,26 +38,48 @@ def get_auth_string():
     storage.put(credentials)
   return 'user=%s\1auth=Bearer %s\1\1' % (os.path.expandvars("$GOOGLEMAIL_USERNAME"), credentials.access_token)
 
-def approximate_body(body):
-  return body
+def process_sender(sender):
+  m = re.match(r"^(?:\")?(.*?)(?:\")?\s*(?:<.*)$", sender)
+  if m: sender = m.group(1).strip()
+  return sender
+
+def process_body(body):
+  body = body.replace("\r\n", " ").replace("\n", " ").strip()
+  m = re.match(r"^\s*(?:Hi|Hello|Hey)(?:\s*(?:\w*))?[,!]?\s*(.*?)$", body)
+  if m: body = m.group(1).strip()
+  m = re.match(r"^(.*?)<html>.*$", body)
+  if m: body = m.group(1).strip()
+  body = ' '.join(body.split())
+  return body[0:450]
 
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
 mail.debug = 4 # VERY USEFUL!
 mail.authenticate('XOAUTH2', lambda x: get_auth_string())
 mail.select('INBOX')
-typ, data = mail.search(None, 'ALL')
-messages = []
-for id in reversed(data[0].split()):
-  typ, data = mail.fetch(id, '(BODY.PEEK[])')
-  for response_part in data:
-    if isinstance(response_part, tuple):
-      msg = email.message_from_string(response_part[1])
-      subject = msg['subject']
-      sender = msg['from']
-      body = ""
-      if msg.is_multipart():
-        for payload in msg.get_payload():
-          body += payload.get_payload()
-      else:
-        body += payload.get_payload()
-      messages.append(dict(subject = subject, sender = sender, body = approximate_body(body)))
+status, data = mail.search(None, 'ALL')
+fetch_ids = ','.join(data[0].split())
+messages = [None] * len(data[0].split())
+status, data = mail.fetch(fetch_ids, '(X-GM-MSGID BODY.PEEK[])')
+for datum_idx in range(len(messages)):
+  # for N emails, we get 2 * N entries in data
+  # even entries have 2 sub-entries that say:
+  # sub-entry #1: 1 (X-GM-MSGID 1456746691601126427 BODY[] {41247}
+  # sub-entry #2: Delivered-To: ...; Received: ...; etc
+  # odd entries have 1 sub-entry that says ")"
+  subentry1 = data[datum_idx * 2 + 0][0]
+  subentry2 = data[datum_idx * 2 + 0][1]
+  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) BODY\[\] \{\d+\}$", subentry1)
+  message_idx = int(m.group(1))
+  id = hex(int(m.group(2)))[2:]
+  msg = email.message_from_string(subentry2)
+  subject = msg['subject']
+  sender = msg['from']
+  charset = next(iter(filter(lambda cs: cs, msg.get_charsets())), "utf-8")
+  body = ""
+  if msg.is_multipart():
+    for payload in msg.get_payload():
+      body += payload.get_payload(decode=True)
+  else:
+    body += msg.get_payload(decode=True)
+  body = body.decode(charset)
+  messages[len(messages) - message_idx] = dict(id = id, subject = subject, sender = process_sender(sender), body = process_body(body))
