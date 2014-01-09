@@ -1,4 +1,5 @@
 Apps:
+.DS_Store
 .localized
 1Password.app
 Adium.app
@@ -30,8 +31,8 @@ FaceTime.app
 Firefox.app
 Font Book.app
 Game Center.app
+Gmail Notifr.app
 Google Chrome.app
-Google Notifier.app
 Growl.app
 Hewlett-Packard
 Image Capture.app
@@ -103,6 +104,7 @@ The following ports are currently installed:
   apr-util @1.5.2_1 (active)
   aquaterm @1.1.1_0 (active)
   arpack @3.1.3_0+accelerate+gcc48 (active)
+  asciidoc @8.6.9_0+python27 (active)
   atlas @3.10.1_5+mpclang33 (active)
   autoconf @2.69_2 (active)
   automake @1.14_0
@@ -129,6 +131,14 @@ The following ports are currently installed:
   desktop-file-utils @0.15_1 (active)
   djvulibre @3.5.25_6
   djvulibre @3.5.25_8 (active)
+  docbook-xml @5.0_2 (active)
+  docbook-xml-4.1.2 @5.0_1 (active)
+  docbook-xml-4.2 @5.0_1 (active)
+  docbook-xml-4.3 @5.0_1 (active)
+  docbook-xml-4.4 @5.0_1 (active)
+  docbook-xml-4.5 @5.0_1 (active)
+  docbook-xml-5.0 @5.0_1 (active)
+  docbook-xsl @1.78.1_0 (active)
   epstool @3.08_6 (active)
   expat @2.1.0_0 (active)
   fftw-3 @3.3.3_5 (active)
@@ -137,6 +147,7 @@ The following ports are currently installed:
   flex @2.5.37_1 (active)
   fontconfig @2.11.0_0
   fontconfig @2.11.0_1 (active)
+  fop @1.1_0 (active)
   freetype @2.5.2_0
   freetype @2.5.2_1 (active)
   gawk @4.1.0_0 (active)
@@ -145,6 +156,7 @@ The following ports are currently installed:
   gd2 @2.1.0_3+x11
   gd2 @2.1.0_4+x11 (active)
   gdbm @1.10_2 (active)
+  getopt @1.1.5_1 (active)
   gettext @0.18.3.1_1
   gettext @0.18.3.1_2 (active)
   ghostscript @9.10_1+x11
@@ -244,6 +256,7 @@ The following ports are currently installed:
   SuiteSparse @4.2.1_0
   SuiteSparse @4.2.1_1 (active)
   tiff @4.0.3_2 (active)
+  tig @1.2.1_0 (active)
   transfig @3.2.5d_4
   transfig @3.2.5d_5 (active)
   urw-fonts @1.0.7pre44_0 (active)
@@ -255,6 +268,8 @@ The following ports are currently installed:
   wxWidgets_select @1.0_0 (active)
   Xft2 @2.3.1_0
   Xft2 @2.3.1_1 (active)
+  xmlcatmgr @2.2_1 (active)
+  xmlto @0.0.25_1 (active)
   xorg-kbproto @1.0.6_0 (active)
   xorg-libice @1.0.8_0 (active)
   xorg-libpthread-stubs @0.3_0 (active)
@@ -1146,11 +1161,9 @@ Can't opendir(/private/etc/cups/certs): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-21019.i69Fnx: Permission denied
+Can't cd to (/private/tmp/) launchd-441.kSRebf: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-425.rWfSvl: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-7048.jGo2ZO: Permission denied
+Can't cd to (/private/tmp/) launchd-829.sRSu0K: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1250,6 +1263,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/) C: Permiss
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000t000006h/) C: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000th00006m/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000th00006m/) T: Permission denied
@@ -1261,8 +1276,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -8795,6 +8808,8 @@ user.workflow.0D7D60F2-2536-4B3E-B4EF-52274137D5DD
 user.workflow.0E191761-323A-407B-8661-63BEA013AA58
 user.workflow.0e16b189-9a86-421e-8ace-6c0f249afcf9
 user.workflow.1761f6f0-6f96-43c7-a1c9-91b80dff36e7
+user.workflow.1C4A5DFA-4B13-4CA3-92CF-1B2C2410711E
+user.workflow.1D4A5DFA-4B13-4CA3-92CF-1B2C2410711E
 user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
@@ -8813,6 +8828,7 @@ user.workflow.4373DD4A-9C72-41DC-B98B-5C4D401C55F3
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
 user.workflow.4c3b6c82-dab3-4583-b30b-96c7ea3f4a51
+user.workflow.5220B7F4-1145-4A6B-9A70-543323CB600D
 user.workflow.52E2149C-90E2-4C2E-AD77-189F43EEF018
 user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
@@ -9002,7 +9018,7 @@ KeyRemap4MacBook private.xml:
     <equal>com.reederapp.mac</equal>
   </appdef>
   <item>
-    <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
+    <name>(System-wide, except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
     <not>SUBLIME2,SUBLIME3,VIRTUALBOX,STARCRAFT</not>
     <autogen>
@@ -9059,6 +9075,107 @@ KeyRemap4MacBook private.xml:
       --KeyToKey--
       KeyCode::EXPOSE_ALL, ModifierFlag::SHIFT_R,
       KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Left Control -> Option + Space</name>
+    <identifier>private.lcontrol_option_space</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::CONTROL_L, KeyCode::SPACE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Control + Ф, Control + Shift + Ф, Control + У, Control + Shift + У</name>
+    <identifier>private.control_plus_nonenglish_letter_shortcuts</identifier>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::A, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::E, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+  </item>
+  <item>
+    <name>(System-wide) Command + H => Command + M</name>
+    <identifier>private.command_h_to_command_m</identifier>
+    <not>SUBLIME2,SUBLIME3</not>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_R,
+    </autogen>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_R,
+      </autogen>
+    </block>
+  </item>
+  <item>
+    <name>(System-wide) Separates LCmd + Tab and RCmd + Tab</name>
+    <identifier>private.cmdtab</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::F16, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
   <item>
@@ -9232,85 +9349,6 @@ KeyRemap4MacBook private.xml:
     </autogen>
   </item>
   <item>
-    <name>(System-wide) Left Control -> Option + Space</name>
-    <identifier>private.lcontrol_option_space</identifier>
-    <autogen>
-      --KeyOverlaidModifier--
-      KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-      KeyCode::CONTROL_L, KeyCode::SPACE, ModifierFlag::OPTION_L
-    </autogen>
-  </item>
-  <item>
-    <name>(System-wide) Left Shift -> Command + Shift + [</name>
-    <identifier>private.lmod_prev_tab</identifier>
-    <autogen>
-      --KeyOverlaidModifier--
-      KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
-      KeyCode::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-    </autogen>
-  </item>
-  <item>
-    <name>(System-wide) Right Shift -> Command + Shift + ]</name>
-    <identifier>private.rmod_next_tab</identifier>
-    <autogen>
-      --KeyOverlaidModifier--
-      KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE,
-      KeyCode::SHIFT_R, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-    </autogen>
-  </item>
-  <item>
-    <name>(System-wide) Control + Ф, Control + Shift + Ф, Control + У, Control + Shift + У</name>
-    <identifier>private.control_plus_nonenglish_letter_shortcuts</identifier>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::A, ModifierFlag::CONTROL_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::E, ModifierFlag::CONTROL_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-  </item>
-  <item>
     <name>(Preview, Skim) Satechi Compat</name>
     <identifier>private.satechi_compat</identifier>
     <only>PREVIEW, SKIM</only>
@@ -9351,62 +9389,7 @@ KeyRemap4MacBook private.xml:
     </autogen>
   </item>
   <item>
-    <name>(System-wide) Command + Shift + . => Command + Shift + ,</name>
-    <identifier>private.command_shift_dot_comma</identifier>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-    </autogen>
-  </item>
-  <item>
-    <name>Command + H => Command + M</name>
-    <identifier>private.command_h_to_command_m</identifier>
-    <not>SUBLIME2,SUBLIME3</not>
-    <autogen>
-      --KeyToKey--
-      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
-      KeyCode::M, ModifierFlag::COMMAND_L,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
-      KeyCode::M, ModifierFlag::COMMAND_R,
-    </autogen>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
-        KeyCode::M, ModifierFlag::COMMAND_L,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
-        KeyCode::M, ModifierFlag::COMMAND_R,
-      </autogen>
-    </block>
-  </item>
-  <item>
-    <name>Double click => Cmd + click</name>
+    <name>(iTerm2) Double click => Cmd + click</name>
     <identifier>private.iterm2.double_click_to_cmd_click</identifier>
     <only>ITERM2</only>
     <lastpressedphysicalkey_only>PointingButton::LEFT</lastpressedphysicalkey_only>
@@ -9418,18 +9401,13 @@ KeyRemap4MacBook private.xml:
     </autogen>
   </item>
   <item>
-    <name>(Pocket) B => Cmd + O, Y => A</name>
-    <identifier>private.pocket.b</identifier>
-    <only>POCKET</only>
+    <name>(Finder) Cmd + Shift + C => Cmd + Shift + Option + Ctrl + C</name>
+    <identifier>private.finder1</identifier>
+    <only>FINDER</only>
     <autogen>
       --KeyToKey--
-      KeyCode::B, ModifierFlag::NONE,
-      KeyCode::O, ModifierFlag::COMMAND_L,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::Y, ModifierFlag::NONE,
-      KeyCode::A,
+      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: OPTION_L | ModifierFlag :: CONTROL_L,
     </autogen>
   </item>
   <item>
@@ -9442,16 +9420,6 @@ KeyRemap4MacBook private.xml:
       KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
-    </autogen>
-  </item>
-  <item>
-    <name>(Finder) Cmd + Shift + C => Cmd + Shift + Option + Ctrl + C</name>
-    <identifier>private.finder1</identifier>
-    <only>FINDER</only>
-    <autogen>
-      --KeyToKey--
-      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
-      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: OPTION_L | ModifierFlag :: CONTROL_L,
     </autogen>
   </item>
   <item>
@@ -9476,15 +9444,6 @@ KeyRemap4MacBook private.xml:
       KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
-    </autogen>
-  </item>
-  <item>
-    <name>Separates LCmd + Tab and RCmd + Tab</name>
-    <identifier>private.cmdtab</identifier>
-    <autogen>
-      --KeyToKey--
-      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
-      KeyCode::F16, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
   <item>
@@ -9567,31 +9526,6 @@ KeyRemap4MacBook private.xml:
     <name>(Tweetbot) Cmd + Q => Cmd + H</name>
     <identifier>private.tweetbot</identifier>
     <only>TWEETBOT</only>
-    <autogen>
-      --KeyToKey--
-      KeyCode::Q, ModifierFlag::COMMAND_L,
-      KeyCode::M, ModifierFlag::COMMAND_L,
-      KeyCode::VK_WAIT_50MS,
-      KeyCode::TAB, ModifierFlag::COMMAND_R,
-    </autogen>
-  </item>
-  <item>
-    <name>Cmd + Shift + Comma => Invoke Mailer</name>
-    <identifier>private.mailer</identifier>
-    <autogen>
-      --KeyToKey--
-      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
-      KeyCode::SPACE, ModifierFlag::COMMAND_L,
-      KeyCode::M,
-      KeyCode::A,
-      KeyCode::I,
-      KeyCode::L
-    </autogen>
-  </item>
-  <item>
-    <name>(Reeder) Cmd + Q => Cmd + H</name>
-    <identifier>private.reeder</identifier>
-    <only>REEDER</only>
     <autogen>
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,

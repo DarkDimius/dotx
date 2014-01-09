@@ -93,7 +93,7 @@
     <equal>com.reederapp.mac</equal>
   </appdef>
   <item>
-    <name>(except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
+    <name>(System-wide, except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
     <not>SUBLIME2,SUBLIME3,VIRTUALBOX,STARCRAFT</not>
     <autogen>
@@ -150,6 +150,107 @@
       --KeyToKey--
       KeyCode::EXPOSE_ALL, ModifierFlag::SHIFT_R,
       KeyCode::G, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Left Control -> Option + Space</name>
+    <identifier>private.lcontrol_option_space</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::CONTROL_L, KeyCode::SPACE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+  <item>
+    <name>(System-wide) Control + Ф, Control + Shift + Ф, Control + У, Control + Shift + У</name>
+    <identifier>private.control_plus_nonenglish_letter_shortcuts</identifier>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::A, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::E, ModifierFlag::CONTROL_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+  </item>
+  <item>
+    <name>(System-wide) Command + H => Command + M</name>
+    <identifier>private.command_h_to_command_m</identifier>
+    <not>SUBLIME2,SUBLIME3</not>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::M, ModifierFlag::COMMAND_R,
+    </autogen>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+        KeyCode::M, ModifierFlag::COMMAND_R,
+      </autogen>
+    </block>
+  </item>
+  <item>
+    <name>(System-wide) Separates LCmd + Tab and RCmd + Tab</name>
+    <identifier>private.cmdtab</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
+      KeyCode::F16, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
   <item>
@@ -323,85 +424,6 @@
     </autogen>
   </item>
   <item>
-    <name>(System-wide) Left Control -> Option + Space</name>
-    <identifier>private.lcontrol_option_space</identifier>
-    <autogen>
-      --KeyOverlaidModifier--
-      KeyCode::CONTROL_L, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-      KeyCode::CONTROL_L, KeyCode::SPACE, ModifierFlag::OPTION_L
-    </autogen>
-  </item>
-  <item>
-    <name>(System-wide) Left Shift -> Command + Shift + [</name>
-    <identifier>private.lmod_prev_tab</identifier>
-    <autogen>
-      --KeyOverlaidModifier--
-      KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
-      KeyCode::SHIFT_L, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-    </autogen>
-  </item>
-  <item>
-    <name>(System-wide) Right Shift -> Command + Shift + ]</name>
-    <identifier>private.rmod_next_tab</identifier>
-    <autogen>
-      --KeyOverlaidModifier--
-      KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE,
-      KeyCode::SHIFT_R, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
-    </autogen>
-  </item>
-  <item>
-    <name>(System-wide) Control + Ф, Control + Shift + Ф, Control + У, Control + Shift + У</name>
-    <identifier>private.control_plus_nonenglish_letter_shortcuts</identifier>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::A, ModifierFlag::CONTROL_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::A, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::E, ModifierFlag::CONTROL_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::E, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
-        KeyCode::VK_WAIT_10MS,
-        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
-      </autogen>
-    </block>
-  </item>
-  <item>
     <name>(Preview, Skim) Satechi Compat</name>
     <identifier>private.satechi_compat</identifier>
     <only>PREVIEW, SKIM</only>
@@ -442,62 +464,7 @@
     </autogen>
   </item>
   <item>
-    <name>(System-wide) Command + Shift + . => Command + Shift + ,</name>
-    <identifier>private.command_shift_dot_comma</identifier>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_L | ModifierFlag :: NONE,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::DOT, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-      KeyCode::COMMA, ModifierFlag::COMMAND_R | ModifierFlag :: SHIFT_R | ModifierFlag :: NONE,
-    </autogen>
-  </item>
-  <item>
-    <name>Command + H => Command + M</name>
-    <identifier>private.command_h_to_command_m</identifier>
-    <not>SUBLIME2,SUBLIME3</not>
-    <autogen>
-      --KeyToKey--
-      KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
-      KeyCode::M, ModifierFlag::COMMAND_L,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
-      KeyCode::M, ModifierFlag::COMMAND_R,
-    </autogen>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::H, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
-        KeyCode::M, ModifierFlag::COMMAND_L,
-      </autogen>
-    </block>
-    <block>
-      <inputsource_only>RUSSIAN</inputsource_only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::H, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
-        KeyCode::M, ModifierFlag::COMMAND_R,
-      </autogen>
-    </block>
-  </item>
-  <item>
-    <name>Double click => Cmd + click</name>
+    <name>(iTerm2) Double click => Cmd + click</name>
     <identifier>private.iterm2.double_click_to_cmd_click</identifier>
     <only>ITERM2</only>
     <lastpressedphysicalkey_only>PointingButton::LEFT</lastpressedphysicalkey_only>
@@ -509,18 +476,13 @@
     </autogen>
   </item>
   <item>
-    <name>(Pocket) B => Cmd + O, Y => A</name>
-    <identifier>private.pocket.b</identifier>
-    <only>POCKET</only>
+    <name>(Finder) Cmd + Shift + C => Cmd + Shift + Option + Ctrl + C</name>
+    <identifier>private.finder1</identifier>
+    <only>FINDER</only>
     <autogen>
       --KeyToKey--
-      KeyCode::B, ModifierFlag::NONE,
-      KeyCode::O, ModifierFlag::COMMAND_L,
-    </autogen>
-    <autogen>
-      --KeyToKey--
-      KeyCode::Y, ModifierFlag::NONE,
-      KeyCode::A,
+      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
+      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: OPTION_L | ModifierFlag :: CONTROL_L,
     </autogen>
   </item>
   <item>
@@ -533,16 +495,6 @@
       KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
-    </autogen>
-  </item>
-  <item>
-    <name>(Finder) Cmd + Shift + C => Cmd + Shift + Option + Ctrl + C</name>
-    <identifier>private.finder1</identifier>
-    <only>FINDER</only>
-    <autogen>
-      --KeyToKey--
-      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L,
-      KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag :: SHIFT_L | ModifierFlag :: OPTION_L | ModifierFlag :: CONTROL_L,
     </autogen>
   </item>
   <item>
@@ -567,15 +519,6 @@
       KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
-    </autogen>
-  </item>
-  <item>
-    <name>Separates LCmd + Tab and RCmd + Tab</name>
-    <identifier>private.cmdtab</identifier>
-    <autogen>
-      --KeyToKey--
-      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::NONE,
-      KeyCode::F16, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
   <item>
@@ -658,31 +601,6 @@
     <name>(Tweetbot) Cmd + Q => Cmd + H</name>
     <identifier>private.tweetbot</identifier>
     <only>TWEETBOT</only>
-    <autogen>
-      --KeyToKey--
-      KeyCode::Q, ModifierFlag::COMMAND_L,
-      KeyCode::M, ModifierFlag::COMMAND_L,
-      KeyCode::VK_WAIT_50MS,
-      KeyCode::TAB, ModifierFlag::COMMAND_R,
-    </autogen>
-  </item>
-  <item>
-    <name>Cmd + Shift + Comma => Invoke Mailer</name>
-    <identifier>private.mailer</identifier>
-    <autogen>
-      --KeyToKey--
-      KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
-      KeyCode::SPACE, ModifierFlag::COMMAND_L,
-      KeyCode::M,
-      KeyCode::A,
-      KeyCode::I,
-      KeyCode::L
-    </autogen>
-  </item>
-  <item>
-    <name>(Reeder) Cmd + Q => Cmd + H</name>
-    <identifier>private.reeder</identifier>
-    <only>REEDER</only>
     <autogen>
       --KeyToKey--
       KeyCode::Q, ModifierFlag::COMMAND_L,

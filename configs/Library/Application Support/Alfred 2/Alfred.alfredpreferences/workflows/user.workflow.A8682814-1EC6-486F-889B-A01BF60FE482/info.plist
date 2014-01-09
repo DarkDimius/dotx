@@ -61,7 +61,7 @@
   Alfred's results, so can be actioned and revealed in finder.
 --&gt;
 
-  &lt;item uid="image" autocomplete="My holiday photo" type="file" arg="~/email.txt"&gt; 
+  &lt;item uid="image" autocomplete="My holiday photo" type="file" arg="http://www.google.com"&gt; 
     &lt;title&gt;My holiday photo&lt;/title&gt; 
     &lt;subtitle&gt;~/email.txt&lt;/subtitle&gt; 
     &lt;icon type="filetype"&gt;public.jpeg&lt;/icon&gt; 

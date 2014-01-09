@@ -28,4 +28,8 @@
         <name>dotx</name>
         <location>/usr/local/dotx/</location>
     </bookmark>
+    <bookmark>
+        <name>Documents</name>
+        <location>/Users/xeno_by/Documents/</location>
+    </bookmark>
 </bookmarks>
