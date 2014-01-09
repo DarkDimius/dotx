@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, httplib2, imaplib, logging, webbrowser, email, email.header, re
+import os, sys, httplib2, imaplib, logging, webbrowser, email, email.header, re, quopri, base64
 from xml.sax.saxutils import escape
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
@@ -32,17 +32,14 @@ def decode_header(raw, header):
   encoded, charset = email.header.decode_header(msg[header])[0]
   return encoded.decode(charset) if charset else encoded
 
-def decode_body(raw, charset):
-  msg = email.message_from_string(raw)
-  body = ""
-  if msg.is_multipart():
-    for payload in msg.get_payload():
-      decoded = payload.get_payload(decode=True)
-      if decoded: body += decoded
-  else:
-    decoded = msg.get_payload(decode=True)
-    if decoded: body += decoded
-  return body.decode(charset)
+def decode_body(raw, charset, encoding):
+  body = email.message_from_string(raw).get_payload()
+  if encoding == "7BIT" or encoding == "8BIT": body = body # do nothing?
+  elif encoding == "QUOTED-PRINTABLE": body = quopri.decodestring(body)
+  elif encoding == "BASE64": body # body = base64.b64decode(body)
+  else: raise Exception("unknown encoding: " + encoding)
+  try: return body.decode(charset)
+  except: return body[:-1].decode(charset)
 
 def process_sender(sender):
   # I've seen two typical formats here
@@ -102,14 +99,15 @@ for datum_idx in range(len(messages)):
   id = hex(int(m.group(2)))[2:]
   unread = not "\Seen" in m.group(3)
   body_structure = m.group(4)
-  m = re.match(r"^(?:\()+\"TEXT\" \"(?:PLAIN|HTML)\" \(\"CHARSET\" \"([^\"]+)\"", body_structure)
+  m = re.match(r"^(?:\()+\"TEXT\" \"(?:PLAIN|HTML)\" \(\"CHARSET\" \"([^\"]+)\".*\) NIL NIL \"([^\"]+)\"", body_structure)
   if not m: raise Exception("unexpected body structure: " + body_structure)
   charset = m.group(1)
+  encoding = m.group(2)
   subject = decode_header(raw_subject, 'subject')
   sender = decode_header(raw_sender, 'from')
   m = re.match(r"^\s*BODY\[1\]<0> \{(\d+)\}$", raw_body_size)
   if not m: raise Exception("unexpected body format: " + raw_body_size)
-  body = decode_body(raw_body, charset)
+  body = decode_body(raw_body, charset, encoding)
   messages[len(messages) - message_idx] = dict(id = id, unread = unread, subject = subject, sender = process_sender(sender), body = process_body(body))
 
 prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
