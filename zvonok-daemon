@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import os, sys, httplib2, imaplib, logging, webbrowser, email, re
+import os, sys, httplib2, imaplib, logging, webbrowser, email, email.header, re
 from xml.sax.saxutils import escape
 from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
@@ -26,6 +26,23 @@ def get_auth_string():
     credentials = flow.step2_exchange(OAUTH_CODE)
     storage.put(credentials)
   return 'user=%s\1auth=Bearer %s\1\1' % (os.path.expandvars("$GOOGLEMAIL_USERNAME"), credentials.access_token)
+
+def decode_header(raw, header):
+  msg = email.message_from_string(raw)
+  encoded, charset = email.header.decode_header(msg[header])[0]
+  return encoded.decode(charset) if charset else encoded
+
+def decode_body(raw, charset):
+  msg = email.message_from_string(raw)
+  body = ""
+  if msg.is_multipart():
+    for payload in msg.get_payload():
+      decoded = payload.get_payload(decode=True)
+      if decoded: body += decoded
+  else:
+    decoded = msg.get_payload(decode=True)
+    if decoded: body += decoded
+  return body.decode(charset)
 
 def process_sender(sender):
   # I've seen two typical formats here
@@ -72,34 +89,29 @@ mail.select('INBOX')
 status, data = mail.search(None, 'ALL')
 inbox_ids = ','.join(data[0].split())
 messages = [None] * len(data[0].split())
-status, data = mail.fetch(inbox_ids, '(X-GM-MSGID FLAGS BODY.PEEK[])')
+status, data = mail.fetch(inbox_ids, '(X-GM-MSGID FLAGS BODYSTRUCTURE BODY.PEEK[HEADER.FIELDS (SUBJECT)] BODY.PEEK[HEADER.FIELDS (FROM)] BODY.PEEK[1]<0.500>)')
+total_body_size = 0
 for datum_idx in range(len(messages)):
-  # for N emails, we get 2 * N entries in data
-  # even entries have 2 sub-entries that say:
-  # sub-entry #1: 1 (X-GM-MSGID 1456746691601126427 BODY[] {41247}
-  # sub-entry #2: Delivered-To: ...; Received: ...; etc
-  # odd entries have 1 sub-entry that says ")"
-  subentry1 = data[datum_idx * 2 + 0][0]
-  subentry2 = data[datum_idx * 2 + 0][1]
-  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) FLAGS \((.*?)\) BODY\[\] \{\d+\}$", subentry1)
+  raw_id_flags_bodystructure = data[datum_idx * 4 + 0][0]
+  raw_subject = data[datum_idx * 4 + 0][1]
+  raw_sender = data[datum_idx * 4 + 1][1]
+  raw_body_size = data[datum_idx * 4 + 2][0]
+  raw_body = data[datum_idx * 4 + 2][1]
+  m = re.match(r"^(\d+) \(X-GM-MSGID (\d+) FLAGS \((.*?)\) BODYSTRUCTURE (?:\()+\"TEXT\" \"PLAIN\" \(\"CHARSET\" \"([^\"]*?)\"\) (?:.*?) BODY\[HEADER\.FIELDS \(SUBJECT\)\] \{\d+\}$", raw_id_flags_bodystructure)
+  if not m: print raw_id_flags_bodystructure
   message_idx = int(m.group(1))
   id = hex(int(m.group(2)))[2:]
   unread = not "\Seen" in m.group(3)
-  msg = email.message_from_string(subentry2)
-  subject = msg['subject']
-  sender = msg['from']
-  charset = next(iter(filter(lambda cs: cs, msg.get_charsets())), "utf-8")
-  body = ""
-  if msg.is_multipart():
-    for payload in msg.get_payload():
-      decoded = payload.get_payload(decode=True)
-      if decoded: body += decoded
-  else:
-    decoded = msg.get_payload(decode=True)
-    if decoded: body += decoded
-  body = body.decode(charset)
+  charset = m.group(4)
+  print charset
+  subject = decode_header(raw_subject, 'subject')
+  sender = decode_header(raw_sender, 'from')
+  m = re.match(r"^\s*BODY\[1\]<0> \{(\d+)\}$", raw_body_size)
+  if not m: raise Exception("unexpected body format")
+  body = decode_body(raw_body, charset)
   messages[len(messages) - message_idx] = dict(id = id, unread = unread, subject = subject, sender = process_sender(sender), body = process_body(body))
 
+sys.exit(0)
 prefix = os.path.expandvars("$GOOGLEMAIL_ALFRED")
 dump_messages(prefix + "_newmail", filter(lambda msg: msg["unread"], messages))
 dump_messages(prefix + "_inbox", messages)
