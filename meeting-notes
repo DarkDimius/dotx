@@ -6,18 +6,22 @@ from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 logging.basicConfig()
 
-def fail(): print("usage: " + sys.argv[0] + " <topic> <weekday> --list|(--create <title>) [--alfred]"); exit(1)
+def fail(): print("usage: " + sys.argv[0] + " <topic> <folder> <weekday> --list|(--create <title>) [--alfred]"); exit(1)
 alfred = "--alfred" in sys.argv
 action_list = "--list" in sys.argv
 action_create = "--create" in sys.argv
 if action_list and action_create: fail()
 if not action_list and not action_create: fail()
 sys.argv = filter(lambda arg: not arg.startswith("--"), sys.argv)
-if action_list and len(sys.argv) != 3: fail()
-if action_create and len(sys.argv) != 4: fail()
+if action_list and len(sys.argv) != 4: fail()
+if action_create and len(sys.argv) != 5: fail()
 topic = sys.argv[1]
-weekday = time.strptime(sys.argv[2], "%A").tm_wday
-title = sys.argv[3] if action_create else None
+folder = sys.argv[2]
+if folder == "Scala Shared": folder = open(os.path.expandvars("$GOOGLEDOCS_SCALA_SHARED")).read().strip()
+elif folder == "Palladium Shared": folder = open(os.path.expandvars("$GOOGLEDOCS_PALLADIUM_SHARED")).read().strip()
+else: print("unknown folder '" + folder + "'"); exit(1)
+weekday = time.strptime(sys.argv[3], "%A").tm_wday
+title = sys.argv[4] if action_create else None
 
 def get_drive_service():
   CLIENT_ID = open(os.path.expandvars("$GOOGLE_CLIENT_ID")).read().strip()
@@ -71,7 +75,6 @@ if drive_service:
     else:
       for doc in docs: print doc
   elif action_create:
-    folder = open(os.path.expandvars("$GOOGLEDOCS_SCALA_SHARED")).read().strip()
     hlocal, FILENAME = tempfile.mkstemp(".txt", title + ".")
     os.write(hlocal, " ")
     media_body = MediaFileUpload(FILENAME, mimetype='text/plain', resumable=True)
