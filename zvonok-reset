@@ -27,11 +27,15 @@ def get_auth_string():
     storage.put(credentials)
   return 'user=%s\1auth=Bearer %s\1\1' % (os.path.expandvars("$GOOGLEMAIL_USERNAME"), credentials.access_token)
 
-mail = imaplib.IMAP4_SSL('imap.gmail.com')
-# mail.debug = 4 # VERY USEFUL!
-mail.authenticate('XOAUTH2', lambda x: get_auth_string())
-mail.select('INBOX')
-status, data = mail.search(None, 'ALL')
-inbox_ids = ','.join(data[0].split())
-mail.store(inbox_ids,'+FLAGS','\Seen')
+def mark_all_read():
+  mail = imaplib.IMAP4_SSL('imap.gmail.com')
+  # mail.debug = 4 # VERY USEFUL!
+  mail.authenticate('XOAUTH2', lambda x: get_auth_string())
+  mail.select('INBOX')
+  status, data = mail.search(None, 'ALL')
+  inbox_ids = ','.join(data[0].split())
+  mail.store(inbox_ids,'+FLAGS','\Seen')
+
+call(["/usr/local/bin/zvonok-daemon"])
+mark_all_read()
 call(["/usr/local/bin/zvonok-refresh"])
