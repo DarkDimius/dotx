@@ -12,6 +12,11 @@ before_click = sys.argv[3]
 after_click = sys.argv[4]
 cwd = sys.argv[5] or "."
 
+# before we do anything, update our PATH, because click-through is going to be launched by iTerm 2.app
+# and unfortunately in Mavericks I haven't managed to customize PATH for GUI applications
+# in Mountain Lion, it was okay to create a launch daemon that called "launchctl setenv PATH ...", but not anymore
+os.environ["PATH"] = check_output(["bash", "-c", "source ~/.bashrc; echo $PATH"]).strip()
+
 def find(root, name):
   # NOTE: find is too slow - I got too spoiled by Sublime
   # names = check_output(["find", root, "-path", "*" + name]).strip().split("\n")
@@ -28,11 +33,11 @@ def subl(full_name, line_number, force_file):
   if full_name:
     if os.path.isdir(full_name) and force_file:
       for file in os.listdir(full_name):
-        call(["/usr/local/bin/subl", os.path.join(full_name, file)], cwd = cwd)
+        call(["subl", os.path.join(full_name, file)], cwd = cwd)
       sys.exit(0)
     else:
       command = full_name + ":" + line_number if line_number else full_name
-      call(["/usr/local/bin/subl", command], cwd = cwd)
+      call(["subl", command], cwd = cwd)
       sys.exit(0)
 
 def subl_file(full_name, line_number):
@@ -46,13 +51,13 @@ def find_then_subl_file(root, qualified_name, line_number):
   subl_file(full_name, line_number)
 
 def goto_commit(sha):
-  user, repo, branch, status = check_output(["/usr/local/bin/hub-introspect"], cwd = cwd).strip().split("\n")
+  user, repo, branch, status = check_output(["hub-introspect"], cwd = cwd).strip().split("\n")
   import webbrowser
   webbrowser.open("http://github.com/" + user + "/" + repo + "/commit/" + sha)
   sys.exit(0)
 
 def partest_diff(test_name):
-  call(["/usr/local/bin/partest-diff", test_name], cwd = cwd)
+  call(["partest-diff", test_name], cwd = cwd)
   sys.exit(0)
 
 cut_prefix = before_click.rfind("\ ") + 1
@@ -69,7 +74,7 @@ if os.path.isabs(file_name) and os.path.exists(file_name):
 # CASE 2: CLICK ON SOMETHING THAT LOOKS LIKE FAILED TEST
 test_prefixes = ["neg", "pos", "run"]
 if filter(lambda prefix: line.startswith(prefix + "/") or line.startswith("\[...\]/files/" + prefix + "/"), test_prefixes):
-  scala_root = check_output(["/usr/local/bin/scala-root"], cwd = cwd).strip()
+  scala_root = check_output(["scala-root"], cwd = cwd).strip()
   if line.startswith("\[...\]"):
     file_name = line[len("\[...\]") + 1:]
     file_name = os.path.join(scala_root, "test", file_name)
@@ -103,9 +108,9 @@ m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?
 if m:
   qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
   if line.startswith("org.scalalang.macroparadise"):
-    git_root = check_output(["/usr/local/bin/git-root"], cwd = cwd).strip()
+    git_root = check_output(["git-root"], cwd = cwd).strip()
     plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
     find_then_subl_file(plugin_src_root, qualified_name, m.group("line"))
   else:
-    scala_root = check_output(["/usr/local/bin/scala-root"], cwd = cwd).strip()
+    scala_root = check_output(["scala-root"], cwd = cwd).strip()
     find_then_subl_file(os.path.join(scala_root, "src"), qualified_name, m.group("line"))
