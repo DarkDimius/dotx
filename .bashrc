@@ -339,3 +339,4 @@ function remove-symbol-based-factories { target="$(hack-home "remove-symbol-base
 function existential-type-tree { target="$(hack-home "existential-type-tree")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function topic42type { target="$(hack-home "42.type")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function pres-compiler-macros { target="$(hack-home "pres-compiler-macros")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function untypecheck { target="$(hack-home "untypecheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
