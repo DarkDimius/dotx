@@ -298,6 +298,9 @@ alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias ksr="scalac *Test*.scala && scala Test"
 alias kssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias sus="sync-upstream"
+alias reflection-test="t run/reflection-* run/toolbox_*"
+alias reflection-torture="cd $(scala-root) && (for i in {1..100}; do parallel -j 50 scala -J-Xms1G -J-Xmx1G Test ::: {1..10} || break; printf . ;done)"
+alias torture="reflection-torture"
 
 alias octave='octave -q'
 alias ez='subl /usr/local/dotx/.bashrc'
