@@ -33,15 +33,18 @@ def decode_header(raw, header):
   return encoded.decode(charset) if charset else encoded
 
 def decode_body(raw, charset, encoding):
-  body = email.message_from_string(raw).get_payload()
-  if encoding == "7BIT" or encoding == "8BIT": body = body # do nothing?
-  elif encoding == "QUOTED-PRINTABLE": body = quopri.decodestring(body)
-  elif encoding == "BASE64":
-    try: body = base64.b64decode(body)
-    except: body = body # might crash with incorrect padding, because body is forcibly cut
-  else: raise Exception("unknown encoding: " + encoding)
-  try: return body.decode(charset)
-  except: return body[:-1].decode(charset)
+  try:
+    body = email.message_from_string(raw).get_payload()
+    if encoding == "7BIT" or encoding == "8BIT": body = body # do nothing?
+    elif encoding == "QUOTED-PRINTABLE": body = quopri.decodestring(body)
+    elif encoding == "BASE64":
+      try: body = base64.b64decode(body)
+      except: body = body # might crash with incorrect padding, because body is forcibly cut
+    else: raise Exception("unknown encoding: " + encoding)
+    try: return body.decode(charset)
+    except: return body[:-1].decode(charset)
+  except:
+    return "couldn't load body"
 
 def process_sender(sender):
   # I've seen two typical formats here

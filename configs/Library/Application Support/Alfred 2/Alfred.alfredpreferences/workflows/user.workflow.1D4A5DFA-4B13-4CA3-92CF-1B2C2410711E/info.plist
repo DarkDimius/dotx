@@ -67,6 +67,38 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>newmail</string>
+				<key>runningsubtext</key>
+				<string>Loading cached mail...</string>
+				<key>script</key>
+				<string>source ~/.bashrc
+if [[ $(stat -f "%m" "$GOOGLEMAIL_STATUS") -gt $(stat -f "%m" "${GOOGLEMAIL_ALFRED}_newmail") ]]; then zvonok-daemon; fi
+cat "${GOOGLEMAIL_ALFRED}_newmail"
+touch "$GOOGLEMAIL_RESET"</string>
+				<key>subtext</key>
+				<string>Lists unread email in Gmail inbox</string>
+				<key>title</key>
+				<string>New email</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>017897A4-AEB6-47D2-AD0A-E202DCE6B225</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>1</integer>
 				<key>argument</key>
@@ -88,37 +120,6 @@
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>410ED6C7-3DA7-420A-A919-37C9C69748EB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>keyword</key>
-				<string>newmail</string>
-				<key>runningsubtext</key>
-				<string>Loading cached mail...</string>
-				<key>script</key>
-				<string>cat "${GOOGLEMAIL_ALFRED}_newmail"
-touch "$GOOGLEMAIL_RESET"
-</string>
-				<key>subtext</key>
-				<string>Lists unread email in Gmail inbox</string>
-				<key>title</key>
-				<string>New email</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>017897A4-AEB6-47D2-AD0A-E202DCE6B225</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>

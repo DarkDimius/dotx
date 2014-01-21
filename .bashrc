@@ -314,14 +314,7 @@ alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110M7='cd "$HOME/Projects/Paradise2110M7/sandbox/src/main/scala"'
 alias paradise211x='cd "$HOME/Projects/Paradise211x/sandbox/src/main/scala"'
-alias dex='cd "$HOME/Projects/Dex"'
-alias spire='cd "$HOME/Projects/Spire"'
-alias fos='cd "$HOME/Projects/teaching/fos"'
-alias fose='cd "$HOME/Projects/teaching/fos/exercises"'
-alias pl='cd "$HOME/Projects/Palladium"'
-alias el='cd "$HOME/Projects/Eleven"'
-alias ml7='cd "$HOME/Projects/mlclass-ex7"'
-alias ml8='cd "$HOME/Projects/mlclass-ex8"'
+alias dslparadise='cd "$HOME/Projects/dsl-paradise/sandbox/src/main/scala"'
 alias talks='cd "$HOME/Projects/Talks"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function sb { cd sandbox; }
@@ -332,11 +325,10 @@ alias masterM7='cd "$HOME/Projects/Scala2110M7"'
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
-function typeCheck { target="$(hack-home "typeCheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function palladium1 { target="$(hack-home "palladium1")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function remove-symbol-based-factories { target="$(hack-home "remove-symbol-based-factories")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function existential-type-tree { target="$(hack-home "existential-type-tree")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function topic42type { target="$(hack-home "42.type")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function pres-compiler-macros { target="$(hack-home "pres-compiler-macros")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function untypecheck { target="$(hack-home "untypecheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function palladium0 { target="$(hack-home "palladium0")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function palladium1 { target="$(hack-home "palladium1")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket8131 { target="$(hack-home "8131")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
+function defaults-nameds { target="$(hack-home "defaults-nameds")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }

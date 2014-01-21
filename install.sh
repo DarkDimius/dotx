@@ -43,7 +43,7 @@ function install-into-daemons() {
   else
     cp -v "$from" "$to"
     launchctl load "$to"
-    launchctl start local.$name
+    launchctl start $name
   fi
 }
 
@@ -229,6 +229,7 @@ install-into-daemons local.by.xeno.gitblit
 install-into-daemons local.by.xeno.ANT_OPTS
 install-into-daemons local.by.xeno.DYLD_LIBRARY_PATH
 install-into-daemons local.by.xeno.EDITOR
+install-into-daemons local.by.xeno.JAVA_OPTS
 install-into-daemons local.by.xeno.MAVEN_OPTS
 install-into-daemons local.by.xeno.PATH
 install-into-daemons local.by.xeno.PYTHONPATH

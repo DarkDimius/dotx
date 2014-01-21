@@ -4,6 +4,7 @@ Apps:
 1Password.app
 Adium.app
 Adobe Reader.app
+Air Video Server HD.app
 Airmail.app
 Alfred 2.app
 App Store.app
@@ -36,6 +37,7 @@ Google Chrome.app
 Growl.app
 Hewlett-Packard
 Image Capture.app
+IntelliJ IDEA 13 CE.app
 JD-GUI.app
 Keka.app
 KeyRemap4MacBook.app
@@ -84,6 +86,7 @@ VirtualBox.app
 Xcode.app
 Xerox
 YourKit_Java_Profiler_12.0.3.app
+eclipse
 gfxCardStatus.app
 iBooks.app
 iPhoto.app
@@ -231,6 +234,7 @@ The following ports are currently installed:
   p11-kit @0.20.1_0 (active)
   pango @1.36.1_0+x11
   pango @1.36.1_1+x11 (active)
+  parallel @20131222_0 (active)
   pcre @8.33_0
   pcre @8.33_1 (active)
   pdflib @7.0.5_1 (active)
@@ -1157,13 +1161,15 @@ Can't cd to (/Library/Application Support/) com.apple.TCC: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/Library/Caches/) com.apple.Spotlight: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/Library/Caches/) com.google.SoftwareUpdate.0: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't opendir(/private/etc/cups/certs): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-441.kSRebf: Permission denied
+Can't cd to (/private/tmp/) launchd-449.wdlnic: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-829.sRSu0K: Permission denied
+Can't cd to (/private/tmp/) launchd-473.Ppj0FG: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1276,6 +1282,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000vr00006y/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) C: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_ngzzzzzvzzzzzy/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) jabberd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -8814,7 +8822,9 @@ user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
 user.workflow.1e7a6291-369f-4662-8801-ed628bb6838c
+user.workflow.1efe53c3-6672-42ac-b991-03b2ce84d998
 user.workflow.1f80a3bb-b16f-4695-8764-9ad779dbf433
+user.workflow.247a2af5-fbee-48bc-a5a7-aa2e713bb29e
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
 user.workflow.2F888D79-E596-4316-B383-F2F560426418
@@ -8822,8 +8832,11 @@ user.workflow.2a8ebb21-78c4-44aa-94b9-143154928594
 user.workflow.3037AAAA-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037AF79-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037BBBB-2AC2-47EB-AED7-B4BB0F313990
-user.workflow.3305db6d-b242-4de3-be57-e8e63221214f
+user.workflow.33a0e6f5-825c-4c19-8831-a45c572306e9
+user.workflow.38175b1d-0b9c-44de-86e1-53a1fd8817fd
+user.workflow.3c5e17ed-3731-4e55-ad09-e5c6574018a5
 user.workflow.3e9782fc-44ea-4e7a-9a18-dadc50c53c5f
+user.workflow.3fd80683-770f-4895-9952-2b8ecf3538c8
 user.workflow.4373DD4A-9C72-41DC-B98B-5C4D401C55F3
 user.workflow.4795D3EE-701D-47E6-ABCD-B6BE8EA876AD
 user.workflow.4D823C9E-A1BB-4D48-B379-E5DC3445961C
@@ -8836,6 +8849,8 @@ user.workflow.5CDDCD6A-35E0-4F95-A4C6-19185D483C89
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
 user.workflow.5fe51370-0bba-4298-8b81-0155f685e1d9
 user.workflow.60093599-6269-4045-89de-84461cdb321e
+user.workflow.602a4346-b4ec-470b-8d28-fb6b146b6df9
+user.workflow.653d7131-27c9-453d-bee8-7f613159cbf6
 user.workflow.6ae4a2ae-406a-4323-a5df-dddcd8ab1a23
 user.workflow.6c1bb799-e10b-4cb0-aa2f-3b5a49ff8e1d
 user.workflow.71b647ca-6895-43ed-8659-96b90737c220
@@ -8882,6 +8897,7 @@ user.workflow.a0dfc2ab-49fc-4c25-9343-aa6392f2c311
 user.workflow.a2fd8a58-9d98-48d1-8915-1319c5fdcefc
 user.workflow.a60a4222-4f00-4937-9e4d-e1c8b45b041a
 user.workflow.a66a7ce5-7da8-46be-9e0a-be4d304093a8
+user.workflow.a999c71d-0ac3-47f1-b02e-7fed66306bb6
 user.workflow.ab26bdb6-0f36-42b9-bdd7-100481daae05
 user.workflow.ab850e7d-dbd6-4d90-ab40-f1a81c9f4525
 user.workflow.b38507f9-4b23-4692-b15f-462c4cbbecc6
@@ -8891,6 +8907,8 @@ user.workflow.c0102391-ba77-482d-a674-025a7e21af7e
 user.workflow.c19678ae-c924-44e2-8b42-3b056321b541
 user.workflow.c60cfd57-0f34-49ce-95b7-c1b00b4d36e4
 user.workflow.c6546e7a-fc98-4a40-b2c3-47d964c46836
+user.workflow.c85ef62b-a6b1-467b-a50d-9839acb449d9
+user.workflow.cdb09ddd-b830-4e8a-8b84-f9b2c6fea420
 user.workflow.d3c55849-3308-40d4-b7bb-681c4da27d79
 user.workflow.d781f402-8e40-496a-b42a-0fe9695def4e
 user.workflow.de1a31cd-6667-4a41-a03c-34f97f826742
@@ -8917,6 +8935,7 @@ keyconfig@petricek.net.xpi
 omnibar@ajitk.com.xpi
 onepassword4@agilebits.com.xpi
 readability@readability.com.xpi
+staged
 testpilot@labs.mozilla.com.xpi
 {d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi
 {dc572301-7619-498c-a57d-39143191b318}.xpi

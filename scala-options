@@ -21,6 +21,9 @@ def append_plugin(dir, name):
   if not "-Ystop-after:parser" in options: # this prevents a crash due to a bug in Global that I have no idea how to work around
     if jars:
       options.append("-Xplugin:" + jars[-1])
+      if name == "dsl-paradise":
+        options.append("-cp")
+        options.append(".:" + jars[-1])
       print "-Xplugin-require:" + name
     else:
       print >> sys.stderr, "no " + name + " plugin found in " + jardir
@@ -30,21 +33,17 @@ def append_paradise_plugin(dir):
   global options
   options = map(lambda opt: opt if opt != "-Yquasiquote-debug" else "-P:macroparadise:-Yquasiquote-debug", options)
 
-def append_spores_plugin(dir):
-  append_plugin(dir, "spores")
+def append_dslparadise_plugin(dir):
+  append_plugin(dir, "dsl-paradise")
 
 # automatically enable the paradise plugin if in relevant directory
 if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Paradise"):
   append_paradise_plugin(git_root)
 
-# automatically enable the spores plugin if in relevant directory
-if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Spores"):
-  append_spores_plugin(git_root)
-
-# automatically enable the virtual classes plugin if in relevant directory
-if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/ScalaVC"):
-  options.append("-Xplugin:" + git_root + "/build/quick/misc/scala-devel/plugins/virtualclasses.jar")
-  print "-Xplugin-require:virtualclasses"
+# automatically enable the dsl paradise plugin if in relevant directory
+if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/dsl-paradise"):
+  append_dslparadise_plugin(git_root)
+  # pass
 
 # if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/copy-untyped"):
 #   append_paradise_plugin("/Users/xeno_by/Projects/Paradise211x")
@@ -60,6 +59,10 @@ if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xe
 # if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/210x"):
 #   options.append("-cp")
 #   options.append("/Users/xeno_by/Projects/async/target/scala-2.10/scala-async_2.10-0.9.0-SNAPSHOT.jar:.")
+
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Paradise2103"):
+#   options.append("-cp")
+#   options.append("/Users/xeno_by/Projects/updatable/target/scala-2.10/updatable_2.10-0.7.1-20140117165401-dc32f87a10b9ad053463b0de04988b83f9378425.jar:.")
 
 if os.environ.get("SCALAC_OPTS"):
   # TODO: tokenize this correctly

@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>local.by.xeno.ANT_OPTS</string>
+  <string>local.by.xeno.JAVA_OPTS</string>
   <key>ProgramArguments</key>
   <array>
     <string>launchctl</string>
     <string>setenv</string>
-    <string>ANT_OPTS</string>
-    <string>-Xmx2612M -Xss2M -server -XX:MaxPermSize=180M</string>
+    <string>JAVA_OPTS</string>
+    <string>-Xms1536M -Xmx3072M -Xss2M -XX:MaxPermSize=512M -XX:+UseParallelGC</string>
   </array>
   <key>QueueDirectories</key>
   <array/>
