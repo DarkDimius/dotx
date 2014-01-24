@@ -22,6 +22,10 @@ if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M7"):
   print "/Users/xeno_by/Projects/Scala2110M7"
   sys.exit(0)
 
+if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise2110M8"):
+  print "/Users/xeno_by/Projects/Scala2110M8"
+  sys.exit(0)
+
 if os.path.abspath(".").startswith("/Users/xeno_by/Projects/Paradise211x"):
   print "/Users/xeno_by/Projects/Master"
   sys.exit(0)
