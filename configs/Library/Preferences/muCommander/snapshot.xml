@@ -56,14 +56,14 @@
                         </date>
                         <size>
                             <position>2</position>
-                            <width>64</width>
+                            <width>56</width>
                             <show>true</show>
                         </size>
                     </file_table>
                     <tabs>
                         <count>1</count>
                         <tab-0>
-                            <location>/Users/xeno_by/Projects/SiteScalamacrosOrg/paperstalks/</location>
+                            <location>/Users/xeno_by/Library/Application Support/Sublime Text 3/Projects/</location>
                         </tab-0>
                     </tabs>
                 </left>

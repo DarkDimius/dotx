@@ -25,7 +25,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>typecheck</string>
+	<string>paradise 2.11.0-M8</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -34,9 +34,9 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>typecheck</string>
+				<string>paradise2110m8</string>
 				<key>text</key>
-				<string>typecheck</string>
+				<string>Paradise 2.11.0-M8</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -54,7 +54,7 @@
 				<integer>127</integer>
 				<key>script</key>
 				<string>source ~/.bashrc
-subl-open-project typecheck</string>
+subl-open-project paradise2110M8</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>

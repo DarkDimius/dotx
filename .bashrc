@@ -299,7 +299,7 @@ alias ksr="scalac *Test*.scala && scala Test"
 alias kssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias sus="sync-upstream"
 alias reflection-test="t run/reflection-* run/toolbox_*"
-alias reflection-torture="cd $(scala-root) && (for i in {1..100}; do parallel -j 50 scala -J-Xms1G -J-Xmx1G Test ::: {1..10} || break; printf . ;done)"
+alias reflection-torture="{ cd '/Users/xeno_by/Projects/8131' && (for i in {1..100}; do parallel -j 50 scala -J-Xms1G -J-Xmx1G Test ::: {1..10} || break; printf . ;done); }"
 alias torture="reflection-torture"
 
 alias octave='octave -q'
@@ -316,6 +316,7 @@ alias slo='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110M7='cd "$HOME/Projects/Paradise2110M7/sandbox/src/main/scala"'
+alias paradise2110M8='cd "$HOME/Projects/Paradise2110M8/sandbox/src/main/scala"'
 alias paradise211x='cd "$HOME/Projects/Paradise211x/sandbox/src/main/scala"'
 alias dslparadise='cd "$HOME/Projects/dsl-paradise/sandbox/src/main/scala"'
 alias talks='cd "$HOME/Projects/Talks"'
@@ -324,7 +325,8 @@ function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 alias 2103='cd "$HOME/Projects/Scala2103"'
-alias masterM7='cd "$HOME/Projects/Scala2110M7"'
+alias 2110M7='cd "$HOME/Projects/Scala2110M7"'
+alias 2110M8='cd "$HOME/Projects/Scala2110M8"'
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
@@ -334,4 +336,6 @@ function palladium0 { target="$(hack-home "palladium0")"; if [[ $? == 0 ]]; then
 function palladium1 { target="$(hack-home "palladium1")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function ticket8131 { target="$(hack-home "8131")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
-function defaults-nameds { target="$(hack-home "defaults-nameds")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket5920 { target="$(hack-home "5920")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function fresh { target="$(hack-home "fresh")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket7570 { target="$(hack-home "7570")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }

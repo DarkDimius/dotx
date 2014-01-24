@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>8158</string>
+  <string>fresh</string>
   <key>objects</key>
   <array>
     <dict>
@@ -35,7 +35,7 @@
         <integer>127</integer>
         <key>script</key>
         <string>source ~/.bashrc
-subl-open-project 8158</string>
+subl-open-project fresh</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -52,9 +52,9 @@ subl-open-project 8158</string>
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>8158</string>
+        <string>fresh</string>
         <key>text</key>
-        <string>8158</string>
+        <string>fresh</string>
         <key>withspace</key>
         <false/>
       </dict>

@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>saturday-night</string>
+  <string>eval</string>
   <key>objects</key>
   <array>
     <dict>
@@ -35,7 +35,7 @@
         <integer>127</integer>
         <key>script</key>
         <string>source ~/.bashrc
-subl-open-project saturday-night</string>
+subl-open-project eval</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -52,9 +52,9 @@ subl-open-project saturday-night</string>
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>saturday-night</string>
+        <string>eval</string>
         <key>text</key>
-        <string>saturday-night</string>
+        <string>eval</string>
         <key>withspace</key>
         <false/>
       </dict>
