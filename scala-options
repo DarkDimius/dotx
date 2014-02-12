@@ -88,8 +88,9 @@ if not partest and not git_root.startswith("/Users/xeno_by/Projects/fos-"):
 # if partest and not is210:
 #   options.append("-optimize")
 
-print "-cp"
-print ":".join(classpath)
+if classpath != ["."]:
+  print "-cp"
+  print ":".join(classpath)
 
 for opt in options:
   print opt
