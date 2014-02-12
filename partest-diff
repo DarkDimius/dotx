@@ -34,8 +34,8 @@ elif flavor == "scalap":
   checkfile = checkfile_special if os.path.exists(checkfile_special) else checkfile
   subprocess.call(["bash", "-c", "araxisopendiff " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 else:
-  if not os.path.exists(checkfile):
-    with file(checkfile, 'a'):
-      os.utime(checkfile, None)
+  # if not os.path.exists(checkfile):
+  #   with file(checkfile, 'a'):
+  #     os.utime(checkfile, None)
   # subprocess.call(["bash", "-c", "diffmerge " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
   subprocess.call(["bash", "-c", "araxisopendiff " + logfile + " " + checkfile + " &"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
