@@ -2,18 +2,18 @@
 import os, sys
 from subprocess import call, check_output
 
-macros_and_reify = "--macros-and-reify" in sys.argv
+macros_and_reflect = "--macros-and-reflect" in sys.argv
 sys.argv = filter(lambda arg: not arg.startswith("-"), sys.argv)
 
 if len(sys.argv) > 1:
-  print "usage: " + sys.argv[0] + " [--macros-only|--macros-and-reify]"
+  print "usage: " + sys.argv[0] + " [--macros-only|--macros-and-reflect]"
   sys.exit(1)
 
 root = check_output(["scala-root"]).strip()
 scope = map(lambda category: root + "/test/files/" + category, ["run", "neg", "pos"])
 
-def is_macro_related(text):
-  return "macro" in text.lower() or (macros_and_reify and ("reify" in text.lower() or "typetag" in text.lower() or "typeof" in text.lower()))
+def is_relevant(text):
+  return "macro" in text.lower() or (macros_and_reflect and ("reify" in text.lower() or "typetag" in text.lower() or "typeof" in text.lower() or "universe" in text.lower()))
 
 def search(dir):
   results = []
@@ -25,10 +25,10 @@ def search(dir):
     for f in files:
       if f.endswith(".scala"):
         full_path = os.path.join(root, f)
-        if is_macro_related(f): append(full_path)
+        if is_relevant(f): append(full_path)
         else:
           text = open(full_path, "r").read()
-          if is_macro_related(text): append(full_path)
+          if is_relevant(text): append(full_path)
   return set(results)
 
 unstructured = map(lambda dir: search(dir), scope)

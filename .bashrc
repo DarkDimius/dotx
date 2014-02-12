@@ -109,6 +109,8 @@ alias tt="gt --extras"
 function tt () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" t "$@"; }
 alias tall="partest --all"
 function ttall () { SCALAC_OPTS="-feature -optimise -Yinline-warnings" tall "$@"; }
+alias treflect="partest-macro --macros-and-reflect"
+alias treify="partest-macro --macros-and-reflect"
 alias tmacro="partest-macro --macros-only"
 alias tmacros="partest-macro --macros-only"
 alias ta="partest --all"
@@ -298,7 +300,7 @@ alias ssr="rmc && scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias ksr="scalac *Test*.scala && scala Test"
 alias kssr="scalac *Macros*.scala && scalac *Test*.scala && scala Test"
 alias sus="sync-upstream"
-alias reflection-test="t run/reflection-* run/toolbox_*"
+alias reflection-test="treflect"
 alias reflection-torture="{ cd '/Users/xeno_by/Projects/8131' && (for i in {1..100}; do parallel -j 50 scala -J-Xms1G -J-Xmx1G Test ::: {1..10} || break; printf . ;done); }"
 alias torture="reflection-torture"
 
