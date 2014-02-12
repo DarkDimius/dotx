@@ -107,7 +107,7 @@ if m: goto_commit(line)
 m = re.match("^(?P<package>.*)\.(?P<class>.*?)\.(?P<method>.*?)\((?P<file>.*):(?P<line>\d+)\)$", line)
 if m:
   qualified_name = os.path.join(m.group("package").replace(".", os.sep), m.group("file"))
-  if line.startswith("org.scalalang.macroparadise"):
+  if line.startswith("org.scalamacros.paradise"):
     git_root = check_output(["git-root"], cwd = cwd).strip()
     plugin_src_root = os.path.join(git_root, "plugin", "src", "main")
     find_then_subl_file(plugin_src_root, qualified_name, m.group("line"))

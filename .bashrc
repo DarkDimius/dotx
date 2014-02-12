@@ -315,6 +315,7 @@ alias des='cd "$HOME/Library/Application Support/Sublime Text 3"'
 alias dotx='cd "/usr/local/dotx"'
 alias smo='cd "$HOME/Projects/SiteScalamacrosOrg"'
 alias slo='cd "$HOME/Projects/SiteDocsScalaLangOrg"'
+alias paradise2102='cd "$HOME/Projects/Paradise2102/sandbox/src/main/scala"'
 alias paradise2103='cd "$HOME/Projects/Paradise2103/sandbox/src/main/scala"'
 alias paradise210x='cd "$HOME/Projects/Paradise210x/sandbox/src/main/scala"'
 alias paradise2110M7='cd "$HOME/Projects/Paradise2110M7/sandbox/src/main/scala"'
@@ -326,9 +327,10 @@ function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target/sandbox
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function 210x { target="$(hack-home "2.10.x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-alias 2103='cd "$HOME/Projects/Scala2103"'
-alias 2110M7='cd "$HOME/Projects/Scala2110M7"'
-alias 2110M8='cd "$HOME/Projects/Scala2110M8"'
+alias 2102='cd "$HOME/Projects/Scala2102/sandbox"'
+alias 2103='cd "$HOME/Projects/Scala2103/sandbox"'
+alias 2110M7='cd "$HOME/Projects/Scala2110M7/sandbox"'
+alias 2110M8='cd "$HOME/Projects/Scala2110M8/sandbox"'
 
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
@@ -341,3 +343,10 @@ export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Ho
 function ticket5920 { target="$(hack-home "5920")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function fresh { target="$(hack-home "fresh")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function ticket7570 { target="$(hack-home "7570")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket6411 { target="$(hack-home "6411")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function reify { target="$(hack-home "reify")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function reify210x { target="$(hack-home "reify210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function reset-all-attrs { target="$(hack-home "reset-all-attrs")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function quasiquote-debug { target="$(hack-home "quasiquote-debug")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket8209 { target="$(hack-home "8209")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function typecheck-member-defs { target="$(hack-home "typecheck-member-defs")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }

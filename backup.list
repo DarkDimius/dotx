@@ -71,6 +71,7 @@ Safari.app
 Skim.app
 Skype.app
 SourceTree.app
+StarCraft II
 StartNinja.app
 Stickies.app
 Sublime Text 3.app
@@ -1168,11 +1169,11 @@ Can't opendir(/private/etc/cups/certs): Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/tmp/) cvcd: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-449.wdlnic: Permission denied
+Can't cd to (/private/tmp/) launchd-442.StJ4Xz: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-473.Ppj0FG: Permission denied
+Can't cd to (/private/tmp/) launchd-5632.pocGAT: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/tmp/) launchd-53844.q3zRiQ: Permission denied
+Can't cd to (/private/tmp/) launchd-7473.28sERh: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/) agentx: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -1240,6 +1241,8 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/) T: Permiss
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
+Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000003800000t/) T: Permission denied
+ at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/) T: Permission denied
@@ -1259,8 +1262,6 @@ Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) C: Permiss
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) C: Permission denied
- at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
-Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000c4000031/) T: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
 Can't cd to (/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/) C: Permission denied
  at /opt/local/lib/perl5/5.12.4/App/Cpan.pm line 906
@@ -8813,6 +8814,7 @@ local::texlive::2013::tlpkg::TeXLive::waitVariableX	1.0
 Alfred 2 extensions:
 user.workflow.0421FB21-22B7-460C-8BA6-0127D99B19E9
 user.workflow.0431FB21-22B7-460C-8BA6-0127D99B19E9
+user.workflow.0460c594-53ba-4427-80d1-a5c2ba7be7b1
 user.workflow.058A61FB-3CC1-4FD7-99E4-01DF7C1B8636
 user.workflow.068A61FB-3CC1-4FD7-99E4-01DF7C1B8636
 user.workflow.07DE5B02-1D57-42A2-AC0D-58F2130B9D5A
@@ -8827,11 +8829,13 @@ user.workflow.1D4A5DFA-4B13-4CA3-92CF-1B2C2410711E
 user.workflow.1DEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1EEFA765-5325-4455-8A9A-64C85DBCCA27
 user.workflow.1F6AEAF5-5559-4B1E-BC3C-C3621D033E88
+user.workflow.1d077c33-de29-4d4a-8b4b-1a82333d2edf
 user.workflow.1e7a6291-369f-4662-8801-ed628bb6838c
 user.workflow.1f80a3bb-b16f-4695-8764-9ad779dbf433
 user.workflow.28FCD8E0-E0AD-40C4-B93C-F452489D7319
 user.workflow.2D61682F-0598-4944-8C13-4BE3406E8F00
 user.workflow.2F888D79-E596-4316-B383-F2F560426418
+user.workflow.2aee94d6-8bc3-4682-9086-dc033cd853b7
 user.workflow.3037AAAA-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037AF79-2AC2-47EB-AED7-B4BB0F313990
 user.workflow.3037BBBB-2AC2-47EB-AED7-B4BB0F313990
@@ -8847,13 +8851,16 @@ user.workflow.542EA2B0-6DD4-4C32-B08C-DFEE3F42FF7D
 user.workflow.55E5166F-C0FA-45D1-A5DF-46C4210D7887
 user.workflow.5CDDCD6A-35E0-4F95-A4C6-19185D483C89
 user.workflow.5FE77F90-2678-4633-AD01-59D9EA40B61C
+user.workflow.5e866510-9f1d-4ba1-8732-00f14dd93e77
 user.workflow.5fe51370-0bba-4298-8b81-0155f685e1d9
 user.workflow.60093599-6269-4045-89de-84461cdb321e
 user.workflow.653d7131-27c9-453d-bee8-7f613159cbf6
 user.workflow.6ae4a2ae-406a-4323-a5df-dddcd8ab1a23
 user.workflow.6c1bb799-e10b-4cb0-aa2f-3b5a49ff8e1d
 user.workflow.6d93a6ca-0160-475b-8cec-3064b6baca6f
+user.workflow.71A56F2E-D455-4033-9D39-26AAB11A3C1C
 user.workflow.71b647ca-6895-43ed-8659-96b90737c220
+user.workflow.73082746-e691-42bb-b79a-b3c2bd677385
 user.workflow.75181cbf-48c8-4d72-802d-3c34870174fb
 user.workflow.77E3F47B-018A-49F2-8710-5B8CDF8A5192
 user.workflow.77dfad3e-16ef-4589-af97-4bf7e97042bd
@@ -8864,6 +8871,7 @@ user.workflow.80faf271-e1ee-4ae7-a5a4-94388f10c93e
 user.workflow.8230d4b6-69b1-48bb-a9ac-5ca8978b82a4
 user.workflow.82810705-0056-43f1-b09e-fbda31822be9
 user.workflow.82DE8877-0899-4F4F-A948-5A054BAA5EB4
+user.workflow.839abff2-da5b-4b48-bb86-311017d4c3c6
 user.workflow.84BE4FB7-1698-4732-8E5B-4EA1ECF98EF7
 user.workflow.887a78ef-75a2-4571-b9c0-a3b8084c9db6
 user.workflow.894c429b-fa2f-41d3-a743-a7c672612a27
@@ -8908,6 +8916,8 @@ user.workflow.c19678ae-c924-44e2-8b42-3b056321b541
 user.workflow.c60cfd57-0f34-49ce-95b7-c1b00b4d36e4
 user.workflow.c85ef62b-a6b1-467b-a50d-9839acb449d9
 user.workflow.cdb09ddd-b830-4e8a-8b84-f9b2c6fea420
+user.workflow.d0d3e320-a4d5-4739-a0d3-a9d30c380b6a
+user.workflow.d25652c2-7f12-4768-9873-1665507de392
 user.workflow.d3c55849-3308-40d4-b7bb-681c4da27d79
 user.workflow.d781f402-8e40-496a-b42a-0fe9695def4e
 user.workflow.de1a31cd-6667-4a41-a03c-34f97f826742
@@ -8915,7 +8925,9 @@ user.workflow.de78ea29-d7dd-4271-b9a4-aa28e21d1312
 user.workflow.e4f44cfd-29ef-4b91-b69d-75127a8dc7ff
 user.workflow.ec9ce5c5-a1ca-4ea6-a49a-5483f5517253
 user.workflow.f0f308bb-027b-4756-93b6-b3e170170236
+user.workflow.f274657e-3ba5-480b-8f82-67060a263cf1
 user.workflow.fd10a821-5938-459a-bae7-dbdcbd624015
+user.workflow.fe4fbd3b-3ff6-46ed-8084-62aac9728723
 
 ==================
 Firefox extensions:
@@ -8930,7 +8942,6 @@ keyconfig@petricek.net.xpi
 omnibar@ajitk.com.xpi
 onepassword4@agilebits.com.xpi
 readability@readability.com.xpi
-staged
 testpilot@labs.mozilla.com.xpi
 {d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}.xpi
 {dc572301-7619-498c-a57d-39143191b318}.xpi
@@ -9030,6 +9041,10 @@ KeyRemap4MacBook private.xml:
   <appdef>
     <appname>REEDER</appname>
     <equal>com.reederapp.mac</equal>
+  </appdef>
+  <appdef>
+    <appname>VLC</appname>
+    <equal>org.videolan.vlc</equal>
   </appdef>
   <item>
     <name>(System-wide, except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
@@ -9546,6 +9561,26 @@ KeyRemap4MacBook private.xml:
       KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(VLC) Play/Pause Bluetooth Clicker Support</name>
+    <identifier>private.vlc</identifier>
+    <only>VLC</only>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PLAY,
+      KeyCode::SPACE,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::CURSOR_RIGHT,
     </autogen>
   </item>
 </root>

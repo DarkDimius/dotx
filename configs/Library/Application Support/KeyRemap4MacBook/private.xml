@@ -92,6 +92,10 @@
     <appname>REEDER</appname>
     <equal>com.reederapp.mac</equal>
   </appdef>
+  <appdef>
+    <appname>VLC</appname>
+    <equal>org.videolan.vlc</equal>
+  </appdef>
   <item>
     <name>(System-wide, except Sublime, VirtualBox, Starcraft) F3 -> Cmd + G, Shift + F3 -> Cmd + Shift + G</name>
     <identifier>private.pc_like_search_prev_search_next_except_sublime</identifier>
@@ -607,6 +611,26 @@
       KeyCode::M, ModifierFlag::COMMAND_L,
       KeyCode::VK_WAIT_50MS,
       KeyCode::TAB, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+  <item>
+    <name>(VLC) Play/Pause Bluetooth Clicker Support</name>
+    <identifier>private.vlc</identifier>
+    <only>VLC</only>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PLAY,
+      KeyCode::SPACE,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::CURSOR_RIGHT,
     </autogen>
   </item>
 </root>

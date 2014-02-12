@@ -71,6 +71,23 @@ if not "fatal: " in git_root and os.path.abspath(git_root).startswith("/Users/xe
 #   classpath.append("/Users/xeno_by/Projects/async/target/scala-2.10/scala-async_2.10-0.9.0-SNAPSHOT.jar")
 # if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Paradise2103"):
 #   classpath.append("/Users/xeno_by/Projects/updatable/target/scala-2.10/updatable_2.10-0.7.1-20140117165401-dc32f87a10b9ad053463b0de04988b83f9378425.jar")
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
+#   classpath.append("/Users/xeno_by/Projects/shapeless/core/target/scala-2.11.0-SNAPSHOT/shapeless_2.11.0-SNAPSHOT-2.0.0-SNAPSHOT.jar")
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Scala2110M7"):
+#   classpath.append("/Users/xeno_by/Projects/shapeless/core/target/scala-2.11.0-M7/shapeless_2.11.0-M7-2.0.0-SNAPSHOT.jar")
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Scala2110M7"):
+#   classpath.append("/Users/xeno_by/Documents/specs2-common_2.11.0-M7-2.4-SNAPSHOT.jar")
+#   classpath.append("/Users/xeno_by/Documents/specs2-core_2.11.0-M7-2.4-SNAPSHOT.jar")
+#   classpath.append("/Users/xeno_by/Documents/specs2-matcher_2.11.0-M7-2.4-SNAPSHOT.jar")
+#   classpath.append("/Users/xeno_by/.ivy2/cache/org.scalaz/scalaz-core_2.11.0-M7/bundles/scalaz-core_2.11.0-M7-7.0.5.jar")
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/Master"):
+#   # classpath.append("/Users/xeno_by/Documents/specs2_2.11.0-M8-2.4-SNAPSHOT.jar")
+#   classpath.append("/Users/xeno_by/Projects/specs2/target/scala-2.11.0-M8/specs2_2.11.0-M8-2.4-SNAPSHOT.jar")
+#   classpath.append("/Users/xeno_by/.ivy2/cache/org.scalaz/scalaz-core_2.11.0-M8/bundles/scalaz-core_2.11.0-M8-7.0.5.jar")
+# if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/210x"):
+#   classpath.append("/Users/xeno_by/.ivy2/cache/org.scalatest/scalatest_2.10.0-M4/jars/scalatest_2.10.0-M4-1.9-2.10.0-M4-B2.jar")
+if os.path.abspath(git_root).startswith("/Users/xeno_by/Projects/8209"):
+  classpath.append("/Users/xeno_by/Projects/shapeless/core/target/scala-2.11.0-SNAPSHOT/shapeless_2.11.0-SNAPSHOT-2.0.0-SNAPSHOT.jar")
 
 if os.environ.get("SCALAC_OPTS"):
   # TODO: tokenize this correctly

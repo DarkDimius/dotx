@@ -28,7 +28,6 @@ sandbox3/
 .history
 *.*~
 *#*#
-*.log
 *.class
 *.DS_Store
 .cache
@@ -79,7 +78,6 @@ Gist.sublime-settings
 *.*~
 *#*#
 *.aux
-*.log
 *.nav
 *.out
 *.snm
@@ -107,3 +105,4 @@ Index
 *.sublime_metrics
 *.gch
 ml_login_data.mat
+*.log
