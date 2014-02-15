@@ -315,7 +315,7 @@ addDebugger () {
 }
 setScalaVersion () {
   [[ "$1" == *-SNAPSHOT ]] && addResolver 'Resolver.sonatypeRepo("snapshots")'
-  addSbt "++ $1"
+  addSbt "set every scalaVersion := \"$1\""
 }
 
 process_args ()
