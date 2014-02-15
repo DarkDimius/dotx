@@ -25,7 +25,7 @@
   <key>disabled</key>
   <false/>
   <key>name</key>
-  <string>palladium1</string>
+  <string>typecheck-member-defs</string>
   <key>objects</key>
   <array>
     <dict>
@@ -35,7 +35,7 @@
         <integer>127</integer>
         <key>script</key>
         <string>source ~/.bashrc
-subl-open-project palladium1</string>
+subl-open-project typecheck-member-defs</string>
         <key>type</key>
         <integer>0</integer>
       </dict>
@@ -52,9 +52,9 @@ subl-open-project palladium1</string>
         <key>argumenttype</key>
         <integer>2</integer>
         <key>keyword</key>
-        <string>palladium1</string>
+        <string>typecheck-member-defs</string>
         <key>text</key>
-        <string>palladium1</string>
+        <string>typecheck-member-defs</string>
         <key>withspace</key>
         <false/>
       </dict>

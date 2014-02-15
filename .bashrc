@@ -323,6 +323,13 @@ alias paradise2110M8='cd "$HOME/Projects/Paradise2110M8/sandbox/src/main/scala"'
 alias paradise211x='cd "$HOME/Projects/Paradise211x/sandbox/src/main/scala"'
 alias dslparadise='cd "$HOME/Projects/dsl-paradise/sandbox/src/main/scala"'
 alias talks='cd "$HOME/Projects/Talks"'
+alias dotty='cd "$HOME/Projects/Dotty"'
+alias async='cd "$HOME/Projects/async"'
+alias xsbt='cd "$HOME/Projects/SBT"'
+alias shapeless='cd "$HOME/Projects/shapeless"'
+alias specs2='cd "$HOME/Projects/specs2"'
+alias spire='cd "$HOME/Projects/spire"'
+alias scalatest='cd "$HOME/Projects/scalatest"'
 function kep { target="$(hack-home)"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function sb { cd sandbox; }
 function master { target="$(hack-home "master")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
@@ -335,18 +342,10 @@ alias 2110M8='cd "$HOME/Projects/Scala2110M8/sandbox"'
 ### Automatically managed part of .bashrc
 ### Don't write anything below this comment, or it might get accidentally destroyed
 function topic42type { target="$(hack-home "42.type")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function untypecheck { target="$(hack-home "untypecheck")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function palladium0 { target="$(hack-home "palladium0")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function palladium1 { target="$(hack-home "palladium1")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function ticket8131 { target="$(hack-home "8131")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 export JAVA_HOME="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"
 function ticket5920 { target="$(hack-home "5920")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function fresh { target="$(hack-home "fresh")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function ticket7570 { target="$(hack-home "7570")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function ticket6411 { target="$(hack-home "6411")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function reify { target="$(hack-home "reify")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function reify210x { target="$(hack-home "reify210x")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function reset-all-attrs { target="$(hack-home "reset-all-attrs")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function quasiquote-debug { target="$(hack-home "quasiquote-debug")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
-function ticket8209 { target="$(hack-home "8209")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
 function typecheck-member-defs { target="$(hack-home "typecheck-member-defs")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket8271 { target="$(hack-home "8271")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket8270 { target="$(hack-home "8270")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
+function ticket8269 { target="$(hack-home "8269")"; if [[ $? == 0 ]]; then cd "$target/sandbox"; fi }
