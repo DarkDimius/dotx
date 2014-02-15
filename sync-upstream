@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-cd "$(scala-root)" && \
+cd "$(sbt-root)" && \
 git remote update && \
 git pull upstream "$(git rev-parse --abbrev-ref HEAD)" && \
 git push origin "$(git rev-parse --abbrev-ref HEAD)" && \
-ant all.clean build
+gaika clean thermonuclear && \
+gaika compile

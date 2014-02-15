@@ -96,29 +96,35 @@ try:
         print("unsupported target at " + os.path.abspath("."))
         exit(1)
   elif action == "clean":
-    root = scala_root
-    def clean_quick(target):
-      quick = os.path.join(root, "build/quick")
-      complete = os.path.join(quick, target + ".complete")
-      classes = os.path.join(quick, "classes/" + target)
-      if os.path.exists(complete): os.unlink(complete)
-      if os.path.exists(classes): shutil.rmtree(classes)
-      notify("Cleaned quick/" + target)
-    target = args[0]
-    if target == "quick@compiler+reflect":
-      clean_quick("compiler")
-      clean_quick("reflect")
-      clean_quick("repl")
-      exit(0)
-    elif target.startswith("quick@"):
-      clean_quick(target[len("quick@"):])
-      exit(0)
-    elif target == "all":
-      map(lambda target: clean_quick(target), ["library", "reflect", "compiler", "repl"])
-      exit(0)
+    if sbt_root and sbt_root != scala_root:
+      root = sbt_root
+      exit(call(sbt_core + ["clean"], cwd = root))
     else:
-      notify("unknown clean target: " + target)
-      exit(1)
+      root = scala_root
+      def clean_quick(target):
+        quick = os.path.join(root, "build/quick")
+        complete = os.path.join(quick, target + ".complete")
+        classes = os.path.join(quick, "classes/" + target)
+        if os.path.exists(complete): os.unlink(complete)
+        if os.path.exists(classes): shutil.rmtree(classes)
+        notify("Cleaned quick/" + target)
+      target = args[0]
+      if target == "quick@compiler+reflect":
+        clean_quick("compiler")
+        clean_quick("reflect")
+        clean_quick("repl")
+        exit(0)
+      elif target.startswith("quick@"):
+        clean_quick(target[len("quick@"):])
+        exit(0)
+      elif target == "all":
+        map(lambda target: clean_quick(target), ["library", "reflect", "compiler", "repl"])
+        exit(0)
+      elif target == "thermonuclear":
+        exit(call(["ant", "all.clean"], cwd = root))
+      else:
+        notify("unknown clean target: " + target)
+        exit(1)
   elif action == "test":
     extras = "--extras" in args
     args = filter(lambda arg: arg != "--extras", args)
